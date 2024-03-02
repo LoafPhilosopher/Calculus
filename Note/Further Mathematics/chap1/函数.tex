@@ -245,14 +245,14 @@ $$
     $$
         f(x) \le K_1
     $$
-    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{上界},而$K_1$称为函数$f(x)$在$X$上都一个上界。
+    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{上界},而$K_1$称为函数$f(x)$在$X$上的一个上界。
 \end{defn}
 \begin{defn}{有下界的定义}{}
     设函数$f(x)$的定义域为$D$,数集$X \in D$。如果存在数$K_2$,使得
     $$
         f(x) \geq  K_2
     $$
-    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{下界},而$K_1$称为函数$f(x)$在$X$上都一个下界。
+    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{下界},而$K_2$称为函数$f(x)$在$X$上的一个下界。
 \end{defn}
 \begin{defn}{有界性的定义}{}
     设$f(x)$的定义域为$D$,数集$I \subset D$.如果存在某个正数$M$,使对任一$x \in I$,有\textcolor{red}{$|f(x)| \leqslant M$},则称$f(z)$在$I$上\uwave{有界};如果这样的$M$不存在,则称$f(x)$在$I$上\uwave{无界}.
@@ -261,14 +261,12 @@ $$
     \item \textbf{有界是指,同时有上界和下界}
     \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
     \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
-    \item 事实上,只要在区间$I$上或其端点处存在点$x_0$,使得$\lim_{x\to x_0} f(x)$的值为无穷大,则没有任何两条直线$y=-M$和$y=M$可以把$I$上的$f(x)$“包起来”,这就叫无界.
 \end{itemize}
 \subsubsection{单调性}
 \begin{defn}{}{}
     设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
 \end{defn}
 虽然单调性的证明一般用求导,但是定义法也需要掌握.
-
 $$
     \begin{aligned}
         \text{对任意 }x_1,x_2\in D, & x_1\neq x_2,\text{有}                  \\
@@ -286,47 +284,58 @@ $$
 \begin{defn}{}{}
     设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.\textcolor{red}{偶函数的图形关于y轴对称,奇函数的图形关于原点对称}.\equiv
 \end{defn}
-\begin{corollary}{}{}
-    设$f(x)$是定义在$[-l,l]$上的任意函数,则
-    $$
-        F_1(x)=f(x)-f(-x)\text{必为奇函数};F_2(x)=f(x)+f(-x)\text{必为偶函数}
-    $$
-\end{corollary}
-\begin{figure}[htbp]
-    \begin{minipage}[t]{0.5\linewidth}
-        \centering
-        \includegraphics[height=4cm,width=4cm]{1.2.1.eps}
-        \caption{双曲正弦函数$y=\frac{e^x-e^{-x}}{2}$}
-    \end{minipage}%
-    \begin{minipage}[t]{0.5\linewidth}
-        \centering
-        \includegraphics[height=4cm,width=4cm]{1.2.2.eps}
-        \caption{双曲余弦函数$y=\frac{e^x+e^{-x}}{2}$}
-    \end{minipage}
-\end{figure}
-可以看到上面两个函数可以很好的解释推论1.2.1,并给出一个直观的图像,以下为证明过程.
-\begin{proof}
-    已知$f(x)$是任意函数,$-1$带入可得,$F_1(-x)=f(-x)-f(x)=-F_1(x)$,同理可证$F_2$成立.
-\end{proof}
-\begin{itemize}
-    \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
-    \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
-\end{itemize}
+\begin{criterion}{}{}
+    \begin{itemize}
+        \item $f(\varphi(x))$(内偶则偶,内奇看外)
+              \begin{itemize}
+                  \item 奇[偶]$\Rightarrow$ 偶
+                  \item 偶[奇]$\Rightarrow$ 偶
+                  \item 奇[奇]$\Rightarrow$ 奇
+                  \item 偶[偶]$\Rightarrow$ 偶
+                  \item 非奇非偶[偶]$\Rightarrow$ 偶
+              \end{itemize}
+        \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数.
+              \begin{proof}
+                  令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$
+              \end{proof}
+        \item 求导后奇偶性互换
+        \item 求积后奇偶性互换
+        \item \textbf{连续的奇函数的一切原函数都是偶函数}
+        \item \textbf{连续的偶函数的原函数中仅有一个原函数是奇函数}
+        \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
+        \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
+        \item     设$f(x)$是定义在$[-l,l]$上的任意函数,则
+              $$
+                  F_1(x)=f(x)-f(-x)\text{必为奇函数};F_2(x)=f(x)+f(-x)\text{必为偶函数}
+              $$
+    \end{itemize}
+    原因如下:
+    \begin{figure}[H]
+        \begin{minipage}[t]{0.5\linewidth}
+            \centering
+            \includegraphics[height=4cm,width=4cm]{1.2.1.eps}
+            \caption{双曲正弦函数$y=\frac{e^x-e^{-x}}{2}$}
+        \end{minipage}%
+        \begin{minipage}[t]{0.5\linewidth}
+            \centering
+            \includegraphics[height=4cm,width=4cm]{1.2.2.eps}
+            \caption{双曲余弦函数$y=\frac{e^x+e^{-x}}{2}$}
+        \end{minipage}
+    \end{figure}
+    可以看到上面两个函数可以很好的解释,并给出一个直观的图像,以下为证明过程.
+    \begin{proof}
+        已知$f(x)$是任意函数,$-1$带入可得,$F_1(-x)=f(-x)-f(x)=-F_1(x)$,同理可证$F_2$成立.
+    \end{proof}
+\end{criterion}
 \subsubsection{周期性}
 \begin{defn}{}{}
     设$f(x)$的定义域为$D$,如果存在一个正数$T$,使得对于任一$x \in D$,有$x \pm T \in D$,且$f(x+T)=f(x)$,则称$f(x)$为周期函数,$T$称为$f(x)$的周期.从几何图形上看,在周期函数的定义域内,相邻两个长度为$T$的区间上,函数的图形完全一样.
 \end{defn}
 需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\frac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
 \subsubsection{重要结论}
-$f'(x)$和$\int_{a}^{x}f\left(t\right)\mathrm{d}t$的性质是重点,提前总结如下:
-
 \begin{itemize}
-    \item 若$f(x)$是可导的偶函数,则$f'(x)$是奇函数.
-    \item 若$f(x)$是可导的奇函数,则$f'(x)$是偶函数(\textcolor{red}{求导后,函数奇偶性互换}).
     \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.
-    \item \textbf{连续的奇函数的一切原函数都是偶函数}
-    \item \textbf{连续的偶函数的原函数中仅有一个原函数是奇函数}
-    \item 若连续函数$f(x)$以$T$为周期且$\int_{0}^{T}f(x)\mathrm{d}x=0$,则$f(x)$的一切原函数也以$T$为周期.
+    \item 若连续函数$f(x)$以$T$为周期且$\int_{0}^{T}f(x)\mathrm{d}x=0$,则$\int_{0}^{T}f\left(x\right)\mathrm{d}x=0$时,$\int_{0}^{x}f\left(t\right)\mathrm{d}t$也以 $T$ 为周期.
     \item 若$f(x)$在$(a,b)$内可导且$f^{\prime}(x) $有界,则 $f(x)$ 在$(a,b)$ 内有界.
 \end{itemize}
 \subsection{三种特殊函数}
@@ -368,7 +377,7 @@ $$
     \centering \includegraphics[width=
         0.4 \linewidth]{1.3.2.1.eps} \caption{常数函数图像}
 \end{figure}
-\begin{corollary}{幂函数常用推论}{}
+\begin{criterion}{幂函数常用技巧}{}
     \begin{itemize}
         \item 当$x>0$时,由$y=x$与$y=\sqrt{x}$,$y=\sqrt[3]{x}$,$y=\ln x$具有相同的单调性,因此可以利用这一特性来研究最值
         \item 见到$\sqrt{u}$,$\sqrt[3]{u}$时,可用$u$来研究最值
@@ -376,7 +385,7 @@ $$
         \item 见到$u_1,u_2,u_3$,$\ln (u_1+u_2+u_3)=\ln u_{1}+\ln u_{2}+\ln u_{3}$来研究最值
         \item 见到$\frac{1}{u}$时,可用$u$来研究最值(结论相反),即$\frac{1}{u}$与$u$的最大值点、最小值点相反
     \end{itemize}
-\end{corollary}
+\end{criterion}
 \subsection{指数函数}
 $$
     y=a^x (a>0,a \neq 1)
@@ -392,6 +401,11 @@ $$
         \item 单调性:常用的指数函数$y=\mathrm{e}^x$
         \item 极限:$\lim_{x\to-\infty}\mathrm{e}^x=0,\lim_{x\to+\infty}\mathrm{e}^x=+\infty$(由于极限的唯一性,因此在趋于不同的无穷时,极限值的不同).
         \item 特殊函数值:$a^0=1$,$\mathrm{e}^0=1$
+        \item 指数运算法则:
+              $$
+                  a^{\alpha}\times a^{\beta}=a^{\alpha+\beta},\frac{a^{\alpha}}{a^{\beta}}=a^{\alpha-\beta},(a^{\alpha})^{\beta}=a^{\alpha\beta},(ab)^{\alpha}=a^{\alpha}b^{\alpha},\left(\frac{a}{b}\right)^{\alpha}=\frac{a^{\alpha}}{b^{\alpha}},
+              $$
+              $eg:e^{\tan x}-e^{\sin x}=e^{\sin x}\left(e^{\tan x-\sin x}-1\right)$
     \end{itemize}
 \end{criterion}
 
@@ -483,9 +497,24 @@ $$
 由于这两个函数分别是$\sin x$和 $\cos x$的反函数,因此可以知道的是,$\sin x$的值域是$\arcsin x$的定义域.因此可以得到下面的结论
 \begin{criterion}{反正余弦函数相关性质}{}
     \begin{itemize}
-        \item 定义域$[-1,1]$,$y=\arcsin x$值域$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域$[0,\pi]$
+        \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$
         \item 性质:$\arcsin x+\arccos x=\frac{\pi}{2}$(求导后可以发现导数为0)
     \end{itemize}
+\end{criterion}
+\begin{criterion}{反三角函数恒等式}{}
+    $$
+        \sin(\arcsin x)=x,x\in[-1,1],\sin(\arccos x)=\sqrt{1-x^2},x\in[-1,1];
+    $$
+    $$
+        \cos(\arccos x)=x,x\in[-1,1],\cos(\arcsin x)=\sqrt{1-x^2},x\in[-1,1];
+    $$
+    上述两个式子可抽象为$f^{-1}f(x)=x$.需要注意的是其值需要在值域内.
+    $$
+        \arcsin(\sin y)=y,y\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]
+    $$
+    $$
+        \arccos(\cos y)=y,y\in\left[0,\pi\right]
+    $$
 \end{criterion}
 \subsubsection{反正切和反余切函数}
 $$
