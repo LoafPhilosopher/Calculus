@@ -1,0 +1,649 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
+
+\input{../config/config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+
+%  ############################ 正文部分
+\chapter{函数}
+\section{映射}
+\subsection{映射的概念}
+\begin{defn}{映射定义}{}
+    设$X,Y$是两个\textcolor{red}{非空集合},如果\textbf{存在}一个\textcolor{red}{法则$f$},使得对$X$中\textbf{每个元素}$x$,按法则$f$,在$Y$中有\textbf{唯一确定的元素}$y$与之对应,那么称$f$为从$X$到$Y$的映射,记作
+    $$
+        f:X \to Y
+    $$
+    其中$y$称为元素$x$(在映射$f$下)的像,并记住$f(x)$,即
+    $$
+        y=f(x)
+    $$
+    而元素$x$称为元素$y$(在映射$f$下)对一个原像;
+\end{defn}
+需要注意的是,从映射的概念可以看出,映射法则$f$可以有多个,但是只要有一个满足即可.
+\subsection{映射的分类}
+\begin{itemize}
+    \item 设$f$是从集合$X$到集合$Y$的映射,若$R_f=Y$,即$Y$中任一元素$y$都是$X$中某元素的像,则称$f$为$X$到$Y$上的\uwave{映射或满射};
+    \item 若对$X$中任意两个不同元素$x_1 \neq x_2$,它们的像$f(x_1) \neq f(x_2)$,则称$f$为$X$到$Y$的\uwave{单射};
+    \item 若映射$f$既是单射,又是满射,则称$f$为\uwave{一一映射(或双射)}
+\end{itemize}
+\section{函数的基本概念与特性}
+\subsection{函数的概念}
+\begin{defn}{函数定义}{}
+    设\textbf{数集}$D \subset \mathbb{R}$,则称映射$f:D \to \mathbb{R}$ 为定义在$D$上的\uwave{函数},通常简记为
+    $$
+        y=f(x),x \in D,
+    $$
+    其中$x$称为\uwave{自变量},$y$称为\uwave{因变量},$D$称为\uwave{定义域},记作$D_f$,即$D_f=D$.
+\end{defn}
+函数的定义中,对\textbf{每个}$x \in D$,按对应法则$f$,总有\textbf{唯一确定}的值$y$与之对应,这个值称为函数$f$在$x$处的\uwave{函数值},记作$f(x)$,即$y=f(x)$.因变量$y$与自变量$x$之间的这种依赖关系,通常称为\uwave{\textbf{函数关系}}.函数值$f(x)$的全体所构成的集合称为函数$f$的值域,记作$R_f$或$f(D)$即：
+$$
+    R_{f}=f(D)=\left\{y|y=f(x),x\in D\right\}
+$$
+\begin{defn}{自然定义域}{}
+    约定函数的定义域是使算式有意义的一切实数组成的集合。
+\end{defn}
+例如:函数$y=\frac{1}{x-1}$,即使没有指出函数的定义域是多少,但是通过分析可得,函数的自然定义域是$(-\infty,1)\cup(1,\infty)$。同理对于函数$y=\sqrt[2]{1-x^2}$,其自然定义域是$(-1,1)$。
+\begin{criterion}{单值函数与多值函数}{}
+    事实上上述定义的函数为\textbf{单值函数},若给定一个$x_1$,对应一个$y_1$。给另外一个$x_2$,对应另外一个$y_2$,即\textbf{“一对一”}.\\
+    \tikzset{every picture/.style={line width=0.95pt}}
+    \begin{center}
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1,scale=0.45]
+            \draw  (50,212.81) -- (407.86,212.81)(85.79,53) -- (85.79,230.57) (400.86,207.81) -- (407.86,212.81) -- (400.86,217.81) (80.79,60) -- (85.79,53) -- (90.79,60)  ;
+            \draw   (112,213) .. controls (171.95,37.76) and (231.9,37.76) .. (291.86,213) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (85.86,120.57) -- (249.86,121.57) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (152.86,122.57) -- (152.86,212.57) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (249.86,121.57) -- (249.86,211.57) ;
+            \draw (93,38) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (143,217) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+            \draw (241,218) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+            \draw (396,220) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (66,215) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (70,109) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+        \end{tikzpicture}
+    \end{center}
+
+\end{criterion}
+\subsection{函数的表示}
+\subsubsection{表格}
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|l|l|l|l|l|l|l|}
+            \hline
+            $x$    & $ 1$ & $2$ & $3$ & $4$ & $5$  & $6$  \\ \hline
+            $y=2x$ & $2$  & $4$ & $6$ & $8$ & $10$ & $12$ \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\subsubsection{图像}
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.4 \linewidth]{1.3.3.eps} \caption{对数函数图像}
+\end{figure}
+\subsubsection{解析式}
+$$
+    \boxed{y=2x}
+$$
+\subsection{反函数}
+\begin{defn}{反函数定义}{}
+    设函数$f:D \to f(D)$是单射(一对一),则它存在逆映射$f^{-1}:f(D) \to D$,称此映射$f^{-1}$为函数$f$的\textcolor{red}{反函数}
+    按此定义,对每个$y \in f(D)$,有唯一的$x \in D$,使得$f(x)=y$,于是有
+    $$
+        f^{-1}(y)=x
+    $$
+\end{defn}
+\begin{criterion}{解释}{}
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{|l|l|l|}
+                \hline
+                $y=2x+1$          & \begin{tabular}[c]{@{}l@{}}自变量:x:{[}1,2{]}\\ 因变量:y:{[}3,5{]}\end{tabular} &                                                 \\ \hline
+                $x=\frac{y-1}{2}$ & \begin{tabular}[c]{@{}l@{}}自变量:y:{[}3,5{]}\\ 因变量:x:{[}1,2{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}变量\\ 改变\end{tabular} \\ \hline
+                $y=\frac{x-1}{2}$ & \begin{tabular}[c]{@{}l@{}}自变量:x:{[}3,5{]}\\ 因变量:y:{[}1,2{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}方程\\ 改变\end{tabular} \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+\end{criterion}
+
+可以看出反函数$f^{-1}$的对应法则是完全由函数$f$的对应法则所确定的.以函数$y=2*x+1$为例.在函数$y=2*x+1$中,开始y为因变量,x为自变量.根据反函数概念1.2.2可以,函数的反函数的自变量与因变量互换.则上述函数的反函数是$\frac{y-1}{2}=x$,其中x是因变量,y是自变量.
+但是由于习惯上x是自变量,y是因变量,上述反函数写作$\frac{x-1}{2}=y$.
+综上所述:\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}
+除此之外,还有两点需要说明的是
+\begin{itemize}
+    \item 严格单调函数必有反函数,但是反函数不一定是单调函数.如函数$f(x)=\begin{cases}x,&x\geqslant0,\\\dfrac{1}{x},&x<0,\end{cases}$,其函数图像为\begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
+              \label{xxx1} \end{figure}
+    \item \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}.这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.
+\end{itemize}
+\begin{problem}
+求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
+\end{problem}
+\begin{note}
+    在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\frac{e^x+e^{-x}}{2}$是双曲余弦函数.上述两个函数的图像为图1.2,图1.3.
+\end{note}
+\begin{solution}
+    已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \frac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
+    对两边可以进行如下操作
+    \begin{center}
+        $e^{-y}=\sqrt{x^2+1}-x$\\
+        $e^{y}=\sqrt{x^2+1}+x$\\
+    \end{center}
+    那么可以得到$x=\frac{1}{2}(e^y-e^{-y})$
+    交换之后可以得到函数$f(x)$的反函数,即
+    $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$
+\end{solution}
+\subsection{复合函数}
+设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,,则由
+$$
+    y=f[\operatorname{g}(x)](x{\in}D)
+$$
+确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集.
+\subsection{函数的四种特性及重要结论}
+\subsubsection{有界性}
+有界性分为三种情况,一种是有上界,一种是有下界,一种是有界。有界包含了有上界和有下界。
+\begin{defn}{有上界的定义}{}
+    设函数$f(x)$的定义域为$D$,数集$X \in D$。如果存在数$K_1$,使得
+    $$
+        f(x) \le K_1
+    $$
+    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{上界},而$K_1$称为函数$f(x)$在$X$上都一个上界。
+\end{defn}
+\begin{defn}{有下界的定义}{}
+    设函数$f(x)$的定义域为$D$,数集$X \in D$。如果存在数$K_2$,使得
+    $$
+        f(x) \geq  K_2
+    $$
+    对任一$x \in X$都成立,那么称函数$f(x)$上有\uwave{下界},而$K_1$称为函数$f(x)$在$X$上都一个下界。
+\end{defn}
+\begin{defn}{有界性的定义}{}
+    设$f(x)$的定义域为$D$,数集$I \subset D$.如果存在某个正数$M$,使对任一$x \in I$,有\textcolor{red}{$|f(x)| \leqslant M$},则称$f(z)$在$I$上\uwave{有界};如果这样的$M$不存在,则称$f(x)$在$I$上\uwave{无界}.
+\end{defn}
+\begin{itemize}
+    \item \textbf{有界是指,同时有上界和下界}
+    \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
+    \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
+    \item 事实上,只要在区间$I$上或其端点处存在点$x_0$,使得$\lim_{x\to x_0} f(x)$的值为无穷大,则没有任何两条直线$y=-M$和$y=M$可以把$I$上的$f(x)$“包起来”,这就叫无界.
+\end{itemize}
+\subsubsection{单调性}
+\begin{defn}{}{}
+    设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
+\end{defn}
+虽然单调性的证明一般用求导,但是定义法也需要掌握.
+
+$$
+    \begin{aligned}
+        \text{对任意 }x_1,x_2\in D, & x_1\neq x_2,\text{有}                  \\
+                                 & f(x)\text{是单调增函数}
+        \Leftrightarrow(x_{1}-x_{2})\Big[f(x_{1})-f(x_{2})\Big]{>}0;     \\
+                                 & f(x)\text{是单调减函数}.
+        \Leftrightarrow(x_{1}-x_{2})\Big[f(x_{1})-f(x_{2})\Big]<0;       \\
+                                 & f(x)\text{是单调不减函数}
+        \Leftrightarrow(x_1-x_2){\big[}f(x_1)-f(x_2){\big]}{\geqslant}0; \\
+                                 & f(x)\text{是单调不增函数}
+        \Leftrightarrow(x_1-x_2){\left[f(x_1)-f(x_2)\right]}\leqslant0.
+    \end{aligned}
+$$
+\subsubsection{奇偶性}
+\begin{defn}{}{}
+    设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.\textcolor{red}{偶函数的图形关于y轴对称,奇函数的图形关于原点对称}.\equiv
+\end{defn}
+\begin{corollary}{}{}
+    设$f(x)$是定义在$[-l,l]$上的任意函数,则
+    $$
+        F_1(x)=f(x)-f(-x)\text{必为奇函数};F_2(x)=f(x)+f(-x)\text{必为偶函数}
+    $$
+\end{corollary}
+\begin{figure}[htbp]
+    \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics[height=4cm,width=4cm]{1.2.1.eps}
+        \caption{双曲正弦函数$y=\frac{e^x-e^{-x}}{2}$}
+    \end{minipage}%
+    \begin{minipage}[t]{0.5\linewidth}
+        \centering
+        \includegraphics[height=4cm,width=4cm]{1.2.2.eps}
+        \caption{双曲余弦函数$y=\frac{e^x+e^{-x}}{2}$}
+    \end{minipage}
+\end{figure}
+可以看到上面两个函数可以很好的解释推论1.2.1,并给出一个直观的图像,以下为证明过程.
+\begin{proof}
+    已知$f(x)$是任意函数,$-1$带入可得,$F_1(-x)=f(-x)-f(x)=-F_1(x)$,同理可证$F_2$成立.
+\end{proof}
+\begin{itemize}
+    \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
+    \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
+\end{itemize}
+\subsubsection{周期性}
+\begin{defn}{}{}
+    设$f(x)$的定义域为$D$,如果存在一个正数$T$,使得对于任一$x \in D$,有$x \pm T \in D$,且$f(x+T)=f(x)$,则称$f(x)$为周期函数,$T$称为$f(x)$的周期.从几何图形上看,在周期函数的定义域内,相邻两个长度为$T$的区间上,函数的图形完全一样.
+\end{defn}
+需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\frac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
+\subsubsection{重要结论}
+$f'(x)$和$\int_{a}^{x}f\left(t\right)\mathrm{d}t$的性质是重点,提前总结如下:
+
+\begin{itemize}
+    \item 若$f(x)$是可导的偶函数,则$f'(x)$是奇函数.
+    \item 若$f(x)$是可导的奇函数,则$f'(x)$是偶函数(\textcolor{red}{求导后,函数奇偶性互换}).
+    \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.
+    \item \textbf{连续的奇函数的一切原函数都是偶函数}
+    \item \textbf{连续的偶函数的原函数中仅有一个原函数是奇函数}
+    \item 若连续函数$f(x)$以$T$为周期且$\int_{0}^{T}f(x)\mathrm{d}x=0$,则$f(x)$的一切原函数也以$T$为周期.
+    \item 若$f(x)$在$(a,b)$内可导且$f^{\prime}(x) $有界,则 $f(x)$ 在$(a,b)$ 内有界.
+\end{itemize}
+\subsection{三种特殊函数}
+\subsubsection{符号函数}
+$$
+    y=\text{sgn} \ x=\begin{cases}-1,&x<0,\\0,&x=0,\\1,&x>0\end{cases}
+$$
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.3 \linewidth]{1.2.3.eps} \caption{符号函数$sgn \ x$图像}
+\end{figure}
+\subsubsection{取整函数}
+$$
+    y=[x]
+$$
+函数值向左移,\textbf{现实生活中其实就是年龄},即$x-1<[x] \leq x$
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.3 \linewidth]{1.2.4.eps} \caption{取整函数$[x]$图像}
+\end{figure}
+
+\subsubsection{狄利克雷函数}
+$$
+    D\left(x\right)=\left\{\begin{matrix}{1,}&x\in\mathbf{Q},\\{0,}&x\in\mathbf{Q}^{c}.\end{matrix}\right.
+$$
+
+\section{函数图像}
+\subsection{常数函数}
+$y=A$,$A$为常数,其图形为平行于$x$轴的水平直线
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.3 \linewidth]{1.3.1.eps} \caption{常数函数图像}
+\end{figure}
+\subsection{幂函数}
+$$
+    y=x^{\mu}(\mu \text{是实数})
+$$
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.4 \linewidth]{1.3.2.1.eps} \caption{常数函数图像}
+\end{figure}
+\begin{corollary}{幂函数常用推论}{}
+    \begin{itemize}
+        \item 当$x>0$时,由$y=x$与$y=\sqrt{x}$,$y=\sqrt[3]{x}$,$y=\ln x$具有相同的单调性,因此可以利用这一特性来研究最值
+        \item 见到$\sqrt{u}$,$\sqrt[3]{u}$时,可用$u$来研究最值
+        \item 见到$\mid u\mid$时,由$\mid u\mid=\sqrt{u^2}$,可用 $u^2$ 来研究最值
+        \item 见到$u_1,u_2,u_3$,$\ln (u_1+u_2+u_3)=\ln u_{1}+\ln u_{2}+\ln u_{3}$来研究最值
+        \item 见到$\frac{1}{u}$时,可用$u$来研究最值(结论相反),即$\frac{1}{u}$与$u$的最大值点、最小值点相反
+    \end{itemize}
+\end{corollary}
+\subsection{指数函数}
+$$
+    y=a^x (a>0,a \neq 1)
+$$
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.4 \linewidth]{1.3.2.eps} \caption{指数函数图像}
+\end{figure}
+
+\begin{criterion}{指数函数相关性质}{}
+    \begin{itemize}
+        \item 定义域:$(-\infty,+\infty)$.值域:$(0,+\infty)$.
+        \item 单调性:常用的指数函数$y=\mathrm{e}^x$
+        \item 极限:$\lim_{x\to-\infty}\mathrm{e}^x=0,\lim_{x\to+\infty}\mathrm{e}^x=+\infty$(由于极限的唯一性,因此在趋于不同的无穷时,极限值的不同).
+        \item 特殊函数值:$a^0=1$,$\mathrm{e}^0=1$
+    \end{itemize}
+\end{criterion}
+
+\subsection{对数函数}
+$$
+    y=\log_a x (a>0,a \neq 1)
+$$
+
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.45 \linewidth]{1.3.3.eps} \caption{对数函数图像}
+\end{figure}
+\begin{criterion}{对数函数相关性质}{}
+    \begin{itemize}
+        \item 定义域:$(0,+\infty)$.值域:$(-\infty,+\infty)$.
+        \item 单调性:当 $a>1$时,$y=log_a x$单调增加;当$0<a<1$时,$y=\log_a x$单调减少;
+        \item 常用对数函数: $y=\ln x$
+        \item 特殊函数值:$\log_a 1=0$,$\log_a=1$,$\ln 1=0$,$\ln e=1$
+        \item 极限$\operatorname*{lim ln}_{x\to0^{+}}x=-\infty$,$\operatorname*{lim ln}_{x\to+\infty}x=+\infty$.
+        \item \textcolor{red}{常用公式:$x=\mathrm{e}^{\ln x}\left(x>0\right),u^{\upsilon}=\mathrm{e}^{\ln u^v}=\mathrm{e}^{\upsilon\ln u}\left(u>0\right)$}
+    \end{itemize}
+\end{criterion}
+\subsection{三角函数}
+
+\subsubsection{正弦和余弦函数}
+$$
+    \boxed{y=\sin x}
+    \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad
+    \boxed{y=\cos x}
+$$
+\begin{figure}[H] \centering
+    \subfigure[正弦函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.5.eps}
+    }
+    \subfigure[余弦函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.4.eps}
+    }
+    \caption{ 正余弦函数图像}
+\end{figure}
+
+\subsubsection{正切和余切函数}
+$$
+    \boxed{y=\tan x=\frac{\sin x}{\cos x}}
+    \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad
+    \boxed{y=\cot x=\frac{\cos x}{\sin x}=\frac{1}{\tan x}}
+$$
+\begin{figure}[H] \centering
+    \subfigure[正切函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.6.eps}
+    }
+    \subfigure[余切函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.7.eps}
+    }
+    \caption{正余切函数图像}
+\end{figure}
+
+\subsubsection{正割和余割函数}
+$$
+    \boxed{\sec x=\frac{1}{\cos x}}
+    \qquad  \qquad \qquad \qquad \qquad \qquad
+    \boxed{\csc x=\frac{1}{\sin x}}
+$$
+\begin{figure}[H] \centering
+    \subfigure[正割函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.8.eps}
+    }
+    \subfigure[余割函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.9.eps}
+    }
+    \caption{正余割函数图像}
+\end{figure}
+
+\subsubsection{反三角函数}
+\subsubsection{反正弦和反余弦函数}
+$$
+    \boxed{y=\arcsin x}
+    \qquad \qquad \qquad \qquad \qquad \qquad
+    \boxed{y=\arccos x}
+$$
+\begin{figure}[H] \centering
+    \subfigure[反正弦函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.10.eps}
+    }
+    \subfigure[反余弦函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.11.eps}
+    }
+    \caption{反正余弦函数图像}
+\end{figure}
+由于这两个函数分别是$\sin x$和 $\cos x$的反函数,因此可以知道的是,$\sin x$的值域是$\arcsin x$的定义域.因此可以得到下面的结论
+\begin{criterion}{反正余弦函数相关性质}{}
+    \begin{itemize}
+        \item 定义域$[-1,1]$,$y=\arcsin x$值域$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域$[0,\pi]$
+        \item 性质:$\arcsin x+\arccos x=\frac{\pi}{2}$(求导后可以发现导数为0)
+    \end{itemize}
+\end{criterion}
+\subsubsection{反正切和反余切函数}
+$$
+    \boxed{y=\arctan x}
+    \qquad \qquad \qquad \qquad \qquad \qquad
+    \boxed{y=\arccot x}
+$$
+\begin{figure}[H] \centering
+    \subfigure[反正切函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.12.eps}
+    }
+    \subfigure[反余切函数图像] {
+        \includegraphics[width=0.45\columnwidth]{1.3.13.pdf}
+    }
+    \caption{反正余切函数图像}
+\end{figure}
+\begin{criterion}{反正余切函数相关性质}{}
+    \begin{itemize}
+        \item 定义域$[-\infty,+\infty]$,$y=\arctan x$值域$(-\frac{\pi}{2},\frac{\pi}{2})$,$y=\arccot x$值域$(0,\pi)$
+        \item 性质:$\arctan x+\arccot x=\frac{\pi}{2}$(求导后可以发现导数为0)
+    \end{itemize}
+\end{criterion}
+
+\subsection{图像绘制}
+
+\subsubsection{极坐标下的图像}
+
+\begin{itemize}
+    \item 用描点法绘制函数图像:就是把每一个点求出来,然后连接起来即可,但是需要点足够多
+    \item 用直角坐标系观点画极坐标系的图像,以函数$r=2(1+\cos \theta )$为例.
+          \begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.8 \linewidth]{1.3.14.png} \caption{函数$r=2(1+\cos \theta)$图像}
+          \end{figure}
+\end{itemize}
+可以看到$\theta - r $的坐标系的关键点为$(0,4),(\frac{\pi}{2},2),(\pi,0),(\frac{3}{2}\pi,2),(2\pi,4)$这五个点,那么在极坐标系下可以绘制出这些点,比如在$x=4$时,$\theta = 0$,$x=2$时,$\theta = \frac{\pi}{2}$,$x=0$时,$\theta = \pi$.
+\subsubsection{参数方程}
+通过第三个变量即参数来表示别的两个变量.
+
+摆线参数方程:
+$$
+    \left\{
+    \begin{array}{l}
+        x=r\left(t-\sin t\right) \\
+        y=r\left(1-\cos t\right).
+    \end{array}
+    \right.
+$$
+
+星型线参数方程:
+$$
+    \left\{
+    \begin{array}{l}
+        x=r \cos^3 t \\
+        y=r \sin^3 t
+    \end{array}
+    \right.
+$$
+\section{常用函数知识}
+
+\subsection{数列}
+\subsubsection{等差数列}
+首项为$a_1$,公差为$d(d \neq 0)$的数列 $a_1,a_1+d,a_1+2d,\cdots,a_1+(n-1)d,\cdots$.
+
+\begin{criterion}{等差数列相关性质}{}
+    \begin{itemize}
+        \item 通项公式$a_n=a_1+(n-1)d$
+        \item 前$n$项的和$S_n=\frac{n}{2}[2a_1+(n-1)d]=\frac{n}{2}(a_1+a_n)$
+    \end{itemize}
+\end{criterion}
+
+\subsubsection{等比数列}
+首项为$a_1$,公比为$r(r \neq 0)$的数列$a_1,a_1r,a_2r^2,...,a_1r^{n-1},...$
+\begin{criterion}{等比数列相关性质}{}
+    \begin{itemize}
+        \item 通项公式$a_n=a_1r^{n-1}$
+        \item 前$n$项的和$S_{n}=\left\{\begin{matrix}{na_{1},}&{r=1,}\\{\frac{a_{1}\left(1-r^{n}\right)}{1-r},}&{r\neq1.}\\\end{matrix}\right.$
+        \item $1+r+r^2+\cdots+r^{n-1}=\frac{1-r^n}{1-r}(r\neq1).$
+    \end{itemize}
+\end{criterion}
+\subsubsection{常见数列前$n$项和}
+\begin{center}
+    \boxed{\begin{aligned}
+             & \sum_{k=1}^nk=1+2+3+\cdots+n=\frac{n(n+1)}{2}.                                                                                 \\
+             & \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{n(n+1)\left(2n+1\right)}{6}.                                          \\
+             & \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{1}{1\times2}+\frac{1}{2\times3}+\frac{1}{3\times4}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}.
+        \end{aligned}}
+\end{center}
+
+\subsection{三角函数}
+\subsubsection{三角函数基本关系}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+             & \csc \alpha = \frac{1}{\sin \alpha} \quad \sec \alpha =\frac{1}{\cos \alpha} \quad \cot \alpha=\frac{1}{\tan \alpha} \\
+             & \tan \alpha = \frac{\sin \alpha}{\cos \alpha} \quad \cot \alpha=\frac{\cos \alpha}{\sin \alpha}
+        \end{aligned}
+    }
+\end{center}
+\subsubsection{倍角公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+             & \sin2a=2\sin a\cos a,\quad\cos2a=\cos^2a-\sin^2a=1-2\sin^2a=2\cos^2a-1                              \\
+             & \sin3\alpha=-4\sin^3a+3\sin\alpha,\quad\cos3a=4\cos^3a-3\cos a                                      \\
+             & \tan2\alpha=\frac{2\tan\alpha}{1-\tan^2\alpha},\quad\cot2\alpha=\frac{\cot^2\alpha-1}{2\cot\alpha}.
+        \end{aligned}
+    }
+\end{center}
+\subsubsection{半角公式}
+\begin{center}
+    \boxed{
+        \begin{gathered}
+            \sin^{2}\frac{\alpha}{2}=\frac{1}{2}\left(1-\cos\alpha\right),\quad\cos^{2}\frac{\alpha}{2}=\frac{1}{2}\left(1+\cos\alpha\right), \\
+            \sin\frac\alpha2=\pm\sqrt{\frac{1-\cos\alpha}2},\quad\cos\frac\alpha2=\pm\sqrt{\frac{1+\cos\alpha}2}, \\
+            \tan{\frac{\alpha}{2}}= \frac{1-\cos\alpha}{\sin\alpha}=\frac{\sin\alpha}{1+\cos\alpha}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}, \\
+            \cot{\frac{\alpha}{2}}= \frac{\sin\alpha}{1-\cos\alpha}=\frac{1+\cos\alpha}{\sin\alpha}=\pm\sqrt{\frac{1+\cos\alpha}{1-\cos\alpha}}.
+        \end{gathered}
+    }
+\end{center}
+\subsubsection{和差公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+             & \sin(\alpha\pm\beta)=\sin\alpha\cos\beta cos\alpha\sin\beta                  \\
+             & \cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta               \\
+             & \tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}  \\
+             & \cot(\alpha\pm\beta)=\frac{\cot\alpha\cot\beta\mp1}{\cot\beta\pm\cot\alpha}.
+        \end{aligned}
+    }
+\end{center}
+\subsubsection{积化和差公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+            \sin\alpha\cos\beta= & \frac{1}{2}\big[\sin(\alpha+\beta)+\sin(\alpha-\beta)\big],\cos\alpha\sin\beta= & \frac{1}{2}\big[\sin(\alpha+\beta)-\sin(\alpha-\beta)\big], \\
+            \cos\alpha\cos\beta= & \frac{1}{2}\big[\cos(\alpha+\beta)+\cos(\alpha-\beta)\big],\sin\alpha\sin\beta= & \frac{1}{2}\big[\cos(\alpha-\beta)-\cos(\alpha+\beta)\big].
+        \end{aligned}
+    }
+\end{center}
+\subsubsection{和差化积公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+            \sin\alpha+\sin\beta & =2\sin\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2},\sin\alpha-\sin\beta=2\sin\frac{\alpha-\beta}{2}\cos\frac{\alpha+\beta}{2}   \\
+            \cos\alpha+\cos\beta & =2\cos\frac{\alpha+\beta}{2}\cos\frac{\alpha-\beta}{2},\cos\alpha-\cos\beta=-2\sin\frac{\alpha+\beta}{2}\sin\frac{\alpha-\beta}{2}.
+        \end{aligned}
+    }
+\end{center}
+\subsubsection{万能公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+            \sin \alpha =\frac{2\tan \frac{\alpha}{2}}{1+\tan^2 \frac{\alpha}{2}} \\
+            \\
+            \cos \alpha=\frac{1- \tan^2 \frac{\alpha}{2}}{1+ \tan^2 \frac{\alpha}{2}}
+        \end{aligned}
+    }
+\end{center}
+\subsection{指数运算法则}
+\begin{center}
+    \boxed{
+    $$
+        a^{a} \times  a^{\beta}=a^{a+\beta},\quad\frac{a^{a}}{a^{\beta}}=a^{a-\beta},\quad(a^{a})^{\beta}=a^{a\beta},\quad(ab)^{a}=a^{a}b^{a},\quad\left(\frac{a}{b}\right)^{a}=\frac{a^{a}}{b^{a}}
+    $$
+    }
+\end{center}
+\subsection{对数运算法则}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+             & log_a(MN)=\log_aM+\log_aN                         \\
+             & \log_{a}\frac{M}{N}=\log_{a}M-\log_{a}N           \\
+             & \mathrm{log}_aM^n=n\mathrm{log}_aM.               \\
+             & \log_{a}\sqrt[n]{M}=\frac{1}{n}\mathrm{log}_{a}M.
+        \end{aligned}
+    }
+\end{center}
+\subsection{一元二次方程基础}
+\begin{itemize}
+    \item 一元二次方程组:$a x^2 +bx+c=0(a \neq 0)$
+    \item 根的公式:$x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+    \item 根与系数的关系:$x_{1}+x_{2}=-\frac{b}{a},x_{1}x_{2}=\frac{c}{a}.$
+    \item 判别式:$\Delta=b^2-4ac$
+    \item 抛物线顶点坐标:$(-\frac{b}{2a},c-\frac{b^2}{4a})$
+\end{itemize}
+\subsection{因式分解公式}
+\begin{center}
+    \boxed{
+        \begin{aligned}
+             & (a+b)^2=a^2+2ab+b^2 \quad \quad (a-b)^2=a^2-2ab+b^2                                                            \\
+             & (a+b)^3=a^3+3a^2b+3ab^2+b^3 \quad \quad (a-b)^3=a^3-3a^2b+3ab^2-b^3                                            \\
+             & a^2-b^2=(a+b)(a-b) \quad \quad (a^3-b^3)=(a-b)(a^2+ab+b^2)                                                     \\
+             & a^3+b^3=(a+b)(a^2-ab+b^2)                                                                                      \\
+             & a^{n}-b^{n}=\left(a-b\right)\left(a^{n-1}+a^{n-2}b+\cdots+ab^{n-2}+b^{n-1}\right)\left(n\text{ 是正整数}\right)    \\
+             & n\text{ 是正奇数时 },a^{n}+b^{n}=\left(a+b\right)\left(a^{n-1}-a^{n-2}b+\cdots-ab^{n-2}+b^{n-1}\right)              \\
+             & (a+b)^n=\sum_{k=0}^n\text{C}_n^ka^{n-k}b^k=                                                                    \\
+             & a^n+na^{n-1}b+\frac{n(n-1)}{2!}a^{n-2}b^2+\cdots+\frac{n(n-1)\cdots(n-k+1)}{k!}a^{n-k}b^k+\cdots+nab^{n-1}+b^n \\
+        \end{aligned}
+    }
+\end{center}
+\subsection{阶乘与双阶乘}
+\begin{itemize}
+    \item $n! =1\cdot2\cdot3\cdot\cdots\cdot n,\text{规定}0!=1.$
+    \item $(2n)!!  =2\cdot4\cdot6\cdot\cdot\cdot(2n)=2^n\cdot n!$
+    \item $(2n-1)!!  =1\cdot3\cdot5\cdot\cdot\cdot(2n-1)$
+\end{itemize}
+\subsection{常用不等式}
+\begin{enumerate}
+    \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$
+          \begin{criterion}{}{}
+              可以将第一个式子推广为:\\
+              离散情况:设$a_1,a_2,...,a_n$为实数,则$|a_1\pm a_2\pm\cdotp\cdotp\cdotp \pm a_n|\leqslant|a_1|+|a_2|+\cdotp\cdotp\cdotp+|a_n|$\\
+              连续情况:设$f(x)$在$[a,b](a<b)$上可积,则$\left|\int_a^bf\left(x\right)\mathrm{d}x\right|\leqslant\int_a^b\big|f(x)\big|\mathrm{d}x$
+          \end{criterion}
+    \item $\sqrt{ab}{\leqslant}\frac{a+b}{2}{\leqslant}\sqrt{\frac{a^{2}+b^{2}}{2}}(a,b{>}0)$
+          \begin{criterion}{}{}
+              还有一个不等式是$|ab|\leqslant \frac{a^2+b^2}{2}$
+          \end{criterion}
+    \item $\sqrt[3]{abc}\leqslant\frac{a+b+c}3\leqslant\sqrt{\frac{a^2+b^2+c^2}3}(a,b,c>0)$
+    \item $\text{设 }a>b>0,\text{则}\left\{\begin{aligned}&\text{当 }n>0\text{ 时 },a^n>b^n,\\&\text{当 }n<0\text{ 时 },a^n<b^n.\end{aligned}\right.$
+    \item $\text{若 }0<a<x<b,0<c<y<d,\text{则}\frac{c}{b}<\frac{y}{x}<\frac{d}{a}.$
+          \begin{criterion}{}{}
+              $\text{当 }n\pi<x<(n+1)\pi,2n<S(x)<2(n+1)\text{时 },\frac{2n}{(n+1)\pi}<\frac{S(x)}{x}<\frac{2(n+1)}{n\pi}.$
+          \end{criterion}
+    \item $\sin x<x<\tan x\left(0<x<\frac{\pi}{2}\right)$
+    \item $\sin x < x(x>0)$
+          \begin{criterion}{}{}
+              当$x_n>0$时,$x_{n+1}=\sin x_n <x_n$,故${x_n}$单调减少
+          \end{criterion}
+    \item $\arctan x{\leqslant}x{\leqslant}\arcsin x(0{\leqslant}x{\leqslant}1)$
+    \item $e^x \geqslant  x+1 (\forall x)$
+          \begin{criterion}{}{}
+              $\text{当 }x_{n+1}=\mathrm{e}^{x_n}-1\text{ 时 ,由 }\mathrm{e}^{x_n}-1\geqslant x_n,\text{得 }x_{n+1}\geqslant x_n,\text{即} \{x_n\} \text{单调不减}$
+          \end{criterion}
+    \item $x-1 \geqslant \ln x(x>0)$
+          \begin{criterion}{}{}
+              $\text{当 }x_{n}>0\text{时,若 }x_{n+1}=\ln x_{n}+1,\text{由}\ln x_{n}+1\leqslant x_{n},\text{得 }x_{n+1}\leqslant x_{n},\text{即}\{ x_{n}\} \text{单调不增}$
+          \end{criterion}
+    \item $\frac{1}{1+x}<\ln(1+\frac{1}{x})<\frac{1}{x}(x>0)$
+          \begin{criterion}{}{}
+              令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有
+              $$
+                  \ln\left(1+\frac{1}{x}\right)=\ln(1+x)-\ln x=\frac{1}{\xi}
+              $$
+              其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\frac{1}{1+x}<\ln\left(1+\frac{1}{x}\right)=\frac{1}{\xi}<\frac{1}{x}$
+          \end{criterion}
+    \item 在处理如下数列时,可以在前面加一个减项,如$(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})$,可化为$(1-\frac{1}{4})(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})*\frac{4}{3}$
+\end{enumerate}
+\subsection{绝对值等式}
+$$\varphi(x)=\operatorname*{max}\left\{f(x),g(x)\right\}=\frac{1}{2}[f(x)+g(x)+|f(x)-g(x)|]$$
+$$\quad\psi(x)=\operatorname*{min}\left\{f(x),g(x) \right\}=\frac{1}{2}[f(x)+g(x)-|f(x)-g(x)|]$$
+
+%  ############################
+\ifx\allfiles\undefined
+\end{document}
+\fi

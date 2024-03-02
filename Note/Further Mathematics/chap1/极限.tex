@@ -1,0 +1,677 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
+
+\input{../config/config}
+\begin{document}
+% \input{../config/cover} 
+\else
+\fi
+%  ############################ 正文部分
+\chapter{极限}
+极限是无穷趋近但是不相等的过程
+\section{数列的极限}
+\subsection{数列极限的定义}
+\begin{defn}{}{}
+    设$|x_n|$为一数列,若\uwave{存在常数$a$},对于\uwave{任意的$\varepsilon>0$(不论它多么小)},\uwave{总存在正整数$N$},使得当\uwave{$n>N$}时 \uwave{$|x_n-a|<\varepsilon$ 恒成立},则称数 $a$是数列$| x_n |$的极限,或者称数列$| x_n |$收敛于 $a$,记为
+    $$
+        \lim_{n\to\infty}x_n=a\text{ 或 }x_n\to a(n\to\infty).
+    $$
+    该定义的$\varepsilon-N$语言描述是\\
+    $$\lim_{n\to\infty}x_n=a\Leftrightarrow\forall\varepsilon>0,\exists\text{正整数}N,\text{当}n>N\text{时},\text{有}|x_n,-a|<\varepsilon.$$
+    其中$\forall\varepsilon>0$是白给的信息,随便写.$\exists\text{正整数}N$是关键.因为第二句话说的是一定存在正整数N,你怎么才能够证明存在正整数N呢?那就必须把这个正整数N给找出来，你找出来才能够证明这个N是存在的.关键第三句话叫做桥梁，桥梁什么意思?就是n大于N的时候n大于N的时候，也就意味着N趋近于无穷的过程中.在大N项之后的所有的项.最后一句话叫做突破口.,不是要去找这个N吗？你找到N才能够证明这个N是存在的,我们一般情况下就用第四句话来寻找大N.
+\end{defn}
+在上面的定义中,$\varepsilon>0$的$\varepsilon$任意性是非常重要的,只有这样才能表示出\textcolor{red}{无限接近的意义}.总存在正整数$N$,使得$n>N$这个条件用于表达$n \to \infty$的过程.
+\begin{criterion}{}{}
+    \begin{itemize}
+        \item 数列的极限值与数列的前有限列无关,只与后面无穷项有关
+        \item $\underset{n\to\infty}{\operatorname*{\lim}}x_n=a\Leftrightarrow\underset{k\to\infty}{\operatorname*{\lim}}x_{2k-1}=\underset{k\to\infty}{\operatorname*{\lim}}x_{2k}=a$
+        \item $\varepsilon - N$\textbf{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}
+    \end{itemize}
+\end{criterion}
+
+\begin{problem}
+已知$x_{n}=\frac{\left(\begin{array}{c}-1\\\end{array}\right)^{n}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}}$,证明数列${x_n}$的极限是$0$
+\end{problem}
+\begin{note}
+    根据数列极限的定义可知,$\forall\varepsilon>0,\exists\text{正整数 }N,\text{当 }n{>}N\text{ 时 },\text{有}|x_{n} - 0 =\frac{\left(\begin{array}{c}-1\\\end{array}\right)^{n}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}}|<\varepsilon.$,即$x_{n}=\frac{\begin{array}{c}1\\\end{array}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}} < \varepsilon \Leftrightarrow \frac{1}{n^2}< \varepsilon \Leftrightarrow n > \frac{1}{\sqrt{\varepsilon}}$,即令$N > \frac{1}{\sqrt{\varepsilon}}$,$\frac{1}{\sqrt{\varepsilon}}$是一个确定的实数,大于它的正整数有无穷个,仍取其中一个作为$N$即可.
+\end{note}
+\begin{solution}
+    $\forall \varepsilon>0$,取$N=\frac{1}{\sqrt{\varepsilon}}+1$,则总有$x_{n}=\frac{\begin{array}{c}1\\\end{array}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}} < \varepsilon \Leftrightarrow \frac{1}{n^2}< \varepsilon \Leftrightarrow n > \frac{1}{\sqrt{\varepsilon}}$,则数列${x_n}$的极限是$0$
+\end{solution}
+\subsection{收敛数列的性质}
+\subsubsection{唯一性}
+\begin{them}{}{}
+    如果数列$\{ x_n \}$收敛,那么它的极限唯一
+\end{them}
+\subsubsection{有界性}
+\begin{them}{}{}
+    如果数列$\{x_n\}$收敛,那么数列$\{x_n\}$一定有界.
+\end{them}
+\begin{criterion}{}{}
+    需要注意的是,如果数列有界,但是不一定存在极限,如数列$(-1)^n$
+\end{criterion}
+\subsubsection{保号性}
+\begin{them}{}{}
+    $\text{如果}\lim_{n\to\infty}x_n=a,\text{且}a{>}0(\text{ 或 }a{<}0),\text{那么存在正整数 }N,\text{当 }n{>}N\text{ 时 },\text{都有 }x_n{>}0\left(\text{ 或 }x_n{<}0\right)$
+\end{them}
+\begin{corollary}{}{}
+    $\text{如果数列}\mid x_n\mid\text{从某项起有 }x_n\geqslant0\text{(或 }x_n\leqslant0\text{)},\text{且}\lim_{n\to\infty}x_n=a\text{ ,那么 }a\geqslant0(\text{ 或 }a\leqslant0).$
+\end{corollary}
+\subsubsection{收敛数列与其子数列之间的关系}
+如果数列${x_n}$收敛于$a$,那么它的任一子数列也收敛,且极限也是$a$
+\begin{criterion}{}{}
+    需要注意的是,证明数列极限存在一般通过证明数列有界并且单调,证明有界则一般通过放缩法.但是证明数列发散则一般通过一下两种方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.
+\end{criterion}
+\section{函数的极限}
+
+\subsection{邻域}
+一个局部区域
+\subsection{函数极限的定义}
+\subsubsection{自变量趋于有限值时的函数极限}
+\begin{defn}{}{}
+    设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$(不论它多么小),总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
+    $$
+        |f(x)-A|<\varepsilon
+    $$
+    那么常数$A$就叫做\uwave{函数$f(x)$当$x \to x_0$时的极限},记作:
+    $$
+        \lim_{x\to x_0}f(x)=A\quad\text{或}f(x)\to A(\text{当}x\to x_0)
+    $$
+    其$\varepsilon-N$语言为
+    $$
+        \lim_{x\to x_0}f(x)=A\Leftrightarrow\forall\varepsilon>0,\exists\delta>0,\text{当}0<|x-x_0|<\delta\text{时},\text{有}|f(x)-A|<\varepsilon.
+    $$
+    $\forall\varepsilon>0,\exists\delta>0$在证明中，这两句是白给，直接写。后面的才是关键。
+\end{defn}
+\begin{criterion}{}{}
+    在函数极限中$x \to \infty$指的是$|x| \to \infty$,而数列中的$n \to \infty$是$n \to +\infty$
+\end{criterion}
+\begin{problem}
+证明$\operatorname*{lim}_{x\to1}(2x-1)=1$
+\end{problem}
+\begin{solution}
+    对于$\forall \varepsilon > 0$,令$\partial = \frac{\varepsilon}{3}$,则当$0<|x-1|<\partial$时,有$|f(x)-A|=2|x-1|<\varepsilon$,从而$\operatorname*{lim}_{x\to1}(2x-1)=1$
+\end{solution}
+\subsubsection{单侧极限}
+\begin{defn}{}{}
+    若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{左极限},记为
+    \begin{center}
+        $\operatorname*{lim}_{x\to x_0^{-}}f(x)=A$或 $f(x_0^{-})=A$.
+    \end{center}
+    若当$x\to x_0^+$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{右极限},记为
+    \begin{center}
+        $\operatorname*{lim}_{x\to x_0^{+}}f(x)=A$或 $f(x_0^{+})=A$
+    \end{center}
+    极限存在的充要条件
+    \begin{center}
+        $\lim_{x\to x_0}f(x)=A\Leftrightarrow\lim_{x\to x_0^-}f(x)=A$,且$\lim_{x\to x_0^+}f(x)=A$(\text{左右极限都存在且相等})
+        $\lim_{x\to x_0}f(x)=A\Leftrightarrow f(x)=A+\alpha(x),\lim_{x\to x_0}\alpha(x)=0(\text{无穷小量}\alpha(x)=0)$
+    \end{center}
+\end{defn}
+\begin{criterion}{}{}
+    需要分左右极限求极限的问题有以下三种：
+    \begin{itemize}
+        \item 分段函数分界点的极限,分界点两侧极限值不同
+        \item $e^\infty$型极限(如$\begin{aligned}\lim_{x\to0}\mathrm{e}^{\frac{1}{x}},\lim_{x\to\infty}\mathrm{e}^{x},\lim_{x\to\infty}\mathrm{e}^{-x}\end{aligned}$)
+        \item $\arctan\infty $型极限(如$\mathop{\mathrm{\lim_{x\to0} \arctan}}\frac{1}{x},\operatorname*{lim}_{x\to\infty}\arctan x$)
+    \end{itemize}
+\end{criterion}
+
+
+\begin{problem}
+$\text{已知}\lim_{x\to0}\biggl[a\arctan\frac{1}{x}+(1+\mid x\mid)^{\frac{1}{x}}\biggr]\text{存在,求}a\text{的值}$
+\end{problem}
+\begin{solution}
+    由于存在$\arctan$与$|x|$函数,则对于0点的极限值需要分左右进行计算.
+
+    $\lim\limits_{x\to0^{-}}\left[\begin{matrix}a\arctan\frac{1}{x}+(1+\mid x\mid)^{\frac{1}{x}}\\\end{matrix}\right]=\lim\limits_{x\to0^{-}}a\arctan\frac{1}{x}+\lim\limits_{x\to0^{-}}(1-x)^{\frac{1}{x}}=-\frac{\pi}{2}a+\frac{1}{\text{e}}$
+
+    $\lim\limits_{x\to0^+}\left[\begin{matrix}a\arctan\frac{1}{x}+(1+\mid x\mid)^{\frac{1}{x}}\\\end{matrix}\right]=\lim\limits_{x\to0^+}a\arctan\frac{1}{x}+\lim\limits_{x\to0^+}(1+x)^{\frac{1}{x}}=\frac{\pi}{2}a+\mathrm{e}$
+    若极限存在,则$a=\frac{1-e^2}{\pi e}$
+\end{solution}
+\subsubsection{自变量趋于无穷大时函数的极限}
+\begin{defn}{}{}
+    设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$.(不论它多么小),总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
+    $$
+        |f(x)-A|<\varepsilon
+    $$
+    那么常数$A$叫做函数$f(x)$当$x \to x_0$的极限,记作:
+    $$
+        \lim_{x\to x_0}f(x)=A\text{或}f(x)\to A(\text{当}x\to x_0)
+    $$
+    其$\varepsilon-N$语言为
+    $$
+        \lim\limits_{x\to x_0}f(x)=A\Leftrightarrow\forall\varepsilon>0,\exists\delta>0,\text{当}0<|x-x_0|<\delta\text{时},\text{有}|f(x)-A|<\varepsilon.
+    $$
+    $\forall\varepsilon>0,\exists\delta>0$在证明中，这两句是白给，直接写。后面的才是关键。
+\end{defn}
+\textcolor{red}{需要注意的是趋向的值不同时,$\varepsilon -N$写法不同,不能照抄}.其$\varepsilon -N$的表达为如下表格
+\begin{table}[H]
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+                      & f(x)\to A                                                                                                                                                   & f(x) \to \infty                                                                                                                         & f(x) \to +\infty\                                                                                                            & f(x) \to -\infty                                                                                                                 \\ \hline
+        $x \to x_0$   & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_0\mid  \\&<\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 },\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当} 0<|x-x_0| \\ &<\delta \text{时 ,即有} \\ &f(x)>M.\end{aligned}$      & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 ,即有}\\& f(x) <-M\end{aligned}$ \\ \hline
+        $x \to x_0^+$ & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有}\\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&|f(x)|>M.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&f(x)>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}<\delta  \\&\text{时,即有} \\& f(x) <-M\end{aligned} $          \\ \hline
+        $x \to x_0^-$ & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)|>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\& f(x) >M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\&f(x) <-M\end{aligned}$    \\ \hline
+        $x\to \infty$ & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}\mid x\mid>X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists X>0,\\& \text{使当}\mid x\mid>X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$                              & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当}\mid x\mid>X \\&\text{时,即有}\\& f(x)>M\end{aligned}$                    & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当|x|>X时,} \\&\text{即有} \\&f(x)<-M.\end{aligned}$                             \\ \hline
+    \end{tabular}
+\end{table}
+\newpage
+接上表
+\begin{table}[H]
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+                          & f(x)\to A                                                                                                                          & f(x) \to \infty                                                                                              & f(x) \to +\infty\                                                                                     & f(x) \to -\infty                                                                                             \\ \hline
+        $x \to + \infty $ & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned} $          & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当 }x>X\text{ 时 }, \\&\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists X>0,\\&\text{使当}x>X\text{时},\\&\text{即有}\\&f(x)>M.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有}\\&f(x)<-M\end{aligned}$             \\ \hline
+        $x \to -\infty$   & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}x<-X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned} & \forall M>0 , \exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$      & $\begin{aligned} &\forall M>0,\exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&f(x)>M\end{aligned}$    & $\begin{aligned}&\forall M>0,\exists X>0,\text{使}\\&\text{当}x<-X\text{时},\text{即有}\\&f(x)< -M.\end{aligned}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{函数极限的性质}
+\subsubsection{唯一性}
+\begin{them}{}{}
+    如果$\lim\limits_{x\to x_0}f(x)$存在,那么极限唯一
+\end{them}
+\subsubsection{局部有界性}
+\begin{them}{}{}
+    如果$\lim\limits_{x\to x_0}f(x)=A$,那么存在常数$M>0$和$\delta >0$使得当$0<|x-x_0|<\delta$时,有$|f(x)| \leq M$
+\end{them}
+\subsubsection{局部保号性}
+\begin{them}{}{}
+    如果$\lim_{x\to x_0}f(x)=A$,且$A>0$(或$A<0$),那么存在常数$\delta>0$,使得当$0<|x-x_0|<\delta$时有$f(x)>0(或f(x)<0)$.
+\end{them}
+\begin{corollary}{}{}
+    如果在$x_0$的某去心邻域内$f(x)\geqslant 0$(或$f(x)\leqslant 0$),而且$\underset{x\to x_0}{\operatorname*{lim}}f(x)=A$,那么$A \leqslant 0$或$(A \leq 0)$
+\end{corollary}
+\begin{problem}
+证明定理3局部保号性,其中$A>0$
+\end{problem}
+\begin{solution}
+    如果$\lim_{x\to x_{0}}f(x)=A > 0$,所以,取$\varepsilon=\frac{A}{2}>0,则\exists \delta >0 $当$0<|x-x_0|<\delta$时,有
+    $$
+        |f(x)-A|<\frac{A}{2}\Rightarrow f(x)>A-\frac{A}{2}=\frac{A}{2}>0.
+    $$
+\end{solution}
+由上述证明可得如下推论
+\begin{corollary}{}{}
+    如果$\lim_{x\to x_{0}}f(x)=A > 0(A \neq 0)$,那么就存在$x_0$的某一去心邻域$\mathring{U}\left(x_{0}\right)$,当$x\in U^{\circ}(x_{0})$时,就有$|f(x)|>\frac{|A|}{2}$
+\end{corollary}
+\subsubsection{函数极限与数列极限的关系(海涅定理)}
+\begin{them}{}{}
+    $\lim_{x \to a}f(x)=L$存在的充要条件是:对属于函数$f(x)$定义域的任意数列,且$\lim_{n\to\infty}a_n=a$,$a_n$ 不等于$a$,有$\lim_{n\to\infty}f(a_n)=L$.
+\end{them}
+把这个定理简化一下,主要意思就是
+\begin{center}
+    $\lim_{x\to a}f(x)=L$\\
+    $\Updownarrow $ \\
+    $\text{所有的}\lim_{n\to\infty}a_n=a\text{,有}\lim_{n\to\infty}f(a_n)=L$
+\end{center}
+其不同之处在于是离散的趋近还是连续的趋近
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.9 \linewidth]{2.2.1.png}
+\end{figure}
+除此之外,$f(x)$ 和 $f(a_n)$的函数图像如下所示
+\begin{figure}[H] \centering
+    \subfigure[函数$f(x)$图像] {
+        \includegraphics[width=0.45\columnwidth]{2.2.2.pdf}
+    }
+    \subfigure[函数$f(a_n)$图像] {
+        \includegraphics[width=0.45\columnwidth]{2.2.3.pdf}
+    }
+    \caption{$f(x)$与$f(a_n)$函数图像}
+\end{figure}
+
+\textcolor{red}{$f(a_n)$其实是$f(x)$的抽样}
+\begin{figure}[htbp]
+    \centering \includegraphics[width=
+        0.5 \linewidth]{2.2.4.pdf}
+\end{figure}
+需要注意的是,是所有的数列（抽样）才能完全代表整体.不能说我选了某个数列有极限就代表函数有极限.
+
+总结:\textcolor{red}{海涅定理表述了离散与连续、数列极限与函数极限的关系.}
+\section{无穷小与无穷大}
+
+\subsection{无穷小}
+\begin{defn}{}{}
+    如果函数$f(x)$当$x\to x_0$(或 $x\to\infty$)时的极限为零,那么称函数$f(x)$为当$x\to x_0$(或$x\to\infty$)时的无穷小.
+\end{defn}
+\textbf{其中$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
+
+下面的定理$2.3.1$讲述了无穷小与函数极限的关系
+\begin{them}{}{}
+    在自变量的同一变化过程$x\to x_0$(或 $x\to\infty$)中,函数$f(x)$具有极限$A$的充分必要条件是$f(x)=A+\alpha$,其中 $\alpha$是无穷小
+\end{them}
+
+\subsection{无穷大}
+\begin{defn}{}{}
+    设函数$f(x)$在$x_0$的某一去心邻域内有定义(或$|x|$大于来一正数时有定义).如果对于任意给定的正数$M$(不论它多么大),总存在正数$\delta$(或数$X$),只要$x$适合不等式$0<|x-x_0|<\delta$(或$|x|>X$),对应的函数值$f(x)$总满足不等式
+    $$
+        |f(x)|>M
+    $$
+    那么称函数$f(x)$是当$x\to x_0$(或$x\to\infty$)时的无穷大.
+    其$\varepsilon-N$语言为
+    $$
+        \lim\limits_{x\to x_0}f(x)= \infty \Leftrightarrow\forall M >0,\exists\delta>0,\text{当}0<|x-x_0|<\delta\text{时},\text{有}|f(x)|>M.
+    $$
+\end{defn}
+需要注意的是无穷大也可能是负数不一定是整数.
+\begin{problem}
+证明$\underset{x\rightarrow1}{\operatorname*{lim}}\frac{1}{x-1}=\infty $
+\end{problem}
+\begin{solution}
+    $\forall M>0$令$\delta=\frac{1}{4M}>0$,当$0<|x-1|<\delta$时,即$0<|x-1|<\frac{1}{4M}$时,$|x-1|<\frac{1}{M}$,所以$\frac{1}{|x-1|}>M$
+    这就证明了$\underset{x\rightarrow1}{\operatorname*{lim}}\frac{1}{x-1}=\infty$
+\end{solution}
+\begin{them}{无穷大与无穷小的关系}{}
+    在自变量的同一变化过程中,如果$f(x)$为无穷大,那么$\frac{1}{f(x)}$为无穷小;反之,如果$f(x)$为无穷小,且$f(x) \neq 0$,那么存在常数$\frac{1}{f(x)}为无穷大$
+\end{them}
+
+\subsection{\textcolor{red}{无穷小的比较}}
+\begin{defn}{}{}
+    \begin{itemize}
+        \item 如果 $\lim \frac{\beta}{\alpha} =0$,那么就说 $\beta$是比$\alpha$高阶的无穷小,记作 $\beta=o(\alpha);$
+        \item  如果 $\lim \frac\beta\alpha  =\infty$,那么就说 $\beta$是比 $\alpha$低阶的无穷小;
+        \item 如果$\lim\frac{\beta}{\alpha} =c\neq 0$,那么就说 $\beta$ 与 $\alpha$ 是同阶无穷小 ;
+        \item 如果$\lim\frac{\beta}{\alpha^{^k}} =c \neq 0$,$k > 0$,那么就说 $\beta$是关于 $\alpha$的$k$阶无穷小;
+        \item 如果 $\lim \frac\beta\alpha = 1$,那么就说 $\beta$ 与 $\alpha$ 是等价无穷小,记作 $\alpha\sim\beta$
+    \end{itemize}
+\end{defn}
+前三个定义解释:$\lim \frac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \frac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\frac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
+
+同时需要注意的是,并不是任意两个无穷小都可进行比阶的.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在.
+\subsection{\textcolor{red}{无穷大的比较}}
+\begin{itemize}
+    \item 当$x \to +\infty$时,$\mathrm{ln}^ax\ll x^\beta\ll a^x,\text{其中}\alpha>0,\beta>0,a>1.$
+    \item 当$n \to \infty$时,$\ln^an\ll n^\beta\ll a^n\ll n!\ll n^n,\text{其中 }\alpha>0,\beta>0,a>1.$
+\end{itemize}
+\subsection{\textcolor{red}{无穷小的运算法则}}
+\begin{itemize}
+    \item[1] 有限个无穷小的和是无穷小
+    \item[2] 有界函数与无穷小的乘积是无穷小
+    \item[3] 有限个无穷小的乘积是无穷小
+        \begin{problem}
+        求极限$\lim _{n \to \infty} \frac{n!}{(-n)^n}$
+        \end{problem}
+        \begin{solution}
+            \begin{align*}
+                 & \lim _{n \to \infty} \frac{n!}{(-n)^n}=\lim_{n \to \infty} (-1)^n \frac{n!}{n^n} \\
+            \end{align*}
+            从上面可以看出,$-1^n$是有界变量.而根据无穷大的比较,分母趋于无穷的速度远大于分子,因此$\frac{n!}{n^n}为无穷小$
+            可求的函数极限为0.
+        \end{solution}
+    \item[4] 无穷小的运算
+        \begin{itemize}
+            \item[a.] $o(x^m)\pm o(x^n)=o(x^l),l=\min\{ m,n\}$(1)
+            \item[b.] $o(x^m)\cdot o(x^n)=o(x^{m+n}),x^m \cdot o(x^n)=o(x^{m+n})$(2)
+            \item[c.] $o(x^m)=o(kx^m)=k\cdot o(x^m),k \neq 0$\text{且为常数}(3)
+        \end{itemize}
+\end{itemize}
+\begin{them}{}{}
+    $\beta$ \text{与}$\alpha$ \text{是等价无穷小的充分必要条件为}
+    $$
+        \beta =\alpha +o(\alpha)
+    $$
+\end{them}
+\subsection{\textcolor{red}{无穷大的运算法则}}
+\begin{itemize}
+    \item 两个无穷大量的积仍未无穷大量
+    \item 无穷大量与有界变量的和仍是无穷大量
+\end{itemize}
+
+\section{极限存在法则}
+
+\subsection{夹逼准则}
+\begin{them}{数列极限存在准则}{}
+    如果数列$\{|x_n|\},\{y_n\}$及$\{z_n\}$满足下列条件:
+    \begin{itemize}
+        \item 从某项开始,即$\exists n_0 \in N_+(\text{即}n \to \infty),$当$n>n_0$时,有
+              $$
+                  y_n \leqslant x_n \leqslant z_n
+              $$
+        \item $\lim_{n\to\infty}y_{n}=a,\operatorname*{lim}_{n\to\infty}z_{n}=a$
+    \end{itemize}
+    那么数列$\{ x_n \}$的极限存在,且$\lim_{n\to\infty}x_{n}=a$
+\end{them}
+现在将上述数列极限存在准则推广至函数极限
+\begin{them}{函数极限存在准则}{}
+    如果
+    \begin{itemize}
+        \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
+              $$
+                  g(x)\leqslant f(x) \leqslant h(x)
+              $$
+        \item $\lim_{x\to x_0(x\to\infty)}g(x)=A,\lim_{x\to x_0(x\to\infty)}h(x)=A$
+    \end{itemize}
+    那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
+\end{them}
+定理2.4.1和定理2.4.2称为\textbf{夹逼准则}
+\subsection{\textcolor{red}{单调有界准则}}
+\begin{them}{数列的单调有界准则}{}
+    单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
+\end{them}
+
+\begin{them}{函数的单调有界准则}{}
+    设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
+\end{them}
+\subsection{柯西极限存在准则}
+该准则表示,数列${x_n}$收敛的\textbf{充分必要条件}是：该数列中的元素随着序数的增加而愈发靠近,即足够靠后的任意两项都无限接近.
+$$
+    \forall \varepsilon >0 ,\exists N \in N^+,\text{当}m>N,n>N\text{时}.\text{总有}|x_n-x_m|<\varepsilon
+$$
+\subsection{极限存在准则的两个应用(两个重要极限)}
+$$
+    \lim _ { \square \rightarrow \infty } ( 1 + \frac { 1 } { \square } ) ^ { \square } = e
+$$
+\\
+$$
+    \lim _ { \square \rightarrow 0 } \frac { \sin \square } { \square } = 1
+$$
+\section{\textcolor{red}{极限运算法则}}
+
+\subsection{数列极限的运算法则}
+设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
+\begin{itemize}
+    \item $\operatorname*{lim}_{n\to\infty}(x_n\pm y_n)=a\pm b$
+    \item $\lim_{n\to\infty}x_{n}y_{n}=ab$
+    \item 若$b \neq 0,y_n \neq 0$,则$\lim_{n\to\infty}\frac{x_n}{y_n}=\frac{a}{b}$
+\end{itemize}
+上述运算规则可推广至有限个数列的情况
+\subsection{函数极限的运算法则}
+若$\lim f(x)=A$,$\lim g(x)=B$,那么
+\begin{itemize}
+    \item $\operatorname*{lim}[kf(x)\pm lg(x)]=k\operatorname*{lim}f(x)\pm l\operatorname*{lim}g(x)=kA\pm lB$,其中$k,l$为常数
+    \item $\operatorname*{lim}[f(x)\bullet g(x)]=\operatorname*{lim}f(x)\bullet\operatorname*{lim}g(x)\equiv A\bullet B$,特别的,若$\lim f(x)$存在,$n$为正整数,则$\operatorname{lim}[f(x)]^n=\begin{bmatrix}\operatorname{lim}f(x)\end{bmatrix}^n$
+    \item $\operatorname*{lim}\frac{f(x)}{g(x)}=\frac{\operatorname*{lim}f(x)}{\operatorname*{lim}g(x)}=\frac{A}{B}(B\neq0)$
+\end{itemize}
+除此之外还有以下定理:
+$$
+    \lim_{x\to\infty}\frac{a_nx^n+a_{n-1}x^{n-1}+\cdots+a_{1}x+a_0}{b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0}=\begin{cases}\dfrac{a_n}{b_m},&n=m,\\[2ex]0,&n<m,\\[2ex]\infty,&n>m.\end{cases}
+$$
+\begin{them}{}{}
+    如果$\varphi(x)\geqslant\psi(x)$,而 $\lim\varphi(x)=A$, $lim \psi(x)=B$ ,那么 $A\geqslant B$
+\end{them}
+\begin{them}{复合函数极限运算法则}{}
+    设函数$y=f[g(x)]$是由函数$u=g(x)$与函数$y=f(u)$复合而成，$f[g(x)]$在点$x_0$的某去心领域内有定义，若$\lim_{x \to  x_0} g(x)=u_0$,$\lim_{u \to u_0}f(u)=A$,且存在$\delta_0 >0$,当$x\in\mathring{U}\left(x_{0},\delta_{0}\right)$时，有$g\left(x\right)\neq u_{0}$,则
+    $$
+        \underset{x\to x_0}{\operatorname*{lim}}f[g(x)]=\underset{u\to u_0}{\operatorname*{lim}}f(u)=A.
+    $$
+\end{them}
+\begin{criterion}{常用结论}{}
+    \begin{itemize}
+        \item 存在 \pm 不存在 = 不存在(只有这一个是不存在,其余都是不一定或者存在)
+        \item 不存在 \pm 不存在 =不一定
+        \item 存在 \times (\div) 不存在 = 不一定
+        \item 不存在 \times (\div) 不存在 = 不一定
+    \end{itemize}
+\end{criterion}
+
+\begin{lemma}{常用的结论}{}
+    \begin{itemize}
+        \item $\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$
+        \item $\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
+    \end{itemize}
+\end{lemma}
+\subsection{函数极限的计算}
+\subsubsection{无穷大与无穷小的关系}
+根据定理1.3.2可以用于函数极限的计算
+\subsubsection{单调有界准则}
+前面已经赘述
+\begin{them}{数列的单调有界准则}{}
+    单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
+\end{them}
+
+\begin{them}{函数的单调有界准则}{}
+    设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
+\end{them}
+\subsubsection{等价无穷小替代}
+关于等价无穷小,有以下两个定理
+\begin{them}{}{}
+    $\beta$与$\alpha$是等价无穷小的充分必要条件为
+    $$
+        \beta=\alpha + o(\alpha)
+    $$
+\end{them}
+
+\begin{them}{}{}
+    设$\alpha\sim\widetilde{\alpha}$,$\beta\sim\widetilde{\beta}$,且$\lim\frac{\widetilde{\beta}}{\underset{\alpha}{\operatorname*{\sim}}}$存在,则
+    $$
+        \lim\frac{\beta}{\alpha}=\lim\frac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.Í
+    $$
+\end{them}
+定理2.5.2 表明,求两个无穷小之比的极限时,分子及分母都可用等价无穷小来代替．但是需要遵循以下代换原则
+
+\begin{itemize}
+    \item 乘除关系可以换:若$\alpha\sim\alpha_1,\beta\sim\beta_1,\text{则}\lim\frac\alpha\beta=\lim\frac{\alpha_1}\beta=\lim\frac\alpha{\beta_1}=\lim\frac{\alpha_1}{\beta_1}$
+    \item 加减关系一定条件下可以换
+          \begin{itemize}
+              \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq1,\text{则 }\alpha-\beta\sim\alpha_{1}-\beta_{1}$
+              \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq-1,\text{则 }\alpha+\beta\sim\alpha_{1}+\beta_{1}$
+          \end{itemize}
+\end{itemize}
+加减关系代换准则证明如下:
+\begin{proof}
+    $$\lim \frac{\alpha-\beta}{\alpha_1 -\beta_1}=\lim \frac{\beta (\frac{\alpha}{\beta}-1)}{\beta_1(\frac{\alpha_1}{\beta_1}-1)}=1$$
+\end{proof}
+当$x \to 0$时,有
+\begin{align*} \boxed{
+        \begin{aligned}
+             & x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\
+             & \quad  \sim \ln (1+x)  \nonumber                                  \\
+             & \quad \sim e^x -1 \nonumber
+        \end{aligned} }
+\end{align*}
+
+\begin{align*} \boxed
+    {
+        \begin{aligned}
+             & (1+x)^a \sim  1+ax   \\
+             & a^x - 1 \sim x \ln a
+        \end{aligned}
+    }
+\end{align*}
+\begin{criterion}{上述结论的推广}{}
+    当$x \to 0$时,若$(1+x)^a -1 \sim ax$,则$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0$,则
+    $$
+        [1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)
+    $$
+\end{criterion}
+\begin{align*} \boxed
+    {
+        \begin{aligned}
+             & \frac{1}{2} x^2 \sim 1-\cos x \sim \sec x -1 \sim x- \ln(1+x)
+        \end{aligned}
+    }
+\end{align*}
+
+\begin{align*} \boxed
+    {
+        \begin{aligned}
+             & \frac{1}{6} x^3 \sim x-\sin \sim \arcsin x -x
+        \end{aligned}
+    }
+\end{align*}
+
+\begin{align*} \boxed
+    {
+        \begin{aligned}
+             & \frac{1}{3} x^3 \sim x-\arctan x \sim \tan x-x
+        \end{aligned}
+    }
+\end{align*}
+\subsubsection{幂指函数求极限}
+\begin{defn}{}{}
+    一般地，对于形如$u\left(x\right)^{v\left(x\right)}\left(u\left(x\right)>0,u\left(x\right)\not\equiv1\right)$的函数(通常称为幂指函数),如果
+    $$
+        \lim u\left(x\right)=a{>}0,\lim v\left(x\right)=b
+    $$
+    那么
+    $$
+        \lim u(x)^{v(x)}=a^{b}
+    $$
+\end{defn}
+\subsubsection{利用基本极限求极限}
+
+\begin{align*} \boxed
+    {
+        \begin{aligned}
+             & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad     \lim _ { \square \rightarrow 0 } \frac { \sin \square } { \square } = 1 \\
+             & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)                                                                                                \\
+             & \lim_{x \to 0} \frac{a^x-1}{x}=\ln a
+        \end{aligned}
+    }
+\end{align*}
+
+
+\subsubsection{洛必达法则}
+\begin{defn}{}{}
+    \begin{itemize}
+        \item $\lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0(\infty)$
+        \item $f(x)$和$g(x)$在$x_0$的某去心邻域内可导,且$g'(x) \neq 0$
+        \item $\lim_{x\to x_0}\frac{f^{\prime}(x)}{g^{\prime}(x)}\text{ 存在(或 }\infty)$
+    \end{itemize}
+    则$\lim_{x\to x_{0}}\frac{f(x)}{g(x)}=\lim_{x\to x_{0}}\frac{f^{'}(x)}{g^{'}(x)}$
+\end{defn}
+需要注意的是使用过洛必达法则之后的极限必须存在,即$\lim _{x \to x_0}\frac{f'(x)}{g'(x)}$ 必须存在.
+\begin{proof}
+    以$\lim _{x \to 0}=\frac{x^2-\sin \frac{1}{x}}{\sin x}=\frac{2x\sin \frac{1}{x}-\cos\frac{1}{x}}{\cos x}$为例,可以看到此时结果是震荡的,因此函数极限不存在,但是显然是错误的.正确的方法是这样的$\lim _{x \to x_0}=\frac{x^2-\sin \frac{1}{x}}{x}=x\sin \frac{1}{x}$
+\end{proof}
+洛必达法则多用于7种未定式的计算
+主要有以下类型$\frac{0}{0},\frac{\infty}{\infty},0 \times \infty,\infty -\infty,\infty ^0,1^\infty$
+
+\begin{itemize}
+    \item $\frac{0}{0},\frac{\infty}{\infty},0 \times \infty$可以直接计算或者简单转换可以直接计算.
+    \item  $\infty -\infty$可以通过取倒数或者取对数进行计算\begin{problem}
+          $\operatorname*{lim}_{x\to0}\bigg[{\frac{1}{\ln(1+x)}}-{\frac{1}{x}}\bigg]$
+          \end{problem}
+          \begin{solution}
+              $
+                  \begin{aligned}
+                        & \lim_{x \to 0}\bigg[\frac{1}{\ln(1+x)}-\frac{1}{x}\bigg]= \lim_{x\to0}\frac{x-\ln(1+x)}{x\ln(1+x)} \\
+                      = & \lim_{x\to0}\frac{x-\ln(1+x)}{x^2}=\lim_{x\to0}\frac{1-\frac{1}{1+x}}{2x}                          \\
+                      = & \lim_{x\to0}\frac{x}{2x(1+x)}=\lim_{x\to0}\frac{1}{2(1+x)}=\frac{1}{2}.
+                  \end{aligned}
+              $
+          \end{solution}
+          \begin{problem}
+          $\lim_{x\to+\infty}\left[x^2\left(\mathrm{e}^{\frac{1}{x}}-1\right)-x\right]$
+          \end{problem}
+          \begin{solution}
+              $
+                  \begin{aligned}
+                      \text{原式}\overset{\text{令 }u=\frac1x}{\operatorname*{=}}\lim_{u\to0^+}\frac{\mathrm{e}^u-1-u}{u^2}=\lim_{u\to0^+}\frac{\mathrm{e}^u-1}{2u}=\frac12
+                  \end{aligned}
+              $
+          \end{solution}
+          \begin{problem}
+          设$f(x)$二阶可导,$f(0)=0,f'(0)=1,f''(0)=2$.求极限$\lim_{x \to 0}\frac{f(x)-x}{x^2}$
+          \end{problem}
+          \begin{solution}
+              $
+                  \begin{aligned}
+                        & \lim _{x\to 0} \frac{f(x)-x}{x^2} =\lim_{x \to 0} \frac{f'(x)-1}{2x} \qquad \text{(洛必达法则)} \\
+                      = & \frac{1}{2} \lim _{x \to 0} \frac{f'(x)-1}{x}                                              \\
+                        & \because{f'(0)=1}                                                                          \\
+                        & \therefore{\frac{1}{2} \lim _{x \to 0} \frac{f'(x)-f'(0)}{x}}                              \\
+                      = & \frac{1}{2} f''(0)=1
+                  \end{aligned}
+              $
+          \end{solution}
+          \begin{note}
+              在使用洛必达法则时候,如果想对$n$阶进行求导使用洛必达法则,那么需要注意的是$n+1$阶导函数存在.
+          \end{note}
+    \item  $\infty ^0$与$0^0$通常使用\textcolor{red}
+          {$\lim u^v=e^{\lim v \ln u}$}来计算
+
+          \begin{problem}
+          求极限$\lim_{x\to0}\left(\frac{e^x+e^{2x}+\cdots+e^{nx}}n\right)^{\frac{1}{x}},$ 其中$n$是给定的自然数.
+          \end{problem}
+          \begin{solution}
+              \begin{align*}
+                  \text{原式} & = e^{\lim_{x \to 0} \frac{\ln \left(\frac{e^x+e^{2x}+\cdots+e^{nx}}n\right)}{x}\qquad \text{(洛必达法则)} } \\
+                            & =\lim_{x\to0}\frac{\frac{e^{x}+2e^{2x}+\cdots+ne^{nx}}{n}}{\frac{e^{x}+e^{2x}+\cdots+e^{nx}}{n}}       \\
+                            & = \lim_{x\to0}\frac{e^{x}+2e^{2x}+\cdots ne^{nx}}{e^{x}+e^{2x}+\cdots+e^{nx}}                          \\
+                            & =\frac{1+2+\cdots+n}{1+1+\cdots+1}                                                                     \\
+                  \text{原式} & = e^{\frac{n+1}{2}}
+              \end{align*}
+          \end{solution}
+    \item $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算,需要知道的是$1^\infty$可以化为第二个重要极限.
+          \begin{problem}
+          $\lim _{x \to \infty}\left[ \frac{x^2 + x}{(x-a)(x-b)}\right]^x$
+          \end{problem}
+          \begin{solution}
+              \begin{align*}
+                  \text{原式} & = \lim _{x \to \infty} \left(\frac{x}{x-a}\right)^x \times \left(\frac{x+1}{x-b}\right)^x         \\
+                            & =  \lim _{x \to \infty} \left(1+\frac{a}{x-a} \right)^x \times \left( 1+\frac{1-b}{x+b} \right)^x \\
+                            & = e^{\lim _{x \to \infty} \frac{ax}{x-a} } \times e^{\lim _{x \to \infty} \frac{(1-b)x}{x+b}}     \\
+                            & =e^{a+1-b}
+              \end{align*}
+          \end{solution}
+          \begin{problem}
+          $\lim_{n\to\infty}\left[\frac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}\right]^n,\text{ 其中}a>0,b>0,c>0.$
+          \end{problem}
+          \begin{solution}
+              \begin{align*}
+                  \text{原式} & =   \lim_{n\rightarrow\infty}\frac{\ln\frac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}}{\frac{1}{n}}              \\
+                            & = \lim_{n\to\infty}\frac{\ln\frac{\sqrt{1+\frac{a}{n}}+\sqrt{1+\frac{b}{n}}+\sqrt{1+\frac{c}{n}}}{3}}{\frac{1}{n}}  \\
+                            & = \lim_{x\to0}\frac{\ln\frac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}+3-3}{3}}{x}                                        \\
+                            & = \lim_{x\rightarrow0}\frac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}-3}{3x}                                              \\
+                            & = \operatorname*{lim}_{x\rightarrow0}\frac{\frac{a}{2\sqrt{1+ax}}+\frac{b}{2\sqrt{1+bx}}+\frac{c}{2\sqrt{1+cx}}}{3} \\
+                            & = \frac{a+b+c}{6}
+              \end{align*}
+              综上所述,答案为  $e^{\frac{a+b+c}{6}}$
+          \end{solution}
+          \begin{problem}
+          求极限$\operatorname*{lim}_{x\to0^+}\frac{x^{x}-(\sin x)^{x}}{x^{2}\ln(1+x)}$
+          \end{problem}
+          \begin{solution}
+              \begin{align*}
+                  \text{原式} & = {lim}_{x\to0^+}\ \frac{x^x (1-(\frac{\sin x}{x})^x)}{x^3}                               \\
+                            & = {lim}_{x\to0^+}\ \frac{1-e^{x\ln \frac{\sin x}{x}}}{x^3}(\text{当x趋于0的时候}x^x,\text{趋于1}) \\
+                            & = {lim}_{x\to0^+}\ - \frac{\ln \frac{\sin}{x}}{x^2} (\text{此处不可以用等价无穷小})                  \\
+                            & = {lim}_{x\to0^+}\ \frac{\ln (1+\frac{\sin x - x}{x})}{x^2}                               \\
+                            & = {lim}_{x\to0^+}\ \frac{\sin x}{x^3}                                                     \\
+                            & = \frac{1}{6}
+              \end{align*}
+              综上所述,答案为$\frac{1}{6}$
+          \end{solution}
+          \begin{problem}
+          $\text{求极限}\lim_{x\to0}\left(\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x}n\right)^{\frac nx},\text{其中 }a_i>0,i=1,2,\cdotp\cdotp\cdotp,n$
+          \end{problem}
+          \begin{solution}
+              \begin{align*}
+                  \text{原式} & = \lim_{x\to0}\left(1+\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}n\right)^{\frac n{a_1'+a_2'+\cdotp\cdotp+a_n'-n}\cdot\frac{a_1^{\prime}+a_1^{\prime}+\cdotp\cdotp\cdotp+a_n^{\prime}-n}x} \\
+                            & = \lim_{x\to0}\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}x=\ln(a_1a_2\cdotp\cdotp\cdotp a_n)                                                                                               \\
+                            & = \lim_{x\to0}\left(1+\frac{a_1^x+a_2^x+\cdot\cdot\cdot+a_n^x-n}n\right)^{\frac n{a_1^{\prime}+a_2^{\prime}+\cdot\cdot\cdot+a_n^{\prime}{-n}}}=\mathrm{e}
+              \end{align*}
+              综上所述,答案为$a_1a_2a_3a_4...a_n$
+          \end{solution}
+\end{itemize}
+\subsubsection{泰勒公式}
+当$x\to 0$时,有以下结论
+\begin{align*}
+    \boxed{\begin{aligned}
+                    & \sin x =x-\frac{x^3}{3!}+o(x^3)                                &  & \cos x =1-\frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4)                  \\
+                    & \arcsin x =x+\frac{x^3}{3!}+o(x^3)                             &  & \tan x =x+\frac{x^3}3+o(x^3)                                    \\
+                    & \arctan x =x-\frac{x^{3}}{3}+o(x^{3})                          &  & \ln(1+x) =x-\frac{x^{2}}{2}+\frac{x^{3}}{3}+o(x^{3})            \\
+                    & \mathrm{e}^{x} =1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
+               \end{aligned}}
+\end{align*}
+\begin{criterion}{泰勒公式使用注意事项}{}
+    \begin{itemize}
+        \item 泰勒公式是在一点处展开,函数必须在那一点处n阶倒数存在
+        \item 分子分母上下同阶
+    \end{itemize}
+\end{criterion}
+\subsubsection{夹逼准则求极限}
+\begin{itemize}
+    \item 主要通过放缩来求极限
+    \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
+\end{itemize}
+
+\subsubsection{定积分求极限}
+
+%  ############################ 正文部分
+\ifx\allfiles\undefined
+\end{document}
+\fi

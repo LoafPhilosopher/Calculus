@@ -1,0 +1,104 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\input{../config/config}
+\begin{document}
+% \input{../config/cover} 
+\else
+\fi
+%  ############################ 正文部分
+\chapter{连续}
+
+\section{函数的连续性}
+连续函数是一条连续而不间断的曲线,以下为函数连续的两个定义
+\begin{defn}{}{}
+    设函数$y=f(x)$在点$x_0$的某一邻域内有定义,如果
+    $$
+        \lim_{\Delta x\to0}\Delta y=\lim_{\Delta x\to0}\big[f\big(x_{0}+\Delta x\big)-f\big(x_{0}\big)\big]=0
+    $$
+    那就称为函数$y=f(x)$在点$x_0$连续.
+\end{defn}
+\begin{defn}{}{}
+    设函数$y=f(x)$在点$x_0$的某一邻域有定义,如果
+    $$
+        \underset{x\to x_0}{\operatorname*{lim}}f(x)=f(x_0)
+    $$
+    那么就称函数$f(x)$在点$x_0$连续
+    其$\varepsilon - \delta $语言表达如下:\\
+    $f(x)\text{ 在点 }x_0\text{连续}\Leftrightarrow\forall\boldsymbol{\varepsilon}>0,\exists\delta>0,\text{当}|x-x_0|<\delta\text{ 时 },\text{有}|f(x)-f(x_0)|<\varepsilon $
+\end{defn}
+\subsection{反函数与复合函数的连续性}
+\begin{defn}{}{}
+    如果函数$y=f(x)$在区间$I_x$上单调增加(或单调减少)且连续那么它的反函数 $x=f^{-1}(y)$也在对应的区间$I_{y}=\{\text{ y | y = }f(x),x\in I_{x}\}$上单调增加(或单调减少)且连续
+\end{defn}
+\begin{defn}{}{}
+    设函数$y=f\Big[g(x)\Big]$由函数$u=g(x)$与函数 $y=f(u)$复合而成$\stackrel{\circ}{U}(x_0)\subset D_{f,g}$.若$\lim_{x\to x_0}g(x)=u_0$,而函数 $y=f(u)$在$u=u_0$连续,则
+    $$\operatorname*{lim}_{x\to x_0}f\Big[g(x)\Big]=\operatorname*{lim}_{u\to u_0}f(u)=f(u_0)$$
+\end{defn}
+\subsection{初等函数的连续性}
+\begin{defn}{}{}
+    \begin{itemize}
+        \item 基本初等函数在其定义域内都连续
+        \item 初等函数在其定义区间内都连续
+    \end{itemize}
+\end{defn}
+\subsection{闭区间上连续函数的性质}
+
+\subsubsection{有界性与最大值最小值定理}
+\begin{defn}{最值定理}{}
+    在闭区间上连续的函数在该区间上有界且一定能取得它的最大值和最 小值
+\end{defn}
+% 3.1.1
+\subsubsection{零点定理与介值定理}
+% 3.1.2
+\begin{defn}{零点定理}{}
+    设函数$f(x)$在闭区间$\left[\begin{array}{c}a,b\end{array}\right]$上连续,且$f(\begin{array}{c}a\end{array})$与$f(\begin{array}{c}b\end{array})$ 异号(即$f(\begin{array}{c}a\end{array})\cdot f(\textit{ b )<}0)$,则在开区间$(a,b)$内至少有一点$\xi$,使$f(\xi)=0$.
+\end{defn}
+\begin{defn}{介值定理}{}
+    设函数$f(x)$在闭区间$[a,b]$上连续,且在这区间的端点取不同的函数值,
+    $$
+        f(a)=A \text{及} f(b)=B
+    $$
+    则对于$A$与$B$之间的任意一个数$C$,在开区间$(a,b)$内至少存在一点$\xi$,使得
+    $$
+        f(\xi) =C (a< \xi <b)
+    $$
+\end{defn}
+该定理的几何意义是:连续曲线弧$y=f(x)$与水平直线$y=C$至少存在相交于一点.
+\section{函数的间断点}
+\subsection{间断点的相关概念}
+\begin{itemize}
+    \item 可去间断点:若$\lim_{x\to x_0}f(x)=A\neq f(x_0)(f(x_0)$甚至可以无定义),则这类间断点称为可去间断点
+          \begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.4 \linewidth]{3.2.1.eps} \caption{可去间断点函数图像}
+          \end{figure}
+    \item 跳跃间断点:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
+          \begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.4 \linewidth]{3.2.2.eps} \caption{跳跃间断点函数图像}
+          \end{figure}
+    \item 无穷间断点:若$\lim_{x\to x_0}f(x)=\infty$,则这类间断点称为无穷间断点,如$y=\tan x$
+          \begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.4 \linewidth]{1.3.6.eps} \caption{无穷间断点函数tan图像}
+          \end{figure}
+    \item 振荡间断点:若$\lim_{x\to x_0}f(x)$振荡不存在,则这类间断点称为振荡间断点
+          \begin{figure}[H]
+              \centering \includegraphics[width=
+                  0.4 \linewidth]{3.2.3.eps} \caption{振荡间断点函数$\sin \frac{1}{x}$图像}
+          \end{figure}
+\end{itemize}
+\subsection{间断点的分类}
+通过求函数在该点的左右极限来判断
+\begin{itemize}
+    \item 第一类间断点：$\lim _ { x \rightarrow x _ { 0 } ^{-}} f ( x )$​ 和$\lim _ { x \rightarrow x _ { 0 }^ {+}} f ( x )$​ 均存在
+          \begin{itemize}
+              \item 可去：$\lim _ { x \rightarrow x_0 ^ { - } } f ( x ) = \lim _ { x \rightarrow x_0^{+} } f  ( x ) \neq f(x_0)$
+              \item 跳跃：$\lim _ { x \rightarrow x_0^{-} } f ( x ) \not= \lim _ { x \rightarrow x_0^{+} } f ( x )$
+          \end{itemize}
+    \item 第二类间断点：除第一类以外的间断点$\implies \lim _ { x \rightarrow x _ { 0 } ^{-}} f ( x )$和$\lim _ { x \rightarrow x _ { 0 }^ {+}} f ( x )$​ 均至少一个不存在
+\end{itemize}
+%  ############################ 正文部分
+\ifx\allfiles\undefined
+\end{document}
+\fi
