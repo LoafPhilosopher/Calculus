@@ -203,15 +203,22 @@ $$
                   \label{xxx1}
               \end{figure}
         \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.
-        \item \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}.这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.
+        \item \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}.\\这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.
     \end{itemize}
 \end{defn}
-
 \begin{problem}
 求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
 \end{problem}
 \begin{note}
-    在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\frac{e^x+e^{-x}}{2}$是双曲余弦函数.上述两个函数的图像为图1.2,图1.3.
+    \begin{itemize}
+        \item 在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\frac{e^x+e^{-x}}{2}$是双曲余弦函数.上述两个函数的图像为图1.2,图1.3.
+        \item 下列结论需要记住
+              \begin{itemize}
+                  \item $x\to0\text{时,}\ln\left(x+\sqrt{x^{2}+1}\right)\sim x.$
+                  \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}+1}},\text{于是}\int\frac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
+                  \item $\text{由于 }y=\ln\left(x+\sqrt{x^2+1}\right)\text{是奇函数,于是}\int_{-1}^1\left[\ln\left(x+\sqrt{x^2+1}\right)+x^2\right]\mathrm{d}x=\int_{-1}^1x^2\mathrm{d}x=\frac 23.$
+              \end{itemize}
+    \end{itemize}
 \end{note}
 \begin{solution}
     已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \frac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
@@ -222,10 +229,10 @@ $$
     \end{center}
     那么可以得到$x=\frac{1}{2}(e^y-e^{-y})$
     交换之后可以得到函数$f(x)$的反函数,即
-    $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$
+    $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$.
 \end{solution}
 \subsection{复合函数}
-设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,,则由
+设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
 $$
     y=f[\operatorname{g}(x)](x{\in}D)
 $$
