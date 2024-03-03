@@ -2,58 +2,61 @@
 \documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
 \input{../config/config}
 \begin{document}
-% \input{../config/cover} 
-\else
-\fi
-%  ############################ 正文部分
-\chapter{函数的微分}
+\begin{sloppypar}
 
-\section{微分的定义}
-\begin{defn}{微分的定义}{}
-    设函数$y=f(x)$在某区间内有定义,$x_0$及$x_0+\Delta x$在这个区间内,如果函数的增量为
-    $$
-        \Delta y = f ( x _ { 0 } + \Delta x ) - f ( x _ { 0 } )
-    $$
-    可表示为
-    $$
-        \Delta y = A \Delta x + o ( \Delta x )
-    $$
-    其中$A$是不依赖于$\Delta x$的常数,那么称函数$f(x)$在点$x_0$是可微的,而$A\Delta x$叫做函数$y=f(x)$在点$x_0$相应于自变量增量$\Delta x$​的微分,记作$dy$,即:
-    $$
-        d y =  A\Delta x
-    $$
-    函数$f(x)$在任意点$x$的微分,称为函数的微分,记作$dy$或$df(x)$,即
-    $$
-        \textcolor{red}{d y = f ^ { \prime } ( x ) \Delta x}
-    $$
-\end{defn}
-核心思想:局部用切线段近似代替曲线段
-\section{微分的几何意义}
-\begin{figure}[H]
-    \centering \includegraphics[width=
-        0.4 \linewidth]{2.3.1.pdf} \caption{函数微分的说明图像}
-\end{figure}
-函数在一点的微分.其中红线部分是微分量，而加上灰线部分后是实际的改变量
-\section{微分存在的意义}
-在当前仅知当前函数的$x$值和导数的情况下,预测未来函数的值,并推测出一个极限,来保证预测值与真实值相近
-\section{微分的计算公式}
+    % \input{../config/cover} 
+    \else
+    \fi
+    %  ############################ 正文部分
+    \chapter{函数的微分}
 
-\section{近似计算}
-\begin{defn}{}{}
-    如果$y=f(x)$在点$x_0$处的导数$f'(x_0)\neq 0$,且$|\delta x|$很小时,我们有
-    $$
-        \Delta y\approx\mathrm{d}y=f^{\prime}\left(x_{0}\right)\Delta x
-    $$
-    即函数在这个点的微分，那么函数在点$x$处的值可以近似为
-    $$
-        f(x)\approx f(x_{0})+f^{\prime}(x_{0})(x-x_{0})
-    $$
-    或
-    $$
-        f(x_0+\Delta x) \approx f(x_{0})+f^{\prime}(x_{0})(x-x_{0})
-    $$
-\end{defn}
-%  ############################ 正文部分
-\ifx\allfiles\undefined
+    \section{微分的定义}
+    \begin{defn}{微分的定义}{}
+        设函数$y=f(x)$在某区间内有定义,$x_0$及$x_0+\Delta x$在这个区间内,如果函数的增量为
+        $$
+            \Delta y = f ( x _ { 0 } + \Delta x ) - f ( x _ { 0 } )
+        $$
+        可表示为
+        $$
+            \Delta y = A \Delta x + o ( \Delta x )
+        $$
+        其中$A$是不依赖于$\Delta x$的常数,那么称函数$f(x)$在点$x_0$是可微的,而$A\Delta x$叫做函数$y=f(x)$在点$x_0$相应于自变量增量$\Delta x$​的微分,记作$dy$,即:
+        $$
+            d y =  A\Delta x
+        $$
+        函数$f(x)$在任意点$x$的微分,称为函数的微分,记作$dy$或$df(x)$,即
+        $$
+            \textcolor{red}{d y = f ^ { \prime } ( x ) \Delta x}
+        $$
+    \end{defn}
+    核心思想:局部用切线段近似代替曲线段
+    \section{微分的几何意义}
+    \begin{figure}[H]
+        \centering \includegraphics[width=
+            0.4 \linewidth]{2.3.1.pdf} \caption{函数微分的说明图像}
+    \end{figure}
+    函数在一点的微分.其中红线部分是微分量，而加上灰线部分后是实际的改变量
+    \section{微分存在的意义}
+    在当前仅知当前函数的$x$值和导数的情况下,预测未来函数的值,并推测出一个极限,来保证预测值与真实值相近
+    \section{微分的计算公式}
+
+    \section{近似计算}
+    \begin{defn}{}{}
+        如果$y=f(x)$在点$x_0$处的导数$f'(x_0)\neq 0$,且$|\delta x|$很小时,我们有
+        $$
+            \Delta y\approx\mathrm{d}y=f^{\prime}\left(x_{0}\right)\Delta x
+        $$
+        即函数在这个点的微分，那么函数在点$x$处的值可以近似为
+        $$
+            f(x)\approx f(x_{0})+f^{\prime}(x_{0})(x-x_{0})
+        $$
+        或
+        $$
+            f(x_0+\Delta x) \approx f(x_{0})+f^{\prime}(x_{0})(x-x_{0})
+        $$
+    \end{defn}
+    %  ############################ 正文部分
+    \ifx\allfiles\undefined
+\end{sloppypar}
 \end{document}
 \fi
