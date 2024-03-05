@@ -1,16 +1,13 @@
 \ifx\allfiles\undefined
 \documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
-
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
-
     % \input{../config/cover} 
     \else
     \fi
     %  ############################ 正文部分
     \chapter{极限}
-    极限是无穷趋近但是不相等的过程
     \section{数列的极限}
     \subsection{数列极限的定义}
     \begin{defn}{}{}
@@ -75,12 +72,22 @@
             \item 超实数集,或称为非标准实数集,记为$^{*}\mathbb{R}$,是实数集$\mathbb{R}$的一个扩张.
         \end{itemize}
     \end{criterion}
-    \subsection{邻域}
-    一个局部区域
+    \subsection{邻域}\footnote{邻域与区间不同,邻域属于区间的范畴.但是邻域通常表示“一个局部位置”.比如“点$x_0$的$\delta$”邻域,可以理解为“点$x_0$”的附近,而区间是明确指出在实数系下的范围}
+    \begin{defn}{邻域的相关概念}{}
+        \begin{itemize}
+            \item $\delta$邻域:设$x_0$是数轴上一个点,$\delta$是某一正数,则称$(x_{0}-\delta,x_{0}+\delta)$为点$x_0$的$\delta$邻域,记作$U(x_{0},\delta)$,即:
+                  $$
+                      U(x_{0},\delta)=\left\{x|x_{0}-\delta<x<x_{0}+\delta\right\}=\left\{\left.x\right|\left|\left.x-x_{0}\right|<\delta\right\}\right.
+                  $$
+            \item 去心$\delta$邻域:定义点$x_0$的去心邻域$\mathring{U}(x_{0},\delta)=\bigl\{x|0<\bigl|x-x_{0}\bigr|<\delta\bigr\}$
+            \item 左,右$\delta$邻域:$\left\{x|0<x-x_{0}<\delta\right\}$称为点$x_0$的右$\delta$邻域,记作$U^{+}(x_{0},\delta);\{x|0<x_{0}-x<\delta\}$称为点$x_0$的左$\delta$邻域,记作$U^{-}(x_{0},\delta).$
+        \end{itemize}
+    \end{defn}
     \subsection{函数极限的定义}
+    函数极限的定义主要分为自变量趋于有限值$(x \to x_0)$时的极限和自变量趋于无穷大时函数的极限$(x \to \infty)$
     \subsubsection{自变量趋于有限值时的函数极限}
-    \begin{defn}{}{}
-        设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$(不论它多么小),总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
+    \begin{defn}{当自变量趋于有限值时函数极限定义}{}
+        设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$\textbf{(不论它多么小)\footnote{$\varepsilon$用于衡量$|f(x)-A|$的值有多小}},总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
         $$
             |f(x)-A|<\varepsilon
         $$
@@ -95,16 +102,11 @@
         $\forall\varepsilon>0,\exists\delta>0$在证明中，这两句是白给，直接写。后面的才是关键。
     \end{defn}
     \begin{criterion}{}{}
-        在函数极限中$x \to \infty$指的是$|x| \to \infty$,而数列中的$n \to \infty$是$n \to +\infty$
+        在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
     \end{criterion}
-    \begin{problem}
-    证明$\operatorname*{lim}_{x\to1}(2x-1)=1$
-    \end{problem}
-    \begin{solution}
-        对于$\forall \varepsilon > 0$,令$\partial = \frac{\varepsilon}{3}$,则当$0<|x-1|<\partial$时,有$|f(x)-A|=2|x-1|<\varepsilon$,从而$\operatorname*{lim}_{x\to1}(2x-1)=1$
-    \end{solution}
+
     \subsubsection{单侧极限}
-    \begin{defn}{}{}
+    \begin{defn}{单侧极限的定义}{}
         若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{左极限},记为
         \begin{center}
             $\operatorname*{lim}_{x\to x_0^{-}}f(x)=A$或 $f(x_0^{-})=A$.
@@ -113,22 +115,7 @@
         \begin{center}
             $\operatorname*{lim}_{x\to x_0^{+}}f(x)=A$或 $f(x_0^{+})=A$
         \end{center}
-        极限存在的充要条件
-        \begin{center}
-            $\lim_{x\to x_0}f(x)=A\Leftrightarrow\lim_{x\to x_0^-}f(x)=A$,且$\lim_{x\to x_0^+}f(x)=A$(\text{左右极限都存在且相等})
-            $\lim_{x\to x_0}f(x)=A\Leftrightarrow f(x)=A+\alpha(x),\lim_{x\to x_0}\alpha(x)=0(\text{无穷小量}\alpha(x)=0)$
-        \end{center}
     \end{defn}
-    \begin{criterion}{}{}
-        需要分左右极限求极限的问题有以下三种：
-        \begin{itemize}
-            \item 分段函数分界点的极限,分界点两侧极限值不同
-            \item $e^\infty$型极限(如$\begin{aligned}\lim_{x\to0}\mathrm{e}^{\frac{1}{x}},\lim_{x\to\infty}\mathrm{e}^{x},\lim_{x\to\infty}\mathrm{e}^{-x}\end{aligned}$)
-            \item $\arctan\infty $型极限(如$\mathop{\mathrm{\lim_{x\to0} \arctan}}\frac{1}{x},\operatorname*{lim}_{x\to\infty}\arctan x$)
-        \end{itemize}
-    \end{criterion}
-
-
     \begin{problem}
     $\text{已知}\lim_{x\to0}\biggl[a\arctan\frac{1}{x}+(1+\mid x\mid)^{\frac{1}{x}}\biggr]\text{存在,求}a\text{的值}$
     \end{problem}
@@ -141,7 +128,7 @@
         若极限存在,则$a=\frac{1-e^2}{\pi e}$
     \end{solution}
     \subsubsection{自变量趋于无穷大时函数的极限}
-    \begin{defn}{}{}
+    \begin{defn}{自变量趋于无穷大时函数极限定义}{}
         设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$.(不论它多么小),总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
         $$
             |f(x)-A|<\varepsilon
@@ -156,53 +143,110 @@
         $$
         $\forall\varepsilon>0,\exists\delta>0$在证明中，这两句是白给，直接写。后面的才是关键。
     \end{defn}
-    \textcolor{red}{需要注意的是趋向的值不同时,$\varepsilon -N$写法不同,不能照抄}.其$\varepsilon -N$的表达为如下表格
-    \begin{table}[H]
-        \begin{tabular}{|l|l|l|l|l|}
+    \textcolor{red}{需要注意的是趋向的值不同时,$\varepsilon -N$写法不同,不能照抄}.其$\varepsilon -N$的表达为如下表格:
+    \begin{center}
+        \tablefirsthead{
             \hline
-                          & f(x)\to A                                                                                                                                                   & f(x) \to \infty                                                                                                                         & f(x) \to +\infty\                                                                                                            & f(x) \to -\infty                                                                                                                 \\ \hline
-            $x \to x_0$   & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_0\mid  \\&<\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 },\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当} 0<|x-x_0| \\ &<\delta \text{时 ,即有} \\ &f(x)>M.\end{aligned}$      & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 ,即有}\\& f(x) <-M\end{aligned}$ \\ \hline
-            $x \to x_0^+$ & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有}\\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&|f(x)|>M.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&f(x)>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}<\delta  \\&\text{时,即有} \\& f(x) <-M\end{aligned} $          \\ \hline
-            $x \to x_0^-$ & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)|>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\& f(x) >M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\&f(x) <-M\end{aligned}$    \\ \hline
-            $x\to \infty$ & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}\mid x\mid>X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists X>0,\\& \text{使当}\mid x\mid>X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$                              & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当}\mid x\mid>X \\&\text{时,即有}\\& f(x)>M\end{aligned}$                    & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当|x|>X时,} \\&\text{即有} \\&f(x)<-M.\end{aligned}$                             \\ \hline
-        \end{tabular}
-    \end{table}
-    \newpage
-    接上表
-    \begin{table}[H]
-        \begin{tabular}{|l|l|l|l|l|}
+            \textbf{} & \textbf{$f(x)\to A$} & \textbf{$f(x)\to \infty$} & \textbf{$f(x)\to +\infty$} & \textbf{$f(x)\to -\infty$}\\
             \hline
-                              & f(x)\to A                                                                                                                          & f(x) \to \infty                                                                                              & f(x) \to +\infty\& f(x) \to -\infty                                                                                                                                                                                  \\ \hline
-            $x \to + \infty $ & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned} $          & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当 }x>X\text{ 时 }, \\&\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists X>0,\\&\text{使当}x>X\text{时},\\&\text{即有}\\&f(x)>M.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有}\\&f(x)<-M\end{aligned}$             \\ \hline
-            $x \to -\infty$   & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}x<-X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned} & \forall M>0 , \exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$      & $\begin{aligned} &\forall M>0,\exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&f(x)>M\end{aligned}$    & $\begin{aligned}&\forall M>0,\exists X>0,\text{使}\\&\text{当}x<-X\text{时},\text{即有}\\&f(x)< -M.\end{aligned}$ \\ \hline
-        \end{tabular}
-    \end{table}
-
+        }
+        \tablehead{
+            \hline
+            \textbf{} & \textbf{$f(x)\to A$} & \textbf{$f(x)\to \infty$} & \textbf{$f(x)\to +\infty$} & \textbf{$f(x)\to -\infty$}\\
+            \hline
+        }
+        \tabletail{
+            \hline
+        }
+        \tablelasttail{
+            \multicolumn{1}{r}{{继续下一页}} \\
+        }
+        \begin{supertabular}{|c|c|c|c|c|}
+            \hline
+            $x \to x_0$       & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_0\mid  \\&<\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 },\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当} 0<|x-x_0| \\ &<\delta \text{时 ,即有} \\ &f(x)>M.\end{aligned}$      & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 ,即有}\\& f(x) <-M\end{aligned}$ \\ \hline
+            $x \to x_0^+$     & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有}\\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&|f(x)|>M.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&f(x)>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}<\delta  \\&\text{时,即有} \\& f(x) <-M\end{aligned} $          \\ \hline
+            $x \to x_0^-$     & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有} \\&|f(x)|>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当}0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\& f(x) >M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0>x-x_{0}> \\&-\delta\text{ 时 },\text{即有}\\&f(x) <-M\end{aligned}$    \\ \hline
+        \end{supertabular}
+        \begin{supertabular}{|c|c|c|c|c|}
+            \hline
+            $x\to \infty$     & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}\mid x\mid>X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists X>0,\\& \text{使当}\mid x\mid>X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$                              & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当}\mid x\mid>X \\&\text{时,即有}\\& f(x)>M\end{aligned}$                    & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当|x|>X时,} \\&\text{即有} \\&f(x)<-M.\end{aligned}$                             \\ \hline
+            $x \to + \infty $ & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned} $                                   & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当 }x>X\text{ 时 }, \\&\text{即有}\\& |f(x)|>M\end{aligned}$                            & $\begin{aligned}&\forall M>0,\exists X>0,\\&\text{使当}x>X\text{时},\\&\text{即有}\\&f(x)>M.\end{aligned}$                        & $\begin{aligned}&\forall M>0,\exists X>0, \\&\text{使当x>X时,} \\&\text{即有}\\&f(x)<-M\end{aligned}$                                 \\ \hline
+            $x \to -\infty$   & $\begin{aligned}&\forall\varepsilon>0,\exists X>0, \\&\text{使当}x<-X\text{ 时 }, \\&\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$                          & $\begin{aligned} & \forall M>0 , \exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&|f(x)|>M\end{aligned}$                                 & $\begin{aligned} &\forall M>0,\exists X> 0,\\&\text{使当 }x<-X \\&\text{时,即有}\\&f(x)>M\end{aligned}$                           & $\begin{aligned}&\forall M>0,\exists X>0,\text{使}\\&\text{当}x<-X\text{时},\text{即有}\\&f(x)< -M.\end{aligned}$                     \\ \hline
+        \end{supertabular}
+    \end{center}
+    \begin{criterion}{上表的部分解释}{}
+        \begin{itemize}
+            \item 以$\lim_{x \to x_0}f(x)=A$为例:不管$f(x)$与$A$的距离多近($\forall \varepsilon >0$),总有$x$不断靠近$x_0$,使得$|f(x)-A|<\varepsilon$.
+            \item 以$\lim_{x\to \infty}f(x)=\infty$为例:不管$M$多大,总有当$x>\infty$时,使得$|f(x)>M|$,即满足$\lim_{x\to \infty}f(x)=\infty$.
+        \end{itemize}
+    \end{criterion}
     \subsection{函数极限的性质}
     \subsubsection{唯一性}
     \begin{them}{}{}
         如果$\lim\limits_{x\to x_0}f(x)$存在,那么极限唯一
     \end{them}
+    \begin{criterion}{关于唯一性的说明}{}
+        \begin{itemize}
+            \item 对于$x \to \infty$,意味着$x \to +\infty$且$x \to -\infty$
+            \item 对于$x \to x_0$,意味着$x \to x_0^+$且$x \to x_0^-$
+                  \newline
+                  对于上述问题,我们称为自变量取值的“双向性”.以下有一些常见的问题:
+                  \begin{itemize}{}{}
+                      \item $\lim_{x\to \infty} e^x$ 不存在, $\lim_{x \to 0}\frac{\sin x}{|x|}$不存在, $\lim_{x\to \infty} \arctan x$不存在, $\lim_{x\to x_0} [x]$不存在.
+                      \item 其不存在的原因均为分段函数分段点极限表达式不同,需要分别求左右极限.
+                  \end{itemize}
+        \end{itemize}
+    \end{criterion}
+    \begin{criterion}{极限存在的充要条件}{}
+        $$
+            \lim_{x\to x_0}f(x)=A\Leftrightarrow\lim_{x\to x_0^-}f(x)=A,\text{且}\lim_{x\to x_0^+}f(x)=A\footnote{左右极限都存在且相等}
+        $$
+        $$
+            \lim_{x\to x_0}f(x)=A\Leftrightarrow f(x)=A+\alpha(x),\lim_{x\to x_0}\alpha(x)=0(\text{无穷小量}\alpha(x)=0)\footnote{对于此概念,如果引入超实数系的解释应为$A$是$f(x)$的标准实数部分,而$f(x)$的值是超实数系下的值,因此其值应为$f(x)=A+\alpha(x)$}
+        $$
+    \end{criterion}
+    \begin{criterion}{极限不存在的情况}{}
+        \begin{itemize}
+            \item \textbf{函数在该点附近趋于无穷}
+            \item 函数在该点的左右极限只存在一个,或两者都存在但不相等
+            \item 函数在该点附近不停地震荡
+            \item 该点是函数无定义点的聚点
+        \end{itemize}
+    \end{criterion}
     \subsubsection{局部有界性}
     \begin{them}{}{}
-        如果$\lim\limits_{x\to x_0}f(x)=A$,那么存在常数$M>0$和$\delta >0$使得当$0<|x-x_0|<\delta$时,有$|f(x)| \leq M$
+        如果$\lim\limits_{x\to x_0}f(x)=A$,那么存在常数$M>0$和$\delta >0$使得当$0<|x-x_0|<\delta$时\footnote{对局部有界性的描述需要指明是在那个区间上},有$|f(x)| \leq M$.
     \end{them}
-    \subsubsection{局部保号性}
-    \begin{them}{}{}
-        如果$\lim_{x\to x_0}f(x)=A$,且$A>0$(或$A<0$),那么存在常数$\delta>0$,使得当$0<|x-x_0|<\delta$时有$f(x)>0(或f(x)<0)$.
-    \end{them}
-    \begin{corollary}{}{}
-        如果在$x_0$的某去心邻域内$f(x)\geqslant 0$(或$f(x)\leqslant 0$),而且$\underset{x\to x_0}{\operatorname*{lim}}f(x)=A$,那么$A \leqslant 0$或$(A \leq 0)$
-    \end{corollary}
+    \begin{criterion}{局部有界性的性质}{}
+        \begin{itemize}
+            \item 极限存在必有界,有界函数极限不一定存在.
+            \item 若$y=f(x)$在$[a,b]$上为连续函数,则$f(x)$在$[a,b]$上必有界.
+            \item \textbf{若$f(x)$在$(a,b)$内为连续函数,且$\lim_{x \to a^+}f(x)$与$\lim_{x\to b^-}f(x)$都存在,则$f(x)$在$(a,b)$内必定有界.}
+            \item 有界函数与有界函数的和,差,积仍为有界函数\footnote{商不是有界函数,因为:$y_1=1,y_2=0,\frac{y_1}{y_2}=\infty$}.
+        \end{itemize}
+    \end{criterion}
     \begin{problem}
-    证明定理3局部保号性,其中$A>0$
+    在下列区间内,函数$f(x)={\frac{x\sin(x-3)}{(x-1)(x-3)^{2}}}$有界的是:\\
+    A:(-2,1) \qquad  B:(-1,0)\qquad C:(1,2) \qquad D:(2,3)
     \end{problem}
     \begin{solution}
-        如果$\lim_{x\to x_{0}}f(x)=A > 0$,所以,取$\varepsilon=\frac{A}{2}>0,则\exists \delta >0 $当$0<|x-x_0|<\delta$时,有
-        $$
-            |f(x)-A|<\frac{A}{2}\Rightarrow f(x)>A-\frac{A}{2}=\frac{A}{2}>0.
-        $$
+        又题意可知,函数的分段点为$x=3,0,1$,对上述三点求极限,分析可得,当$x=3,1$时,函数极限为$\infty$,因此函数在上述两点的极限不存在,因此根据局部有界性的性质可得,含这两个点的区间无界,因此排除A,C,D.答案为B.
     \end{solution}
+    \subsubsection{局部保号性}
+    \begin{them}{}{}
+        如果$\lim_{x\to x_0}f(x)=A$,且$A>0$(或$A<0$),那么存在常数$\delta>0$,使得当$0<|x-x_0|<\delta$时有$f(x)>0(或f(x)<0)$\footnote{如果函数在$x_0$附近的极限值为正,那么$x_0$附近的函数值为正}.
+        \\
+        如果在$x_0$的某去心邻域内$f(x)\geqslant 0$(或$f(x)\leqslant 0$),而且$\underset{x\to x_0}{\operatorname*{lim}}f(x)=A$,那么$A \leqslant 0$或$(A \leq 0)$\footnote{如果函数在$x_0$附近的函数值$\leq 0$,那么$x_0$此处的极限值$\le 0$}.
+    \end{them}
+    对上述定理中,为什么一个可以等于0,一个不能等于0?其解释如下:如果第一个定理中$A \leqslant 0,f(x)\leqslant 0$,那么以函数$f(x)={x^2}$为例,虽然$\lim_{x \to 0}f(x)=0 $,但是邻域内的函数值都大于0.对于第二个定理中如果$f(x) < 0,A< 0$,那么以函数$f(x)={-x^2}$为例,虽然邻域内的函数值都小于0,但是$\lim_{x \to 0}f(x)=0 $.
+    \begin{criterion}{局部保号性的证明}{}
+        \begin{proof}
+            如果$\lim_{x\to x_{0}}f(x)=A > 0$,所以,取$\varepsilon=\frac{A}{2}>0,则\exists \delta >0 $当$0<|x-x_0|<\delta$时,有
+            $$
+                |f(x)-A|<\frac{A}{2}\Rightarrow f(x)>A-\frac{A}{2}=\frac{A}{2}>0.
+            $$
+        \end{proof}
+    \end{criterion}
     由上述证明可得如下推论
     \begin{corollary}{}{}
         如果$\lim_{x\to x_{0}}f(x)=A > 0(A \neq 0)$,那么就存在$x_0$的某一去心邻域$\mathring{U}\left(x_{0}\right)$,当$x\in U^{\circ}(x_{0})$时,就有$|f(x)|>\frac{|A|}{2}$
