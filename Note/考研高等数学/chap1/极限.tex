@@ -278,26 +278,47 @@
     \end{figure}
 
     \textcolor{red}{$f(a_n)$其实是$f(x)$的抽样}
-    \begin{figure}[htbp]
+    \begin{figure}[H]
         \centering \includegraphics[width=
-            0.5 \linewidth]{2.2.4.pdf}
+            0.4 \linewidth]{2.2.4.pdf}
     \end{figure}
     需要注意的是,是所有的数列（抽样）才能完全代表整体.不能说我选了某个数列有极限就代表函数有极限.
 
     总结:\textcolor{red}{海涅定理表述了离散与连续、数列极限与函数极限的关系.}
     \section{无穷小与无穷大}
-
     \subsection{无穷小}
-    \begin{defn}{}{}
+    \begin{defn}{无穷小的定义}{}
         如果函数$f(x)$当$x\to x_0$(或 $x\to\infty$)时的极限为零,那么称函数$f(x)$为当$x\to x_0$(或$x\to\infty$)时的无穷小.
     \end{defn}
-    \textbf{其中$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
+    \textbf{$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
+    \begin{criterion}{无穷小与函数极限的关系(脱帽法)}{}
+        $\lim_{x\to\bullet}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\bullet}f(x)$为超实数值，其实数部分为$A$，函数$f(x)$的函数值为$A+\alpha$
+    \end{criterion}
+    \subsection{\textcolor{red}{无穷小的性质}}
+    \begin{itemize}
+        \item[1] 有限个无穷小的和是无穷小\footnote{无穷个无穷小的和不一定是无穷小，如$\lim_{n \to \infty}=(\frac{1}{n+1}+\frac{1}{n+2}+\frac{1}{n+3}\dots +\frac{1}{n+n})=\ln 2$}
+            \begin{proof}
+                设$\alpha_1$和$\alpha_2$为无穷小量。则$0 \leqslant |\alpha_1+\alpha_2|\leqslant |\alpha_1|+|\alpha_2|$,$|\alpha_1|+|\alpha_2|$的极限为0。证明完毕。
+            \end{proof}
+        \item[2] 有界函数与无穷小的乘积是无穷小\footnote{无界函数$\times$无穷小量不一定是无穷小，如$\lim_{x \to \infty}x \times \frac{1}{x}=1$}
+            \begin{proof}
+                $|\alpha _1|\leqslant M$,$\alpha_2$是无穷小量。那么$0\leqslant|\alpha_1 \times \alpha_2|=|\alpha_1|\times |\alpha_2|\leqslant M \times |\alpha_2|$证明完毕。
+            \end{proof}
+        \item[3] 有限个无穷小的乘积是无穷小
+    \end{itemize}
+    \subsection{\textcolor{red}{无穷小的比阶}}
+    \begin{defn}{}{}
+        \begin{itemize}
+            \item 如果 $\lim \frac{\beta}{\alpha} =0$,那么就说 $\beta$是比$\alpha$高阶的无穷小,记作 $\beta=o(\alpha);$
+            \item  如果 $\lim \frac\beta\alpha  =\infty$,那么就说 $\beta$是比 $\alpha$低阶的无穷小;
+            \item 如果$\lim\frac{\beta}{\alpha} =c\neq 0$,那么就说 $\beta$ 与 $\alpha$ 是同阶无穷小 ;
+            \item 如果$\lim\frac{\beta}{\alpha^{^k}} =c \neq 0$,$k > 0$,那么就说 $\beta$是关于 $\alpha$的$k$阶无穷小;
+            \item 如果 $\lim \frac\beta\alpha = 1$,那么就说 $\beta$ 与 $\alpha$ 是等价无穷小,记作 $\alpha\sim\beta$
+        \end{itemize}
+    \end{defn}
+    前三个定义解释:$\lim \frac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \frac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\frac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
 
-    下面的定理$2.3.1$讲述了无穷小与函数极限的关系
-    \begin{them}{}{}
-        在自变量的同一变化过程$x\to x_0$(或 $x\to\infty$)中,函数$f(x)$具有极限$A$的充分必要条件是$f(x)=A+\alpha$,其中 $\alpha$是无穷小
-    \end{them}
-
+    同时需要注意的是,\textbf{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在,其值为$\infty$和$0$
     \subsection{无穷大}
     \begin{defn}{}{}
         设函数$f(x)$在$x_0$的某一去心邻域内有定义(或$|x|$大于来一正数时有定义).如果对于任意给定的正数$M$(不论它多么大),总存在正数$\delta$(或数$X$),只要$x$适合不等式$0<|x-x_0|<\delta$(或$|x|>X$),对应的函数值$f(x)$总满足不等式
@@ -322,52 +343,13 @@
         在自变量的同一变化过程中,如果$f(x)$为无穷大,那么$\frac{1}{f(x)}$为无穷小;反之,如果$f(x)$为无穷小,且$f(x) \neq 0$,那么存在常数$\frac{1}{f(x)}为无穷大$
     \end{them}
 
-    \subsection{\textcolor{red}{无穷小的比较}}
-    \begin{defn}{}{}
-        \begin{itemize}
-            \item 如果 $\lim \frac{\beta}{\alpha} =0$,那么就说 $\beta$是比$\alpha$高阶的无穷小,记作 $\beta=o(\alpha);$
-            \item  如果 $\lim \frac\beta\alpha  =\infty$,那么就说 $\beta$是比 $\alpha$低阶的无穷小;
-            \item 如果$\lim\frac{\beta}{\alpha} =c\neq 0$,那么就说 $\beta$ 与 $\alpha$ 是同阶无穷小 ;
-            \item 如果$\lim\frac{\beta}{\alpha^{^k}} =c \neq 0$,$k > 0$,那么就说 $\beta$是关于 $\alpha$的$k$阶无穷小;
-            \item 如果 $\lim \frac\beta\alpha = 1$,那么就说 $\beta$ 与 $\alpha$ 是等价无穷小,记作 $\alpha\sim\beta$
-        \end{itemize}
-    \end{defn}
-    前三个定义解释:$\lim \frac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \frac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\frac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
 
-    同时需要注意的是,并不是任意两个无穷小都可进行比阶的.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在.
     \subsection{\textcolor{red}{无穷大的比较}}
     \begin{itemize}
         \item 当$x \to +\infty$时,$\mathrm{ln}^ax\ll x^\beta\ll a^x,\text{其中}\alpha>0,\beta>0,a>1.$
         \item 当$n \to \infty$时,$\ln^an\ll n^\beta\ll a^n\ll n!\ll n^n,\text{其中 }\alpha>0,\beta>0,a>1.$
     \end{itemize}
-    \subsection{\textcolor{red}{无穷小的运算法则}}
-    \begin{itemize}
-        \item[1] 有限个无穷小的和是无穷小
-        \item[2] 有界函数与无穷小的乘积是无穷小
-        \item[3] 有限个无穷小的乘积是无穷小
-            \begin{problem}
-            求极限$\lim _{n \to \infty} \frac{n!}{(-n)^n}$
-            \end{problem}
-            \begin{solution}
-                \begin{align*}
-                     & \lim _{n \to \infty} \frac{n!}{(-n)^n}=\lim_{n \to \infty} (-1)^n \frac{n!}{n^n} \\
-                \end{align*}
-                从上面可以看出,$-1^n$是有界变量.而根据无穷大的比较,分母趋于无穷的速度远大于分子,因此$\frac{n!}{n^n}为无穷小$
-                可求的函数极限为0.
-            \end{solution}
-        \item[4] 无穷小的运算
-            \begin{itemize}
-                \item[a.] $o(x^m)\pm o(x^n)=o(x^l),l=\min\{ m,n\}$(1)
-                \item[b.] $o(x^m)\cdot o(x^n)=o(x^{m+n}),x^m \cdot o(x^n)=o(x^{m+n})$(2)
-                \item[c.] $o(x^m)=o(kx^m)=k\cdot o(x^m),k \neq 0$\text{且为常数}(3)
-            \end{itemize}
-    \end{itemize}
-    \begin{them}{}{}
-        $\beta$ \text{与}$\alpha$ \text{是等价无穷小的充分必要条件为}
-        $$
-            \beta =\alpha +o(\alpha)
-        $$
-    \end{them}
+
     \subsection{\textcolor{red}{无穷大的运算法则}}
     \begin{itemize}
         \item 两个无穷大量的积仍未无穷大量
