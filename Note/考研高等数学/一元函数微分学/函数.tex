@@ -21,6 +21,18 @@
     $$
         R_{f}=f(D)=\left\{y|y=f(x),x\in D\right\}
     $$
+    \begin{criterion}{关于定义域的注意事项}{}
+        \begin{itemize}
+            \item 定义域指的是$x$的定义域
+            \item 括号内定义域相同
+        \end{itemize}
+        \begin{problem}
+        已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为:
+        \end{problem}
+        \begin{solution}
+            定义域指的是$x$的定义域,因此$x \in [0,a]$,那么$x+1 \in [1,a+1]$.括号内定义域相同,那么可以得知$f(x)$定义域为$[1,a+1]$.$f(x+10)$定义域为$[-9,a-9]$.
+        \end{solution}
+    \end{criterion}
     \begin{criterion}{单值函数与多值函数}{}
         事实上上述定义的函数为\textbf{单值函数},若给定一个$x_1$,对应一个$y_1$。给另外一个$x_2$,对应另外一个$y_2$,即\textbf{“一对一”}.其图像如下图所示\\
         \tikzset{every picture/.style={line width=0.55pt}} %set default line width to 0.75pt        
@@ -136,7 +148,7 @@
     $$
     \subsection{反函数}
     \begin{defn}{反函数定义}{}
-        设函数$y=f(x)$的定义域为$D$,值域为$R$.如果对于每一个$y \in R $,必存在唯一的$x \in D$使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
+        设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
     \end{defn}
     \begin{criterion}{解释}{}
         以函数$y=2x+1$为例:
@@ -155,7 +167,7 @@
     \begin{defn}{反函数的性质}{}
         \begin{itemize}
             \item $f^{-1}f(x)=x$
-            \item 严格单调函数必有反函数,但是有反函数的函数不一定是单调函数.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
+            \item \textbf{严格单调函数必有反函数,但是有反函数的函数不一定是单调函数}.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
                   \begin{figure}[H]
                       \centering \includegraphics[width=
                           0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
@@ -208,6 +220,14 @@
         y=f[\operatorname{g}(x)](x{\in}D)
     $$
     确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集.
+    \begin{problem}
+    $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则
+    \newline
+    $(A)\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}\text{不存在}.\quad(\mathrm{C})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}\text{不存在}.$
+    \end{problem}
+    \begin{solution}
+        函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
+    \end{solution}
     \subsection{函数的四种特性及重要结论}
     \subsubsection{有界性}
     有界性分为三种情况,一种是有上界,一种是有下界,一种是有界。其中有界包含了有上界和有下界。
@@ -219,6 +239,20 @@
         \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
         \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
     \end{itemize}
+    \begin{criterion}{有界性的判断}{}
+        \begin{itemize}
+            \item 利用定义
+            \item $f(x)$在$[a,b]$上连续$\Rightarrow f(x)$在$[a,b]$上有界
+            \item $f(x)$在$(a,b)$上连续,且$f(a^+)$和$f(b^-)$存在$\Rightarrow f(x)$在$(a,b)$上有界.
+            \item $f'(x)$在区间$I(\text{有限})$\footnote{长度有限}上有界$\Rightarrow f(x)$在$I$上有界
+        \end{itemize}
+    \end{criterion}
+    \begin{problem}
+    已知函数$f(x)=\frac{\int_0^x\ln(1+t^2)\operatorname{d}t}{x^a}\text{在}(0,+\infty)$上有界,则$a$的取值范围为
+    \end{problem}
+    \begin{solution}
+        如果说$f(x)$在$(0,+\infty)$上有界,那么$f(x)$应该在区间两端点连续单侧极限存在.则$\lim_{x \to +\infty}f(x)$
+    \end{solution}
     \subsubsection{单调性}
     \begin{defn}{}{}
         设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
@@ -239,17 +273,17 @@
     $$
     \subsubsection{奇偶性}
     \begin{defn}{}{}
-        设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.
+        设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x \in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.
     \end{defn}
     \begin{criterion}{}{}
         \begin{itemize}
             \item $f(\varphi(x))$(内偶则偶,内奇看外)\footnote{
                   奇[偶]$\Rightarrow$ 偶;偶[奇]$\Rightarrow$ 偶;奇[奇]$\Rightarrow$ 奇;偶[偶]$\Rightarrow$ 偶;非奇非偶[偶]$\Rightarrow$ 偶}
             \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数\footnote{证明如下:令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$}.
-            \item 求导后奇偶性互换,求积后奇偶性互换.
-            \item 对于任意函数$f(x)$,令$u(x)=\frac{1}{2}[f(x)+f(-x)]$,$v(x)=\frac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\frac{1}{2}[f(x)+f(-x)]+\frac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$
-            \item \textbf{连续的奇函数的一切原函数都是偶函数}
-            \item \textbf{连续的偶函数的原函数中仅有一个原函数是奇函数}
+            \item \textbf{求导后奇偶性互换}
+            \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}
+            \item \textbf{对于任意函数$f(x)$,令$u(x)=\frac{1}{2}[f(x)+f(-x)]$,$v(x)=\frac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\frac{1}{2}[f(x)+f(-x)]+\frac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
+            \item \textbf{连续的奇函数的一切原函数都是偶函数},\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{因为奇函数必须过原点,但是偶函数的原函数后面有一个常数$c$因此仅有一个原函数是奇函数}}
             \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
             \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
             \item     设$f(x)$是定义在$[-l,l]$上的任意函数,则
@@ -266,8 +300,8 @@
     \subsubsection{重要结论}
     \begin{itemize}
         \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.
-        \item 若连续函数$f(x)$以$T$为周期且$\int_{0}^{T}f(x)\mathrm{d}x=0$,则$\int_{0}^{T}f\left(x\right)\mathrm{d}x=0$时,$\int_{0}^{x}f\left(t\right)\mathrm{d}t$也以 $T$ 为周期.
-        \item 若$f(x)$在$(a,b)$内可导且$f^{\prime}(x) $有界,则 $f(x)$ 在$(a,b)$ 内有界.
+        \item 设$f(x)$连续且以$T$为周期,则$F(x)=\int_0 ^x f(t)dt$ 是以$T$为周期的周期函数$\Leftrightarrow\int_{0}^{\tau}f(x)\mathrm{d}x=0.$
+        \item \textbf{周期函数的原函数是周期函数的充要条件是其在一个周期上的积分为0.}
     \end{itemize}
     \subsection{三种特殊函数}
     \subsubsection{符号函数}
@@ -298,12 +332,12 @@
             \draw (433,117) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
         \end{tikzpicture}
     \end{center}
-    \subsubsection{取整函数}\footnote{\textbf{现实生活中其实就是年龄}}
+    \subsubsection{取整函数}
     $$
         y=[x]
     $$
 
-    函数值向左移,即$x-1<[x] \leq x$
+    函数值向左移\footnote{\textbf{坐标轴上向左移}},即$x-1<[x] \leq x$
 
     \begin{center}
         \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
