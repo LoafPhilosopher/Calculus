@@ -37,3 +37,116 @@
     \item 若对$X$中任意两个不同元素$x_1 \neq x_2$,它们的像$f(x_1) \neq f(x_2)$,则称$f$为$X$到$Y$的\uwave{单射};
     \item 若映射$f$既是单射,又是满射,则称$f$为\uwave{一一映射(或双射)}
 \end{itemize}
+\begin{criterion}{单值函数与多值函数}{}
+    事实上上述定义的函数为\textbf{单值函数},若给定一个$x_1$,对应一个$y_1$。给另外一个$x_2$,对应另外一个$y_2$,即\textbf{“一对一”}.其图像如下图所示\\
+    \tikzset{every picture/.style={line width=0.55pt}} %set default line width to 0.75pt        
+    \begin{center}
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+            %Straight Lines [id:da7957062642323978] 
+            \draw    (220.57,170.29) -- (355.57,170.29) ;
+            \draw [shift={(357.57,170.29)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da31198976122474575] 
+            \draw    (231.57,177.29) -- (231.57,70.29) ;
+            \draw [shift={(231.57,68.29)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da5655592463420158] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (297.57,127.29) -- (298,169) ;
+            %Straight Lines [id:da8571495896140271] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (316.57,96.29) -- (317,170) ;
+            %Straight Lines [id:da505677150137505] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (232,97) -- (316.57,96.29) ;
+            %Straight Lines [id:da9798041145850536] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (231,128) -- (297.57,127.29) ;
+            %Curve Lines [id:da5109656726245018] 
+            \draw    (232,169) .. controls (303,147) and (309,115) .. (323,62) ;
+            % Text Node
+            \draw (226,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            % Text Node
+            \draw (354,173) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            % Text Node
+            \draw (212,169) node [anchor=north west][inner sep=0.75pt]  [font=\large] [align=left] {$\displaystyle O$};
+            % Text Node
+            \draw (291.07,173.29) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle x_{1}$};
+            % Text Node
+            \draw (319,173) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle x_{2}$};
+            % Text Node
+            \draw (212,120) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y_{1}$};
+            % Text Node
+            \draw (212,86) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y_{2}$};
+        \end{tikzpicture}
+    \end{center}
+\end{criterion}
+\begin{criterion}{接上}{}
+    若给定$x_1$和$x_2$,且他们对应同一个$y$,则称“多对一”.
+    \tikzset{every picture/.style={line width=0.55pt}}
+    \begin{center}
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1,scale=0.45]
+            \draw  (50,212.81) -- (407.86,212.81)(85.79,53) -- (85.79,230.57) (400.86,207.81) -- (407.86,212.81) -- (400.86,217.81) (80.79,60) -- (85.79,53) -- (90.79,60)  ;
+            \draw   (112,213) .. controls (171.95,37.76) and (231.9,37.76) .. (291.86,213) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (85.86,120.57) -- (249.86,121.57) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (152.86,122.57) -- (152.86,212.57) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (249.86,121.57) -- (249.86,211.57) ;
+            \draw (93,38) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (143,217) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+            \draw (241,218) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+            \draw (396,220) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (66,215) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (70,109) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+        \end{tikzpicture}
+    \end{center}
+    所以\textbf{函数可以一对一,也可以多对一,统称为单值函数}.
+    \begin{center}
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+            %Straight Lines [id:da7957062642323978] 
+            \draw    (220.57,170.29) -- (355.57,170.29) ;
+            \draw [shift={(357.57,170.29)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da31198976122474575] 
+            \draw    (231.57,177.29) -- (231.57,70.29) ;
+            \draw [shift={(231.57,68.29)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+            %Straight Lines [id:da5655592463420158] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (260.57,95.29) -- (261,169) ;
+            %Straight Lines [id:da8571495896140271] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (259,156) -- (233,157) ;
+            %Straight Lines [id:da9798041145850536] 
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (231,96) -- (260.57,95.29) ;
+            %Shape: Parabola [id:dp09151495358584594] 
+            \draw   (233,167) .. controls (314.65,138.69) and (314.38,111.2) .. (232.18,84.52) ;
+            % Text Node
+            \draw (226,45) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            % Text Node
+            \draw (354,173) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            % Text Node
+            \draw (212,169) node [anchor=north west][inner sep=0.75pt]  [font=\large] [align=left] {$\displaystyle O$};
+            % Text Node
+            \draw (253.07,174.29) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle x_{1}$};
+            % Text Node
+            \draw (213,141) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y_{1}$};
+            % Text Node
+            \draw (212,86) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y_{2}$};
+        \end{tikzpicture}
+    \end{center}
+    但是,如果一个$x$对应一个$y_1$,同时对应另一个$y_2$,也就是一对多,这叫做多值函数.(高等数学中研究对象主要是单值函数)\footnote{多值函数是不是函数取决于对于函数的定义。可以说狭义的函数特指单值函数,但是广义的函数既包含单值函数,也包含多值函数。}
+\end{criterion}
+\subsection{函数的表示}
+\subsubsection{表格}
+\begin{table}[H]
+    \begin{center}
+        \begin{tabular}{|l|l|l|l|l|l|l|}
+            \hline
+            $x$    & $ 1$ & $2$ & $3$ & $4$ & $5$  & $6$  \\ \hline
+            $y=2x$ & $2$  & $4$ & $6$ & $8$ & $10$ & $12$ \\ \hline
+        \end{tabular}
+    \end{center}
+\end{table}
+\subsubsection{图像}
+\begin{figure}[H]
+    \centering \includegraphics[width=
+        0.6 \linewidth]{1.3.3.eps} \caption{对数函数图像}
+\end{figure}
+\subsubsection{解析式}
+$$
+    \boxed{y=2x}
+$$
