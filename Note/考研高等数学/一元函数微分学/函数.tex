@@ -3,7 +3,6 @@
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
-    % \input{../config/cover}
     \else
     \fi
     %  ############################ 正文部分
@@ -37,20 +36,6 @@
     \begin{defn}{反函数定义}{}
         设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
     \end{defn}
-    \begin{criterion}{解释}{}
-        以函数$y=2x+1$为例:
-        \begin{table}[H]
-            \begin{center}
-                \begin{tabular}{|l|l|l|}
-                    \hline
-                    $y=2x+1$          & \begin{tabular}[c]{@{}l@{}}自变量:x:{[}1,2{]}\\ 因变量:y:{[}3,5{]}\end{tabular} &                                                 \\ \hline
-                    $x=\frac{y-1}{2}$ & \begin{tabular}[c]{@{}l@{}}自变量:y:{[}3,5{]}\\ 因变量:x:{[}1,2{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}变量\\ 改变\end{tabular} \\ \hline
-                    $y=\frac{x-1}{2}$ & \begin{tabular}[c]{@{}l@{}}自变量:x:{[}3,5{]}\\ 因变量:y:{[}1,2{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}方程\\ 改变\end{tabular} \\ \hline
-                \end{tabular}
-            \end{center}
-        \end{table}
-    \end{criterion}
-
     \begin{defn}{反函数的性质}{}
         \begin{itemize}
             \item $f^{-1}f(x)=x$
@@ -61,9 +46,48 @@
                       \label{xxx1}
                   \end{figure}
             \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.
-            \item \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}\footnote{这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.}.
         \end{itemize}
     \end{defn}
+    \begin{criterion}{关于反函数图像和$x,y$值转换的问题}{}
+        \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}\footnote{这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.}.
+        以函数$y=2x+1$为例:
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                \draw  (182.59,210.43) -- (373.59,210.43)(208.14,82.43) -- (208.14,245) (366.59,205.43) -- (373.59,210.43) -- (366.59,215.43) (203.14,89.43) -- (208.14,82.43) -- (213.14,89.43) (228.14,205.43) -- (228.14,215.43)(248.14,205.43) -- (248.14,215.43)(268.14,205.43) -- (268.14,215.43)(288.14,205.43) -- (288.14,215.43)(308.14,205.43) -- (308.14,215.43)(328.14,205.43) -- (328.14,215.43)(348.14,205.43) -- (348.14,215.43)(188.14,205.43) -- (188.14,215.43)(203.14,190.43) -- (213.14,190.43)(203.14,170.43) -- (213.14,170.43)(203.14,150.43) -- (213.14,150.43)(203.14,130.43) -- (213.14,130.43)(203.14,110.43) -- (213.14,110.43)(203.14,230.43) -- (213.14,230.43) ;
+                \draw   ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (205.57,153.21) -- (228.64,152.93) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (228.64,152.93) -- (228.14,210.43) ;
+                \draw    (249.14,95.43) -- (208.14,210.43) ;
+                \draw (204,59) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (380.08,201.96) node [anchor=north west][inner sep=0.75pt]  [rotate=-0.51] [align=left] {$\displaystyle x$};
+                \draw (213,218) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \varphi ( y)$};
+                \draw (191,141) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \end{tikzpicture}
+        \end{center}
+        原函数为$y=2x+1$,其中自变量为$x$,定义域为$[1,2]$,因变量$y$,值域为$[3,5]$.\\
+        如上图所示$x=f^{-1}(y)$中自变量为$y$,定义域为$[3,5]$,因变量$x$,值域为$[1,2]\footnote{此时仅发生了变量改变，$x=f^{-1}(y)$和$y=f(x)$图像在同一坐标轴中}$.\\
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+                %Shape: Axis 2D [id:dp3683500595420659] 
+                \draw  (188.22,210.43) -- (337.19,210.43)(208.14,125.17) -- (208.14,233.46) (330.19,205.43) -- (337.19,210.43) -- (330.19,215.43) (203.14,132.17) -- (208.14,125.17) -- (213.14,132.17) (228.14,205.43) -- (228.14,215.43)(248.14,205.43) -- (248.14,215.43)(268.14,205.43) -- (268.14,215.43)(288.14,205.43) -- (288.14,215.43)(308.14,205.43) -- (308.14,215.43)(203.14,190.43) -- (213.14,190.43)(203.14,170.43) -- (213.14,170.43)(203.14,150.43) -- (213.14,150.43) ;
+                \draw   ;
+                %Straight Lines [id:da3729532890775762] 
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (276.57,188.71) -- (277.57,213.71) ;
+                %Straight Lines [id:da7981448339387538] 
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (276.57,188.71) -- (209.14,189.43) ;
+                %Straight Lines [id:da9335082876230565] 
+                \draw    (307.57,179.71) -- (208.14,210.43) ;
+                \draw (205,100) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (346.08,200.96) node [anchor=north west][inner sep=0.75pt]  [rotate=-0.51] [align=left] {$\displaystyle x$};
+                \draw (193,177) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (273,222) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \end{tikzpicture}
+        \end{center}
+        最终化为$y=f^{-1}(x)$，其中自变量为$x$,定义域为$[3,5]$,因变量$y$,值域为$[1,2]$.\\
+    \end{criterion}
     \begin{problem}
     求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
     \end{problem}
