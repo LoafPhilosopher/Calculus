@@ -329,6 +329,13 @@
     前三个定义解释:$\lim \frac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \frac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\frac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
 
     同时需要注意的是,\textbf{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在,其值为$\infty$和$0$。
+    \subsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中，会对上述高阶无穷小的运算提出要求}
+    设$m,n$为无穷小，则
+    \begin{itemize}
+        \item[1.] $o(x^{m})\pm o(x^{n})=o(x^{l}),l=\min\{m,n\}$
+        \item[2.] $o(x^{m})\bullet o(x^{n})=o(x^{m+n}),x^{m}\bullet o(x^{n})=o(x^{m+n})$
+        \item[3.] $o(x^{m})=o(kx^{m})=k\bullet o(x^{m}),k \neq 0$
+    \end{itemize}
     \subsection{无穷大}
     \begin{defn}{无穷大的定义}{}
         设函数$f(x)$在$x_0$的某一去心邻域内有定义(或$|x|$大于来一正数时有定义).如果对于任意给定的正数$M$(不论它多么大),总存在正数$\delta$(或数$X$),只要$x$适合不等式$0<|x-x_0|<\delta$(或$|x|>X$),对应的函数值$f(x)$总满足不等式
@@ -394,11 +401,18 @@
         \end{itemize}
         则$\lim_{x\to x_{0}}\frac{f(x)}{g(x)}=\lim_{x\to x_{0}}\frac{f^{'}(x)}{g^{'}(x)}$
     \end{defn}
-    需要注意的是使用过洛必达法则之后的极限必须存在,即$\lim _{x \to x_0}\frac{f'(x)}{g'(x)}$ 必须存在.
-    \begin{proof}
-        以$\lim _{x \to 0}=\frac{x^2-\sin \frac{1}{x}}{\sin x}=\frac{2x\sin \frac{1}{x}-\cos\frac{1}{x}}{\cos x}$为例,可以看到此时结果是震荡的,因此函数极限不存在,但是显然是错误的.正确的方法是这样的$\lim _{x \to x_0}=\frac{x^2-\sin \frac{1}{x}}{x}=x\sin \frac{1}{x}$
-    \end{proof}
+    \textbf{需要注意的是使用过洛必达法则之后的极限必须存在,即$\lim _{x \to x_0}\frac{f'(x)}{g'(x)}$ 必须存在.}
+    \begin{problem}
+    求$\lim _{x \to 0}\frac{x^2 \times \sin \frac{1}{x}}{\sin x}$
+    \end{problem}
+    \begin{solution}
+        该函数也是$\frac{0}{0}$型，但是如果使用洛必达法则，则$2x \times \sin \frac{1}{x}-\cos \frac{1}{x}$,极限显然不存在，因此不可以使用洛必达法则。则正确求法为$\lim _{x\to 0}\frac{x^2\times \sin \frac{1}{x}}{x}=\lim_{x\to 0}x\times\sin\frac{1}{x}=0$.
+    \end{solution}
     \subsection{泰勒公式}
+    设$f(x)$在点$x=0$处$n$阶可导\footnote{泰勒公式是在一点处展开,函数必须在那一点处n阶导数存在},则存在$x=0$的一个邻域，对于该领域内的任一点$x$,有:
+    $$
+        f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n)}(0)}{n!}x^n+o(x^n)
+    $$
     当$x\to 0$时,有以下结论
     \begin{align*}
         \boxed{\begin{aligned}
@@ -408,50 +422,12 @@
                         & \mathrm{e}^{x} =1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
                    \end{aligned}}
     \end{align*}
-    \begin{criterion}{泰勒公式使用注意事项}{}
+    \begin{criterion}{泰勒公式应用时的展开原则}{}
         \begin{itemize}
-            \item 泰勒公式是在一点处展开,函数必须在那一点处n阶倒数存在
-            \item 分子分母上下同阶
+            \item $\frac{A}{B}$型，适用于"上下同阶"原则:具体来说，如果分母或者分子是$x$的$k$次幂，则应把分子或分母展开到$x$的$k$次幂。如:$\lim_{x\to0}\frac{x-\ln(1+x)}{x^{2}}$，此处$\ln(1+x)$应展开为$x-\frac{x^2}{2}+o(x^2)$
+            \item $A-B$型,适用"幂次最低"原则:将$A,B$分别展开到他们系数不相等的$x$的最低次幂为止。如:已知当$x\to0$时，$\cos x-e^{\frac{x^2}2}$与$ax^b$为等价无穷小,求$a,b$.则应展开为$\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4),\mathrm{e}^{-\frac{x^2}{2}}=1-\frac{x^2}{2}+\frac{1}{2!}\frac{x^4}{4}+o(x^4).$
         \end{itemize}
     \end{criterion}
-
-    \subsection{夹逼准则}
-    \begin{them}{数列极限存在准则}{}
-        如果数列$\{|x_n|\},\{y_n\}$及$\{z_n\}$满足下列条件:
-        \begin{itemize}
-            \item 从某项开始,即$\exists n_0 \in N_+(\text{即}n \to \infty),$当$n>n_0$时,有
-                  $$
-                      y_n \leqslant x_n \leqslant z_n
-                  $$
-            \item $\lim_{n\to\infty}y_{n}=a,\operatorname*{lim}_{n\to\infty}z_{n}=a$
-        \end{itemize}
-        那么数列$\{ x_n \}$的极限存在,且$\lim_{n\to\infty}x_{n}=a$
-    \end{them}
-    现在将上述数列极限存在准则推广至函数极限
-    \begin{them}{函数极限存在准则}{}
-        如果
-        \begin{itemize}
-            \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
-                  $$
-                      g(x)\leqslant f(x) \leqslant h(x)
-                  $$
-            \item $\lim_{x\to x_0(x\to\infty)}g(x)=A,\lim_{x\to x_0(x\to\infty)}h(x)=A$
-        \end{itemize}
-        那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
-    \end{them}
-    定理2.4.1和定理2.4.2称为\textbf{夹逼准则}
-    \subsection{\textcolor{red}{单调有界准则}}
-    \begin{them}{数列的单调有界准则}{}
-        单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
-    \end{them}
-    \begin{them}{函数的单调有界准则}{}
-        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
-    \end{them}
-    \subsection{柯西极限存在准则}
-    该准则表示,数列${x_n}$收敛的\textbf{充分必要条件}是：该数列中的元素随着序数的增加而愈发靠近,即足够靠后的任意两项都无限接近.
-    $$
-        \forall \varepsilon >0 ,\exists N \in N^+,\text{当}m>N,n>N\text{时}.\text{总有}|x_n-x_m|<\varepsilon
-    $$
     \subsection{极限存在准则的两个应用(两个重要极限)}
     $$
         \lim _ { \square \rightarrow \infty } ( 1 + \frac { 1 } { \square } ) ^ { \square } = e
@@ -461,74 +437,73 @@
         \lim _ { \square \rightarrow 0 } \frac { \sin \square } { \square } = 1
     $$
 
-    \subsection{数列极限的运算法则}
-    设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
+    \subsection{夹逼准则}
+    \begin{defn}{函数极限存在准则}{}
+        如果
+        \begin{itemize}
+            \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
+                  $$
+                      g(x)\leqslant f(x) \leqslant h(x)
+                  $$
+            \item $\lim_{x\to x_0(x\to\infty)}g(x)=A,\lim_{x\to x_0(x\to\infty)}h(x)=A$
+        \end{itemize}
+        那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
+    \end{defn}
     \begin{itemize}
-        \item $\operatorname*{lim}_{n\to\infty}(x_n\pm y_n)=a\pm b$
-        \item $\lim_{n\to\infty}x_{n}y_{n}=ab$
-        \item 若$b \neq 0,y_n \neq 0$,则$\lim_{n\to\infty}\frac{x_n}{y_n}=\frac{a}{b}$
+        \item 夹逼准则处主要通过放缩来求极限
+        \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
     \end{itemize}
-    上述运算规则可推广至有限个数列的情况
+    \subsection{\textcolor{red}{单调有界准则}}
+    \begin{defn}{函数的单调有界准则}{}
+        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
+    \end{defn}
+
     \subsection{函数极限的运算法则}
-    \begin{them}{}{}
+    \begin{defn}{}{}
         如果$\varphi(x)\geqslant\psi(x)$,而 $\lim\varphi(x)=A$, $lim \psi(x)=B$ ,那么 $A\geqslant B$
-    \end{them}
-    \begin{them}{复合函数极限运算法则}{}
+    \end{defn}
+    \begin{defn}{复合函数极限运算法则}{}
         设函数$y=f[g(x)]$是由函数$u=g(x)$与函数$y=f(u)$复合而成，$f[g(x)]$在点$x_0$的某去心领域内有定义，若$\lim_{x \to  x_0} g(x)=u_0$,$\lim_{u \to u_0}f(u)=A$,且存在$\delta_0 >0$,当$x\in\mathring{U}\left(x_{0},\delta_{0}\right)$时，有$g\left(x\right)\neq u_{0}$,则
         $$
             \underset{x\to x_0}{\operatorname*{lim}}f[g(x)]=\underset{u\to u_0}{\operatorname*{lim}}f(u)=A.
         $$
-    \end{them}
-
-
-    \begin{lemma}{常用的结论}{}
+    \end{defn}
+    \begin{criterion}{常用的结论}{}
         \begin{itemize}
             \item $\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$
             \item $\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
         \end{itemize}
-    \end{lemma}
-    \subsection{函数极限的计算}
-    \subsubsection{无穷大与无穷小的关系}
-    根据定理1.3.2可以用于函数极限的计算
-    \subsubsection{单调有界准则}
-    前面已经赘述
-    \begin{them}{数列的单调有界准则}{}
-        单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
-    \end{them}
-
-    \begin{them}{函数的单调有界准则}{}
-        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
-    \end{them}
-    \subsubsection{等价无穷小替代}
+    \end{criterion}
+    \subsection{等价无穷小替代}
     关于等价无穷小,有以下两个定理
-    \begin{them}{}{}
+    \begin{defn}{}{}
         $\beta$与$\alpha$是等价无穷小的充分必要条件为
         $$
             \beta=\alpha + o(\alpha)
         $$
-    \end{them}
+    \end{defn}
 
-    \begin{them}{}{}
+    \begin{defn}{}{}
         设$\alpha\sim\widetilde{\alpha}$,$\beta\sim\widetilde{\beta}$,且$\lim\frac{\widetilde{\beta}}{\underset{\alpha}{\operatorname*{\sim}}}$存在,则
         $$
             \lim\frac{\beta}{\alpha}=\lim\frac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.Í
         $$
-    \end{them}
-    定理2.5.2 表明,求两个无穷小之比的极限时,分子及分母都可用等价无穷小来代替．但是需要遵循以下代换原则
-
-    \begin{itemize}
-        \item 乘除关系可以换:若$\alpha\sim\alpha_1,\beta\sim\beta_1,\text{则}\lim\frac\alpha\beta=\lim\frac{\alpha_1}\beta=\lim\frac\alpha{\beta_1}=\lim\frac{\alpha_1}{\beta_1}$
-        \item 加减关系一定条件下可以换
-              \begin{itemize}
-                  \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq1,\text{则 }\alpha-\beta\sim\alpha_{1}-\beta_{1}$
-                  \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq-1,\text{则 }\alpha+\beta\sim\alpha_{1}+\beta_{1}$
-              \end{itemize}
-    \end{itemize}
-    加减关系代换准则证明如下:
-    \begin{proof}
-        $$\lim \frac{\alpha-\beta}{\alpha_1 -\beta_1}=\lim \frac{\beta (\frac{\alpha}{\beta}-1)}{\beta_1(\frac{\alpha_1}{\beta_1}-1)}=1$$
-    \end{proof}
-    当$x \to 0$时,有
+        求两个无穷小之比的极限时,分子及分母都可用等价无穷小来代替．但是需要遵循以下代换原则\footnote{其实没有什么替换原则，本质其实是因为超实数系下不能进行实数运算，只能进行替换运算}
+        \begin{itemize}
+            \item 乘除关系可以换:若$\alpha\sim\alpha_1,\beta\sim\beta_1,\text{则}\lim\frac\alpha\beta=\lim\frac{\alpha_1}\beta=\lim\frac\alpha{\beta_1}=\lim\frac{\alpha_1}{\beta_1}$
+            \item 加减关系一定条件下可以换
+                  \begin{itemize}
+                      \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq1,\text{则 }\alpha-\beta\sim\alpha_{1}-\beta_{1}$
+                      \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq-1,\text{则 }\alpha+\beta\sim\alpha_{1}+\beta_{1}$
+                  \end{itemize}
+        \end{itemize}
+        加减关系代换准则证明如下:
+        \begin{proof}
+            $$\lim \frac{\alpha-\beta}{\alpha_1 -\beta_1}=\lim \frac{\beta (\frac{\alpha}{\beta}-1)}{\beta_1(\frac{\alpha_1}{\beta_1}-1)}=1$$
+        \end{proof}
+    \end{defn}
+    以下为常用等价无穷小
+    \\当$x \to 0$时,有
     \begin{align*} \boxed{
             \begin{aligned}
                  & x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\
@@ -566,7 +541,6 @@
             \end{aligned}
         }
     \end{align*}
-
     \begin{align*} \boxed
         {
             \begin{aligned}
@@ -574,19 +548,7 @@
             \end{aligned}
         }
     \end{align*}
-    \subsubsection{幂指函数求极限}
-    \begin{defn}{}{}
-        一般地，对于形如$u\left(x\right)^{v\left(x\right)}\left(u\left(x\right)>0,u\left(x\right)\not\equiv1\right)$的函数(通常称为幂指函数),如果
-        $$
-            \lim u\left(x\right)=a{>}0,\lim v\left(x\right)=b
-        $$
-        那么
-        $$
-            \lim u(x)^{v(x)}=a^{b}
-        $$
-    \end{defn}
-    \subsubsection{利用基本极限求极限}
-
+    \subsection{利用基本极限求极限}
     \begin{align*} \boxed
         {
             \begin{aligned}
@@ -596,14 +558,37 @@
             \end{aligned}
         }
     \end{align*}
-    \subsubsection{夹逼准则求极限}
+    \subsection{定积分求极限}
+    \subsection{七种未定式的计算}
+    \subsubsection{形如$\frac{0}{0}$,$\frac{\infty}{\infty}$,$0 \times \infty$}
+    \subsubsection{形如$\infty -\infty$}
+    \subsubsection{形如$\infty^0,0^0$}
+    \subsubsection{形如$1^{\infty}$}
+    \section{数列极限的运算}
+    \subsection{数列极限的运算法则}
+    设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
     \begin{itemize}
-        \item 主要通过放缩来求极限
-        \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
+        \item $\operatorname*{lim}_{n\to\infty}(x_n\pm y_n)=a\pm b$
+        \item $\lim_{n\to\infty}x_{n}y_{n}=ab$
+        \item 若$b \neq 0,y_n \neq 0$,则$\lim_{n\to\infty}\frac{x_n}{y_n}=\frac{a}{b}$
     \end{itemize}
-
-    \subsubsection{定积分求极限}
-
+    上述运算规则可推广至有限个数列的情况
+    \subsection{夹逼准则}
+    \begin{them}{数列极限存在准则}{}
+        如果数列$\{|x_n|\},\{y_n\}$及$\{z_n\}$满足下列条件:
+        \begin{itemize}
+            \item 从某项开始,即$\exists n_0 \in N_+(\text{即}n \to \infty),$当$n>n_0$时,有
+                  $$
+                      y_n \leqslant x_n \leqslant z_n
+                  $$
+            \item $\lim_{n\to\infty}y_{n}=a,\operatorname*{lim}_{n\to\infty}z_{n}=a$
+        \end{itemize}
+        那么数列$\{ x_n \}$的极限存在,且$\lim_{n\to\infty}x_{n}=a$
+    \end{them}
+    \subsection{\textcolor{red}{单调有界准则}}
+    \begin{them}{数列的单调有界准则}{}
+        单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
+    \end{them}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}
