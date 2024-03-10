@@ -1,71 +1,30 @@
 \ifx\allfiles\undefined
-\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook} 
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
-
     % \input{../config/cover} 
     \else
     \fi
     %  ############################ 正文部分
     \chapter{连续}
-
     \section{函数的连续性}
-    连续函数是一条连续而不间断的曲线,以下为函数连续的两个定义
-    \begin{defn}{}{}
+    \begin{defn}{连续点的定义}{}
         设函数$y=f(x)$在点$x_0$的某一邻域内有定义,如果
         $$
-            \lim_{\Delta x\to0}\Delta y=\lim_{\Delta x\to0}\big[f\big(x_{0}+\Delta x\big)-f\big(x_{0}\big)\big]=0
+            \lim_{x\to x_0}f(x)=f(x_0)
         $$
         那就称为函数$y=f(x)$在点$x_0$连续.
     \end{defn}
-    \begin{defn}{}{}
-        设函数$y=f(x)$在点$x_0$的某一邻域有定义,如果
-        $$
-            \underset{x\to x_0}{\operatorname*{lim}}f(x)=f(x_0)
-        $$
-        那么就称函数$f(x)$在点$x_0$连续
-        其$\varepsilon - \delta $语言表达如下:\\
-        $f(x)\text{ 在点 }x_0\text{连续}\Leftrightarrow\forall\boldsymbol{\varepsilon}>0,\exists\delta>0,\text{当}|x-x_0|<\delta\text{ 时 },\text{有}|f(x)-f(x_0)|<\varepsilon $
-    \end{defn}
-    \subsection{反函数与复合函数的连续性}
-    \begin{defn}{}{}
-        如果函数$y=f(x)$在区间$I_x$上单调增加(或单调减少)且连续那么它的反函数 $x=f^{-1}(y)$也在对应的区间$I_{y}=\{\text{ y | y = }f(x),x\in I_{x}\}$上单调增加(或单调减少)且连续
-    \end{defn}
-    \begin{defn}{}{}
-        设函数$y=f\Big[g(x)\Big]$由函数$u=g(x)$与函数 $y=f(u)$复合而成$\stackrel{\circ}{U}(x_0)\subset D_{f,g}$.若$\lim_{x\to x_0}g(x)=u_0$,而函数 $y=f(u)$在$u=u_0$连续,则
-        $$\operatorname*{lim}_{x\to x_0}f\Big[g(x)\Big]=\operatorname*{lim}_{u\to u_0}f(u)=f(u_0)$$
-    \end{defn}
-    \subsection{初等函数的连续性}
-    \begin{defn}{}{}
+    \begin{criterion}{}{}
         \begin{itemize}
-            \item 基本初等函数在其定义域内都连续
-            \item 初等函数在其定义区间内都连续
+            \item 当极限需要讨论时：$\lim_{x\to x_0^+}f\left(x\right)=\lim_{x\to x_0^-}f\left(x\right)=f\left(x_{0}\right)\Leftrightarrow f\left(x\right)$在点$x_{0}$处连续
+            \item 连续性的四则运算:设$f(x)$与$g(x)$都在点$x=x_0$处连续，则$f(x)\pm g(x)$与$f(x)g(x)$在点$x=x_{0}$处连续，当$g(x_0)\neq0$ 时，$f(x)/g(x)$在点$x=x_{0}$处也连续。
+            \item 复合函数的连续性:设$u=\varphi(x)$在点$x=x_0$处连续，$y=f(u)$在点$u=u_0$处连续，且$u_{0}=\varphi(x_{0})$,则$f\left[\varphi(x)\right]$在点$x=x_{0}$处连续。
+            \item 反函数的连续性:设$y=f(x)$在区间$I_x$上单调且连续，则反函数$x=\varphi(y)$在对应的区间 $I_{y}=\{y|y=f(x),x\in I_{x}\}$ 上连续且有相同的单调性
+            \item \textbf{$f(x)$在点$x=x_0$处连续，且$f(x_0)>0$(或$f(x_0)<0$),则存在$\delta>0$,使得当$|x-x_0|<\delta$时 $f\left(x\right)>0\left(\text{或}f\left(x\right)<0\right).$ }
         \end{itemize}
-    \end{defn}
-    \subsection{闭区间上连续函数的性质}
-
-    \subsubsection{有界性与最大值最小值定理}
-    \begin{defn}{最值定理}{}
-        在闭区间上连续的函数在该区间上有界且一定能取得它的最大值和最 小值
-    \end{defn}
-    % 3.1.1
-    \subsubsection{零点定理与介值定理}
-    % 3.1.2
-    \begin{defn}{零点定理}{}
-        设函数$f(x)$在闭区间$\left[\begin{array}{c}a,b\end{array}\right]$上连续,且$f(\begin{array}{c}a\end{array})$与$f(\begin{array}{c}b\end{array})$ 异号(即$f(\begin{array}{c}a\end{array})\cdot f(\textit{ b )<}0)$,则在开区间$(a,b)$内至少有一点$\xi$,使$f(\xi)=0$.
-    \end{defn}
-    \begin{defn}{介值定理}{}
-        设函数$f(x)$在闭区间$[a,b]$上连续,且在这区间的端点取不同的函数值,
-        $$
-            f(a)=A \text{及} f(b)=B
-        $$
-        则对于$A$与$B$之间的任意一个数$C$,在开区间$(a,b)$内至少存在一点$\xi$,使得
-        $$
-            f(\xi) =C (a< \xi <b)
-        $$
-    \end{defn}
-    该定理的几何意义是:连续曲线弧$y=f(x)$与水平直线$y=C$至少存在相交于一点.
+    \end{criterion}
     \section{函数的间断点}
     \subsection{间断点的相关概念}
     \begin{itemize}
@@ -74,7 +33,7 @@
                   \centering \includegraphics[width=
                       0.4 \linewidth]{3.2.1.eps} \caption{可去间断点函数图像}
               \end{figure}
-        \item 跳跃间断点:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
+        \item 跳跃间断点\footnote{一点极限存在\neq f(x)在$x_0$连续}:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
               \begin{figure}[H]
                   \centering \includegraphics[width=
                       0.4 \linewidth]{3.2.2.eps} \caption{跳跃间断点函数图像}
