@@ -7,6 +7,32 @@
     \fi
     %  ############################ 正文部分
     \chapter{函数}
+    \section{数列}
+    \subsection{等差数列}
+    首项为$a_1$,公差为$d(d \neq 0)$的数列 $a_1,a_1+d,a_1+2d,\cdots,a_1+(n-1)d,\cdots$.
+    \begin{criterion}{等差数列相关性质}{}
+        \begin{itemize}
+            \item 通项公式$a_n=a_1+(n-1)d$
+            \item 前$n$项的和$S_n=\frac{n}{2}[2a_1+(n-1)d]=\frac{n}{2}(a_1+a_n)$
+        \end{itemize}
+    \end{criterion}
+    \subsection{等比数列}
+    首项为$a_1$,公比为$r(r \neq 0)$的数列$a_1,a_1r,a_2r^2,...,a_1r^{n-1},...$
+    \begin{criterion}{等比数列相关性质}{}
+        \begin{itemize}
+            \item 通项公式$a_n=a_1r^{n-1}$
+            \item 前$n$项的和$S_{n}=\left\{\begin{matrix}{na_{1},}&{r=1,}\\{\frac{a_{1}\left(1-r^{n}\right)}{1-r},}&{r\neq1.}\\\end{matrix}\right.$
+            \item $1+r+r^2+\cdots+r^{n-1}=\frac{1-r^n}{1-r}(r\neq1).$
+        \end{itemize}
+    \end{criterion}
+    \subsection{常见数列前$n$项和}
+    \begin{center}
+        \boxed{\begin{aligned}
+                 & \sum_{k=1}^nk=1+2+3+\cdots+n=\frac{n(n+1)}{2}.                                                                                 \\
+                 & \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{n(n+1)\left(2n+1\right)}{6}.                                          \\
+                 & \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{1}{1\times2}+\frac{1}{2\times3}+\frac{1}{3\times4}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}.
+            \end{aligned}}
+    \end{center}
     \section{函数的基本概念与特性}
     \subsection{函数的概念}
     \begin{defn}{函数定义}{}
@@ -234,6 +260,7 @@
     \end{criterion}
     \begin{problem}
     设$f(x)$连续且为奇函数,则下列函数中必为偶函数的为\\
+            % //TODO
     (A) $\int_0 ^x du \int _0 ^u t f(t) dt$ \qquad \qquad (B)$\int_a ^x du \int _0 ^u f(t)dt$\\
     (C) $\int _a ^x du \int _0 ^u tf(t)dt$  \qquad \qquad (D) $\int_0 ^x du \int _a ^u f(t) dt$
     \end{problem}
@@ -595,36 +622,6 @@
         \right.
     $$
     \section{常用函数知识}
-
-    \subsection{数列}
-    \subsubsection{等差数列}
-    首项为$a_1$,公差为$d(d \neq 0)$的数列 $a_1,a_1+d,a_1+2d,\cdots,a_1+(n-1)d,\cdots$.
-
-    \begin{criterion}{等差数列相关性质}{}
-        \begin{itemize}
-            \item 通项公式$a_n=a_1+(n-1)d$
-            \item 前$n$项的和$S_n=\frac{n}{2}[2a_1+(n-1)d]=\frac{n}{2}(a_1+a_n)$
-        \end{itemize}
-    \end{criterion}
-
-    \subsubsection{等比数列}
-    首项为$a_1$,公比为$r(r \neq 0)$的数列$a_1,a_1r,a_2r^2,...,a_1r^{n-1},...$
-    \begin{criterion}{等比数列相关性质}{}
-        \begin{itemize}
-            \item 通项公式$a_n=a_1r^{n-1}$
-            \item 前$n$项的和$S_{n}=\left\{\begin{matrix}{na_{1},}&{r=1,}\\{\frac{a_{1}\left(1-r^{n}\right)}{1-r},}&{r\neq1.}\\\end{matrix}\right.$
-            \item $1+r+r^2+\cdots+r^{n-1}=\frac{1-r^n}{1-r}(r\neq1).$
-        \end{itemize}
-    \end{criterion}
-    \subsubsection{常见数列前$n$项和}
-    \begin{center}
-        \boxed{\begin{aligned}
-                 & \sum_{k=1}^nk=1+2+3+\cdots+n=\frac{n(n+1)}{2}.                                                                                 \\
-                 & \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{n(n+1)\left(2n+1\right)}{6}.                                          \\
-                 & \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{1}{1\times2}+\frac{1}{2\times3}+\frac{1}{3\times4}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}.
-            \end{aligned}}
-    \end{center}
-
     \subsection{三角函数}
     \subsubsection{三角函数基本关系}
     \begin{center}
@@ -744,47 +741,6 @@
         \item $(2n-1)!!  =1\cdot3\cdot5\cdot\cdot\cdot(2n-1)$
     \end{itemize}
     \subsection{常用不等式}
-    \begin{enumerate}
-        \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$
-              \begin{criterion}{}{}
-                  可以将第一个式子推广为:\\
-                  离散情况:设$a_1,a_2,...,a_n$为实数,则$|a_1\pm a_2\pm\cdotp\cdotp\cdotp \pm a_n|\leqslant|a_1|+|a_2|+\cdotp\cdotp\cdotp+|a_n|$\\
-                  连续情况:设$f(x)$在$[a,b](a<b)$上可积,则$\left|\int_a^bf\left(x\right)\mathrm{d}x\right|\leqslant\int_a^b\big|f(x)\big|\mathrm{d}x$
-              \end{criterion}
-        \item $\sqrt{ab}{\leqslant}\frac{a+b}{2}{\leqslant}\sqrt{\frac{a^{2}+b^{2}}{2}}(a,b{>}0)$
-              \begin{criterion}{}{}
-                  还有一个不等式是$|ab|\leqslant \frac{a^2+b^2}{2}$
-              \end{criterion}
-        \item $\sqrt[3]{abc}\leqslant\frac{a+b+c}3\leqslant\sqrt{\frac{a^2+b^2+c^2}3}(a,b,c>0)$
-        \item $\text{设 }a>b>0,\text{则}\left\{\begin{aligned}&\text{当 }n>0\text{ 时 },a^n>b^n,\\&\text{当 }n<0\text{ 时 },a^n<b^n.\end{aligned}\right.$
-        \item $\text{若 }0<a<x<b,0<c<y<d,\text{则}\frac{c}{b}<\frac{y}{x}<\frac{d}{a}.$
-              \begin{criterion}{}{}
-                  $\text{当 }n\pi<x<(n+1)\pi,2n<S(x)<2(n+1)\text{时 },\frac{2n}{(n+1)\pi}<\frac{S(x)}{x}<\frac{2(n+1)}{n\pi}.$
-              \end{criterion}
-        \item $\sin x<x<\tan x\left(0<x<\frac{\pi}{2}\right)$
-        \item $\sin x < x(x>0)$
-              \begin{criterion}{}{}
-                  当$x_n>0$时,$x_{n+1}=\sin x_n <x_n$,故${x_n}$单调减少
-              \end{criterion}
-        \item $\arctan x{\leqslant}x{\leqslant}\arcsin x(0{\leqslant}x{\leqslant}1)$
-        \item $e^x \geqslant  x+1 (\forall x)$
-              \begin{criterion}{}{}
-                  $\text{当 }x_{n+1}=\mathrm{e}^{x_n}-1\text{ 时 ,由 }\mathrm{e}^{x_n}-1\geqslant x_n,\text{得 }x_{n+1}\geqslant x_n,\text{即} \{x_n\} \text{单调不减}$
-              \end{criterion}
-        \item $x-1 \geqslant \ln x(x>0)$
-              \begin{criterion}{}{}
-                  $\text{当 }x_{n}>0\text{时,若 }x_{n+1}=\ln x_{n}+1,\text{由}\ln x_{n}+1\leqslant x_{n},\text{得 }x_{n+1}\leqslant x_{n},\text{即}\{ x_{n}\} \text{单调不增}$
-              \end{criterion}
-        \item $\frac{1}{1+x}<\ln(1+\frac{1}{x})<\frac{1}{x}(x>0)$
-              \begin{criterion}{}{}
-                  令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有
-                  $$
-                      \ln\left(1+\frac{1}{x}\right)=\ln(1+x)-\ln x=\frac{1}{\xi}
-                  $$
-                  其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\frac{1}{1+x}<\ln\left(1+\frac{1}{x}\right)=\frac{1}{\xi}<\frac{1}{x}$
-              \end{criterion}
-        \item 在处理如下数列时,可以在前面加一个减项,如$(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})$,可化为$(1-\frac{1}{4})(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})*\frac{4}{3}$
-    \end{enumerate}
     \subsection{绝对值等式}
     $$\varphi(x)=\operatorname*{max}\left\{f(x),g(x)\right\}=\frac{1}{2}[f(x)+g(x)+|f(x)-g(x)|]$$
     $$\quad\psi(x)=\operatorname*{min}\left\{f(x),g(x) \right\}=\frac{1}{2}[f(x)+g(x)-|f(x)-g(x)|]$$

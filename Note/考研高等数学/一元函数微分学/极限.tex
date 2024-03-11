@@ -15,28 +15,29 @@
         $$
             \lim_{n\to\infty}x_n=a\text{ 或 }x_n\to a(n\to\infty).
         $$
-        该定义的$\varepsilon-N$语言描述是\\
+        该定义的$\varepsilon-N$\footnote{$\varepsilon - N$\textbf{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}}语言描述是
+        \\
         $$\lim_{n\to\infty}x_n=a\Leftrightarrow\forall\varepsilon>0,\exists\text{正整数}N,\text{当}n>N\text{时},\text{有}|x_n,-a|<\varepsilon.$$
-        其中$\forall\varepsilon>0$是白给的信息,随便写.$\exists\text{正整数}N$是关键.因为第二句话说的是一定存在正整数N,你怎么才能够证明存在正整数N呢?那就必须把这个正整数N给找出来，你找出来才能够证明这个N是存在的.关键第三句话叫做桥梁，桥梁什么意思?就是n大于N的时候n大于N的时候，也就意味着N趋近于无穷的过程中.在大N项之后的所有的项.最后一句话叫做突破口.,不是要去找这个N吗？你找到N才能够证明这个N是存在的,我们一般情况下就用第四句话来寻找大N.
     \end{defn}
     在上面的定义中,$\varepsilon>0$的$\varepsilon$任意性是非常重要的,只有这样才能表示出\textcolor{red}{无限接近的意义}.总存在正整数$N$,使得$n>N$这个条件用于表达$n \to \infty$的过程.
     \begin{criterion}{}{}
         \begin{itemize}
             \item 数列的极限值与数列的前有限列无关,只与后面无穷项有关
+            \item 若数列$\{a_n\}$收敛，则其任何子列$\{a_{n_k}\}$也收敛，且$\lim_{k\to\infty}a_{n_k}=\lim_{n\to\infty}a_n$\footnote{ 此条定理提供了一个判断数列发散的方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.}
             \item $\underset{n\to\infty}{\operatorname*{\lim}}x_n=a\Leftrightarrow\underset{k\to\infty}{\operatorname*{\lim}}x_{2k-1}=\underset{k\to\infty}{\operatorname*{\lim}}x_{2k}=a$
-            \item $\varepsilon - N$\textbf{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}
+            \item 关于数列$(1+\frac{1}{n})^n$的结论
+            \begin{itemize}
+                \item 单调增加
+                \item $\lim_{n\to \infty}(1+\frac{1}{n})^n=e$
+            \end{itemize}
         \end{itemize}
     \end{criterion}
-
     \begin{problem}
-    已知$x_{n}=\frac{\left(\begin{array}{c}-1\\\end{array}\right)^{n}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}}$,证明数列${x_n}$的极限是$0$
+        证明:若$\lim_{n \to \infty}a_n=A$,则$\lim_{n \to \infty}|a_n|=|A|$
     \end{problem}
-    \begin{note}
-        根据数列极限的定义可知,$\forall\varepsilon>0,\exists\text{正整数 }N,\text{当 }n{>}N\text{ 时 },\text{有}|x_{n} - 0 =\frac{\left(\begin{array}{c}-1\\\end{array}\right)^{n}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}}|<\varepsilon.$,即$x_{n}=\frac{\begin{array}{c}1\\\end{array}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}} < \varepsilon \Leftrightarrow \frac{1}{n^2}< \varepsilon \Leftrightarrow n > \frac{1}{\sqrt{\varepsilon}}$,即令$N > \frac{1}{\sqrt{\varepsilon}}$,$\frac{1}{\sqrt{\varepsilon}}$是一个确定的实数,大于它的正整数有无穷个,仍取其中一个作为$N$即可.
-    \end{note}
-    \begin{solution}
-        $\forall \varepsilon>0$,取$N=\frac{1}{\sqrt{\varepsilon}}+1$,则总有$x_{n}=\frac{\begin{array}{c}1\\\end{array}}{\left(\begin{array}{c}n+1\\\end{array}\right)^{2}} < \varepsilon \Leftrightarrow \frac{1}{n^2}< \varepsilon \Leftrightarrow n > \frac{1}{\sqrt{\varepsilon}}$,则数列${x_n}$的极限是$0$
-    \end{solution}
+    \begin{proof}
+        % //TODO
+    \end{proof}
     \subsection{收敛数列的性质}
     \subsubsection{唯一性}
     \begin{them}{}{}
@@ -44,23 +45,13 @@
     \end{them}
     \subsubsection{有界性}
     \begin{them}{}{}
-        如果数列$\{x_n\}$收敛,那么数列$\{x_n\}$一定有界.
+        如果数列$\{x_n\}$收敛,那么数列$\{x_n\}$一定有界\footnote{如果数列有界,但是不一定存在极限,如数列$(-1)^n$}.
     \end{them}
-    \begin{criterion}{}{}
-        需要注意的是,如果数列有界,但是不一定存在极限,如数列$(-1)^n$
-    \end{criterion}
     \subsubsection{保号性}
     \begin{them}{}{}
-        $\text{如果}\lim_{n\to\infty}x_n=a,\text{且}a{>}0(\text{ 或 }a{<}0),\text{那么存在正整数 }N,\text{当 }n{>}N\text{ 时 },\text{都有 }x_n{>}0\left(\text{ 或 }x_n{<}0\right)$
+        $\text{如果}\lim_{n\to\infty}x_n=a,\text{且}a{>}b(\text{ 或 }a{<}b),\text{那么存在正整数 }N,\text{当 }n{>}N\text{ 时 },\text{都有 }x_n{>}b\left(\text{ 或 }x_n{<}b\right)$\\
+        $\text{如果数列}\mid x_n\mid\text{从某项起有 }x_n\geqslant b\text{(或 }x_n\leqslant b\text{)},\text{且}\lim_{n\to\infty}x_n=a\text{ ,那么 }a\geqslant b(\text{ 或 }a\leqslant b)\footnote{其中b可以为任意实数，常考b=0的情况}.$
     \end{them}
-    \begin{corollary}{}{}
-        $\text{如果数列}\mid x_n\mid\text{从某项起有 }x_n\geqslant0\text{(或 }x_n\leqslant0\text{)},\text{且}\lim_{n\to\infty}x_n=a\text{ ,那么 }a\geqslant0(\text{ 或 }a\leqslant0).$
-    \end{corollary}
-    \subsubsection{收敛数列与其子数列之间的关系}
-    如果数列${x_n}$收敛于$a$,那么它的任一子数列也收敛,且极限也是$a$
-    \begin{criterion}{}{}
-        需要注意的是,证明数列极限存在一般通过证明数列有界并且单调,证明有界则一般通过放缩法.但是证明数列发散则一般通过一下两种方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.
-    \end{criterion}
     \section{函数的极限}
     \subsection{超实数系}
     \begin{defn}{超实数系的概念}{}
@@ -263,7 +254,7 @@
     \end{corollary}
     \subsubsection{函数极限与数列极限的关系(海涅定理)}
     \begin{them}{}{}
-        $\lim_{x \to a}f(x)=L$存在的充要条件是:对属于函数$f(x)$定义域的任意数列,且$\lim_{n\to\infty}a_n=a$,$a_n$ 不等于$a$,有$\lim_{n\to\infty}f(a_n)=L$.
+        设$f(x)$在$\mathring{U}(x_0,\delta)$内有定义，则$\lim_{x\to\ x_0}f(x)=A$存在$\Leftrightarrow$对任何$\mathring{U}(x_0,\delta)$内以$x_{0}$为极限的数列$\{x_{n}\}\left(x_{n}\neq x_{0}\right)$,极限$\lim_{n\to\infty}f(x_{n})=A$存在.
     \end{them}
     把这个定理简化一下,主要意思就是
     \begin{center}
@@ -272,26 +263,134 @@
         $\text{所有的}\lim_{n\to\infty}a_n=a\text{,有}\lim_{n\to\infty}f(a_n)=L$
     \end{center}
     其不同之处在于是离散的趋近还是连续的趋近
-    \begin{figure}[H]
-        \centering \includegraphics[width=
-            0.9 \linewidth]{2.2.1.png}
-    \end{figure}
-    除此之外,$f(x)$ 和 $f(a_n)$的函数图像如下所示
-    \begin{figure}[H] \centering
-        \subfigure[函数$f(x)$图像] {
-            \includegraphics[width=0.45\columnwidth]{2.2.2.pdf}
-        }
-        \subfigure[函数$f(a_n)$图像] {
-            \includegraphics[width=0.45\columnwidth]{2.2.3.pdf}
-        }
-        \caption{$f(x)$与$f(a_n)$函数图像}
-    \end{figure}
+    \begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+%Straight Lines [id:da6830558496778245] 
+\draw    (134.57,139) -- (188.82,108.97) ;
+\draw [shift={(190.57,108)}, rotate = 151.03] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da07841724524359273] 
+\draw    (134.57,163) -- (180.92,194.87) ;
+\draw [shift={(182.57,196)}, rotate = 214.51] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Rectangle [id:dp17250072607306577] 
+\draw   (5,139) -- (134.57,139) -- (134.57,163) -- (5,163) -- cycle ;
+%Straight Lines [id:da13126401352293082] 
+\draw    (467.57,105.17) -- (405.57,105.17) ;
+\draw [shift={(403.57,105.17)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da4762701253242423] 
+\draw    (337.57,105.17) -- (401.57,105.17) ;
+\draw [shift={(403.57,105.17)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Circle [id:dp7800939808530729] 
+\draw  [color={rgb, 255:red, 10; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (400.4,105.17) .. controls (400.4,103.42) and (401.82,102) .. (403.57,102) .. controls (405.32,102) and (406.74,103.42) .. (406.74,105.17) .. controls (406.74,106.92) and (405.32,108.33) .. (403.57,108.33) .. controls (401.82,108.33) and (400.4,106.92) .. (400.4,105.17) -- cycle ;
+%Straight Lines [id:da6049113689847059] 
+\draw [line width=0.75]    (430.57,188.68) -- (415.34,188.68) ;
+\draw [shift={(413.34,188.68)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5010547943851986] 
+\draw [line width=0.75]    (395.57,188.68) -- (411.34,188.68) ;
+\draw [shift={(413.34,188.68)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp1897785859382639] 
+\draw  [color={rgb, 255:red, 10; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]  (412.49,188.68) .. controls (412.49,187.67) and (412.87,186.86) .. (413.34,186.86) .. controls (413.81,186.86) and (414.19,187.67) .. (414.19,188.68) .. controls (414.19,189.68) and (413.81,190.49) .. (413.34,190.49) .. controls (412.87,190.49) and (412.49,189.68) .. (412.49,188.68) -- cycle ;
+%Straight Lines [id:da33120845449274916] 
+\draw [line width=0.75]    (430.57,197.29) -- (415.34,197.29) ;
+\draw [shift={(413.34,197.29)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da3991756450542825] 
+\draw [line width=0.75]    (395.57,197.29) -- (411.34,197.29) ;
+\draw [shift={(413.34,197.29)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp001924895922092995] 
+\draw  [color={rgb, 255:red, 10; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]  (412.49,197.29) .. controls (412.49,196.28) and (412.87,195.47) .. (413.34,195.47) .. controls (413.81,195.47) and (414.19,196.28) .. (414.19,197.29) .. controls (414.19,198.29) and (413.81,199.11) .. (413.34,199.11) .. controls (412.87,199.11) and (412.49,198.29) .. (412.49,197.29) -- cycle ;
+%Straight Lines [id:da7910762637867215] 
+\draw [line width=0.75]    (430.57,205.9) -- (415.34,205.9) ;
+\draw [shift={(413.34,205.9)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da07718430145157917] 
+\draw [line width=0.75]    (395.57,205.9) -- (411.34,205.9) ;
+\draw [shift={(413.34,205.9)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp4577405063604876] 
+\draw  [color={rgb, 255:red, 10; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]  (412.49,205.9) .. controls (412.49,204.9) and (412.87,204.08) .. (413.34,204.08) .. controls (413.81,204.08) and (414.19,204.9) .. (414.19,205.9) .. controls (414.19,206.91) and (413.81,207.72) .. (413.34,207.72) .. controls (412.87,207.72) and (412.49,206.91) .. (412.49,205.9) -- cycle ;
+%Straight Lines [id:da2702738213642686] 
+\draw [line width=0.75]    (430.57,214.51) -- (415.34,214.51) ;
+\draw [shift={(413.34,214.51)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da33471016850917423] 
+\draw [line width=0.75]    (395.57,214.51) -- (411.34,214.51) ;
+\draw [shift={(413.34,214.51)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Shape: Ellipse [id:dp7038511804724237] 
+\draw  [color={rgb, 255:red, 10; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ][line width=0.75]  (412.49,214.51) .. controls (412.49,213.51) and (412.87,212.7) .. (413.34,212.7) .. controls (413.81,212.7) and (414.19,213.51) .. (414.19,214.51) .. controls (414.19,215.52) and (413.81,216.33) .. (413.34,216.33) .. controls (412.87,216.33) and (412.49,215.52) .. (412.49,214.51) -- cycle ;
 
-    \textcolor{red}{$f(a_n)$其实是$f(x)$的抽样}
-    \begin{figure}[H]
-        \centering \includegraphics[width=
-            0.4 \linewidth]{2.2.4.pdf}
-    \end{figure}
+%Straight Lines [id:da06820011768609446] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (430.57,188.68) -- (502.57,187.86) ;
+%Straight Lines [id:da38889784591400756] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (430.57,214.51) -- (502.57,213.7) ;
+%Straight Lines [id:da13236673435660906] 
+\draw  [dash pattern={on 3.75pt off 3pt on 7.5pt off 1.5pt}]  (430.57,205.9) -- (502.57,205.08) ;
+%Straight Lines [id:da2391713360416905] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (430.57,197.29) -- (502.57,196.47) ;
+%Straight Lines [id:da6979616704671985] 
+\draw  [dash pattern={on 4.5pt off 4.5pt}]  (327.57,189.68) -- (398.57,188.86) ;
+%Straight Lines [id:da414366896294613] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (327.57,215.51) -- (398.57,214.7) ;
+%Straight Lines [id:da8091445079082518] 
+\draw  [dash pattern={on 3.75pt off 3pt on 7.5pt off 1.5pt}]  (327.57,206.9) -- (398.57,206.08) ;
+%Straight Lines [id:da6577192607072848] 
+\draw  [dash pattern={on 0.84pt off 2.51pt}]  (330.57,198.11) -- (401.57,197.29) ;
+
+% Text Node
+\draw (5,142) node [anchor=north west][inner sep=0.75pt]   [align=left] {趋向于$\displaystyle a$的方式不同};
+% Text Node
+\draw (194,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \lim _{x\rightarrow a}$};
+% Text Node
+\draw (231,191) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle \lim _{n\rightarrow \infty } a_{n} =a$};
+% Text Node
+\draw (186,192) node [anchor=north west][inner sep=0.75pt]   [align=left] {所有的};
+% Text Node
+\draw (356,59.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {连续左右逼近};
+% Text Node
+\draw (354,153.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {各种离散左右逼近};
+% Text Node
+\draw (398,79.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle a$};
+% Text Node
+\draw (408,220.86) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle a$};
+\end{tikzpicture}
+    \end{center}
+    除此之外,$f(x)$ 和 $f(a_n)$的函数图像如下所示
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+%Shape: Axis 2D [id:dp017003131307001818] 
+\draw  (57,165) -- (309.57,165)(82.57,77) -- (82.57,230) (302.57,160) -- (309.57,165) -- (302.57,170) (77.57,84) -- (82.57,77) -- (87.57,84)  ;
+%Shape: Wave [id:dp30207647780524005] 
+\draw  [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ] (59,163.5) .. controls (63.08,200.64) and (66.98,236) .. (71.5,236) .. controls (76.02,236) and (79.92,200.64) .. (84,163.5) .. controls (88.08,126.36) and (91.98,91) .. (96.5,91) .. controls (101.02,91) and (104.92,126.36) .. (109,163.5) .. controls (113.08,200.64) and (116.98,236) .. (121.5,236) .. controls (126.02,236) and (129.92,200.64) .. (134,163.5) .. controls (138.08,126.36) and (141.98,91) .. (146.5,91) .. controls (151.02,91) and (154.92,126.36) .. (159,163.5) .. controls (163.08,200.64) and (166.98,236) .. (171.5,236) .. controls (176.02,236) and (179.92,200.64) .. (184,163.5) .. controls (188.08,126.36) and (191.98,91) .. (196.5,91) .. controls (201.02,91) and (204.92,126.36) .. (209,163.5) .. controls (213.08,200.64) and (216.98,236) .. (221.5,236) .. controls (226.02,236) and (229.92,200.64) .. (234,163.5) .. controls (238.08,126.36) and (241.98,91) .. (246.5,91) .. controls (251.02,91) and (254.92,126.36) .. (259,163.5) .. controls (263.08,200.64) and (266.98,236) .. (271.5,236) .. controls (271.86,236) and (272.22,235.77) .. (272.57,235.34) ;
+%Shape: Axis 2D [id:dp3577874261347358] 
+\draw  (372,164) -- (624.57,164)(397.57,76) -- (397.57,229) (617.57,159) -- (624.57,164) -- (617.57,169) (392.57,83) -- (397.57,76) -- (402.57,83)  ;
+%Shape: Wave [id:dp5769071550363087] 
+\draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (374,162.5) .. controls (378.08,199.64) and (381.98,235) .. (386.5,235) .. controls (391.02,235) and (394.92,199.64) .. (399,162.5) .. controls (403.08,125.36) and (406.98,90) .. (411.5,90) .. controls (416.02,90) and (419.92,125.36) .. (424,162.5) .. controls (428.08,199.64) and (431.98,235) .. (436.5,235) .. controls (441.02,235) and (444.92,199.64) .. (449,162.5) .. controls (453.08,125.36) and (456.98,90) .. (461.5,90) .. controls (466.02,90) and (469.92,125.36) .. (474,162.5) .. controls (478.08,199.64) and (481.98,235) .. (486.5,235) .. controls (491.02,235) and (494.92,199.64) .. (499,162.5) .. controls (503.08,125.36) and (506.98,90) .. (511.5,90) .. controls (516.02,90) and (519.92,125.36) .. (524,162.5) .. controls (528.08,199.64) and (531.98,235) .. (536.5,235) .. controls (541.02,235) and (544.92,199.64) .. (549,162.5) .. controls (553.08,125.36) and (556.98,90) .. (561.5,90) .. controls (566.02,90) and (569.92,125.36) .. (574,162.5) .. controls (578.08,199.64) and (581.98,235) .. (586.5,235) .. controls (586.86,235) and (587.22,234.77) .. (587.57,234.34) ;
+\draw (78,55) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+\draw (393,53) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+\draw (313,156) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+\draw (627,155) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+\draw (100,263) node [anchor=north west][inner sep=0.75pt]   [align=left] {函数$\displaystyle f( x) 图像$};
+\draw (135,69.4) node [anchor=north west][inner sep=0.75pt]    {$f( x)$};
+\draw (451,67.4) node [anchor=north west][inner sep=0.75pt]    {$f( a_{n})$};
+\draw (436,257) node [anchor=north west][inner sep=0.75pt]   [align=left] {函数$\displaystyle f( a_{n}) 图像$};
+\end{tikzpicture}
+\end{center}
+    \textcolor{red}{如上图所示$f(a_n)$其实是$f(x)$的抽样}
+    \begin{center}
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt       
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+        \draw  [color={rgb, 255:red, 189; green, 16; blue, 224 }  ,draw opacity=1 ] (59,163.5) .. controls (63.08,200.64) and (66.98,236) .. (71.5,236) .. controls (76.02,236) and (79.92,200.64) .. (84,163.5) .. controls (88.08,126.36) and (91.98,91) .. (96.5,91) .. controls (101.02,91) and (104.92,126.36) .. (109,163.5) .. controls (113.08,200.64) and (116.98,236) .. (121.5,236) .. controls (126.02,236) and (129.92,200.64) .. (134,163.5) .. controls (138.08,126.36) and (141.98,91) .. (146.5,91) .. controls (151.02,91) and (154.92,126.36) .. (159,163.5) .. controls (163.08,200.64) and (166.98,236) .. (171.5,236) .. controls (176.02,236) and (179.92,200.64) .. (184,163.5) .. controls (188.08,126.36) and (191.98,91) .. (196.5,91) .. controls (201.02,91) and (204.92,126.36) .. (209,163.5) .. controls (213.08,200.64) and (216.98,236) .. (221.5,236) .. controls (226.02,236) and (229.92,200.64) .. (234,163.5) .. controls (238.08,126.36) and (241.98,91) .. (246.5,91) .. controls (251.02,91) and (254.92,126.36) .. (259,163.5) .. controls (263.08,200.64) and (266.98,236) .. (271.5,236) .. controls (271.86,236) and (272.22,235.77) .. (272.57,235.34) ;
+        %Shape: Wave [id:dp5769071550363087] 
+        \draw  [color={rgb, 255:red, 208; green, 2; blue, 27 }  ,draw opacity=1 ][dash pattern={on 4.5pt off 4.5pt}] (374,162.5) .. controls (378.08,199.64) and (381.98,235) .. (386.5,235) .. controls (391.02,235) and (394.92,199.64) .. (399,162.5) .. controls (403.08,125.36) and (406.98,90) .. (411.5,90) .. controls (416.02,90) and (419.92,125.36) .. (424,162.5) .. controls (428.08,199.64) and (431.98,235) .. (436.5,235) .. controls (441.02,235) and (444.92,199.64) .. (449,162.5) .. controls (453.08,125.36) and (456.98,90) .. (461.5,90) .. controls (466.02,90) and (469.92,125.36) .. (474,162.5) .. controls (478.08,199.64) and (481.98,235) .. (486.5,235) .. controls (491.02,235) and (494.92,199.64) .. (499,162.5) .. controls (503.08,125.36) and (506.98,90) .. (511.5,90) .. controls (516.02,90) and (519.92,125.36) .. (524,162.5) .. controls (528.08,199.64) and (531.98,235) .. (536.5,235) .. controls (541.02,235) and (544.92,199.64) .. (549,162.5) .. controls (553.08,125.36) and (556.98,90) .. (561.5,90) .. controls (566.02,90) and (569.92,125.36) .. (574,162.5) .. controls (578.08,199.64) and (581.98,235) .. (586.5,235) .. controls (586.86,235) and (587.22,234.77) .. (587.57,234.34) ;
+        % Text Node
+        \draw (135,69.4) node [anchor=north west][inner sep=0.75pt]    {$f( x)$};
+        % Text Node
+        \draw (451,67.4) node [anchor=north west][inner sep=0.75pt]    {$f( a_{n})$};
+        % Text Node
+        \draw (88,247) node [anchor=north west][inner sep=0.75pt]   [align=left] {用$\displaystyle \upvarepsilon -\delta $求它的极限};
+        % Text Node
+        \draw (396,252) node [anchor=north west][inner sep=0.75pt]   [align=left] {用海涅定理求它的极限};
+        \end{tikzpicture}        
+    \end{center}
     需要注意的是,是所有的数列（抽样）才能完全代表整体.不能说我选了某个数列有极限就代表函数有极限.
 
     总结:\textcolor{red}{海涅定理表述了离散与连续、数列极限与函数极限的关系.}
@@ -559,7 +658,9 @@
         }
     \end{align*}
     \subsection{定积分求极限}
+            % //TODO
     \subsection{七种未定式的计算}
+            % //TODO
     \subsubsection{形如$\frac{0}{0}$,$\frac{\infty}{\infty}$,$0 \times \infty$}
     \subsubsection{形如$\infty -\infty$}
     \subsubsection{形如$\infty^0,0^0$}
@@ -585,6 +686,45 @@
         \end{itemize}
         那么数列$\{ x_n \}$的极限存在,且$\lim_{n\to\infty}x_{n}=a$
     \end{them}
+    以下为放缩的常用方法
+    \begin{itemize}
+        \item 利用简单放大与缩小
+        $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
+        \item 利用如下重要不等式
+        \begin{problem}
+            $\lim\limits_{n\to\infty}\Bigg(\frac{1}{n^2+n+1}+\frac{2}{n^2+n+2}+\cdots+\frac{n}{n^2+n+n}\Bigg)$
+        \end{problem}
+        \begin{proof}
+            
+        \end{proof}
+        \begin{problem}
+            求极限$\lim_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}$,其中$a_i(i=1,2,\cdots,m)$都是非负数
+        \end{problem}
+        \begin{proof}
+            
+        \end{proof}
+        \begin{enumerate}
+            \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\footnote{
+                可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
+            \item $\sqrt{ab}{\leqslant}\frac{a+b}{2}{\leqslant}\sqrt{\frac{a^{2}+b^{2}}{2}}(a,b{>}0)\footnote{还有一个不等式是$|ab|\leqslant \frac{a^2+b^2}{2}$}$
+            \item $\sqrt[3]{abc}\leqslant\frac{a+b+c}3\leqslant\sqrt{\frac{a^2+b^2+c^2}3}(a,b,c>0)$
+            \item $\text{设 }a\geq b\geq 0,\text{则}\left\{\begin{aligned}&\text{当 }n\geq 0\text{ 时 },a^n\geq b^n,\\&\text{当 }n \leqslant 0\text{ 时 },a^n \leqslant b^n.\end{aligned}\right.$
+            \item $\text{若 }0<a<x<b,0<c<y<d,\text{则}\frac{c}{b}<\frac{y}{x}<\frac{d}{a}.\footnote{$\text{当 }n\pi<x<(n+1)\pi,2n<S(x)<2(n+1)\text{时 },\frac{2n}{(n+1)\pi}<\frac{S(x)}{x}<\frac{2(n+1)}{n\pi}.$}$
+            \item $\sin x<x<\tan x\left(0<x<\frac{\pi}{2}\right)$
+            \item $\sin x < x(x>0)$
+            \item 当$0<x<\frac{\pi}{4}$时，$x<\tan x<\frac{4}{\pi}x$
+            \item 当$0<x<\frac{\pi}{2}$时，$\sin x>\frac{2}{\pi}x$
+            \item $\arctan x{\leqslant}x{\leqslant}\arcsin x(0{\leqslant}x{\leqslant}1)$
+            \item $e^x \geqslant  x+1 (\forall x)\footnote{  $\text{当 }x_{n+1}=\mathrm{e}^{x_n}-1\text{ 时 ,由 }\mathrm{e}^{x_n}-1\geqslant x_n,\text{得 }x_{n+1}\geqslant x_n,\text{即} \{x_n\} \text{单调不减}$}$
+            \item $x-1 \geqslant \ln x(x>0)\footnote{                  $\text{当 }x_{n}>0\text{时,若 }x_{n+1}=\ln x_{n}+1,\text{由}\ln x_{n}+1\leqslant x_{n},\text{得 }x_{n+1}\leqslant x_{n},\text{即}\{ x_{n}\} \text{单调不增}$}$
+            \item $\frac{1}{1+x}<\ln(1+\frac{1}{x})<\frac{1}{x}(x>0)$或 $\frac{x}{1+x}<\ln(1+x)<x(x>0)$\footnote{
+                令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有$\ln\left(1+\frac{1}{x}\right)=\ln(1+x)-\ln x=\frac{1}{\xi}$其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\frac{1}{1+x}<\ln\left(1+\frac{1}{x}\right)=\frac{1}{\xi}<\frac{1}{x}$}
+            \item 在处理如下数列时,可以在前面加一个减项,如$(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})$,可化为$(1-\frac{1}{4})(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})*\frac{4}{3}$
+        \end{enumerate}
+        \item 利用闭区间上连续函数必有最大值与最小值
+        \item 利用压缩映射原理
+        % //TODO
+    \end{itemize}
     \subsection{\textcolor{red}{单调有界准则}}
     \begin{them}{数列的单调有界准则}{}
         单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
