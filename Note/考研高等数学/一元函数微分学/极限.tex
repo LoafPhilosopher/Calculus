@@ -207,6 +207,7 @@
     \begin{criterion}{一些重要的函数极限问题}{}
         以下类型的函数由于自变量取值的双向性因此需要进行特殊讨论:
         \begin{itemize}
+            \item 形如$f(x)=max\{h(x),g(x)\}$此类函数也需要注意在函数变化点的自变量取值问题
             \item $\lim_{x \to \infty}e^x$:$\lim _{x \to +\infty}e^x=+\infty,
                       \lim _{x \to -\infty}e^x=0$
             \item $\lim_{x \to 0} \frac{\sin x}{|x|}$:$\lim_{x \to 0^+}=\frac{\sin x}{x}=1$,$\lim_{x \to 0^-}=\frac{\sin x}{-x}=-1$
@@ -660,11 +661,89 @@
     \subsection{定积分求极限}
             % //TODO
     \subsection{七种未定式的计算}
-            % //TODO
+    主要有以下类型$\frac{0}{0},\frac{\infty}{\infty},0 \times \infty,\infty -\infty,\infty ^0,1^\infty$
     \subsubsection{形如$\frac{0}{0}$,$\frac{\infty}{\infty}$,$0 \times \infty$}
+         $\frac{0}{0},\frac{\infty}{\infty},0 \times \infty$可以直接计算或者简单转换可以直接计算.
     \subsubsection{形如$\infty -\infty$}
+          $\infty -\infty$可以通过取倒数或者取对数进行计算
+              \begin{problem}
+              $\lim_{x\to+\infty}\left[x^2\left(\mathrm{e}^{\frac{1}{x}}-1\right)-x\right]$
+              \end{problem}
+              \begin{solution}
+                  $
+                      \begin{aligned}
+                          \text{原式}\overset{\text{令 }u=\frac1x}{\operatorname*{=}}\lim_{u\to0^+}\frac{\mathrm{e}^u-1-u}{u^2}=\lim_{u\to0^+}\frac{\mathrm{e}^u-1}{2u}=\frac12
+                      \end{aligned}
+                  $
+              \end{solution}
     \subsubsection{形如$\infty^0,0^0$}
+          $\infty ^0$与$0^0$通常使用\textcolor{red}
+              {$ u^v=e^{v \ln u}$}来计算
+
+              \begin{problem}
+              求极限$\lim_{x\to0}\left(\frac{e^x+e^{2x}+\cdots+e^{nx}}n\right)^{\frac{1}{x}},$ 其中$n$是给定的自然数.
+              \end{problem}
+              \begin{solution}
+                  \begin{align*}
+                      \text{原式} & = e^{\lim_{x \to 0} \frac{\ln \left(\frac{e^x+e^{2x}+\cdots+e^{nx}}n\right)}{x}\qquad \text{(洛必达法则)} } \\
+                                & =\lim_{x\to0}\frac{\frac{e^{x}+2e^{2x}+\cdots+ne^{nx}}{n}}{\frac{e^{x}+e^{2x}+\cdots+e^{nx}}{n}}       \\
+                                & = \lim_{x\to0}\frac{e^{x}+2e^{2x}+\cdots ne^{nx}}{e^{x}+e^{2x}+\cdots+e^{nx}}                          \\
+                                & =\frac{1+2+\cdots+n}{1+1+\cdots+1}                                                                     \\
+                      \text{原式} & = e^{\frac{n+1}{2}}
+                  \end{align*}
+              \end{solution}
     \subsubsection{形如$1^{\infty}$}
+         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算,需要知道的是$1^\infty$可以化为第二个重要极限.
+              \begin{problem}
+              $\lim _{x \to \infty}\left[ \frac{x^2 + x}{(x-a)(x-b)}\right]^x$
+              \end{problem}
+              \begin{solution}
+                  \begin{align*}
+                      \text{原式} & = \lim _{x \to \infty} \left(\frac{x}{x-a}\right)^x \times \left(\frac{x+1}{x-b}\right)^x         \\
+                                & =  \lim _{x \to \infty} \left(1+\frac{a}{x-a} \right)^x \times \left( 1+\frac{1-b}{x+b} \right)^x \\
+                                & = e^{\lim _{x \to \infty} \frac{ax}{x-a} } \times e^{\lim _{x \to \infty} \frac{(1-b)x}{x+b}}     \\
+                                & =e^{a+1-b}
+                  \end{align*}
+              \end{solution}
+              \begin{problem}
+              $\lim_{n\to\infty}\left[\frac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}\right]^n,\text{ 其中}a>0,b>0,c>0.$
+              \end{problem}
+              \begin{solution}
+                  \begin{align*}
+                      \text{原式} & =   \lim_{n\rightarrow\infty}\frac{\ln\frac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}}{\frac{1}{n}}              \\
+                                & = \lim_{n\to\infty}\frac{\ln\frac{\sqrt{1+\frac{a}{n}}+\sqrt{1+\frac{b}{n}}+\sqrt{1+\frac{c}{n}}}{3}}{\frac{1}{n}}  \\
+                                & = \lim_{x\to0}\frac{\ln\frac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}+3-3}{3}}{x}                                        \\
+                                & = \lim_{x\rightarrow0}\frac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}-3}{3x}                                              \\
+                                & = \operatorname*{lim}_{x\rightarrow0}\frac{\frac{a}{2\sqrt{1+ax}}+\frac{b}{2\sqrt{1+bx}}+\frac{c}{2\sqrt{1+cx}}}{3} \\
+                                & = \frac{a+b+c}{6}
+                  \end{align*}
+                  综上所述,答案为  $e^{\frac{a+b+c}{6}}$
+              \end{solution}
+              \begin{problem}
+              求极限$\operatorname*{lim}_{x\to0^+}\frac{x^{x}-(\sin x)^{x}}{x^{2}\ln(1+x)}$
+              \end{problem}
+              \begin{solution}
+                  \begin{align*}
+                      \text{原式} & = {lim}_{x\to0^+}\ \frac{x^x (1-(\frac{\sin x}{x})^x)}{x^3}                               \\
+                                & = {lim}_{x\to0^+}\ \frac{1-e^{x\ln \frac{\sin x}{x}}}{x^3}(\text{当x趋于0的时候}x^x,\text{趋于1}) \\
+                                & = {lim}_{x\to0^+}\ - \frac{\ln \frac{\sin}{x}}{x^2} (\text{此处不可以用等价无穷小})                  \\
+                                & = {lim}_{x\to0^+}\ \frac{\ln (1+\frac{\sin x - x}{x})}{x^2}                               \\
+                                & = {lim}_{x\to0^+}\ \frac{\sin x}{x^3}                                                     \\
+                                & = \frac{1}{6}
+                  \end{align*}
+                  综上所述,答案为$\frac{1}{6}$
+              \end{solution}
+              \begin{problem}
+              $\text{求极限}\lim_{x\to0}\left(\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x}n\right)^{\frac nx},\text{其中 }a_i>0,i=1,2,\cdotp\cdotp\cdotp,n$
+              \end{problem}
+              \begin{solution}
+                  \begin{align*}
+                      \text{原式} & = \lim_{x\to0}\left(1+\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}n\right)^{\frac n{a_1'+a_2'+\cdotp\cdotp+a_n'-n}\cdot\frac{a_1^{\prime}+a_1^{\prime}+\cdotp\cdotp\cdotp+a_n^{\prime}-n}x} \\
+                                & = \lim_{x\to0}\frac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}x=\ln(a_1a_2\cdotp\cdotp\cdotp a_n)                                                                                               \\
+                                & = \lim_{x\to0}\left(1+\frac{a_1^x+a_2^x+\cdot\cdot\cdot+a_n^x-n}n\right)^{\frac n{a_1^{\prime}+a_2^{\prime}+\cdot\cdot\cdot+a_n^{\prime}{-n}}}=\mathrm{e}
+                  \end{align*}
+                  综上所述,答案为$a_1a_2a_3a_4...a_n$
+              \end{solution}
     \section{数列极限的运算}
     \subsection{数列极限的运算法则}
     设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
@@ -691,18 +770,6 @@
         \item 利用简单放大与缩小
         $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
         \item 利用如下重要不等式
-        \begin{problem}
-            $\lim\limits_{n\to\infty}\Bigg(\frac{1}{n^2+n+1}+\frac{2}{n^2+n+2}+\cdots+\frac{n}{n^2+n+n}\Bigg)$
-        \end{problem}
-        \begin{proof}
-            
-        \end{proof}
-        \begin{problem}
-            求极限$\lim_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}$,其中$a_i(i=1,2,\cdots,m)$都是非负数
-        \end{problem}
-        \begin{proof}
-            
-        \end{proof}
         \begin{enumerate}
             \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\footnote{
                 可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
@@ -720,15 +787,46 @@
             \item $\frac{1}{1+x}<\ln(1+\frac{1}{x})<\frac{1}{x}(x>0)$或 $\frac{x}{1+x}<\ln(1+x)<x(x>0)$\footnote{
                 令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有$\ln\left(1+\frac{1}{x}\right)=\ln(1+x)-\ln x=\frac{1}{\xi}$其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\frac{1}{1+x}<\ln\left(1+\frac{1}{x}\right)=\frac{1}{\xi}<\frac{1}{x}$}
             \item 在处理如下数列时,可以在前面加一个减项,如$(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})$,可化为$(1-\frac{1}{4})(1+\frac{1}{2^2})(1+\frac{1}{2^{2^2}})...(1+\frac{1}{2^{2^n}})*\frac{4}{3}$
+            \item 关于重要数列$\left\{\left(1+\frac{1}{n}\right)^{n}\right\}$的重要结论:
+\begin{itemize}
+    \item 单调递增
+    \item $\lim_{n\to\infty}\biggl(1+\frac{1}{n}\biggr)^{n}=\mathrm{e}$
+\end{itemize}
         \end{enumerate}
         \item 利用闭区间上连续函数必有最大值与最小值
         \item 利用压缩映射原理
         % //TODO
     \end{itemize}
+        \begin{problem}
+            $\lim\limits_{n\to\infty}\Bigg(\frac{1}{n^2+n+1}+\frac{2}{n^2+n+2}+\cdots+\frac{n}{n^2+n+n}\Bigg)$
+        \end{problem}
+        \begin{proof}
+            
+        \end{proof}
+        \begin{problem}
+            求极限$\lim_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}$,其中$a_i(i=1,2,\cdots,m)$都是非负数
+        \end{problem}
+        \begin{proof}
+            
+        \end{proof}
+
     \subsection{\textcolor{red}{单调有界准则}}
     \begin{them}{数列的单调有界准则}{}
         单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
     \end{them}
+    \begin{criterion}{证明数列单调性的方法}{}
+        \begin{enumerate}
+            \item $x_{n+1}-x_{n}\underset{(<)}{\operatorname*{>}}0\text{ 或}\frac{x_{n+1}}{x_{n}}\underset{(<)}{\operatorname*{>}}1\text{(同号})$
+            \item 利用数学归纳法
+            \item 利用重要不等式
+            \item $x_n-x_{n-1}$与$x_{n-1}-x_{n-2}$同号,则${x_n}$单调
+            \item 利用结论:对$x_{n+1}=f(x_n)(n=1,2,...)$,$x_n \in \text{区间}I$
+            \begin{enumerate}
+                \item $\text{若} f^{\prime}(x) > 0, x \in \text{区间}I, \text{则数列} \{x_n\} \text{单调,且}\left\{\begin{array}{l}\text{当}x_2>x_1\text{时,数列}\left\{x_n\right\}\text{单调增加}\\\\\text{当}x_2<x_1\text{时,数列}\left\{x_n\right\}\text{单调减少}\end{array}\right.$
+                \item 若$f^{\prime}(x)<0$,$x\in $区间$I$, 则数列$\{x_n\}$ 不单调
+            \end{enumerate}
+        \end{enumerate}
+    \end{criterion}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}
