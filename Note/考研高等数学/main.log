@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.3)  17 MAR 2024 14:57
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.7.3)  18 MAR 2024 16:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -881,7 +881,8 @@ Library (tcolorbox): 'tcbposter.code.tex' version '6.0.1'
 \c@problemname=\count375
 \c@tcb@cnt@defn=\count376
 \c@tcb@cnt@lemma=\count377
-) (./main.aux (./config/cover.aux) (./一元函数微分学/函数.aux) (./一元函数微分学/极限.aux) (./一元函数微分学/连续.aux))
+)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -904,7 +905,6 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
-
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1114,9 +1114,11 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/cmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 6.
 Package hyperref Info: Link coloring ON on input line 6.
-(./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
+
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Info: Redefining \microtypecontext on input line 6.
 Package microtype Info: Applying patch `item' on input line 6.
@@ -1129,7 +1131,7 @@ Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of spacing.
 Package microtype Info: No adjustment of kerning.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
+(/usr/local/texlive/2023/texmf-dist/tex/latex/microtype/mt-LatinModernRoman.cfg
 File: mt-LatinModernRoman.cfg 2021/02/21 v1.1 microtype config. file: Latin Modern Roman (RS)
 )
 \c@lstlisting=\count378
@@ -1216,66 +1218,61 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
 (Font)              scaled to size 5.00053pt on input line 63.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 63.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 71 replaced by U+FFFD.
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+
+ []
+
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 111 replaced by U+FFFD.
 File: figure//1.1.1.eps Graphic file (type eps)
 <figure//1.1.1.eps>
 
-Underfull \hbox (badness 1087) in paragraph at lines 68--73
+Underfull \hbox (badness 1087) in paragraph at lines 108--113
 []\TU/SongtiSCLight(0)/b/n/12 严 格 单 调 函 数 必 有 反 函 数\TU/lmr/bx/n/12 , \TU/SongtiSCLight(0)/b/n/12 但 是 有 反 函 数 的 函 数 不 一 定 是 单 调 函 数\TU/lmr/m/n/12 . \TU/SongtiSCLight(0)/m/n/12 如 函 数
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--116
-
- []
-
 [2] [3]
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 126 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 138 replaced by U+FFFD.
 File: figure//1.2.1.eps Graphic file (type eps)
 <figure//1.2.1.eps>
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
-Invalid UTF-8 byte or sequence at line 131 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 143 replaced by U+FFFD.
 File: figure//1.2.2.eps Graphic file (type eps)
 <figure//1.2.2.eps>
  [4]
-Overfull \hbox (22.16615pt too wide) in paragraph at lines 139--140
+Overfull \hbox (22.16615pt too wide) in paragraph at lines 151--152
 []$[][] [] [] [] [] [][] [] [][] [] [][] [][][][] []
  []
 
-[5] [6] [7] [8] [9]
-Overfull \hbox (13.4734pt too wide) in paragraph at lines 277--278
-[]\TU/SongtiSCLight(0)/m/n/12 设 $[][][][]$ 连 续 且 以 $[]$ 为 周 期\TU/lmr/m/n/12 , \TU/SongtiSCLight(0)/m/n/12 则 $[][][][] [] [][] [][][][][][]$ 是 以 $[]$ 为 周 期 的 周 期 函 数 $[] [][] [][][][][][] []
- []
-
-[10]
+[5] [6] [7] [8] [9] [10]
 File: figure//1.3.1.eps Graphic file (type eps)
 <figure//1.3.1.eps>
+ [11]
 File: figure//1.3.2.1.pdf Graphic file (type pdf)
 <use figure//1.3.2.1.pdf>
- [11]
 File: figure//1.3.2.eps Graphic file (type eps)
 <figure//1.3.2.eps>
  [12]
@@ -1373,31 +1370,26 @@ Overfull \hbox (9.96295pt too wide) in paragraph at lines 52--54
  []
 
 [24] [25] [26]
-Overfull \hbox (14.79868pt too wide) in paragraph at lines 155--167
+Overfull \hbox (14.79868pt too wide) in paragraph at lines 157--169
  [] 
  []
 
 [27] [28] [29]
 Missing character: There is no 或 (U+6216) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-Missing character: There is no 则 (U+5219) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 [30]
+Missing character: There is no 则 (U+5219) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no 图 (U+56FE) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no 像 (U+50CF) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no 图 (U+56FE) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
 Missing character: There is no 像 (U+50CF) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-[31] [32] [33]
-Missing character: There is no 为 (U+4E3A) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-Missing character: There is no 无 (U+65E0) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-Missing character: There is no 穷 (U+7A77) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-Missing character: There is no 大 (U+5927) in font [latinmodern-math.otf]/OT:script=math;language=dflt;!
-[34] [35] [36] [37]
+[31] [32] [33] [34] [35] [36] [37]
 Missing character: There is no Í ("CD) in font cmmi12!
-[38] [39] [40] [41] [42] [43]
-Overfull \hbox (28.8468pt too wide) in paragraph at lines 825--826
+[38] [39] [40] [41] [42] [43] [44]
+Overfull \hbox (28.8468pt too wide) in paragraph at lines 819--820
 []$[][][][][][] [] [][] [] [] [][][] [][][][][][] []$ 
  []
 
-) [44]
+) [45]
 \openout2 = `一元函数微分学/连续.aux'.
 
  (./一元函数微分学/连续.tex
@@ -1411,7 +1403,7 @@ Invalid UTF-8 byte or sequence at line 34 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 34 replaced by U+FFFD.
 File: figure//3.2.1.eps Graphic file (type eps)
 <figure//3.2.1.eps>
-[45
+[46
 
 
 
@@ -1440,21 +1432,30 @@ Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
 Invalid UTF-8 byte or sequence at line 49 replaced by U+FFFD.
 File: figure//3.2.3.eps Graphic file (type eps)
 <figure//3.2.3.eps>
-[46]
+[47]
 Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
 Missing character: There is no ​ (U+200B) in font [lmroman12-regular]:mapping=tex-text;!
-) [47] (./main.aux (./config/cover.aux) (./一元函数微分学/函数.aux) (./一元函数微分学/极限.aux) (./一元函数微分学/连续.aux))
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: C1D2C7602702D6DBE583C7475EAA68DF;6881.
+) [48] (./main.aux (./config/cover.aux) (./一元函数微分学/函数.aux) (./一元函数微分学/极限.aux) (./一元函数微分学/连续.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  DE92D8ADB9666571D4C4D494CACC187F;7173.
  ) 
 Here is how much of TeX's memory you used:
- 41196 strings out of 476683
- 897478 string characters out of 5804048
+ 41163 strings out of 476683
+ 897060 string characters out of 5804048
  1900018 words of memory out of 5000000
- 60669 multiletter control sequences out of 15000+600000
+ 60650 multiletter control sequences out of 15000+600000
  521777 words of font info for 129 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  99i,20n,115p,1276b,940s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (51 pages).
+Output written on main.pdf (52 pages).

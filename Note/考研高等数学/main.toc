@@ -9,9 +9,9 @@
 \contentsline {subsection}{\numberline {1.2.3}复合函数}{5}{subsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.2.4}函数的四种特性及重要结论}{6}{subsection.1.2.4}%
 \contentsline {subsubsection}{有界性}{6}{subsubsection*.2}%
-\contentsline {subsubsection}{单调性}{8}{subsubsection*.3}%
+\contentsline {subsubsection}{单调性}{7}{subsubsection*.3}%
 \contentsline {subsubsection}{奇偶性}{8}{subsubsection*.4}%
-\contentsline {subsubsection}{周期性}{9}{subsubsection*.5}%
+\contentsline {subsubsection}{周期性}{10}{subsubsection*.5}%
 \contentsline {subsubsection}{重要结论}{10}{subsubsection*.6}%
 \contentsline {subsection}{\numberline {1.2.5}三种特殊函数}{10}{subsection.1.2.5}%
 \contentsline {subsubsection}{符号函数}{10}{subsubsection*.7}%
@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{狄利克雷函数}{11}{subsubsection*.9}%
 \contentsline {section}{\numberline {1.3}函数图像}{11}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}常数函数}{11}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}幂函数}{11}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.2}幂函数}{12}{subsection.1.3.2}%
 \contentsline {subsection}{\numberline {1.3.3}指数函数}{12}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}对数函数}{13}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}三角函数}{15}{subsection.1.3.5}%
@@ -69,34 +69,36 @@
 \contentsline {subsubsection}{函数极限与数列极限的关系(海涅定理)}{31}{subsubsection*.34}%
 \contentsline {section}{\numberline {2.3}无穷小与无穷大}{32}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}无穷小}{32}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}\textcolor {red}{无穷小的性质}}{32}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.2}\textcolor {red}{无穷小的性质}}{33}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}\textcolor {red}{无穷小的比阶}}{33}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}无穷小的运算}{33}{subsection.2.3.4}%
 \contentsline {subsection}{\numberline {2.3.5}无穷大}{34}{subsection.2.3.5}%
 \contentsline {subsection}{\numberline {2.3.6}\textcolor {red}{无穷大的比阶}}{34}{subsection.2.3.6}%
 \contentsline {subsection}{\numberline {2.3.7}\textcolor {red}{无穷大的性质}}{34}{subsection.2.3.7}%
+\contentsline {subsection}{\numberline {2.3.8}无穷大与无界变量的关系}{34}{subsection.2.3.8}%
+\contentsline {subsection}{\numberline {2.3.9}无穷大与无穷小的关系}{35}{subsection.2.3.9}%
 \contentsline {section}{\numberline {2.4}函数极限的运算}{35}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}极限的四则运算法则}{35}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}洛必达法则}{35}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}洛必达法则}{36}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}泰勒公式}{36}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}极限存在准则的两个应用(两个重要极限)}{36}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.4}极限存在准则的两个应用(两个重要极限)}{37}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}夹逼准则}{37}{subsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.4.6}\textcolor {red}{单调有界准则}}{37}{subsection.2.4.6}%
 \contentsline {subsection}{\numberline {2.4.7}函数极限的运算法则}{37}{subsection.2.4.7}%
 \contentsline {subsection}{\numberline {2.4.8}等价无穷小替代}{38}{subsection.2.4.8}%
-\contentsline {subsection}{\numberline {2.4.9}利用基本极限求极限}{39}{subsection.2.4.9}%
-\contentsline {subsection}{\numberline {2.4.10}定积分求极限}{39}{subsection.2.4.10}%
-\contentsline {subsection}{\numberline {2.4.11}七种未定式的计算}{39}{subsection.2.4.11}%
-\contentsline {subsubsection}{形如$\frac {0}{0}$,$\frac {\infty }{\infty }$,$0 \times \infty $}{39}{subsubsection*.35}%
-\contentsline {subsubsection}{形如$\infty -\infty $}{39}{subsubsection*.36}%
+\contentsline {subsection}{\numberline {2.4.9}利用基本极限求极限}{40}{subsection.2.4.9}%
+\contentsline {subsection}{\numberline {2.4.10}定积分求极限}{40}{subsection.2.4.10}%
+\contentsline {subsection}{\numberline {2.4.11}七种未定式的计算}{40}{subsection.2.4.11}%
+\contentsline {subsubsection}{形如$\frac {0}{0}$,$\frac {\infty }{\infty }$,$0 \times \infty $}{40}{subsubsection*.35}%
+\contentsline {subsubsection}{形如$\infty -\infty $}{40}{subsubsection*.36}%
 \contentsline {subsubsection}{形如$\infty ^0,0^0$}{40}{subsubsection*.37}%
-\contentsline {subsubsection}{形如$1^{\infty }$}{40}{subsubsection*.38}%
-\contentsline {section}{\numberline {2.5}数列极限的运算}{42}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}数列极限的运算法则}{42}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}夹逼准则}{42}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}\textcolor {red}{单调有界准则}}{44}{subsection.2.5.3}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}连续}{45}{chapter.3}%
-\contentsline {section}{\numberline {3.1}函数的连续性}{45}{section.3.1}%
-\contentsline {section}{\numberline {3.2}函数的间断点}{45}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}间断点的相关概念}{45}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}间断点的分类}{47}{subsection.3.2.2}%
+\contentsline {subsubsection}{形如$1^{\infty }$}{41}{subsubsection*.38}%
+\contentsline {section}{\numberline {2.5}数列极限的运算}{43}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}数列极限的运算法则}{43}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}夹逼准则}{43}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}\textcolor {red}{单调有界准则}}{45}{subsection.2.5.3}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}连续}{46}{chapter.3}%
+\contentsline {section}{\numberline {3.1}函数的连续性}{46}{section.3.1}%
+\contentsline {section}{\numberline {3.2}函数的间断点}{46}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}间断点的相关概念}{46}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}间断点的分类}{48}{subsection.3.2.2}%
