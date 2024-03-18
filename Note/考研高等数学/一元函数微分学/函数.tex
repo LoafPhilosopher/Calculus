@@ -51,28 +51,16 @@
             \item 定义域指的是$x$的定义域
             \item 括号内定义域相同
         \end{itemize}
-        \begin{problem}
+    \end{criterion}
+    \begin{problem}
         已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为:
         \end{problem}
         \begin{solution}
             定义域指的是$x$的定义域,因此$x \in [0,a]$,那么$x+1 \in [1,a+1]$.括号内定义域相同,那么可以得知$f(x)$定义域为$[1,a+1]$.$f(x+10)$定义域为$[-9,a-9]$.
         \end{solution}
-    \end{criterion}
     \subsection{反函数}
     \begin{defn}{反函数定义}{}
         设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
-    \end{defn}
-    \begin{defn}{反函数的性质}{}
-        \begin{itemize}
-            \item $f^{-1}f(x)=x$
-            \item \textbf{严格单调函数必有反函数,但是有反函数的函数不一定是单调函数}.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
-                  \begin{figure}[H]
-                      \centering \includegraphics[width=
-                          0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
-                      \label{xxx1}
-                  \end{figure}
-            \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.
-        \end{itemize}
     \end{defn}
     \begin{criterion}{关于反函数图像和$x,y$值转换的问题}{}
         \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}\footnote{这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.}.
@@ -112,11 +100,35 @@
                 \draw (273,222) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
             \end{tikzpicture}
         \end{center}
-        最终化为$y=f^{-1}(x)$，其中自变量为$x$,定义域为$[3,5]$,因变量$y$,值域为$[1,2]$.\\
+        最终化为$y=f^{-1}(x)$，其中自变量为$x$,定义域为$[3,5]$,因变量$y$,值域为$[1,2]$.此时反函数改写为$y=f^{-1}(x)$,该函数图像与$y=f(x)$关于直线$y=x$对称\\
     \end{criterion}
+    \begin{defn}{反函数的性质}{}
+        \begin{itemize}
+            \item \textbf{$f^{-1}f(x)=x$,$f(f^{-1}(x))=x$}
+            \item \textbf{严格单调函数必有反函数,但是有反函数的函数不一定是单调函数}.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
+                  \begin{figure}[H]
+                      \centering \includegraphics[width=
+                          0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
+                      \label{xxx1}
+                  \end{figure}
+            \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.
+        \end{itemize}
+    \end{defn}
+
     \begin{problem}
     求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
     \end{problem}
+    \begin{solution}
+        已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \frac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
+        对两边可以进行如下操作
+        \begin{center}
+            $e^{-y}=\sqrt{x^2+1}-x$\\
+            $e^{y}=\sqrt{x^2+1}+x$\\
+        \end{center}
+        那么可以得到$x=\frac{1}{2}(e^y-e^{-y})$
+        交换之后可以得到函数$f(x)$的反函数,即
+        $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$.
+    \end{solution}
     \begin{note}
         \begin{itemize}
             \item 在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\frac{e^x+e^{-x}}{2}$是双曲余弦函数.
@@ -140,23 +152,13 @@
                   \end{itemize}
         \end{itemize}
     \end{note}
-    \begin{solution}
-        已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \frac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
-        对两边可以进行如下操作
-        \begin{center}
-            $e^{-y}=\sqrt{x^2+1}-x$\\
-            $e^{y}=\sqrt{x^2+1}+x$\\
-        \end{center}
-        那么可以得到$x=\frac{1}{2}(e^y-e^{-y})$
-        交换之后可以得到函数$f(x)$的反函数,即
-        $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$.
-    \end{solution}
+   
     \subsection{复合函数}
     设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
     $$
         y=f[\operatorname{g}(x)](x{\in}D)
     $$
-    确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集.
+    确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集\footnote{需要注意的是,不是任何两个函数都可以进行复合,如果函数$A$的定义域与函数$B$的值域的交集为$\varnothing$,则两个函数不可进行复合}.
     \begin{problem}
     $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则
     \newline
@@ -223,33 +225,34 @@
     \begin{defn}{}{}
         设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
     \end{defn}
-    虽然单调性的证明一般用求导,但是定义法也需要掌握.
-    $$
-        \begin{aligned}
-            \text{对任意 }x_1,x_2\in D, & x_1\neq x_2,\text{有}                  \\
-                                     & f(x)\text{是单调增函数}
-            \Leftrightarrow(x_{1}-x_{2})\Big[f(x_{1})-f(x_{2})\Big]{>}0;     \\
-                                     & f(x)\text{是单调减函数}.
-            \Leftrightarrow(x_{1}-x_{2})\Big[f(x_{1})-f(x_{2})\Big]<0;       \\
-                                     & f(x)\text{是单调不减函数}
-            \Leftrightarrow(x_1-x_2){\big[}f(x_1)-f(x_2){\big]}{\geqslant}0; \\
-                                     & f(x)\text{是单调不增函数}
-            \Leftrightarrow(x_1-x_2){\left[f(x_1)-f(x_2)\right]}\leqslant0.
-        \end{aligned}
-    $$
+    判断单调性的方法
+    \begin{enumerate}
+        \item 利用导数进行判断,若$f(x)$在区间$I$上可导,则
+        \begin{itemize}
+            \item $f^{\prime}(x)>0(<0)\Rightarrow f(x)$ 单调增(单调减)
+            \item $f^{\prime}(x)\geqslant0(\leqslant0)\Leftrightarrow f(x)$ 单调不减(单调不增)
+        \end{itemize}
+        \item 利用导数的定义,对任意$x_1,x_2\in D,x_1\neq x_2$,有
+        \begin{itemize}
+            \item $f\left(x\right)$是单调增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]>0$
+            \item $f(x)$是单调减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]<0$
+            \item $f(x)$是单调不减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]\geqslant0$
+            \item $f\left(x\right)$是单调不增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]\leqslant0$
+        \end{itemize}
+    \end{enumerate}
     \subsubsection{奇偶性}
-    \begin{defn}{}{}
+    \begin{defn}{奇偶性的定义}{}
         设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x \in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.
     \end{defn}
-    \begin{criterion}{}{}
+    \begin{criterion}{奇偶性的性质}{}
         \begin{itemize}
             \item $f(\varphi(x))$(内偶则偶,内奇看外)\footnote{
                   奇[偶]$\Rightarrow$ 偶;偶[奇]$\Rightarrow$ 偶;奇[奇]$\Rightarrow$ 奇;偶[偶]$\Rightarrow$ 偶;非奇非偶[偶]$\Rightarrow$ 偶}
             \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数\footnote{证明如下:令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$}.
             \item \textbf{求导后奇偶性互换}
+            \item \textbf{连续的奇函数的一切原函数都是偶函数},\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\label{sec:intro}\footnote{设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,F(x)为奇函数.}}
             \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}
             \item \textbf{对于任意函数$f(x)$,令$u(x)=\frac{1}{2}[f(x)+f(-x)]$,$v(x)=\frac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\frac{1}{2}[f(x)+f(-x)]+\frac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
-            \item \textbf{连续的奇函数的一切原函数都是偶函数},\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{因为奇函数必须过原点,但是偶函数的原函数后面有一个常数$c$因此仅有一个原函数是奇函数}}
             \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
             \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
             \item     设$f(x)$是定义在$[-l,l]$上的任意函数,则
@@ -264,17 +267,17 @@
     (C) $\int _a ^x du \int _0 ^u tf(t)dt$  \qquad \qquad (D) $\int_0 ^x du \int _a ^u f(t) dt$
     \end{problem}
     \begin{solution}
-% //TODO
+        % // TODO
     \end{solution}
     \subsubsection{周期性}
-    \begin{defn}{}{}
+    \begin{defn}{周期函数的定义}{}
         设$f(x)$的定义域为$D$,如果存在一个正数$T$,使得对于任一$x \in D$,有$x \pm T \in D$,且$f(x+T)=f(x)$,则称$f(x)$为周期函数,$T$称为$f(x)$的周期.从几何图形上看,在周期函数的定义域内,相邻两个长度为$T$的区间上,函数的图形完全一样.
     \end{defn}
     需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\frac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
     \subsubsection{重要结论}
     \begin{itemize}
         \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.
-        \item 设$f(x)$连续且以$T$为周期,则$F(x)=\int_0 ^x f(t)dt$ 是以$T$为周期的周期函数$\Leftrightarrow\int_{0}^{\tau}f(x)\mathrm{d}x=0.$
+        \item 设$f(x)$\textbf{连续}\footnote{一定要连续,例如$f(x)=|\sin x|$此函数因在$x=n \pi$点上不连续,因此不满足}且以$T$为周期,则$F(x)=\int_0 ^x f(t)dt$ 是以$T$为周期的周期函数$\Leftrightarrow\int_{0}^{\tau}f(x)\mathrm{d}x=0.$
         \item \textbf{周期函数的原函数是周期函数的充要条件是其在一个周期上的积分为0.}
     \end{itemize}
     \subsection{三种特殊函数}
@@ -283,11 +286,8 @@
         y=\text{sgn} \ x=\begin{cases}-1,&x<0,\\0,&x=0,\\1,&x>0\end{cases}
     $$
     \begin{center}
-
         \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
         \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-            %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-            %Shape: Axis 2D [id:dp3683500595420659] 
             \draw  (144,128.43) -- (426.14,128.43)(283.14,38.43) -- (283.14,201) (419.14,123.43) -- (426.14,128.43) -- (419.14,133.43) (278.14,45.43) -- (283.14,38.43) -- (288.14,45.43) (303.14,123.43) -- (303.14,133.43)(323.14,123.43) -- (323.14,133.43)(343.14,123.43) -- (343.14,133.43)(363.14,123.43) -- (363.14,133.43)(383.14,123.43) -- (383.14,133.43)(403.14,123.43) -- (403.14,133.43)(263.14,123.43) -- (263.14,133.43)(243.14,123.43) -- (243.14,133.43)(223.14,123.43) -- (223.14,133.43)(203.14,123.43) -- (203.14,133.43)(183.14,123.43) -- (183.14,133.43)(163.14,123.43) -- (163.14,133.43)(278.14,108.43) -- (288.14,108.43)(278.14,88.43) -- (288.14,88.43)(278.14,68.43) -- (288.14,68.43)(278.14,148.43) -- (288.14,148.43)(278.14,168.43) -- (288.14,168.43)(278.14,188.43) -- (288.14,188.43) ;
             \draw   ;
             %Straight Lines [id:da4633461327012798] 
@@ -311,7 +311,7 @@
         y=[x]
     $$
 
-    函数值向左移\footnote{\textbf{坐标轴上向左移}},即$x-1<[x] \leq x$
+    函数值向左移\footnote{\textbf{坐标轴上向左移,在现实生活中就是年龄}},即$x-1<[x] \leq x$
 
     \begin{center}
         \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        

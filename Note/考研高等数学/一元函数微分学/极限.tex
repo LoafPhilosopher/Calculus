@@ -93,9 +93,11 @@
         $\forall\varepsilon>0,\exists\delta>0$在证明中，这两句是白给，直接写。后面的才是关键。
     \end{defn}
     \begin{criterion}{}{}
-        在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
+        \begin{enumerate}
+            \item 在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
+            \item 函数的极限值只与邻域内的函数值有关,而与该点的函数值无关.
+        \end{enumerate}
     \end{criterion}
-
     \subsubsection{单侧极限}
     \begin{defn}{单侧极限的定义}{}
         若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{左极限},记为
@@ -217,7 +219,7 @@
     \end{criterion}
     \subsubsection{局部有界性}
     \begin{them}{}{}
-        如果$\lim\limits_{x\to x_0}f(x)=A$,那么存在常数$M>0$和$\delta >0$使得当$0<|x-x_0|<\delta$时\footnote{对局部有界性的描述需要指明是在那个区间上},有$|f(x)| \leq M$.
+        若极限$\lim_{x \to x_0}f(x)$存在\footnote{对局部有界性的描述需要指明是在那个区间上},则$f(x)$在点$x_0$某去心邻域内有界.
     \end{them}
     \begin{criterion}{局部有界性的性质}{}
         \begin{itemize}
@@ -241,14 +243,23 @@
         如果在$x_0$的某去心邻域内$f(x)\geqslant 0$(或$f(x)\leqslant 0$),而且$\underset{x\to x_0}{\operatorname*{lim}}f(x)=A$,那么$A \leqslant 0$或$(A \leq 0)$\footnote{如果函数在$x_0$附近的函数值$\leq 0$,那么$x_0$此处的极限值$\le 0$}.
     \end{them}
     对上述定理中,为什么一个可以等于0,一个不能等于0?其解释如下:如果第一个定理中$A \leqslant 0,f(x)\leqslant 0$,那么以函数$f(x)={x^2}$为例,虽然$\lim_{x \to 0}f(x)=0 $,但是邻域内的函数值都大于0.对于第二个定理中如果$f(x) < 0,A< 0$,那么以函数$f(x)={-x^2}$为例,虽然邻域内的函数值都小于0,但是$\lim_{x \to 0}f(x)=0 $.
-    \begin{criterion}{局部保号性的证明}{}
+    \begin{criterion}{}{}
+        由保号性可推出保序性:
+        设$\lim_{x\to x_0}f(x)=A,\lim_{x\to x_{0}}g(x)=B$,则:
+        \begin{enumerate}
+            \item 若$A>B\Rightarrow\exists\delta>0$,当${x}\in\mathring{U}(x_0,\delta)$ 时，$f(x)>\mathbf{g}(x).$ 
+            \item 若 $\exists\delta>0$,当$x\in\mathring{U}(x_0,\delta)$ 时，$f(x)\geqslant g(x)\Rightarrow A\geqslant B.$
+        \end{enumerate}
+    \end{criterion}
+    \begin{problem}
+        局部保号性的证明:
+    \end{problem}
         \begin{proof}
             如果$\lim_{x\to x_{0}}f(x)=A > 0$,所以,取$\varepsilon=\frac{A}{2}>0,则\exists \delta >0 $当$0<|x-x_0|<\delta$时,有
             $$
                 |f(x)-A|<\frac{A}{2}\Rightarrow f(x)>A-\frac{A}{2}=\frac{A}{2}>0.
             $$
         \end{proof}
-    \end{criterion}
     由上述证明可得如下推论
     \begin{corollary}{}{}
         如果$\lim_{x\to x_{0}}f(x)=A > 0(A \neq 0)$,那么就存在$x_0$的某一去心邻域$\mathring{U}\left(x_{0}\right)$,当$x\in U^{\circ}(x_{0})$时,就有$|f(x)|>\frac{|A|}{2}$
@@ -455,9 +466,6 @@
         $\forall M>0$令$\delta=\frac{1}{4M}>0$,当$0<|x-1|<\delta$时,即$0<|x-1|<\frac{1}{4M}$时,$|x-1|<\frac{1}{M}$,所以$\frac{1}{|x-1|}>M$
         这就证明了$\underset{x\rightarrow1}{\operatorname*{lim}}\frac{1}{x-1}=\infty$
     \end{solution}
-    \begin{criterion}{无穷大与无穷小的关系}{}
-        在自变量的同一变化过程中,如果$f(x)$为无穷大,那么$\frac{1}{f(x)}$为无穷小;反之,如果$f(x)$为无穷小,且$f(x) \neq 0$,那么存在常数$\frac{1}{f(x)}为无穷大$
-    \end{criterion}
     \subsection{\textcolor{red}{无穷大的比阶}}
     \begin{itemize}
         \item 当$x \to +\infty$时,$\mathrm{ln}^ax\ll x^\beta\ll a^x,\text{其中}\alpha>0,\beta>0,a>1.$\footnote{由洛必达公式证明}
@@ -468,6 +476,10 @@
         \item 两个无穷大量的积仍未无穷大量
         \item 无穷大量与有界变量的和仍是无穷大量
     \end{itemize}
+    \subsection{无穷大与无界变量的关系}
+    无穷大量一定是无界变量,但无界变量不一定是无穷大量.\footnote{如数列$x_n=\begin{cases}n,n\text{ 为奇数}\\0,n\text{ 为偶数}&\end{cases}$,是无界变量,但不是无穷大.无穷大是一个极限}
+    \subsection{无穷大与无穷小的关系}
+    在自变量的同一变化过程中,若$f(x)$是无穷大,则$\frac{1}{f(x)}$是无穷小;若$f(x)$是无穷小,且$f(x)\neq 0$,则$\frac{1}{f(x)}$是无穷大.
     \section{函数极限的运算}
     \subsection{极限的四则运算法则}
     如果极限不存在，那么极限属于超实数系的范畴，在超实数系下不可以进行代数运算，只可以进行替换运算。但是如果极限均存在，那么可以进行代数计算。\\
@@ -538,7 +550,7 @@
     $$
 
     \subsection{夹逼准则}
-    \begin{defn}{函数极限存在准则}{}
+    \begin{defn}{函数极限夹逼准则}{}
         如果
         \begin{itemize}
             \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
@@ -582,8 +594,7 @@
             \beta=\alpha + o(\alpha)
         $$
     \end{defn}
-
-    \begin{defn}{}{}
+    \begin{defn}{等价无穷小的替换准则}{}
         设$\alpha\sim\widetilde{\alpha}$,$\beta\sim\widetilde{\beta}$,且$\lim\frac{\widetilde{\beta}}{\underset{\alpha}{\operatorname*{\sim}}}$存在,则
         $$
             \lim\frac{\beta}{\alpha}=\lim\frac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.Í
@@ -604,50 +615,33 @@
     \end{defn}
     以下为常用等价无穷小
     \\当$x \to 0$时,有
-    \begin{align*} \boxed{
-            \begin{aligned}
-                 & x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\
-                 & \quad  \sim \ln (1+x)  \nonumber                                  \\
-                 & \quad \sim e^x -1 \nonumber
-            \end{aligned} }
-    \end{align*}
-
-    \begin{align*} \boxed
-        {
-            \begin{aligned}
-                 & (1+x)^a \sim  1+ax   \\
-                 & a^x - 1 \sim x \ln a
-            \end{aligned}
-        }
-    \end{align*}
-    \begin{criterion}{上述结论的推广}{}
-        当$x \to 0$时,若$(1+x)^a -1 \sim ax$,则$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0$,则
-        $$
-            [1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)
-        $$
-    \end{criterion}
-    \begin{align*} \boxed
-        {
-            \begin{aligned}
-                 & \frac{1}{2} x^2 \sim 1-\cos x \sim \sec x -1 \sim x- \ln(1+x)
-            \end{aligned}
-        }
-    \end{align*}
-
-    \begin{align*} \boxed
-        {
-            \begin{aligned}
-                 & \frac{1}{6} x^3 \sim x-\sin \sim \arcsin x -x
-            \end{aligned}
-        }
-    \end{align*}
-    \begin{align*} \boxed
-        {
-            \begin{aligned}
-                 & \frac{1}{3} x^3 \sim x-\arctan x \sim \tan x-x
-            \end{aligned}
-        }
-    \end{align*}
+    \begin{enumerate}
+        \item     \begin{align*} \boxed{\begin{aligned}& x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\& \quad  \sim \ln (1+x)  \nonumber                                  \\& \quad \sim e^x -1 \nonumber\end{aligned} }\end{align*}
+        \item     \begin{align*} \boxed{\begin{aligned}& (1+x)^a \sim  1+ax   \\& a^x - 1 \sim x \ln a \\& 1- \cos^{\alpha} x \sim \frac{\alpha}{2}x^2\end{aligned}}\end{align*}
+        \item     {上述结论的推广}{}当$x \to 0$时,若$(1+x)^a -1 \sim ax$,则$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0$,那么$[1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)$
+        \item     \begin{align*} \boxed
+            {
+                \begin{aligned}
+                     & \frac{1}{2} x^2  \sim \sec x -1 \sim x- \ln(1+x)
+                \end{aligned}
+            }
+        \end{align*}
+        \item     \begin{align*} \boxed
+            {
+                \begin{aligned}
+                     & \frac{1}{6} x^3 \sim x-\sin \sim \arcsin x -x
+                \end{aligned}
+            }
+        \end{align*}
+        \item     \begin{align*} \boxed
+            {
+                \begin{aligned}
+                     & \frac{1}{3} x^3 \sim x-\arctan x \sim \tan x-x
+                \end{aligned}
+            }
+        \end{align*}
+        \item  设 $f(x)$ 和 $g(x)$ 在 $x=0$ 的某邻域内连续，且$\operatorname*{lim}_{x\rightarrow0}\frac{f(x)}{g(x)}=1$,则$\int_{0}^{x}f(t)\mathrm{d}t\sim\int_{0}^{x}g(t)\mathrm{d}t$
+    \end{enumerate}
     \subsection{利用基本极限求极限}
     \begin{align*} \boxed
         {
@@ -754,7 +748,7 @@
     \end{itemize}
     上述运算规则可推广至有限个数列的情况
     \subsection{夹逼准则}
-    \begin{them}{数列极限存在准则}{}
+    \begin{them}{数列极限夹逼准则}{}
         如果数列$\{|x_n|\},\{y_n\}$及$\{z_n\}$满足下列条件:
         \begin{itemize}
             \item 从某项开始,即$\exists n_0 \in N_+(\text{即}n \to \infty),$当$n>n_0$时,有
