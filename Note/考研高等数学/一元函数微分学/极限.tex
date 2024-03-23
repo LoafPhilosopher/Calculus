@@ -36,8 +36,19 @@
         证明:若$\lim_{n \to \infty}a_n=A$,则$\lim_{n \to \infty}|a_n|=|A|$
     \end{problem}
     \begin{proof}
-        % //TODO
-    \end{proof}
+        已知数列$a_n$极限为$A$,那么$|a_n-A|<\varepsilon$,由不等式\ref{lyzybds1}可得,$||a_n|-|A||\leqslant|a_n -A|<\varepsilon$,因此$\lim_{n \to \infty }|a_n|=|A|$.
+        \end{proof}
+    \begin{note}
+        \begin{enumerate}
+            \item 此命题反过来则错误,如取$a_n=(-1)^n$,则$\lim_{n\to\infty}\left|(-1)^n\right|=1$。但$\lim_{n\to\infty}(-1)^n$不存在.
+            \item 在本题中若$A=0$,则$||a_n|-|A||=||a_n|-0|=|a_n-0|$,即有
+            $$
+            \lim_{n\to\infty}a_{n}=0\Leftrightarrow\lim_{n\to\infty}\lvert a_{n}\rvert=0\:,
+            $$
+            此结论常用,即若要证明$\lim _{n \to \infty}a_n=0$,可转换为证明$\lim_{n \to \infty}|a_n|=0$,由于$|a_n| \geq 0$,若使用了夹逼准则,只需证明$|a_n|\leqslant 0$即可
+            \item 此结论对函数亦成立,即若$\lim_{x\to x_0 }f\left(x\right)=A$,则$\lim_{x\to x_0}\left|f\left(x\right)\right|=\left|A\right|.$
+        \end{enumerate}
+    \end{note}
     \subsection{收敛数列的性质}
     \subsubsection{唯一性}
     \begin{them}{}{}
@@ -481,7 +492,7 @@
     \subsection{无穷大与无穷小的关系}
     在自变量的同一变化过程中,若$f(x)$是无穷大,则$\frac{1}{f(x)}$是无穷小;若$f(x)$是无穷小,且$f(x)\neq 0$,则$\frac{1}{f(x)}$是无穷大.
     \section{函数极限的运算}
-    \subsection{极限的四则运算法则}
+    \subsection{极限的四则运算法则}\label{jxdsz1}
     如果极限不存在，那么极限属于超实数系的范畴，在超实数系下不可以进行代数运算，只可以进行替换运算。但是如果极限均存在，那么可以进行代数计算。\\
     若$\lim f(x)=A$,$\lim g(x)=B$,那么
     \begin{itemize}
@@ -495,15 +506,38 @@
             \item 不存在 \pm 不存在 =不一定\footnote{反例：$\lim _{x \to 0}(\sin \frac{1}{x}-\sin \frac{1}{x})=0$}
             \item 存在 \times (\div) 不存在 = 不一定
             \item 不存在 \times (\div) 不存在 = 不一定
-            \item 若$\lim f(x) = A \neq 0$,则$\lim f(x)\lim g(x)=A \times \lim g(x)$
+            \item 若$\lim f(x) = A \neq 0$,则$\lim f(x)\lim g(x)=A \times \lim g(x)$\footnote{即极限非0的因子可以先求出来}
         \end{itemize}
     \end{criterion}
     \begin{problem}
+        求$\lim_{x\to+\infty}\frac{e^x}{\left(1+\frac1x\right)^{x^2}}.$极限
+    \end{problem}
+    \begin{solution}
+        由于该极限的分子$e^x$的极限为无穷大,无穷大属于极限中的不存在情况,因此不可以使用极限的四则运算法则\ref{jxdsz1},也不可以对分母使用两个重要无穷小进行化简.只能使用等价变换进行求解.即$\lim _{x\to +\infty}\frac{e^x}{(1+\frac{1}{x})x^2}=\lim_{x\to +\infty}\frac{e^x}{e^{x^2 \ln (1+\frac{1}{x})}}=\lim_{x\to +\infty} e^{x-x^2\ln(1+\frac{1}{x})}$对$\ln(1+\frac{1}{x})$进行泰勒展开,化简为$\lim_{x\to +\infty} e^{x-x+\frac{1}{2}}=e^{\frac{1}{2}}$
+    \end{solution}
+    \begin{problem}
+        已知$f(0)=f'(0)=0$,$f''(0)\neq0$,求$\lim _{x \to 0}\frac{\frac{f(x)}{x}}{f'(x)}$
+    \end{problem}
+    \begin{solution}
+        如果想把分子写$x \to 0$时的导数形式,然后进行计算,即$\lim_{x \to 0}\frac{\frac{f(x)-f(0)}{x-0}}{f'(0)}=\frac{f'(0)}{f'(0)}=1$进行运算,则不满足极限四则运算法则\ref{jxdsz1},因为其分母为0,违背了极限的四则运算法则,因此不可这样计算,需要对其进行恒等变形计算.即$\lim_{x \to 0}\frac{\frac{f(x)}{x^2}}{\frac{f'(x)-f'(0)}{x}}=\frac{1}{f''(0)}\lim_{x \to x_0}\frac{f(x)}{x^2} \xlongequal {\text{洛必达法则}}\frac{1}{f''(0)}\lim_{x\to 0}\frac{1}{2}\frac{f'(x)-f'(0)}{x}=\frac{1}{f''(0)}\frac{1}{2}f''(0)=\frac{1}{2}$
+    \end{solution}
+    \begin{problem}
     \textbf{若$\lim \frac{f(x)}{g(x)}=A \neq 0$,则$\lim f(x)=0 ,\lim g(x)=0 $}
     \end{problem}
+    
+    \begin{problem}
+        
+    \end{problem}
     \begin{proof}
-        $g(x)=\frac{f(x)}{\frac{f(x)}{g(x)}}$。求极限得$\lim g(x)=\lim \frac{f(x)}{\frac{f(x)}{g(x)}}=\frac{\lim f(x)}{\lim \frac{f(x)}{g(x)}}=0$.证明完毕\footnote{此证明为结论，经常使用}。
+        
     \end{proof}
+
+    \begin{proof}
+        $g(x)=\frac{f(x)}{\frac{f(x)}{g(x)}}$。求极限得$\lim g(x)=\lim \frac{f(x)}{\frac{f(x)}{g(x)}}=\frac{\lim f(x)}{\lim \frac{f(x)}{g(x)}}=0$.证明完毕
+    \end{proof}
+    \begin{note}
+        此证明为结论，经常使用
+    \end{note}
     \subsection{洛必达法则}
     \begin{defn}{}{}
         \begin{itemize}
@@ -765,7 +799,7 @@
         $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
         \item 利用如下重要不等式
         \begin{enumerate}
-            \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\footnote{
+            \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\label{lyzybds1} \footnote{
                 可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
             \item $\sqrt{ab}{\leqslant}\frac{a+b}{2}{\leqslant}\sqrt{\frac{a^{2}+b^{2}}{2}}(a,b{>}0)\footnote{还有一个不等式是$|ab|\leqslant \frac{a^2+b^2}{2}$}$
             \item $\sqrt[3]{abc}\leqslant\frac{a+b+c}3\leqslant\sqrt{\frac{a^2+b^2+c^2}3}(a,b,c>0)$

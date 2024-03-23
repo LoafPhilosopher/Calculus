@@ -60,10 +60,11 @@
         \end{solution}
     \subsection{反函数}
     \begin{defn}{反函数定义}{}
-        设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
+        设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}\footnote{该条件"唯一性"非常重要,如函数$y=x^2$,当$y=y_0$时,有不同的$x$值满足$f(x)=y_0$,因此$x^2$不存在反函数,而$y=\ln x$取任意$y_0 \in R_y$都存在唯一的$x$满足$f(x)=y_0$}\label{xxx1}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
     \end{defn}
     \begin{criterion}{关于反函数图像和$x,y$值转换的问题}{}
-        \textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}\footnote{这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.}.
+        基本解释:若以函数$y=e^x$为例,其中$y=e^x$为原函数,记为$y=f(x)$,其反函数为$x=\ln y$,记为$x=f^{-1}(y)$,自变量转换,转换为$y=\ln x$,记为$y=f(x)$.此时,在同一直角坐标系中，$y=f(x)$ 和$x=f^{-1}(y)$ 的图形重合，$y=f(x)$ 和$y=f^{-1}(x)$ 的图形关于直线$y=x$对称。\newline
+        详细解释:\textbf{若把$x=f^{-1}(y)$与$y=f(x)$的图形画在同一坐标系中,则它们完全重合.只有把$y=f(x)$的反函数$x=f^{-1}(y)$写成$y=f^{-1}(x)$后,它们的图形才关于 $y=x$对称}\footnote{这是因为在$x=f^{-1}(y)$中$y$是自变量而$x$是因变量,而在$y=f(x)$中恰恰相反(这个时候的图像应该一个是x-y坐标系函数图像,一个是y-x坐标系函数图像),因此如果此时不交换变量,那么其域没有变化,画在一起会重合,只有交换了变量之后才不会重合.}.
         以函数$y=2x+1$为例:
         \begin{center}
             \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -109,9 +110,9 @@
                   \begin{figure}[H]
                       \centering \includegraphics[width=
                           0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
-                      \label{xxx1}
                   \end{figure}
-            \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.
+            \item 连续可导的函数如果具有反函数，那么一定单调，但是单调函数不一定推出导数一定都不为0，如$f(x)=x^3$在$x=0$处的导数
+            \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.\footnote{反函数的唯一性见此处定义\ref{xxx1}}
         \end{itemize}
     \end{defn}
 
@@ -152,7 +153,6 @@
                   \end{itemize}
         \end{itemize}
     \end{note}
-   
     \subsection{复合函数}
     设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
     $$
@@ -164,7 +164,7 @@
     \newline
     $(A)\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}\text{不存在}.\quad(\mathrm{C})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}\text{不存在}.$
     \end{problem}
-    \begin{solution}
+    \begin{solution}\footnote{看见复合函数,应把复合函数带入,把表达式求出来}
         函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
     \end{solution}
     \subsection{函数的四种特性及重要结论}
@@ -173,20 +173,20 @@
     \begin{defn}{有界性的定义}{}
         设$f(x)$的定义域为$D$,数集$I \subset D$.如果存在某个正数$M$,使对任一$x \in I$,有\textcolor{red}{$|f(x)| \leqslant M$},则称$f(z)$在$I$上\uwave{有界};如果这样的$M$不存在,则称$f(x)$在$I$上\uwave{无界}.
     \end{defn}
-    \begin{itemize}
+    \begin{itemize}\label{yjxpd1}
         \item \textbf{有界是指,同时有上界和下界}
         \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
         \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
     \end{itemize}
-    \begin{criterion}{有界性的判断}{}
+    \begin{criterion}{\textcolor{red}{有界性的判断}}{}
         \begin{itemize}
             \item 利用定义
             \item $f(x)$在$[a,b]$上连续$\Rightarrow f(x)$在$[a,b]$上有界
-            \item $f(x)$在$(a,b)$上连续,且$f(a^+)$和$f(b^-)$存在$\Rightarrow f(x)$在$(a,b)$上有界.
+            \item $f(x)$在$(a,b)$上连续,且$f(a^+)$和$f(b^-)$存在$\Leftrightarrow f(x)$在$(a,b)$上有界.
             \item \textbf{$f'(x)$在区间$I(\text{有限})$\footnote{长度有限}上有界$\Rightarrow f(x)$在$I$上有界}
                   \begin{proof}
                       \begin{itemize}
-                          \item 使用拉格朗日中值定理进行证明:设区间$I(a,b)$由拉格朗日中值定理可得$f(b)-f(a)=f'(\xi)(b-a)$，固定点$a$，那么对区间$I(a,b)$上每一个点求拉格朗日中值定理，那么$f(x)=f(a)+f'(\xi)(b-a)$,其中$f(a)$为固定值,$(x-a)$为固定值，$f'(\xi)$在$I(a,b)$上有界，综上$f(x)$在区间上必有界。
+                          \item 使用拉格朗日中值定理进行证明:设区间$I(a,b)$由拉格朗日中值定理可得$f(b)-f(a)=f'(\xi)(b-a)$，固定点$a$，那么对区间$I(a,b)$上每一个点求拉格朗日中值定理，那么$f(x)=f(a)+f'(\xi)(x-a)$,其中$f(a)$为固定值,$(x-a)$为有界值，$f'(\xi)$在$I(a,b)$上有界，综上$f(x)$在区间上必有界。
                           \item 使用斜率进行证明:由几何意义可知,$f'(x)$为$f(x)$的斜率,那么如果$f'(x)$有界,那么斜率有界,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
                           \item 使用面积进行证明:$f'(x)$在有限区间上有界,则该区间上$f'(x)$与$x$轴所围成的面积是有界的,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
                       \end{itemize}
@@ -209,7 +209,7 @@
     (D)若$f(x)$在$(0,1)$内有界,则$f'(x)$在$(0,1)$内有界
     \end{problem}
     \begin{solution}
-        \textbf{一元函数中,优先看导数,由导数推函数\footnote{因为函数导数可以刻画出函数的变化情况}}。同时此处可以使用有界性判断的定理三,可以得出导函数如果在有限区间$I$上有界,那么函数在区间$I$上有界。本题选C。
+        \textbf{一元函数中,优先看导数,由导数推函数\footnote{导数可以决定函数的变化,因此出现该类型的题目时,优先看有导数的选项}}。同时此处可以使用有界性判断\ref{yjxpd1}的定理三,可以得出导函数如果在有限区间$I$上有界,那么函数在区间$I$上有界。本题选C。
     \end{solution}
     \begin{problem}
     设函数$f(x)$连续,且$f'(0)>0$,则存在$\delta >0 $使得:\\
@@ -219,10 +219,10 @@
     (D)对任意的$x\in (-\delta,0)$有$f(x)>f(0)$
     \end{problem}
     \begin{solution}
-        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项：一点可导推不出区间可导\footnote{由符号函数可证得}。D显然错误不满足题意，本题选C。
+        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \frac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \frac{f(x)-f(0)}{x}$。
     \end{solution}
     \subsubsection{单调性}
-    \begin{defn}{}{}
+    \begin{defn}{单调性的定义}{}
         设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
     \end{defn}
     判断单调性的方法
@@ -244,30 +244,42 @@
     \begin{defn}{奇偶性的定义}{}
         设$f(x)$的定义域$D$关于原点对称(即若$x \in D$,则$-x \in D$).如果对于任一$x \in D$,恒有$f(-x)=f(x)$,则称$f(x)$为\textbf{偶函数}.如果对于任一$x \in D$,恒有$f(-x)=-f(x)$,则称$f(x)$为\textbf{奇函数}.
     \end{defn}
-    \begin{criterion}{奇偶性的性质}{}
-        \begin{itemize}
+    \begin{criterion}{奇偶性的性质}{}\label{jox2}
+        \begin{enumerate}
+            \item 奇偶函数运算后的奇偶性:
+            \begin{itemize}
+                \item 奇函数乘(除)偶函数=奇函数；
+                \item 奇函数乘(除)奇函数=偶函数；
+                \item 偶函数乘(除)偶函数=偶函数；
+                \item 奇函数加(减)奇函数=奇函数；
+                \item 偶函数加(减)偶函数=偶函数；
+                \item 不恒为零的偶(奇)函数加减不恒为零的奇(偶)函数为非奇非偶函数；
+                \item 偶(奇)函数乘以非奇非偶函数，一般不再是偶(奇)函数，为非奇非偶函数。
+            \end{itemize}
             \item $f(\varphi(x))$(内偶则偶,内奇看外)\footnote{
                   奇[偶]$\Rightarrow$ 偶;偶[奇]$\Rightarrow$ 偶;奇[奇]$\Rightarrow$ 奇;偶[偶]$\Rightarrow$ 偶;非奇非偶[偶]$\Rightarrow$ 偶}
             \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数\footnote{证明如下:令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$}.
             \item \textbf{求导后奇偶性互换}
-            \item \textbf{连续的奇函数的一切原函数都是偶函数},\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\label{sec:intro}\footnote{设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,F(x)为奇函数.}}
-            \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}
+            \item \textbf{连续的奇函数的一切原函数都是偶函数}\\\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{证明如下:设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,F(x)为奇函数.}}\label{jox1}
+            \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}\footnote{证明如下:设$F(x)=\int_a ^x f(t)dt$由变上限积分求导公式可得:$(\int _a ^x f(t)dt)'=f(x)$,已知$f(x)$为奇/偶函数,由奇偶性的性质 \ref{jox2} 中第\ref{jox1}条可得}
             \item \textbf{对于任意函数$f(x)$,令$u(x)=\frac{1}{2}[f(x)+f(-x)]$,$v(x)=\frac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\frac{1}{2}[f(x)+f(-x)]+\frac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
             \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
             \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
-            \item     设$f(x)$是定义在$[-l,l]$上的任意函数,则
+            \item 设$f(x)$是定义在$[-l,l]$上的任意函数,则
                   $$
                       F_1(x)=f(x)-f(-x)\text{必为奇函数};F_2(x)=f(x)+f(-x)\text{必为偶函数}\footnote{证明如下:已知$f(x)$是任意函数,$-1$带入可得,$F_1(-x)=f(-x)-f(x)=-F_1(x)$,同理可证$F_2$成立.}
                   $$
-        \end{itemize}
+        \end{enumerate}
     \end{criterion}
     \begin{problem}
     设$f(x)$连续且为奇函数,则下列函数中必为偶函数的为\\
-    (A) $\int_0 ^x du \int _0 ^u t f(t) dt$ \qquad \qquad (B)$\int_a ^x du \int _0 ^u f(t)dt$\\
+    (A) $\int_0 ^x du \int _a ^u t f(t) dt$ \qquad \qquad (B)$\int_a ^x du \int _0 ^u f(t)dt$\\
     (C) $\int _a ^x du \int _0 ^u tf(t)dt$  \qquad \qquad (D) $\int_0 ^x du \int _a ^u f(t) dt$
     \end{problem}
     \begin{solution}
-        % // TODO
+       $A$选项 已知函数$f(x)$连续为奇函数,那么$tf(t)$为偶函数,若其想为奇函数,其积分形式应为$\int _0 ^u tf(t) dt$.\\ $B$选项为奇函数,$\int _0 ^x f(t) dt$为偶函数,再次积分,无法满足过原点,因此无奇偶性.
+       \\$C$选项,同理,$tf(t)$为偶函数,积分后为奇函数,再次积分后为偶函数,正确
+       \\$D$选项,第一次积分后为非奇非偶函数
     \end{solution}
     \subsubsection{周期性}
     \begin{defn}{周期函数的定义}{}
@@ -276,10 +288,16 @@
     需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\frac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
     \subsubsection{重要结论}
     \begin{itemize}
-        \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.
-        \item 设$f(x)$\textbf{连续}\footnote{一定要连续,例如$f(x)=|\sin x|$此函数因在$x=n \pi$点上不连续,因此不满足}且以$T$为周期,则$F(x)=\int_0 ^x f(t)dt$ 是以$T$为周期的周期函数$\Leftrightarrow\int_{0}^{\tau}f(x)\mathrm{d}x=0.$
-        \item \textbf{周期函数的原函数是周期函数的充要条件是其在一个周期上的积分为0.}
+        \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.\label{zyjl1}
+        \item 设$f(x)$\textbf{连续且以$T$为周期,则$F(x)=\int_0 ^x f(t)dt$ 是以$T$为周期的周期函数$\Leftrightarrow\int_{0}^{\tau}f(x)\mathrm{d}x=0.$}\footnote{证明如下:$F(x+T)=\int_{a}^{x+T}f(t)\mathrm{d}t=\int_{a}^{x}f(t)\mathrm{d}t+\int_{x}^{x+T}f(t)\mathrm{d}t$,因为$f(x)$ 以$T$为周期，于是$\int _x^{x+ T}f( t) $d$t= \int _0^Tf( t) $d$t$, 即$F( x+ T) - F( x) = \int _0^Tf( t) $d$t$,所以当且仅当$\int _0^Tf( t) $d$t= 0, $即$\int _0^Tf( x) $d$x= 0$ 时，$F(x)$ 以$T$为周期.}
+        \item \textbf{周期函数的原函数是周期函数的充要条件是其在一个周期上的积分为0.}\label{zyjl2}
     \end{itemize}
+    \subsubsection{周期性的判断}
+    \begin{enumerate}
+        \item 利用周期性的定义
+        \item 根据定义\ref{zyjl1}第一条可导的周期函数其导函数为周期函数
+        \item 根据定义\ref{zyjl2}第三条周期函数的原函数不一定是周期函数\footnote{如函数$1+\cos x$}
+    \end{enumerate}
     \subsection{三种特殊函数}
     \subsubsection{符号函数}
     $$
@@ -310,9 +328,7 @@
     $$
         y=[x]
     $$
-
-    函数值向左移\footnote{\textbf{坐标轴上向左移,在现实生活中就是年龄}},即$x-1<[x] \leq x$
-
+    数值上向下取整,数轴上向左取整\footnote{\textbf{坐标轴上向左移,在现实生活中就是年龄}},即$x-1<[x] \leq x$
     \begin{center}
         \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
         \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
@@ -380,7 +396,6 @@
         \centering
         \includegraphics[width=0.8\textwidth]{1.3.2.1.pdf}
         \caption{幂函数图像}
-        \label{fig1}
     \end{figure}
     \begin{criterion}{幂函数常用技巧}{}
         \begin{itemize}
@@ -537,7 +552,16 @@
     由于这两个函数分别是$\sin x$和 $\cos x$的反函数,因此可以知道的是,$\sin x$的值域是$\arcsin x$的定义域.因此可以得到下面的结论
     \begin{criterion}{反正余弦函数相关性质}{}
         \begin{itemize}
-            \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$
+            \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)\footnote{描述一个函数所有值的区间}$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$需要注意的是其值需要在值域内.因为只有在这个区间上,函数才满足反函数定义\ref{xxx1}中的唯一性.那么可以推断出如下的反函数:
+            $$
+            \text{当}x \in [-\frac{\pi}{2},\frac{\pi}{2}]\text{时},x=\arcsin y
+            $$
+            $$
+            \text{当}x \in [\frac{\pi}{2},\frac{3\pi}{2}]时,x=\pi-\arcsin y
+            $$
+            $$
+            \text{当}x \in [\frac{3\pi}{2},2\pi],x=2\pi+\arcsin y            
+            $$
             \item 性质:$\arcsin x+\arccos x=\frac{\pi}{2}$(求导后可以发现导数为0)
         \end{itemize}
     \end{criterion}
@@ -548,8 +572,8 @@
         $$
             \cos(\arccos x)=x,x\in[-1,1],\cos(\arcsin x)=\sqrt{1-x^2},x\in[-1,1]\footnote{证明如下:令$t=\arccos x \in [0,\pi]$,$\cos t = x$,又$\sin ^2 t+\cos ^2 t=1$,那么$\sin t=\sqrt[2]{1-x^2}$,即$\sin(\arccos x)=\sqrt{1-x^2}$};
         $$
-        上述两个式子可抽象为$f^{-1}f(x)=x$.需要注意的是其值需要在值域内.
-
+        上述两个式子可抽象为$f^{-1}f(x)=x$.
+        除此之外,还有下面的等式
         $$
             \arcsin(\sin y)=y,y\in\left[-\frac{\pi}{2},\frac{\pi}{2}\right]
         $$
