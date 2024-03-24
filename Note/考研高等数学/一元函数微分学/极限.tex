@@ -106,7 +106,7 @@
     \begin{criterion}{}{}
         \begin{enumerate}
             \item 在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
-            \item 函数的极限值只与邻域内的函数值有关,而与该点的函数值无关.
+            \item \textbf{函数的极限值只与邻域内的函数值有关,而与该点的函数值无关}.
         \end{enumerate}
     \end{criterion}
     \subsubsection{单侧极限}
@@ -131,6 +131,17 @@
         $\lim\limits_{x\to0^+}\left[\begin{matrix}a\arctan\frac{1}{x}+(1+\mid x\mid)^{\frac{1}{x}}\\\end{matrix}\right]=\lim\limits_{x\to0^+}a\arctan\frac{1}{x}+\lim\limits_{x\to0^+}(1+x)^{\frac{1}{x}}=\frac{\pi}{2}a+\mathrm{e}$
         若极限存在,则$a=\frac{1-e^2}{\pi e}$
     \end{solution}
+    \begin{note}
+        由于自变量趋向的双向性,以下类型的函数因此需要进行特殊讨论:
+        \begin{itemize}
+            \item 形如$f(x)=max\{h(x),g(x)\}$此类函数也需要注意在函数变化点的自变量取值问题
+            \item $\lim_{x \to \infty}e^x$:$\lim _{x \to +\infty}e^x=+\infty,
+                      \lim _{x \to -\infty}e^x=0$
+            \item $\lim_{x \to 0} \frac{\sin x}{|x|}$:$\lim_{x \to 0^+}=\frac{\sin x}{x}=1$,$\lim_{x \to 0^-}=\frac{\sin x}{-x}=-1$
+            \item $\lim_{x \to \infty }\arctan x$:$\lim_{x \to +\infty}\arctan x=\frac{\pi}{2}$,$\lim_{x \to -\infty}\arctan x= -\frac{\pi}{2}$
+            \item $\lim_{x \to 0}[x]$:$\lim _{x \to 0^+}[x]=0,\lim_{x \to 0^-}[x]=-1$
+        \end{itemize}
+    \end{note}
     \subsubsection{自变量趋于无穷大时函数的极限}
     \begin{defn}{自变量趋于无穷大时函数极限定义}{}
         设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$.(不论它多么小),总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
@@ -217,17 +228,7 @@
             \item 该点是函数无定义点的聚点
         \end{itemize}
     \end{criterion}
-    \begin{criterion}{一些重要的函数极限问题}{}
-        以下类型的函数由于自变量取值的双向性因此需要进行特殊讨论:
-        \begin{itemize}
-            \item 形如$f(x)=max\{h(x),g(x)\}$此类函数也需要注意在函数变化点的自变量取值问题
-            \item $\lim_{x \to \infty}e^x$:$\lim _{x \to +\infty}e^x=+\infty,
-                      \lim _{x \to -\infty}e^x=0$
-            \item $\lim_{x \to 0} \frac{\sin x}{|x|}$:$\lim_{x \to 0^+}=\frac{\sin x}{x}=1$,$\lim_{x \to 0^-}=\frac{\sin x}{-x}=-1$
-            \item $\lim_{x \to \infty }\arctan x$:$\lim_{x \to +\infty}\arctan x=\frac{\pi}{2}$,$\lim_{x \to -\infty}\arctan x= -\frac{\pi}{2}$
-            \item $\lim_{x \to 0}[x]$:$\lim _{x \to 0^+}[x]=0,\lim_{x \to 0^-}[x]=-1$
-        \end{itemize}
-    \end{criterion}
+    
     \subsubsection{局部有界性}
     \begin{them}{}{}
         若极限$\lim_{x \to x_0}f(x)$存在\footnote{对局部有界性的描述需要指明是在那个区间上},则$f(x)$在点$x_0$某去心邻域内有界.
@@ -424,7 +425,7 @@
     \end{defn}
     \textbf{$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
     \begin{criterion}{无穷小与函数极限的关系(脱帽法)}{}
-        $\lim_{x\to\bullet}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\bullet}f(x)$为超实数值，其实数部分为$A$，函数$f(x)$的函数值为$A+\alpha$
+        $\lim_{x\to\bullet}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\bullet}f(x)$为超实数值，其实数部分为$A$，函数$f(x)$的函数值为$A+\alpha$\label{wqx1}
     \end{criterion}
     \subsection{\textcolor{red}{无穷小的性质}}
     \begin{itemize}
@@ -573,18 +574,32 @@
         该函数也是$\frac{0}{0}$型，但是如果使用洛必达法则，则$2x \times \sin \frac{1}{x}-\cos \frac{1}{x}$,极限显然不存在，因此不可以使用洛必达法则。则正确求法为$\lim _{x\to 0}\frac{x^2\times \sin \frac{1}{x}}{x}=\lim_{x\to 0}x\times\sin\frac{1}{x}=0$.
     \end{solution}
     \subsection{泰勒公式}
-    设$f(x)$在点$x=0$处$n$阶可导\footnote{泰勒公式是在一点处展开,函数必须在那一点处n阶导数存在},则存在$x=0$的一个邻域，对于该领域内的任一点$x$,有:
+    泰勒公式的目的是提高精确度,用更高次的多项式来逼近函数
+    \subsubsection{带拉格朗日余项的$n$阶泰勒展开式}
+    如果函数$f(x)$在$x_0$的某个邻域$U(x_0)$内具有(n +1)阶导数，那么对任一$x\in U(x_0)$,有
     $$
-        f(x)=f(0)+f'(0)x+\frac{f''(0)}{2!}x^2+\cdots+\frac{f^{(n)}(0)}{n!}x^n+o(x^n)
+    f(x)=f(x_{0})+f^{\prime}(x_{0})(x-x_{0})+\frac{f^{\prime\prime}(x_{0})}{2!}(x-x_{0})^{2}+\frac{f^{(n)}\left(x_{0}\right)}{n!}\left(x-x_{0}\right)^{n}+{\frac{f^{(n+1)}(\xi)}{(n+1)!}}(x-x_{0})^{n+1}
     $$
-    当$x\to 0$时,有以下结论
+    \subsubsection{带佩亚诺余项的$n$阶泰勒展开式}
+    如果函数$f(x)$在\textbf{$x_0$处具有$n$ 阶导数，那么存在$x_{0}$的一个邻域，对于该邻域内的任一 $x$},有
+    $$
+    f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\frac{f''(x_{0})}{2!}(x-x_{0})^{2}+\cdots+\frac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}+o\left(\left(x-x_{0}\right)^{n}\right)
+    $$
+    \subsubsection{带有佩亚诺余项的麦克劳林公式}
+    对带有佩亚诺余项的泰勒公式取$x_0=0$,则可以得到带有佩亚诺余项的麦克劳林公式
+    $$
+    f(x)=f(0)+f'(0)x+\cdots+\frac{f^{(n)}(0)}{n!}x^{n}+o(x^{n})
+    $$
+    当$x\to 0$时,由麦克劳林公式可得,有以下结论
     \begin{align*}
         \boxed{\begin{aligned}
                         & \sin x =x-\frac{x^3}{3!}+o(x^3)                                &  & \cos x =1-\frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4)                  \\
-                        & \arcsin x =x+\frac{x^3}{3!}+o(x^3)                             &  & \tan x =x+\frac{x^3}3+o(x^3)                                    \\
-                        & \arctan x =x-\frac{x^{3}}{3}+o(x^{3})                          &  & \ln(1+x) =x-\frac{x^{2}}{2}+\frac{x^{3}}{3}+o(x^{3})            \\
+                        & \arcsin x =x+\frac{x^3}{3!}+o(x^3)                             &  &                              arccosx=\frac\pi2-arcsinx=\frac\pi2-x-\frac1{3!}x^3+o(x^3)       \\
+                        & \arctan x =x-\frac{x^{3}}{3}+o(x^{3})                          &  & \tan x =x+\frac{x^3}3+o(x^3)              \\
                         & \mathrm{e}^{x} =1+x+\frac{x^{2}}{2!}+\frac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\frac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
-                   \end{aligned}}
+                        & \frac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n}x^{n}+o(x^{n})          &  &       \frac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o(x^{n}) \\
+                        & \ln (x+\sqrt{1+x^{2}})=x-\frac{1}{6}x^{3}+\frac{1\times3}{2\times4\times5}x^{5}+\cdots  & & \ln(1+x) =x-\frac{x^{2}}{2}+\frac{x^{3}}{3}+o(x^{3}) \\
+                    \end{aligned}}
     \end{align*}
     \begin{criterion}{泰勒公式应用时的展开原则}{}
         \begin{itemize}
@@ -592,6 +607,85 @@
             \item $A-B$型,适用"幂次最低"原则:将$A,B$分别展开到他们系数不相等的$x$的最低次幂为止。如:已知当$x\to0$时，$\cos x-e^{\frac{x^2}2}$与$ax^b$为等价无穷小,求$a,b$.则应展开为$\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}+o(x^4),\mathrm{e}^{-\frac{x^2}{2}}=1-\frac{x^2}{2}+\frac{1}{2!}\frac{x^4}{4}+o(x^4).$
         \end{itemize}
     \end{criterion}
+    \begin{criterion}{\textcolor{red}{泰勒公式的解题技巧}}{}
+        \begin{enumerate}
+            \item 泰勒公式构建了函数与其高阶导之间的联系,因此看见高阶导数,要条件反射的想到泰勒公式
+            \item 奇函数的泰勒展式只有奇数次幂，偶函数的泰勒展式只有偶数次幂\footnote{如$\sin x$和$\cos x$}
+            \item 极限当中,用佩亚诺余项$O$($x$的$n$次幂),证明题中,用拉格朗日余项,找提供信息最多的点作为展开点
+            \item 等价无穷小的本质是泰勒的低精度形式,加减法不建议使用等价无穷小,建议直接泰勒
+            \item 加项减项的本质也是泰勒\footnote{如$\ln(x)=\ln(1+x-1)\sim x-1$}
+        \end{enumerate}
+    \end{criterion}
+    \begin{problem}
+        $\lim_{x\to0}\frac{\ln\left(1+x+x^{2}\right)-x}{x^{2}}$
+    \end{problem}
+    \begin{solution}
+        对等式进行泰勒展开$\frac{\ln(1+x+x^2)-x}{x^2}=\frac{(x+x^2-\frac{1}{2}(x+x^2)^2-x)}{x^2}=\lim_{x \to 0}\frac{x^2-\frac{1}{2}x^2}{x^2}=\frac{1}{2}$
+    \end{solution}
+    \begin{problem}
+        $f(x)$在$x=0$处二阶可导且满足$\lim_{x\to 0}\frac{f(x)\sin x+\ln(1+x)}{x^3}=0$ ,求$f(0),f^{\prime}(0),f^{\prime\prime}(0)$
+    \end{problem}
+    \begin{solution}
+        对原式中$f(0)$和$\sin x$和$\ln(1+x)$各项进行泰勒展开得:
+    \begin{equation*}
+        \begin{split}    
+            & \lim_{x\to 0}\frac{f(x)\sin x+\ln(1+x)}{x^3}=0 \\
+            & = \lim_{x \to 0}\frac{(f(x)=f(0)+f'(0)x+\frac{f''(0)}{2}x^2)(x-\frac{1}{6}x^3)-(x-\frac{1}{6}x^3)+(x-\frac{x^2}{2}+\frac{x^3}{3})}{x^3}=0 \\
+            & = \frac{(f(0)+1)x+(f^{\prime\prime}(0)-\frac{1}{2})x^{2}+(-\frac{1}{6}f(0)+\frac{f^{\prime\prime}(0)}{2}+\frac{1}{3})x^{3}+o(x^{3})}{x^{3}}=0.
+    \end{split}
+    \end{equation*}    
+    可以得到的是,分子的极限一定为0,那么$\begin{cases}f(0)+1=0\\f'(0)-\frac{1}{2}=0\\-\frac{1}{6}f(0)+\frac{f''(0)}{2}+\frac{1}{3}=0\end{cases}\implies \begin{cases}f(0)=-1\\f^{\prime}(0)=\frac{1}{2}\\f''(0)=-1\end{cases}$
+    \end{solution}
+    \begin{note}
+        看见各阶导数应想到泰勒公式
+    \end{note}
+    \begin{problem}
+        已知函数$f(x)$在$x=0$的某领域内连续,且$\lim_{x \to 0}(\frac{\sin x}{x^2}+\frac{f(x)}{x})=2$,试求$f(0),f'(0)$
+    \end{problem}
+    \begin{solution}
+        对原式进行通分然后对$\sin x$进行泰勒展开:
+        \begin{equation*}
+            \begin{split}    
+                & \lim_{x \to 0}\frac{\sin x+xf(x)}{x^2}=2\\
+                & = \lim_{x \to 0}\frac{x+xf(x)+o(x^2)}{x^2}=2 \\
+            \end{split}
+        \end{equation*}  
+    根据函数极限与无穷小的关系\ref{wqx1}可知,$1+f(x)=2x+o(x)$,$f(x)=2x-1+o(x)$因为函数在$x=0$上连续,因此$f(0)=\lim_{x\to 0}f(x)$,$f(x)=2x-1+o(x)$的表达式是$x\to 0$时的表达式,将$x=0$带入可得$f(0)=-1$,使用导数定义求得$f(x)$在点0处的导数,即$f'(0)=\lim_{x \to 0}\frac{f(x)-f(0)}{x-0}=\frac{2x+o(x)}{x}=2$
+    \end{solution}
+    \begin{note}
+        看见此类问题,第一步应先通分,然后将具体函数的泰勒进行展开(因为此题中的条件是连续而不是可导,如果是可导的话可以全部进行展开),然后把$f(x)$的表达式给求出来
+    \end{note}
+    \begin{problem}
+        设函数$f(x)\:=\sec x$在$x=0$ 处的 2 次泰勒多项式为1 + $ax+bx^2$,则\\
+        $(A)a=1,b=\frac{1}{2}  \qquad (B)a=1.b=\frac{1}{2}  \qquad (C)a=0,b=-\frac{1}{2} \qquad  (D)a=0,b=\frac{1}{2}$
+    \end{problem}
+    \begin{solution}
+        $f(x)=\sec x=\frac{1}{\cos x}$,该函数为偶函数,因此泰勒展开只有偶数次幂,那么$a=0$,该函数一定大于0,因此$b \geq 0$,排除C,A,B.
+    \end{solution}
+    \begin{note}
+        本题也可以将$\sec x$展开,但是较为麻烦,可以采用上述的方法进行运算.
+    \end{note}
+    \begin{problem}
+        设函数$f(x)=\frac{\sin x}{1+x^2}$在$x=0$处的3次泰勒多项式为$ax + b x ^ 2 + c x ^ 3 $,则
+        \\(A)$a=1,b=0,c=-\frac{7}{6}$\quad (B)$a=1,b=0,c=\frac{7}{6}$\\ (C)$a=-1,b=-1,c=-\frac{7}{6}$\quad (D)$a=-1,b=-1,c=\frac{7}{6}$
+    \end{problem}
+    \begin{solution}
+        法1:对分子进行泰勒展开,然后使用整式除法$$
+            \begin{tabular}{lllll}
+                                         &  & $x-\frac{7}{6}x^3$                  &  &  \\ \cline{2-3}
+            \multicolumn{1}{l|}{$1+x^2$} &  & $x-\frac{7}{6}x^3+\frac{1}{120}x^5$ &  &  \\ \cline{3-3}
+                                         &  & $ x+x^3$                            &  &  \\ \cline{3-3}
+                                         &  & $-\frac{7}{6}x^3+\frac{1}{120}x^5$  &  &  \\ \cline{3-3}
+                                         &  & $-\frac{7}{6}x^3-\frac{7}{6}x^5$    &  & 
+            \end{tabular}
+        $$
+        \\法2:对整式进行泰勒展开与等价无穷小替换$f(x)=(x-\frac{x^3}{6})(1-x^2)=x-\frac{7}{6}x^3$\\
+        法3:对整式进行泰勒展开计算可得$x-\frac{7}{6}x^3$\\
+    \end{solution}
+    \begin{note}
+        遇见此类问题,解题方法的优先级为长除法,利用等价替换,使用定义(利用泰勒公式直接所有项都展开)
+    \end{note}
+   
     \subsection{抓大头和抓小头}
     本质是同时处以最高阶/最低阶
     $$
@@ -655,7 +749,7 @@
         求两个无穷小之比的极限时,分子及分母都可用等价无穷小来代替．但是需要遵循以下代换原则\footnote{其实没有什么替换原则，本质其实是因为超实数系下不能进行实数运算，只能进行替换运算}
         \begin{itemize}
             \item 乘除关系可以换:若$\alpha\sim\alpha_1,\beta\sim\beta_1,\text{则}\lim\frac\alpha\beta=\lim\frac{\alpha_1}\beta=\lim\frac\alpha{\beta_1}=\lim\frac{\alpha_1}{\beta_1}$
-            \item 加减关系一定条件下可以换
+            \item 加减关系一定条件下可以换\footnote{这样的形式其实不经常用,看见加减最好使用泰勒公式进行替换运算}
                   \begin{itemize}
                       \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq1,\text{则 }\alpha-\beta\sim\alpha_{1}-\beta_{1}$
                       \item 若$\alpha\sim\alpha_{1},\beta\sim\beta_{1},\text{且}\operatorname*{lim}\frac{\alpha_{1}}{\beta_{1}}=A\neq-1,\text{则 }\alpha+\beta\sim\alpha_{1}+\beta_{1}$
@@ -697,6 +791,37 @@
         \item $x \to 1$时,$\ln x \sim x-1$,因为$\ln(1+x-1)\sim x-1$
         \item 当$A\to 0,B \to 0$时,$e^A-e^B \sim A-B$,因为$e^B(e^{A-B}-1)\sim A-B$
     \end{enumerate}
+    \begin{problem}
+        假设$\lim_{x \to 0}\frac{f(x)}{1-\cos x}$存在
+    \end{problem}
+    \begin{solution}
+        若$\lim_{x \to 0}\frac{f(x)}{1-\cos x}$存在,那么$\lim_{x \to 0}\frac{f(x)}{1-\cos x}=\lim_{x \to 0}(\frac{f(x)}{\frac{1}{2}x^2}\times\frac{\frac{1}{2}x^2}{1-\cos x})\xlongequal {\text{等价无穷小}}\lim_{x \to 0\frac{f(x)}{\frac{1}{2}x^2}}$
+    \end{solution}
+    \begin{note}
+        整体的乘除法本质是构造恒等变形
+    \end{note}
+    \begin{problem}
+        求极限$\lim_{x\to 0}\frac{\sin(x^2\sin \frac{1}{x})}{x}$
+    \end{problem}
+    \begin{solution}
+        由常用不等式\ref{cybds1}的$x \to 0$,$|\sin x|\le|x|$,那么$|\frac{\sin(x^2\sin\frac{1}{x})}{x}|\leq|\lim_{x \to 0}\frac{x^2\sin\frac{1}{x}}{x}|$,由夹逼准则得:$0\leqslant \lim_{x \to 0}|\frac{\sin(x^2\sin\frac{1}{x})}{x}|\leqslant\lim_{x\to 0}|\frac{x^2\sin\frac{1}{x}}{x}|$左右极限都为0,因此$\lim_{x\to 0}\frac{\sin(x^2\sin \frac{1}{x})}{x}$极限为0
+    \end{solution}
+    \begin{note}
+        \textbf{等价无穷小替换的本质是构造恒等变形.}\\
+        本题有一个常见的错误做法,就是直接把$\lim_{x \to 0}\frac{\sin(x^2\sin\frac{1}{x})}{x}$进行等价无穷小替代,写为$\lim_{x \to 0}\frac{x^2\sin\frac{1}{x}}{x}$,但是这是错误的,如果这样写,那么$\lim_{x\to0}\frac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}\times \frac{x^2\sin\frac{1}{x}}{x}$,在$\lim_{x\to0}\frac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}$的分母中,存在$x= \frac{1}{n\pi}$的间断点,根据极限定义,极限如果存在,那么去心邻域一定要有定义,那这样写就违背了极限的存在准则,因此极限$\lim_{x \to 0}\frac{x^2\sin\frac{1}{x}}{x}$不存在,不可以这样写.
+    \end{note}
+    \begin{problem}
+        设$\lim_{x\to0}\varphi(x)=0$,则下列命题中正确的个数为\\
+        (1)$\lim_{x\to0}\frac{\sin\varphi(x)}{\varphi(x)}=1$\\
+        (2)$\lim_{x\to0}(1+\varphi(x))^{\frac{1}{\varphi(x)}}=\mathrm{e}.$\\
+        (3)$\text{若 }f^{\prime}(x_{0})=A,\text{则}\operatorname*{lim}_{x\to0}\frac{f(x_{0}+\varphi(x))-f(x_{0})}{\varphi(x)}=A$\\
+    \end{problem}
+    \begin{solution}
+        这三个都是错的,因为$\varphi(x)$在分母上,都可能为0
+    \end{solution}
+    \begin{note}
+        抽象函数等价的条件是\textbf{$f(x) \to 0$只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$},比如函数$\varphi(x)=x\times\sin\frac{1}{x}$,其极限为0,但是又存在$x=\frac{1}{n\pi}$的无定义点.
+    \end{note}
     \subsection{利用基本极限求极限}
     \begin{align*} \boxed
         {
@@ -818,7 +943,7 @@
     \begin{itemize}
         \item 利用简单放大与缩小
         $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
-        \item 利用如下重要不等式
+        \item 利用如下重要不等式\label{cybds1}
         \begin{enumerate}
             \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\label{lyzybds1} \footnote{
                 可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
