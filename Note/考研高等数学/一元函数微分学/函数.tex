@@ -21,8 +21,8 @@
     \begin{criterion}{等比数列相关性质}{}
         \begin{itemize}
             \item 通项公式$a_n=a_1r^{n-1}$
-            \item 前$n$项的和$S_{n}=\left\{\begin{matrix}{na_{1},}&{r=1,}\\{\frac{a_{1}\left(1-r^{n}\right)}{1-r},}&{r\neq1.}\\\end{matrix}\right.$
-            \item $1+r+r^2+\cdots+r^{n-1}=\frac{1-r^n}{1-r}(r\neq1).$
+            \item 前$n$项的和$S_{n}=\left\{\begin{matrix}{na_{1},}&{r=1,}\\{\dfrac{a_{1}\left(1-r^{n}\right)}{1-r},}&{r\neq1.}\\\end{matrix}\right.$
+            \item $1+r+r^2+\cdots+r^{n-1}=\dfrac{1-r^n}{1-r}(r\neq1).$
         \end{itemize}
     \end{criterion}
     \subsection{常见数列前$n$项和}
@@ -132,17 +132,17 @@
     \end{solution}
     \begin{note}
         \begin{itemize}
-            \item 在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\frac{e^x+e^{-x}}{2}$是双曲余弦函数.
+            \item 在上面的例子中,函数$f(x)=\ln(x+\sqrt{x^2+1})$为反双曲正弦函数,其反函数为双曲正弦函数.除此之外,函数$y=\dfrac{e^x+e^{-x}}{2}$是双曲余弦函数.
                   \begin{figure}[H]
                       \begin{minipage}[t]{0.5\linewidth}
                           \centering
                           \includegraphics[height=4cm,width=4cm]{1.2.1.eps}
-                          \caption{双曲正弦函数$y=\frac{e^x-e^{-x}}{2}$}
+                          \caption{双曲正弦函数$y=\dfrac{e^x-e^{-x}}{2}$}
                       \end{minipage}%
                       \begin{minipage}[t]{0.5\linewidth}
                           \centering
                           \includegraphics[height=4cm,width=4cm]{1.2.2.eps}
-                          \caption{双曲余弦函数$y=\frac{e^x+e^{-x}}{2}$}
+                          \caption{双曲余弦函数$y=\dfrac{e^x+e^{-x}}{2}$}
                       \end{minipage}
                   \end{figure}
             \item \textbf{下列有关反双曲正弦函数结论需要记住}
@@ -150,7 +150,7 @@
                       \item $x\to0\text{时,}\ln\left(x+\sqrt{x^{2}+1}\right)\sim x.$
                       \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}+1}},\text{于是}\int\frac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
                       \item 由于$y=\ln\left(x+\sqrt{x^2+1}\right)$是奇函数,于是$\int_{-1}^1\left[\ln\left(x+\sqrt{x^2+1}\right)+x^2\right]\mathrm{d}x=\int_{-1}^1x^2\mathrm{d}x=\frac 23.$
-                      \item 泰勒展开前两项为$x-\frac{1}{6}x^3$\footnote{前两项和$\sin x$ 一样}
+                      \item 泰勒展开前两项为$x-\dfrac{1}{6}x^3$\footnote{前两项和$\sin x$ 一样}
                   \end{itemize}
         \end{itemize}
     \end{note}
@@ -195,12 +195,12 @@
         \end{itemize}
     \end{criterion}
     \begin{problem}
-    已知函数$f(x)=\frac{\int_0^x\ln(1+t^2)\operatorname{d}t}{x^a}\text{在}(0,+\infty)$上有界,则$a$的取值范围为
+    已知函数$f(x)=\dfrac{\int_0^x\ln(1+t^2)\operatorname{d}t}{x^a}\text{在}(0,+\infty)$上有界,则$a$的取值范围为
     \end{problem}
     \begin{solution}
         如果说$f(x)$在$(0,+\infty)$上有界,那么$f(x)$应该在区间两端点连续单侧极限存在.则$\lim_{x \to +\infty}f(x)$与$\lim_{x \to 0+}f(x)$极限存在。下面进行分情况讨论：\\
-        $\lim_{x \to +\infty}f(x)=\lim_{x \to +\infty}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}$对函数使用洛必达法则.化简为$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$.若要$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$有界,那么分母应趋近于无穷。则$\alpha -1>0$.\\
-        $\lim_{x \to 0^+}f(x)=\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}=$由洛必达法则可知$\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}$.由等价无穷小可知$\ln(1+x^2)\sim x^2$.那么上述等式可化为$\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}$,若要该极限成立。$\alpha -1\leqslant2$使得极限整体趋于0.综上所述,$\alpha$的取值范围应为$(1,3]$.
+        $\lim_{x \to +\infty}f(x)=\lim_{x \to +\infty}\dfrac{\int_0^x \ln(1+t^2)dt}{x^\alpha}$对函数使用洛必达法则.化简为$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$.若要$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$有界,那么分母应趋近于无穷。则$\alpha -1>0$.\\
+        $\lim_{x \to 0^+}f(x)=\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}$由洛必达法则可知$\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}$.由等价无穷小可知$\ln(1+x^2)\sim x^2$.那么上述等式可化为$\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}$,若要该极限成立。$\alpha -1\leqslant2$使得极限整体趋于0.综上所述,$\alpha$的取值范围应为$(1,3]$.
     \end{solution}
     \begin{problem}
     以下四个命题中正确的是:\\
@@ -220,7 +220,7 @@
     (D)对任意的$x\in (-\delta,0)$有$f(x)>f(0)$
     \end{problem}
     \begin{solution}
-        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \frac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \frac{f(x)-f(0)}{x}$。
+        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \frac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \dfrac{f(x)-f(0)}{x}$。
     \end{solution}
     \subsubsection{单调性}
     \begin{defn}{单调性的定义}{}
@@ -263,7 +263,7 @@
             \item \textbf{求导后奇偶性互换}
             \item \textbf{连续的奇函数的一切原函数都是偶函数}\\\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{证明如下:设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,F(x)为奇函数.}}\label{jox1}
             \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}\footnote{证明如下:设$F(x)=\int_a ^x f(t)dt$由变上限积分求导公式可得:$(\int _a ^x f(t)dt)'=f(x)$,已知$f(x)$为奇/偶函数,由奇偶性的性质 \ref{jox2} 中第\ref{jox1}条可得}
-            \item \textbf{对于任意函数$f(x)$,令$u(x)=\frac{1}{2}[f(x)+f(-x)]$,$v(x)=\frac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\frac{1}{2}[f(x)+f(-x)]+\frac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
+            \item \textbf{对于任意函数$f(x)$,令$u(x)=\dfrac{1}{2}[f(x)+f(-x)]$,$v(x)=\dfrac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\dfrac{1}{2}[f(x)+f(-x)]+\dfrac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
             \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
             \item 偶函数$y=f(x)$的图形关于$y$轴对称,且当$f(0)$存在时,必有$f'(0)=0$.
             \item 设$f(x)$是定义在$[-l,l]$上的任意函数,则
@@ -408,7 +408,7 @@
             \item 见到$\sqrt{u}$,$\sqrt[3]{u}$时,可用$u$来研究最值
             \item 见到$\mid u\mid$时,由$\mid u\mid=\sqrt{u^2}$,可用 $u^2$ 来研究最值
             \item 见到$u_1,u_2,u_3$,$\ln (u_1+u_2+u_3)=\ln u_{1}+\ln u_{2}+\ln u_{3}$来研究最值
-            \item 见到$\frac{1}{u}$时,可用$u$来研究最值(结论相反),即$\frac{1}{u}$与$u$的最大值点、最小值点相反
+            \item 见到$\dfrac{1}{u}$时,可用$u$来研究最值(结论相反),即$\dfrac{1}{u}$与$u$的最大值点、最小值点相反
         \end{itemize}
     \end{criterion}
     \subsection{指数函数}
@@ -428,7 +428,7 @@
             \item 特殊函数值:$a^0=1$,$\mathrm{e}^0=1$
             \item 指数运算法则:
                   $$
-                      a^{\alpha}\times a^{\beta}=a^{\alpha+\beta},\frac{a^{\alpha}}{a^{\beta}}=a^{\alpha-\beta}\footnote{$eg:e^{\tan x}-e^{\sin x}=e^{\sin x}\left(e^{\tan x-\sin x}-1\right)$},(a^{\alpha})^{\beta}=a^{\alpha\beta},(ab)^{\alpha}=a^{\alpha}b^{\alpha},\left(\frac{a}{b}\right)^{\alpha}=\frac{a^{\alpha}}{b^{\alpha}},
+                      a^{\alpha}\times a^{\beta}=a^{\alpha+\beta},\frac{a^{\alpha}}{a^{\beta}}=a^{\alpha-\beta}\footnote{$eg:e^{\tan x}-e^{\sin x}=e^{\sin x}\left(e^{\tan x-\sin x}-1\right)$},(a^{\alpha})^{\beta}=a^{\alpha\beta},(ab)^{\alpha}=a^{\alpha}b^{\alpha},\left(\dfrac{a}{b}\right)^{\alpha}=\dfrac{a^{\alpha}}{b^{\alpha}},
                   $$
         \end{itemize}
     \end{criterion}
@@ -451,7 +451,7 @@
             \item 对数运算法则
                   \begin{itemize}
                       \item $\log_{a}\left(MN\right)=\log_{a}M+\log_{a}N\left(\text{ 积的对数}=\text{对数的和 }\right).$
-                      \item $\log_{a}\frac{M}{N}=\log_{a}M-\log_{a}N\left(商的对数=\text{对数的差 }\right).$
+                      \item $\log_{a}\dfrac{M}{N}=\log_{a}M-\log_{a}N\left(商的对数=\text{对数的差 }\right).$
                       \item $\log_aM^n=n\log_aM,\quad\log_a\sqrt[n]{M}=\frac1n\log_aM\text{(幂的对数}=\text{对数的倍数 }).$
                   \end{itemize}
             \item \textcolor{red}{常用公式:$x=\mathrm{e}^{\ln x}\left(x>0\right),u^{\upsilon}=\mathrm{e}^{\ln u^v}=\mathrm{e}^{\upsilon\ln u}\left(u>0\right)$}
@@ -654,8 +654,8 @@
     \begin{center}
         \boxed{
             \begin{aligned}
-                 & \csc \alpha = \frac{1}{\sin \alpha} \quad \sec \alpha =\frac{1}{\cos \alpha} \quad \cot \alpha=\frac{1}{\tan \alpha} \\
-                 & \tan \alpha = \frac{\sin \alpha}{\cos \alpha} \quad \cot \alpha=\frac{\cos \alpha}{\sin \alpha}
+                 & \csc \alpha = \dfrac{1}{\sin \alpha} \quad \sec \alpha =\frac{1}{\cos \alpha} \quad \cot \alpha=\frac{1}{\tan \alpha} \\
+                 & \tan \alpha = \dfrac{\sin \alpha}{\cos \alpha} \quad \cot \alpha=\frac{\cos \alpha}{\sin \alpha}
             \end{aligned}
         }
     \end{center}
@@ -673,10 +673,10 @@
     \begin{center}
         \boxed{
             \begin{gathered}
-                \sin^{2}\frac{\alpha}{2}=\frac{1}{2}\left(1-\cos\alpha\right),\quad\cos^{2}\frac{\alpha}{2}=\frac{1}{2}\left(1+\cos\alpha\right), \\
-                \sin\frac\alpha2=\pm\sqrt{\frac{1-\cos\alpha}2},\quad\cos\frac\alpha2=\pm\sqrt{\frac{1+\cos\alpha}2}, \\
-                \tan{\frac{\alpha}{2}}= \frac{1-\cos\alpha}{\sin\alpha}=\frac{\sin\alpha}{1+\cos\alpha}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}, \\
-                \cot{\frac{\alpha}{2}}= \frac{\sin\alpha}{1-\cos\alpha}=\frac{1+\cos\alpha}{\sin\alpha}=\pm\sqrt{\frac{1+\cos\alpha}{1-\cos\alpha}}.
+                \sin^{2}\dfrac{\alpha}{2}=\frac{1}{2}\left(1-\cos\alpha\right),\quad\cos^{2}\frac{\alpha}{2}=\frac{1}{2}\left(1+\cos\alpha\right), \\
+                \sin\dfrac\alpha2=\pm\sqrt{\frac{1-\cos\alpha}2},\quad\cos\frac\alpha2=\pm\sqrt{\frac{1+\cos\alpha}2}, \\
+                \tan{\frac{\alpha}{2}}= \dfrac{1-\cos\alpha}{\sin\alpha}=\frac{\sin\alpha}{1+\cos\alpha}=\pm\sqrt{\frac{1-\cos\alpha}{1+\cos\alpha}}, \\
+                \cot{\frac{\alpha}{2}}= \dfrac{\sin\alpha}{1-\cos\alpha}=\frac{1+\cos\alpha}{\sin\alpha}=\pm\sqrt{\frac{1+\cos\alpha}{1-\cos\alpha}}.
             \end{gathered}
         }
     \end{center}
@@ -686,8 +686,8 @@
             \begin{aligned}
                  & \sin(\alpha\pm\beta)=\sin\alpha\cos\beta cos\alpha\sin\beta                  \\
                  & \cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta               \\
-                 & \tan(\alpha\pm\beta)=\frac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}  \\
-                 & \cot(\alpha\pm\beta)=\frac{\cot\alpha\cot\beta\mp1}{\cot\beta\pm\cot\alpha}.
+                 & \tan(\alpha\pm\beta)=\dfrac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}  \\
+                 & \cot(\alpha\pm\beta)=\dfrac{\cot\alpha\cot\beta\mp1}{\cot\beta\pm\cot\alpha}.
             \end{aligned}
         }
     \end{center}
@@ -713,9 +713,9 @@
     \begin{center}
         \boxed{
             \begin{aligned}
-                \sin \alpha =\frac{2\tan \frac{\alpha}{2}}{1+\tan^2 \frac{\alpha}{2}} \\
+                \sin \alpha =\frac{2\tan \frac{\alpha}{2}}{1+\tan^2 \dfrac{\alpha}{2}} \\
                 \\
-                \cos \alpha=\frac{1- \tan^2 \frac{\alpha}{2}}{1+ \tan^2 \frac{\alpha}{2}}
+                \cos \alpha=\frac{1- \tan^2 \frac{\alpha}{2}}{1+ \tan^2 \dfrac{\alpha}{2}}
             \end{aligned}
         }
     \end{center}
@@ -741,10 +741,10 @@
     \subsection{一元二次方程基础}
     \begin{itemize}
         \item 一元二次方程组:$a x^2 +bx+c=0(a \neq 0)$
-        \item 根的公式:$x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$
+        \item 根的公式:$x_{1,2}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$
         \item 根与系数的关系:$x_{1}+x_{2}=-\frac{b}{a},x_{1}x_{2}=\frac{c}{a}.$
         \item 判别式:$\Delta=b^2-4ac$
-        \item 抛物线顶点坐标:$(-\frac{b}{2a},c-\frac{b^2}{4a})$
+        \item 抛物线顶点坐标:$(-\dfrac{b}{2a},c-\dfrac{b^2}{4a})$
     \end{itemize}
     \subsection{因式分解公式}
     \begin{center}
