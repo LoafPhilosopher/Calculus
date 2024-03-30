@@ -408,7 +408,7 @@
     \end{defn}
     \textbf{$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
     \begin{criterion}{无穷小与函数极限的关系(脱帽法)}{}
-        $\lim_{x\to\bullet}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\bullet}f(x)$为超实数值,其实数部分为$A$,函数$f(x)$的函数值为$A+\alpha$\label{wqx1}
+        $\lim_{x\to\cdot}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\cdot}f(x)$为超实数值,其实数部分为$A$,函数$f(x)$的函数值为$A+\alpha$\label{wqx1}
     \end{criterion}
     \subsection{\textcolor{red}{无穷小的性质}}
     \begin{itemize}
@@ -439,8 +439,8 @@
     设$m,n$为无穷小,则
     \begin{itemize}
         \item[1.] $o(x^{m})\pm o(x^{n})=o(x^{l}),l=\min\{m,n\}$
-        \item[2.] $o(x^{m})\bullet o(x^{n})=o(x^{m+n}),x^{m}\bullet o(x^{n})=o(x^{m+n})$
-        \item[3.] $o(x^{m})=o(kx^{m})=k\bullet o(x^{m}),k \neq 0$
+        \item[2.] $o(x^{m})\cdot o(x^{n})=o(x^{m+n}),x^{m}\cdot o(x^{n})=o(x^{m+n})$
+        \item[3.] $o(x^{m})=o(kx^{m})=k\cdot o(x^{m}),k \neq 0$
     \end{itemize}
     \subsection{无穷大}
     \begin{defn}{无穷大的定义}{}
@@ -477,11 +477,12 @@
     在自变量的同一变化过程中,若$f(x)$是无穷大,则$\dfrac{1}{f(x)}$是无穷小;若$f(x)$是无穷小,且$f(x)\neq 0$,则$\dfrac{1}{f(x)}$是无穷大.
     \section{函数极限的运算}
     \subsection{极限的四则运算法则}\label{jxdsz1}
+    \subsubsection{利用极限的四则运算法则求极限}
     如果极限不存在,那么极限属于超实数系的范畴,在超实数系下不可以进行代数运算,只可以进行替换运算。但是如果极限均存在,那么可以进行代数计算。\\
     若$\lim f(x)=A$,$\lim g(x)=B$,那么
     \begin{itemize}
         \item $\operatorname*{lim}[kf(x)\pm lg(x)]=k\operatorname*{lim}f(x)\pm l\operatorname*{lim}g(x)=kA\pm lB$,其中$k,l$为常数
-        \item $\operatorname*{lim}[f(x)\bullet g(x)]=\operatorname*{lim}f(x)\bullet\operatorname*{lim}g(x)\equiv A\bullet B$,特别的,若$\lim f(x)$存在,$n$为正整数,则$\operatorname{lim}[f(x)]^n=\begin{bmatrix}\operatorname{lim}f(x)\end{bmatrix}^n$
+        \item $\operatorname*{lim}[f(x)\cdot g(x)]=\operatorname*{lim}f(x)\cdot\operatorname*{lim}g(x)\equiv A\cdot B$,特别的,若$\lim f(x)$存在,$n$为正整数,则$\operatorname{lim}[f(x)]^n=\begin{bmatrix}\operatorname{lim}f(x)\end{bmatrix}^n$
         \item $\operatorname*{lim}\dfrac{f(x)}{g(x)}=\dfrac{\operatorname*{lim}f(x)}{\operatorname*{lim}g(x)}=\dfrac{A}{B}(B\neq0)$
     \end{itemize}
     \begin{defn}{复合函数极限运算法则}{}
@@ -495,7 +496,7 @@
         (2)证明:$\lim \dfrac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
     \end{problem}
     \begin{proof}
-        (1)$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\bullet g(x)=\lim\dfrac{f(x)}{g(x)}\bullet\lim g(x)=A\bullet0=0.$
+        (1)$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
         \\
         (2)由于$g(x)=\dfrac{f(x)}{\dfrac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\dfrac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\dfrac{f(x)}{g(x)}}=\dfrac{0}{A}=0$ 
     \end{proof}
@@ -530,12 +531,15 @@
     \end{solution}
     \begin{note}
         本题的有另一个解法,但是相较上面的解法相比有些复杂,但是记录一个常见的错误,即什么时候可以用等价无穷小的问题,其写法为:
-        \newline
-        $\lim_{x\to 0}(\dfrac{1}{x^2}-\cot ^2 x)=(\dfrac{1}{x^2}-\dfrac{\cos^2 x}{\sin^2 x})$
-        \newline
-        $=\lim_{x\to 0}\dfrac{\sin^2 x-x^2 \cos^2 x}{x^2 \sin^2 x}=\lim_{x\to 0}(\dfrac{\sin^2 x-x^2\cos^2x}{x^4})\footnote{此处有一个常见的错误,就是能不能把 $\cos^2 x$代换为1,其实是不能的,即使最后答案正确,此时$x \to 0$时,分母也趋于0,如果进行替换,则违背了极限的运算法则,因此不能进行替换}$
-        \newline
-        $=\lim_{x\to 0}\dfrac{(\sin x-x\cos x)(\sin x+x\cos x)}{x^4}\xlongequal {\text{泰勒公式}}\dfrac{2}{3}$
+      \begin{align*}
+         \text{原式} & = \lim_{x\to 0}(\dfrac{1}{x^2}-\cot ^2 x)=(\dfrac{1}{x^2}-\dfrac{\cos^2 x}{\sin^2 x})  & \\ 
+        & =\lim_{x\to 0}\dfrac{\sin^2 x-x^2 \cos^2 x}{x^2 \sin^2 x} & \\
+        & =\lim_{x\to 0}(\dfrac{\sin^2 x-x^2\cos^2x}{x^4}) & \\
+    \end{align*}
+    此处有一个常见的错误,就是能不能把 $\cos^2 x$代换为1,其实是不能的,即使最后答案正确,此时$x \to 0$时,分母也趋于0,如果进行替换,则违背了极限的运算法则,因此不能进行替换
+        \begin{align*}
+            \text{原式} & =  \lim_{x\to 0}\dfrac{(\sin x-x\cos x)(\sin x+x\cos x)}{x^4}\xlongequal {\text{泰勒公式}}\dfrac{2}{3}  &\\
+        \end{align*}
     \end{note}
     \begin{problem}
     \textbf{若$\lim \dfrac{f(x)}{g(x)}=A \neq 0$,则$\lim f(x)=0 ,\lim g(x)=0 $}
@@ -546,7 +550,6 @@
     \begin{note}
         此证明为结论,经常使用
     \end{note}
- 
     \subsection{泰勒公式}
     泰勒公式的目的是提高精确度,用更高次的多项式来逼近函数
     \subsubsection{带拉格朗日余项的$n$阶泰勒展开式}
@@ -743,54 +746,18 @@
         等价无穷小具有传递性,因此$\sin x^2 \sim x^2$,$\sin x \sim x$,$\ln (1+x^2) \sim x^2$,$\ln (\sqrt{1+x^2})\sim \dfrac{1}{2}x^2$.若与$y(x)$为等价无穷小,那么$\lim_{x\to 0}\dfrac{y(x)}{f(x)}=1$。对$y(x)$进行泰勒展开$y(x)=y(0)+y'(0)x+\dfrac{y''(0)}{2}x^2.$当$x=0$时,有$y''(0)=1$,易知一阶导是连续的,对函数形式进行分析,可知函数在二阶导也是连续的,那么就可以展开到二阶,那么$y(x)=\dfrac{1}{2}x^2$。\\
         除此之外,还可以这样解决,已知二阶导连续,那么对$\dfrac{y(x)}{A/B/C/D}$进行洛必达可知D选项正确。
     \end{solution}
-    \subsection{抓大头和抓小头}
-    本质是同时处以最高阶/最低阶
-    $$
-    \lim_{x\to\infty}\dfrac{a_0x^m+a_1x^{m-1}+\cdots+a_m}{b_0x^n+b_1x^{n-1}+\cdots+b_n}=\left.\left\{\begin{aligned}&0\text{ ,当 }n>m\\&\dfrac{a_0}{b_0}\text{,当}n=m\\&\infty\text{ ,当 }n<m\end{aligned}\right.\right.
-    $$
-    \textbf{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{!n}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textbf{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}
-    \begin{problem}
-        求$\lim_{x\to \infty}\dfrac{4x^3+x^2+3x+10}{3x^3+2x+7}$
-    \end{problem}
-    \begin{solution}
-        对等式上下同除以$x^3$得$\lim_{x \to \infty}\dfrac{4+\dfrac1x+\dfrac3{x^2}+\dfrac{10}{x^3}}{3+\dfrac2{x^2}+\dfrac7{x^3}}=\dfrac{4}{3}$
-    \end{solution}
-    \begin{problem}
-        求$\lim_{x\to 0}\dfrac{x+2x^{2}+3x^{4}}{2x+4x^{3}+x^{5}}$
-    \end{problem}
-    \begin{solution}
-        上下同除以$x$得$\lim_{x\to 0}\dfrac{1+2x+3x^{3}}{2+4x^{2}+x^{4}}=\dfrac{1}{2}$
-    \end{solution}
-    \subsection{两个重要极限}
-    $$
-        \lim _ { \square \rightarrow \infty } ( 1 + \dfrac { 1 } { \square } ) ^ { \square } = e
-    $$
-    \\
-    $$
-        \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1
-    $$
-
-    \subsection{夹逼准则}
-    \begin{defn}{函数极限夹逼准则}{}
-        如果
-        \begin{itemize}
-            \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
-                  $$
-                      g(x)\leqslant f(x) \leqslant h(x)
-                  $$
-            \item $\lim_{x\to x_0(x\to\infty)}g(x)=A,\lim_{x\to x_0(x\to\infty)}h(x)=A$
-        \end{itemize}
-        那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
-    \end{defn}
-    \begin{itemize}
-        \item 夹逼准则处主要通过放缩来求极限
-        \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
-    \end{itemize}
-    \subsection{\textcolor{red}{单调有界准则}}
-    \begin{defn}{函数的单调有界准则}{}
-        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
-    \end{defn} 
-    \subsection{等价无穷小替代}
+    \subsection{等价替代求极限}
+    \subsubsection{利用基本极限求极限}
+    \begin{align*} \boxed
+        {
+            \begin{aligned}
+                 & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad     \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1 \\
+                 & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)                                                                                                \\
+                 & \lim_{x \to 0} \dfrac{a^x-1}{x}=\ln a
+            \end{aligned}
+        }
+    \end{align*}
+    \subsubsection{等价无穷小求极限}
     关于等价无穷小,有以下两个定理
     \begin{defn}{等价无穷小的充要条件}{}
         $\beta$与$\alpha$是等价无穷小的充分必要条件为
@@ -844,7 +811,6 @@
                 \end{aligned}
             }
         \end{align*}
-        \item  设 $f(x)$ 和 $g(x)$ 在 $x=0$ 的某邻域内连续,且$\operatorname*{lim}_{x\rightarrow0}\dfrac{f(x)}{g(x)}=1$,则$\int_{0}^{x}f(t)\mathrm{d}t\sim\int_{0}^{x}g(t)\mathrm{d}t$
         \item $x \to 1$时,$\ln x \sim x-1$,因为$\ln(1+x-1)\sim x-1$
         \item 当$A\to 0,B \to 0$时,$e^A-e^B \sim A-B$,因为$e^B(e^{A-B}-1)\sim A-B$
     \end{enumerate}
@@ -852,7 +818,7 @@
         假设$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在
     \end{problem}
     \begin{solution}
-        若$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在,那么$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}=\lim_{x \to 0}(\dfrac{f(x)}{\dfrac{1}{2}x^2}\times\dfrac{\dfrac{1}{2}x^2}{1-\cos x})\xlongequal {\text{等价无穷小}}\lim_{x \to 0\dfrac{f(x)}{\dfrac{1}{2}x^2}}$
+        若$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在,那么$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}=\lim_{x \to 0}(\dfrac{f(x)}{\frac{1}{2}x^2}\times\dfrac{\frac{1}{2}x^2}{1-\cos x})\xlongequal {\text{等价无穷小}}\lim_{x \to 0\dfrac{f(x)}{\frac{1}{2}x^2}}$
     \end{solution}
     \begin{note}
         整体的乘除法本质是构造恒等变形
@@ -879,18 +845,195 @@
     \begin{note}
         抽象函数等价的条件是\textbf{$f(x) \to 0$只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$},比如函数$\varphi(x)=x\times\sin\dfrac{1}{x}$,其极限为0,但是又存在$x=\dfrac{1}{n\pi}$的无定义点.
     \end{note}
-    \subsection{利用基本极限求极限}
-    \begin{align*} \boxed
-        {
-            \begin{aligned}
-                 & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad     \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1 \\
-                 & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)                                                                                                \\
-                 & \lim_{x \to 0} \dfrac{a^x-1}{x}=\ln a
-            \end{aligned}
-        }
-    \end{align*}
-    \subsection{定积分求极限}
-            % //TODO
+    \subsubsection{积分等价替换求极限}
+    \begin{defn}{积分等价替换法则}{}
+        设 $f(x)$ 和 $g(x)$ 在 $x=0$ 的某邻域内连续,且$\operatorname*{lim}_{x\rightarrow0}\dfrac{f(x)}{g(x)}=1$,则$\int_{0}^{x}f(t)\mathrm{d}t\sim\int_{0}^{x}g(t)\mathrm{d}t.$ \label{BSXJF1}
+    \end{defn}
+    \begin{defn}{变限积分求导公式}{}
+        设$F( x) = \int _{\varphi_1( x) }^{\varphi_2( x) }f( t) $d$t$ ,其中$f(x)$在$[a,b]$上连续，可导函数$\varphi_1(x)$和$\varphi_2(x)$的值域在$[a,b]$上，则在函数$\varphi_1(x)$和$\varphi_2(x)$的公共定义域上,有
+        $$
+        F'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\biggl[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t\biggr]=f\bigl[\varphi_{2}(x)\bigr]\varphi_{2}^{\prime}(x)-f\bigl[\varphi_{1}(x)\bigr]\varphi_{1}^{\prime}(x).
+        $$
+    \end{defn}
+    \begin{problem}
+        求$\lim_{x\to+\infty}\dfrac{\int_0^x(1+t^2)\mathrm{e}^{t^2}\mathrm{d}t}{x\operatorname{e}^{x^2}+x^2}$导数
+    \end{problem}
+    \begin{solution}
+        看见变上限积分类型计算题应首先想到洛必达法则，对原式进行进行洛必达法则得：
+            \begin{align*}
+                \text{原式} & =\lim_{x\to+\infty}\frac{\mathrm{e}^{x^2}+{x^2\mathrm{e}^{x^2}}}{\mathrm{e}^{x^2}+2x^2\mathrm{e}^{x^2}+2x}  & \\
+                & =\dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} & \\
+                \text{对极限取大头可得} & \\
+                & \lim_{x\to +\infty} \dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} = \dfrac{1}{2}  & \\
+            \end{align*}
+    \end{solution}
+    \begin{note}
+    在极限中,处理变上限积分的最好办法是洛必达。能洛则洛,不能洛的话就换元之后再洛。
+    \end{note}
+    \begin{problem}
+        若$\operatorname*{lim}_{x \to 0}\dfrac{\int_{0}^{x}\dfrac{t^{2}}{\sqrt{a^{2}+t^{2}}}dt}{bx-\sin x}=1$,求a,b,其中a,b为正数
+    \end{problem}
+    \begin{solution}
+            \begin{align*}
+              \text{原式} & = \dfrac{\frac{x^2}{\sqrt{a^2+x^2}}}{b-\cos x}  & \\
+              & = \dfrac{1}{a} \cdot \lim_{x\to 0} \dfrac{x^2}{b-\cos x}  & \\
+            \end{align*}
+            若分子趋近于零,但是该等式的极限为1,那么该分母的极限一定趋近于0,那么b一定为1
+        \begin{align*}
+            \text{原式} & = \dfrac{1}{a} \cdot \lim_{x \to 0}\dfrac{x^2}{\frac{1}{2}x^2}  & \\     
+            & a = 2   
+        \end{align*}
+        综上所述$a=2,b=1$
+    \end{solution}
+    \begin{note}
+        对于本题,还可以可被积函数进行等价运算\ref{BSXJF1},但是这不是通法,因此应当对此类问题首先进行洛必达.以下为使用被积函数等价运算计算过程:
+        由于当$t \to 0$时,$\frac{t^2}{\sqrt{a^2+t^2}} \sim \frac{t^2}{a^2}$
+        \begin{align*}
+         \text{原式} & =  \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}{\sqrt{a^2+t^2}}\mathrm{d}t}{bx-\sin x}&\\
+        &  = \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}a\mathrm{d}t}{bx-\sin x} & \\
+        & = \frac1{3a}\lim_{x\to0}\frac{x^3}{bx-\sin x} \xlongequal{b \neq 1} \dfrac1{3a}\lim_{x\to0}\frac{x^3}{bx-x}=0 & \\ 
+        \end{align*}
+        等式矛盾,因此$b=1$,对上式进行泰勒展开得:\\
+        \begin{align*}
+            &  1=\frac1{3a}\lim_{x\to0}\frac{x^3}{x-\sin x}=\frac1{3a}\lim_{x\to0}\frac{x^3}{\frac{x^3}6}=\frac2a & \\
+        \end{align*}
+        综上所述$a=2,b=1$
+        \end{note}
+    \begin{problem}
+        求极限$\lim_{x\to0}\dfrac{x\int_0^x\ln{(1+t^2)}\mathrm{d}t}{x^2-\sin^2x}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+            \text{原式} & =  \lim_{x\to0}\dfrac{x\int_0^x\ln{(1+t^2)}dt}{(x-\sin x)(x + \sin x)} & \\
+            & =  \lim_{x\to0}\dfrac{x\int_0^x\ln{(1+t^2)}dt}{2x \times \frac{1}{6}x^3} & \\
+            & = \dfrac{\ln(1+x^2)}{x^2}=1  & \\
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        看见形如$x^2-\sin x^2$的形式,就应当想到$(x+\sin x)(x-\sin x)$的展开,然后可以通过泰勒展开进行计算
+    \end{note}
+    \begin{problem}
+        设函数 $f(x)$ 连续，且 $f(0)\neq0$,求极限$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
+    \end{problem}
+    \begin{solution}
+        由于分母有两个变量,因此不好进行洛必达,那么此时就要对分母进行换元,换元过程如下:
+        令$(x-t)=u$,对等式两边求微分得:$d(-t)=du$.\\
+        首先,对分子展开,对分母换元得:
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0}\dfrac{x\int_{0}^{x}f(t)\mathrm{d}t-\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f(t)\mathrm{d}t}  & \\ 
+        \end{align*}
+        对原式进行进行洛必达法则得
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0}\dfrac{\int_0^xf(t)\mathrm{d}t+xf(x)-xf(x)}{\int_0^xf(t)\mathrm{d}t+xf(x)} & \\
+            & =  \lim\limits_{x\to0}\dfrac{\int_0^xf(t)\mathrm{d}t}{\int_0^xf(t)\mathrm{d}t+xf(x)} & \\  
+        \end{align*}
+        如果此时还要进行洛必达,那么分母则会出现$f'(x)$,那么最后是不可计算的,因此此时应进行积分中值定理,则$\int _0 ^x f(t)dt=xf(\varepsilon) (\varepsilon \in (0,x))$\footnote{这个地方一定要可以夹起来,如果夹起来的极限不一样,那么则不可以使用积分中值定理}
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0}\frac{xf\left(c\right)}{xf\left(c\right)+xf\left(x\right)} & \\
+            & = \frac{f(0)}{f(0)+f(0)}=\frac12 &\\ 
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        如果出现两个变量则换元之后再洛,如果实在洛不了的话,再考虑使用积分中值定理。积分中值定理和拉格朗日中值定理中出现的$\varepsilon$,最后一步想说明最终结果时,严格来说需要夹逼准则。(卷面上可以不体现出来, 但脑子里必须把这些事情想明白)\\
+        本题也可以积分替换进行计算,但是不推荐,写法如下:
+        \begin{align*}
+             \text{原式} & = \lim_{x\to0}\frac{x\int_{0}^{x}f(t)\mathrm{d}t-\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\!\int_{0}^{x}f(t)\mathrm{d}t}. & \\
+             & = 1-\lim_{x\to0}\frac{\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(t\right)\mathrm{d}t} & \\
+             & =1-\lim_{x\to0}\frac{\frac{f\left(0\right)}{2}x^{2}}{f\left(0\right)x^{2}} & \\
+             & =\frac{1}{2} &\\
+        \end{align*}
+    \end{note}
+    \subsection{抓大头和抓小头}
+    本质是同时处以最高阶/最低阶
+    $$
+    \lim_{x\to\infty}\dfrac{a_0x^m+a_1x^{m-1}+\cdots+a_m}{b_0x^n+b_1x^{n-1}+\cdots+b_n}=\left.\left\{\begin{aligned}&0\text{ ,当 }n>m\\&\dfrac{a_0}{b_0}\text{,当}n=m\\&\infty\text{ ,当 }n<m\end{aligned}\right.\right.
+    $$
+    \textbf{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{!n}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textbf{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}
+    \begin{problem}
+        求$\lim_{x\to \infty}\dfrac{4x^3+x^2+3x+10}{3x^3+2x+7}$
+    \end{problem}
+    \begin{solution}
+        对等式上下同除以$x^3$得$\lim_{x \to \infty}\dfrac{4+\dfrac1x+\dfrac3{x^2}+\dfrac{10}{x^3}}{3+\dfrac2{x^2}+\dfrac7{x^3}}=\dfrac{4}{3}$
+    \end{solution}
+    \begin{problem}
+        求$\lim_{x\to 0}\dfrac{x+2x^{2}+3x^{4}}{2x+4x^{3}+x^{5}}$
+    \end{problem}
+    \begin{solution}
+        上下同除以$x$得$\lim_{x\to 0}\dfrac{1+2x+3x^{3}}{2+4x^{2}+x^{4}}=\dfrac{1}{2}$
+    \end{solution}
+    \subsection{利用函数和函数极限的性质求极限}
+    \subsubsection{夹逼准则}
+    \begin{defn}{函数极限夹逼准则}{}
+        如果
+        \begin{itemize}
+            \item 当$x\in U^{\circ}(x_{0},r)($ 或 $|x|>M)$ 时
+                  $$
+                      g(x)\leqslant f(x) \leqslant h(x)
+                  $$
+            \item $\lim_{x\to x_0(x\to\infty)}g(x)=A,\lim_{x\to x_0(x\to\infty)}h(x)=A$
+        \end{itemize}
+        那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
+    \end{defn}
+    \begin{itemize}
+        \item 夹逼准则处主要通过放缩来求极限
+        \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
+    \end{itemize}
+    \subsubsection{\textcolor{red}{单调有界准则}}
+    \begin{defn}{函数的单调有界准则}{}
+        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
+    \end{defn} 
+    \subsubsection{幂指函数求极限}
+    一般主要是进行恒等变换,即$a^b=e^{b\ln a}$.如果两个函数的指数相同,则可以提后项/前项
+    除此之外,还有一个常用的结论:\textcolor{red}{对于$\forall a,b>0$均有:$\lim_{x\to 0^+}x^a(\ln x)^b=0$},证明如下:
+    \begin{proof}
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0^{+}}x^{a}\cdot\ln^{b}x & \\
+             & = \lim_{x\to0^{+}}\frac{\ln^{b}x}{x^{-a}} &\\
+             & =\lim_{x\to0^{+}}\frac{b\ln^{b-1}x\cdot\frac{1}{x}}{-ax^{-a-1}}&\\
+        \end{align*}
+    没洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
+    \end{proof}
+    
+    \subsubsection{对数函数性质求极限}
+    \subsection{拉格朗日中值定理求极限}
+    如果两个函数的形式一样,那么可以使用拉格朗日中值定理进行计算,但是处理之后的$\varepsilon$需要可以使用夹逼准则.
+    \begin{problem}
+    $\lim_{x\to+\infty}x^{2}\left(a^{\frac{1}{x}}-a^{\frac{1}{x+1}}\right)\left(a>0\right)$        
+    \end{problem}
+    \begin{solution}
+        该题存在相近的函数形式,使用拉格朗日中值定理进行解析$a^{\frac{1}{x}}-a^{\frac{1}{x+1}}=a^{\frac{1}{\varepsilon}}\ln a\frac{1}{\varepsilon ^2},\varepsilon \in (x,x+1)$
+        \begin{align*}
+            \text{原式} & = x^2 a^{\frac{1}{\varepsilon}}\ln a\frac{1}{\varepsilon ^2} &\\
+        \end{align*}
+        当$\varepsilon \to x+1$时,原式的极限为$x^2 a^{\frac{1}{x+1}}\ln a \frac{1}{(x+1)^2}=\ln a$\\
+        当$\varepsilon \to x$时,原式的极限为$x^2 a^{\frac{1}{x}}\ln a \frac{1}{x^2}=\ln a$\\
+        综上,函数极限为$\ln a$
+    \end{solution}
+    \begin{problem}
+        $\lim_{n\to\infty}n^{2}\left(\arctan\frac{a}{n}-\arctan\frac{a}{n+1}\right)\left(a>0\right)$
+    \end{problem}
+    \begin{solution}
+        该题存在相近的函数形式,使用拉格朗日中值定理进行解析$\arctan \dfrac{a}{n}-\arctan \dfrac{a}{a+1}=-\dfrac{a}{ \varepsilon^2 +a^2}$
+        \begin{align*}
+            \text{原式} & =\lim_{n\to \infty} n^2(-\dfrac{a}{\varepsilon^2+a^2}),(\varepsilon \in (n,n+1) ) &\\
+        \end{align*}
+        当$\varepsilon \to n+1$时,原式的极限为$\lim_{n\to \infty} n^2(-\dfrac{a}{(n+1)^2+a^2})=a$\\
+        当$\varepsilon \to n$时,原式的极限为$\lim_{n\to \infty}n^2(-\dfrac{a}{(n)^2+a^2})=a$\\
+        综上,函数极限为$a$
+    \end{solution}
+    \begin{problem}
+        $\lim_{x\to 0}\dfrac{\cos(2x)-\cos x}{x^2}$
+    \end{problem}
+    \begin{solution}
+        对分子进行泰勒展开得:
+        \begin{align*}
+            \text{原式} & = \dfrac{1-\frac{4}{2}x^2-1+\frac{x^2}{2}+o(x^2)}{x^2} & \\
+            & = -\dfrac{3}{2} & \\
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        本题看似可以存在两个形式相同的函数形式,但是如果对其使用拉格朗日中值定理解析,则$\sin \varepsilon,\varepsilon \in (x,2x)$,此时$\sin \varepsilon$的极限不可以通过夹逼准则得到,因此不可以使用这种方法,只可以使用泰勒展开.
+    \end{note}
     \subsection{七种未定式的计算}
     主要有以下类型$\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty,\infty -\infty,\infty ^0,1^\infty$
     \subsubsection{形如$\dfrac{0}{0}$,$\dfrac{\infty}{\infty}$,$0 \times \infty$}
@@ -975,6 +1118,7 @@
                   \end{align*}
                   综上所述,答案为$a_1a_2a_3a_4...a_n$
               \end{solution}
+    
     \section{数列极限的运算}
     \subsection{数列极限的运算法则}
     设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
