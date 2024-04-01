@@ -1,5 +1,5 @@
 \ifx\allfiles\undefined
-\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook} 
+\documentclass[10pt, a4paper, oneside, UTF8]{ctexbook} 
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
@@ -51,18 +51,18 @@
     \end{note}
     \subsection{收敛数列的性质}
     \subsubsection{唯一性}
-    \begin{them}{}{}
+    \begin{defn}{}{}
         如果数列$\{ x_n \}$收敛,那么它的极限唯一
-    \end{them}
+    \end{defn}
     \subsubsection{有界性}
-    \begin{them}{}{}
+    \begin{defn}{}{}
         如果数列$\{x_n\}$收敛,那么数列$\{x_n\}$一定有界\footnote{如果数列有界,但是不一定存在极限,如数列$(-1)^n$}.
-    \end{them}
+    \end{defn}
     \subsubsection{保号性}
-    \begin{them}{}{}
+    \begin{defn}{}{}
         如果$\lim_{n\to\infty}x_n=a$,且$a{>}b( $或 $a{<}b)$,那么存在正整数 $N$,当 $n{>}N$ 时 ,都有$x_n{>}b($ 或 $x_n{<}b$.\newline
         如果数列$\mid x_n\mid$从某项起有$x_n\geqslant b($或$x_n\leqslant b)$,且$\lim_{n\to\infty}x_n=a $,那么 $a\geqslant b( 或 a\leqslant b)$\footnote{其中b可以为任意实数,常考b=0的情况}.
-    \end{them}
+    \end{defn}
     \section{函数的极限}
     \subsection{超实数系}
     \begin{defn}{超实数系的概念}{}
@@ -584,7 +584,7 @@
             \item $A-B$型,适用"幂次最低"原则:将$A,B$分别展开到他们系数不相等的$x$的最低次幂为止。如:已知当$x\to0$时,$\cos x-e^{\dfrac{x^2}2}$与$ax^b$为等价无穷小,求$a,b$.则应展开为$\cos x=1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+o(x^4),\mathrm{e}^{-\dfrac{x^2}{2}}=1-\dfrac{x^2}{2}+\dfrac{1}{2!}\dfrac{x^4}{4}+o(x^4).$
         \end{itemize}
     \end{criterion}
-    \begin{criterion}{\textcolor{red}{泰勒公式的解题技巧}}{}
+    \begin{criterion}{泰勒公式的解题技巧}{}
         \begin{enumerate}
             \item 泰勒公式构建了函数与其高阶导之间的联系,因此看见高阶导数,要条件反射的想到泰勒公式
             \item 奇函数的泰勒展式只有奇数次幂,偶函数的泰勒展式只有偶数次幂\footnote{如$\sin x$和$\cos x$}
