@@ -1,5 +1,5 @@
 \ifx\allfiles\undefined
-\documentclass[10pt, a4paper, oneside, UTF8]{ctexbook} 
+\documentclass[9pt a4paper, oneside, UTF8]{ctexbook} 
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
@@ -15,7 +15,7 @@
         $$
             \lim_{n\to\infty}x_n=a\text{或}x_n\to a(n\to\infty)
         $$
-        该定义的$\varepsilon-N$\footnote{$\varepsilon - N$\textbf{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}}语言描述是
+        该定义的$\varepsilon-N$\footnote{$\varepsilon - N$\textcolor{red}{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}}语言描述是
         \newline
         $$\lim_{n\to\infty}x_n=a\Leftrightarrow\forall\varepsilon>0,\exists\text{正整数}N,\text{当}n>N\text{时},\text{有}|x_n,-a|<\varepsilon.$$
     \end{defn}
@@ -70,7 +70,7 @@
     \end{defn}
     \begin{criterion}{}{}
         \begin{itemize}
-            \item 超实数集\textbf{是为了严格处理无穷量(无穷大量和无穷小量)而提出的}。
+            \item 超实数集\textcolor{red}{是为了严格处理无穷量(无穷大量和无穷小量)而提出的}。
             \item 超实数集,或称为非标准实数集,记为$^{*}\mathbb{R}$,是实数集$\mathbb{R}$的一个扩张.
         \end{itemize}
     \end{criterion}
@@ -89,7 +89,7 @@
     函数极限的定义主要分为自变量趋于有限值$(x \to x_0)$时的极限和自变量趋于无穷大时函数的极限$(x \to \infty)$
     \subsubsection{自变量趋于有限值时的函数极限}
     \begin{defn}{当自变量趋于有限值时函数极限定义}{}
-        设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$\textbf{(不论它多么小)\footnote{$\varepsilon$用于衡量$|f(x)-A|$的值有多小}},总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
+        设函数$f(x)$在点$x_0$的某一去心邻域内有定义.如果存在常数$A$,对于任意给定的正数$\varepsilon$\textcolor{red}{(不论它多么小)\footnote{$\varepsilon$用于衡量$|f(x)-A|$的值有多小}},总存在正数$\delta$,使得当$x$满足不等式$0<|x-x_0|<\delta$时,对应的函数值$f(x)$都满足不等式
         $$
             |f(x)-A|<\varepsilon
         $$
@@ -106,16 +106,16 @@
     \begin{criterion}{}{}
         \begin{enumerate}
             \item 在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
-            \item \textbf{函数的极限值只与邻域内的函数值有关,而与该点的函数值无关}.
+            \item \textcolor{red}{函数的极限值只与邻域内的函数值有关,而与该点的函数值无关}.
         \end{enumerate}
     \end{criterion}
     \subsubsection{单侧极限}
     \begin{defn}{单侧极限的定义}{}
-        若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{左极限},记为
+        若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textcolor{red}{左极限},记为
         \begin{center}
             $\operatorname*{lim}_{x\to x_0^{-}}f(x)=A$或 $f(x_0^{-})=A$.
         \end{center}
-        若当$x\to x_0^+$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textbf{右极限},记为
+        若当$x\to x_0^+$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textcolor{red}{右极限},记为
         \begin{center}
             $\operatorname*{lim}_{x\to x_0^{+}}f(x)=A$或 $f(x_0^{+})=A$
         \end{center}
@@ -162,7 +162,7 @@
     \begin{center}
         \begin{tabular}{|c|c|c|c|c|}
             \hline
-            & \textbf{$f(x)\to A$} & \textbf{$f(x)\to \infty$} & \textbf{$f(x)\to +\infty$} & \textbf{$f(x)\to -\infty$}\\
+            & \textcolor{red}{$f(x)\to A$} & \textcolor{red}{$f(x)\to \infty$} & \textcolor{red}{$f(x)\to +\infty$} & \textcolor{red}{$f(x)\to -\infty$}\\
             \hline
             $x \to x_0$       & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_0\mid  \\&<\delta\text{ 时 },\text{即有} \\&|f(x)-A|<\varepsilon.\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 },\text{即有}\\& |f(x)|>M\end{aligned}$ & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当} 0<|x-x_0| \\ &<\delta \text{时 ,即有} \\ &f(x)>M.\end{aligned}$      & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<\mid x-x_{0}\mid  \\&<\delta\text{ 时 ,即有}\\& f(x) <-M\end{aligned}$ \\ \hline
             $x \to x_0^+$     & $\begin{aligned}&\forall\varepsilon>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有}\\&|f(x)-A|<\varepsilon.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&|f(x)|>M.\end{aligned}$                  & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}< \\&\delta \text{时,即有} \\&f(x)>M.\end{aligned}$         & $\begin{aligned}&\forall M>0,\exists\delta>0, \\&\text{使当 }0<x-x_{0}<\delta  \\&\text{时,即有} \\& f(x) <-M\end{aligned} $          \\ \hline
@@ -205,7 +205,7 @@
     \end{criterion}
     \begin{criterion}{极限不存在的情况}{}
         \begin{itemize}
-            \item \textbf{函数在该点附近趋于无穷}
+            \item \textcolor{red}{函数在该点附近趋于无穷}
             \item 函数在该点的左右极限只存在一个,或两者都存在但不相等
             \item 函数在该点附近不停地震荡
             \item 该点是函数无定义点的聚点
@@ -220,7 +220,7 @@
         \begin{itemize}
             \item 极限存在必有界,有界函数极限不一定存在.
             \item 若$y=f(x)$在$[a,b]$上为连续函数,则$f(x)$在$[a,b]$上必有界.
-            \item \textbf{若$f(x)$在$(a,b)$内为连续函数,且$\lim_{x \to a^+}f(x)$与$\lim_{x\to b^-}f(x)$都存在,则$f(x)$在$(a,b)$内必定有界.}
+            \item \textcolor{red}{若$f(x)$在$(a,b)$内为连续函数,且$\lim_{x \to a^+}f(x)$与$\lim_{x\to b^-}f(x)$都存在,则$f(x)$在$(a,b)$内必定有界.}
             \item 有界函数与有界函数的和,差,积仍为有界函数\footnote{商不是有界函数,因为:$y_1=1,y_2=0,\dfrac{y_1}{y_2}=\infty$}.
         \end{itemize}
     \end{criterion}
@@ -360,7 +360,7 @@
     \begin{defn}{无穷小的定义}{}
         如果函数$f(x)$当$x\to x_0$(或 $x\to\infty$)时的极限为零,那么称函数$f(x)$为当$x\to x_0$(或$x\to\infty$)时的无穷小.
     \end{defn}
-    \textbf{$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
+    \textcolor{red}{$f(x)$是可以本身为$0$或者无限趋近于零,其中$0$可以作为无穷小唯一常数}.
     \begin{criterion}{无穷小与函数极限的关系(脱帽法)}{}
         $\lim_{x\to\cdot}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\cdot}f(x)$为超实数值,其实数部分为$A$,函数$f(x)$的函数值为$A+\alpha$\label{wqx1}
     \end{criterion}
@@ -388,7 +388,7 @@
     \end{defn}
     前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
 
-    同时需要注意的是,\textbf{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\dfrac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \dfrac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$。
+    同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\dfrac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \dfrac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$。
     \subsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
     设$m,n$为无穷小,则
     \begin{itemize}
@@ -402,7 +402,7 @@
         $$
             |f(x)|>M
         $$
-        那么称函数$f(x)$是当$x\to x_0$(或$x\to\infty$\footnote{等价于$x \to -\infty$同时$x \to +\infty$})时的无穷大.\footnote{\textbf{无穷大一定无界,但无界不一定是无穷大量。}与无穷小相同,都是一个极限过程,因此无穷大也是一个极限,所以无界不一定是无穷大量}
+        那么称函数$f(x)$是当$x\to x_0$(或$x\to\infty$\footnote{等价于$x \to -\infty$同时$x \to +\infty$})时的无穷大.\footnote{\textcolor{red}{无穷大一定无界,但无界不一定是无穷大量。}与无穷小相同,都是一个极限过程,因此无穷大也是一个极限,所以无界不一定是无穷大量}
         其$\varepsilon-N$语言为
         $$
             \lim\limits_{x\to x_0}f(x)= \infty \Leftrightarrow\forall M >0,\exists\delta>0,\text{当}0<|x-x_0|<\delta\text{时},\text{有}|f(x)|>M.
@@ -431,32 +431,14 @@
     在自变量的同一变化过程中,若$f(x)$是无穷大,则$\dfrac{1}{f(x)}$是无穷小;若$f(x)$是无穷小,且$f(x)\neq 0$,则$\dfrac{1}{f(x)}$是无穷大.
     \section{函数极限的运算}
     \subsection{极限的四则运算法则}\label{jxdsz1}
-    \subsubsection{利用极限的四则运算法则求极限}
-    如果极限不存在,那么极限属于超实数系的范畴,在超实数系下不可以进行代数运算,只可以进行替换运算。但是如果极限均存在,那么可以进行代数计算。\\
+    \subsubsection{\textcolor{red}{利用极限的四则运算法则求极限}}\footnote{易错,在计算中往往容易忽视极限不存在的情况}
+    如果极限不存在,那么极限属于超实数系的范畴,在超实数系下不可以进行代数运算,只可以进行替换运算。\textcolor{red}{但是如果极限均存在,那么可以进行代数计算}。那么就可以使用下面的运算法则:\\
     若$\lim f(x)=A$,$\lim g(x)=B$,那么
     \begin{itemize}
         \item $\operatorname*{lim}[kf(x)\pm lg(x)]=k\operatorname*{lim}f(x)\pm l\operatorname*{lim}g(x)=kA\pm lB$,其中$k,l$为常数
         \item $\operatorname*{lim}[f(x)\cdot g(x)]=\operatorname*{lim}f(x)\cdot\operatorname*{lim}g(x)\equiv A\cdot B$,特别的,若$\lim f(x)$存在,$n$为正整数,则$\operatorname{lim}[f(x)]^n=\begin{bmatrix}\operatorname{lim}f(x)\end{bmatrix}^n$
         \item $\operatorname*{lim}\dfrac{f(x)}{g(x)}=\dfrac{\operatorname*{lim}f(x)}{\operatorname*{lim}g(x)}=\dfrac{A}{B}(B\neq0)$
     \end{itemize}
-    \begin{defn}{复合函数极限运算法则}{}
-        设函数$y=f[g(x)]$是由函数$u=g(x)$与函数$y=f(u)$复合而成,$f[g(x)]$在点$x_0$的某去心领域内有定义,若$\lim_{x \to  x_0} g(x)=u_0$,$\lim_{u \to u_0}f(u)=A$,且存在$\delta_0 >0$,当$x\in\mathring{U}\left(x_{0},\delta_{0}\right)$时,有$g\left(x\right)\neq u_{0}$,则
-        $$
-            \underset{x\to x_0}{\operatorname*{lim}}f[g(x)]=\underset{u\to u_0}{\operatorname*{lim}}f(u)=A.
-        $$
-    \end{defn}
-    \begin{problem}
-        (1)证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$\\
-        (2)证明:$\lim \dfrac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
-    \end{problem}
-    \begin{proof}
-        (1)$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
-        \\
-        (2)由于$g(x)=\dfrac{f(x)}{\dfrac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\dfrac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\dfrac{f(x)}{g(x)}}=\dfrac{0}{A}=0$ 
-    \end{proof}
-    \begin{note}
-        此题的两个证明是常用结论
-    \end{note}
     \begin{criterion}{常用结论}{}
         \begin{itemize}
             \item 存在 \pm 不存在 = 不存在(只有这一个是不存在,其余都是不一定或者存在)
@@ -466,22 +448,59 @@
         \end{itemize}
     \end{criterion}
     \begin{problem}
+        (1)证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$\\
+        (2)证明:$\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
+    \end{problem}
+    \begin{proof}
+        (1)$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
+        \\
+        (2)由于$g(x)=\dfrac{f(x)}{\frac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\frac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\frac{f(x)}{g(x)}}=\dfrac{0}{A}=0$ 
+    \end{proof}
+    \begin{note}
+        此题的两个证明是常用结论
+    \end{note}
+    \begin{problem}
         求$\lim_{x\to+\infty}\dfrac{e^x}{\left(1+\dfrac1x\right)^{x^2}}.$极限
     \end{problem}
     \begin{solution}
-        由于该极限的分子$e^x$的极限为无穷大,无穷大属于极限中的不存在情况,因此不可以使用极限的四则运算法则\ref{jxdsz1},也不可以对分母使用两个重要无穷小进行化简.只能使用等价变换进行求解.即$\lim _{x\to +\infty}\dfrac{e^x}{(1+\dfrac{1}{x})x^2}=\lim_{x\to +\infty}\dfrac{e^x}{e^{x^2 \ln (1+\dfrac{1}{x})}}=\lim_{x\to +\infty} e^{x-x^2\ln(1+\dfrac{1}{x})}$对$\ln(1+\dfrac{1}{x})$进行泰勒展开,化简为$\lim_{x\to +\infty} e^{x-x+\frac{1}{2}}=e^{\frac{1}{2}}$
+        由于该极限的分子$e^x$的极限为无穷大,无穷大属于极限中的不存在情况,因此不可以使用极限的四则运算法则\ref{jxdsz1},也不可以对分母使用两个重要无穷小进行化简.只能使用等价变换进行求解.即
+        \begin{align*}
+           \text{原式} & =\lim_{x\to +\infty}\dfrac{e^x}{e^{x^2 \ln (1+\frac{1}{x})}}\\
+           & =\lim_{x\to +\infty} e^{x-x^2\ln(1+\frac{1}{x})}\\
+           & \xlongequal{\text{泰勒展开}}\lim_{x\to +\infty} e^{x-x+\frac{1}{2}}\\
+           & =e^{\frac{1}{2}}
+        \end{align*}
     \end{solution}
     \begin{problem}
-        已知$f(0)=f'(0)=0$,$f''(0)\neq0$,求$\lim _{x \to 0}\dfrac{\dfrac{f(x)}{x}}{f'(x)}$
+        已知$f(0)=f'(0)=0$,$f''(0)\neq0$,求$\lim _{x \to 0}\dfrac{\frac{f(x)}{x}}{f'(x)}$
     \end{problem}
     \begin{solution}
-        如果想把分子写$x \to 0$时的导数形式,然后进行计算,即$\lim_{x \to 0}\dfrac{\dfrac{f(x)-f(0)}{x-0}}{f'(0)}=\dfrac{f'(0)}{f'(0)}=1$进行运算,则不满足极限四则运算法则\ref{jxdsz1},因为其分母为0,违背了极限的四则运算法则,因此不可这样计算,需要对其进行恒等变形计算.即$\lim_{x \to 0}\dfrac{\dfrac{f(x)}{x^2}}{\dfrac{f'(x)-f'(0)}{x}}=\dfrac{1}{f''(0)}\lim_{x \to x_0}\dfrac{f(x)}{x^2} \xlongequal {\text{洛必达法则}}\dfrac{1}{f''(0)}\lim_{x\to 0}\dfrac{1}{2}\dfrac{f'(x)-f'(0)}{x}=\dfrac{1}{f''(0)}\dfrac{1}{2}f''(0)=\dfrac{1}{2}$
+        如果想把分子写$x \to 0$时的导数形式,然后进行计算,即$\lim_{x \to 0}\dfrac{\frac{f(x)-f(0)}{x-0}}{f'(0)}=\dfrac{f'(0)}{f'(0)}=1$进行运算,则不满足极限四则运算法则\ref{jxdsz1},因为其分母为0,违背了极限的四则运算法则,因此不可这样计算,需要对其进行恒等变形计算.即
+        \begin{equation*}
+            \begin{split}
+                \text{原式} & =\lim_{x \to 0}\dfrac{\frac{f(x)}{x^2}}{\frac{f'(x)-f'(0)}{x}} \\
+                & =\dfrac{1}{f''(0)}\lim_{x \to x_0}\dfrac{f(x)}{x^2} \\
+                & \xlongequal {\text{洛必达法则}}\frac{1}{f''(0)}\lim_{x\to 0}\dfrac{1}{2}\dfrac{f'(x)-f'(0)}{x}\qquad \qquad (\text{此处的处理不可再次使用洛必达,因为二阶导在此不连续})  \\
+                & =\frac{1}{f''(0)}\dfrac{1}{2}f''(0) \\
+                & =\dfrac{1}{2} \\
+            \end{split}
+        \end{equation*} 
     \end{solution}
+    \begin{note}
+        \textcolor{red}{使用极限运算法则的注意事项}:在求分式这种形式的极限时,一定要注意分子的极限是不是无穷,如果极限为无穷则不可以使用极限运算法则对极限进行拆分计算,同时还要注意分母的极限是不是0,如果是0,则也不可以使用极限运算法则计算,只能进行等价替换进行运算.
+    \end{note}
     \begin{problem}
         求$\lim_{x\to 0}(\dfrac{1}{x^2}-\cot^2 x)$    
     \end{problem}
     \begin{solution}
-        $\lim_{x \to 0}(\dfrac{1}{x^2}-\dfrac{1}{\tan^x x})=\dfrac{(\tan x +x)(\tan x - x)}{x^2 \times \tan^2 x}=\dfrac{2x \times \dfrac{1}{3}x^3}{x^4}=\dfrac{2}{3}$
+        \begin{equation*}
+            \begin{split}    
+                \text{原式} &= \lim_{x \to 0}(\dfrac{1}{x^2}-\dfrac{1}{\tan^x x}) \\
+                & =\dfrac{(\tan x +x)(\tan x - x)}{x^2 \times \tan^2 x} \\
+                & =\dfrac{2x \times \dfrac{1}{3}x^3}{x^4} \\
+                & =\dfrac{2}{3} \\
+            \end{split}
+        \end{equation*} 
     \end{solution}
     \begin{note}
         本题的有另一个解法,但是相较上面的解法相比有些复杂,但是记录一个常见的错误,即什么时候可以用等价无穷小的问题,其写法为:
@@ -505,9 +524,9 @@
         此证明为结论,经常使用
     \end{note}
     \subsection{泰勒公式}
-    泰勒公式的目的是提高精确度,用更高次的多项式来逼近函数
+    \textcolor{red}{泰勒公式的目的是提高精确度,用更高次的多项式来逼近函数}
     \subsubsection{带拉格朗日余项的$n$阶泰勒展开式}
-    如果函数$f(x)$在$x_0$的某个邻域$U(x_0)$内具有(n +1)阶导数,那么对任一$x\in U(x_0)$,有
+    如果函数$f(x)$在\textbf{$x_0$的某个邻域$U(x_0)$内具有(n +1)阶导数},那么对任一$x\in U(x_0)$,有
     $$
     f(x)=f(x_{0})+f^{\prime}(x_{0})(x-x_{0})+\dfrac{f^{\prime\prime}(x_{0})}{2!}(x-x_{0})^{2}+\dfrac{f^{(n)}\left(x_{0}\right)}{n!}\left(x-x_{0}\right)^{n}+{\dfrac{f^{(n+1)}(\xi)}{(n+1)!}}(x-x_{0})^{n+1}
     $$
@@ -524,13 +543,13 @@
     当$x\to 0$时,由麦克劳林公式可得,有以下结论
     \begin{align*}
         \boxed{\begin{aligned}
-                        & \sin x =x-\dfrac{x^3}{3!}+o(x^3)                                &  & \cos x =1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+o(x^4)                  \\
-                        & \arcsin x =x+\dfrac{x^3}{3!}+o(x^3)                             &  &                              arccosx=\frac\pi2-arcsinx=\frac\pi2-x-\frac1{3!}x^3+o(x^3)       \\
-                        & \arctan x =x-\dfrac{x^{3}}{3}+o(x^{3})                          &  & \tan x =x+\dfrac{x^3}3+o(x^3)              \\
-                        & \mathrm{e}^{x} =1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
-                        & \dfrac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n}x^{n}+o(x^{n})          &  &       \dfrac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o(x^{n}) \\
-                        & \ln (x+\sqrt{1+x^{2}})=x-\dfrac{1}{6}x^{3}+\dfrac{3}{40}x^{5}+\cdots  & & \ln(1+x) =x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}+o(x^{3}) \\
-                    \end{aligned}}
+                    & \sin x =x-\dfrac{x^3}{3!}+o(x^3)                                &  & \cos x =1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+o(x^4)                  \\
+                    & \arcsin x =x+\dfrac{x^3}{3!}+o(x^3)                             &  &                              arccosx=\frac\pi2-arcsinx=\frac\pi2-x-\frac1{3!}x^3+o(x^3)       \\
+                    & \arctan x =x-\dfrac{x^{3}}{3}+o(x^{3})                          &  & \tan x =x+\dfrac{x^3}3+o(x^3)              \\
+                    & \mathrm{e}^{x} =1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
+                    & \dfrac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n}x^{n}+o(x^{n})          &  &       \dfrac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o(x^{n}) \\
+                    & \ln (x+\sqrt{1+x^{2}})=x-\dfrac{1}{6}x^{3}+\dfrac{3}{40}x^{5}+\cdots  & & \ln(1+x) =x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}+o(x^{3}) \\
+                \end{aligned}}
     \end{align*}
     \begin{criterion}{泰勒公式应用时的展开原则}{}
         \begin{itemize}
@@ -540,7 +559,7 @@
     \end{criterion}
     \begin{criterion}{泰勒公式的解题技巧}{}
         \begin{enumerate}
-            \item 泰勒公式构建了函数与其高阶导之间的联系,因此看见高阶导数,要条件反射的想到泰勒公式
+            \item \textcolor{red}{泰勒公式构建了函数与其高阶导之间的联系,因此看见高阶导数,要条件反射的想到泰勒公式}
             \item 奇函数的泰勒展式只有奇数次幂,偶函数的泰勒展式只有偶数次幂\footnote{如$\sin x$和$\cos x$}
             \item 极限当中,用佩亚诺余项$O$($x$的$n$次幂),证明题中,用拉格朗日余项,找提供信息最多的点作为展开点
             \item 等价无穷小的本质是泰勒的低精度形式,加减法不建议使用等价无穷小,建议直接泰勒
@@ -551,13 +570,13 @@
         $\lim_{x\to0}\dfrac{\ln\left(1+x+x^{2}\right)-x}{x^{2}}$
     \end{problem}
     \begin{solution}
-        对等式进行泰勒展开即:\\$\dfrac{\ln(1+x+x^2)-x}{x^2}=\dfrac{(x+x^2-\dfrac{1}{2}(x+x^2)^2-x)}{x^2}=\lim_{x \to 0}\dfrac{x^2-\dfrac{1}{2}x^2}{x^2}=\dfrac{1}{2}$
+        对等式进行泰勒展开即:\\$$\dfrac{\ln(1+x+x^2)-x}{x^2}=\dfrac{(x+x^2-\dfrac{1}{2}(x+x^2)^2-x)}{x^2}=\lim_{x \to 0}\dfrac{x^2-\dfrac{1}{2}x^2}{x^2}=\dfrac{1}{2}$$
     \end{solution}
     \begin{problem}
         $f(x)$在$x=0$处二阶可导且满足$\lim_{x\to 0}\dfrac{f(x)\sin x+\ln(1+x)}{x^3}=0$ ,求$f(0),f^{\prime}(0),f^{\prime\prime}(0)$
     \end{problem}
     \begin{solution}
-        对原式中$f(0)$和$\sin x$和$\ln(1+x)$各项进行泰勒展开得:
+        对原式中$f(x)$和$\sin x$和$\ln(1+x)$各项进行泰勒展开得:
     \begin{equation*}
         \begin{split}    
             & \lim_{x\to 0}\dfrac{f(x)\sin x+\ln(1+x)}{x^3}=0 \\
@@ -617,7 +636,7 @@
         遇见此类问题,解题方法的优先级为长除法,利用等价替换,使用定义(利用泰勒公式直接所有项都展开)
     \end{note}
     \subsection{洛必达法则}
-    \begin{defn}{}{}
+    \begin{defn}{洛必达法则定义}{}
         \begin{itemize}
             \item $\lim_{x\to x_0}f(x)=\lim_{x\to x_0}g(x)=0(\infty)$
             \item $f(x)$和$g(x)$在$x_0$的某去心邻域内可导,且$g'(x) \neq 0$
@@ -625,7 +644,7 @@
         \end{itemize}
         则$\lim_{x\to x_{0}}\dfrac{f(x)}{g(x)}=\lim_{x\to x_{0}}\dfrac{f^{'}(x)}{g^{'}(x)}$
     \end{defn}
-    \textbf{需要注意的是使用过洛必达法则之后的极限必须存在,即$\lim _{x \to x_0}\dfrac{f'(x)}{g'(x)}$ 必须存在.}
+    \textcolor{red}{需要注意的是使用过洛必达法则之后的极限必须存在,即$\lim _{x \to x_0}\dfrac{f'(x)}{g'(x)}$ 必须存在.}
     \begin{problem}
     求$\lim _{x \to 0}\dfrac{x^2 \times \sin \dfrac{1}{x}}{\sin x}$
     \end{problem}
@@ -634,8 +653,8 @@
     \end{solution}
     \begin{criterion}{洛必达可以洛到几阶}{}
         \begin{itemize}
-            \item $n$阶导连续,则最多可以洛到$n$阶.
-            \item $n$阶导存在/$n$阶邻域内可导,则最多能洛到$n-1$阶.
+            \item \textcolor{red}{$n$阶导连续,则最多可以洛到$n$阶}.
+            \item \textcolor{red}{$n$阶导存在/$n$阶邻域内可导,则最多能洛到$n-1$阶}.
             \item 实际上,$n$阶等连续,不一定能够洛到$n$阶\footnote{但是考研中这点没有难为过人,因此可以粗略的认为上述两条是成立的}.结论如下:\\
             $\lim_{x\to x_0}\dfrac{f(x)}{\left(x-x_0\right)^m}$到底能用多少次洛必达法则
             假设$m$ 和$n$ 均为正整数，并且 $f(x_0)=f^{\prime}(x_0)=\cdots=f^{(n)}(x_0)=0.$ 
@@ -685,12 +704,28 @@
         求极限$\lim_{x\to +\infty}x(e^{\frac{\pi}{2}+\arctan x}-e^\pi)$
     \end{problem}
     \begin{solution}
-        % (1)拉格朗日中值定理:$\lim_{x\to +\infty}x\times e^{(\varepsilon)}(\arctan x -\dfrac{\pi}{2})//TODO$\\
-        (2)提后项:$\lim_{x\to +\infty}e^\pi(e^{\arctan \frac{\pi}{2}}-1)=\lim_{x\to +\infty}e^\pi\times\arctan \frac{-\pi x}{2}=-e^\pi$\newline
-        (3)直接洛:$\lim_{x\to +\infty}\frac{e^{\frac{\pi+\arctan x}{2}}-e^\pi}{\frac{1}{x}}=\frac{e^{\frac{\pi}{2}+\arctan x}\times\frac{1}{1+x^{2}}}{-\frac{1}{x^{2}}}=-e^\pi$\newline
+        (1)拉格朗日中值定理:
+        \begin{align*}
+            \text{原式} & = \lim_{x\to +\infty}x\times e^{(\varepsilon)}(\arctan x -\dfrac{\pi}{2})\\
+            & = e^{\pi} \lim_{x\to +\infty}\dfrac{\arctan x -\frac{\pi}{2}}{\frac1x}\\
+            & =\lim_{x\to +\infty} \dfrac{\frac{1}{1+x^2}}{-\frac{1}{x^2}}\\
+            & =-e^\pi 
+        \end{align*}
+        (2)提后项:
+        \begin{align*}
+            \text{原式} & = \lim_{x\to +\infty}e^\pi(e^{\arctan \frac{\pi}{2}}-1)\\
+            & =\lim_{x\to +\infty}e^\pi\times\arctan \frac{-\pi x}{2}\\
+            & =-e^\pi
+        \end{align*}
+        (3)直接洛:
+        \begin{align*}
+          \text{原式} & = \lim_{x\to +\infty}\frac{e^{\frac{\pi+\arctan x}{2}}-e^\pi}{\frac{1}{x}} \\
+          & = \frac{e^{\frac{\pi}{2}+\arctan x}\times\frac{1}{1+x^{2}}}{-\frac{1}{x^{2}}} \\
+          & = -e^\pi
+        \end{align*}
     \end{solution}
     \begin{note}
-        无穷大乘以无穷小,可以构造无穷大比无穷大,或无穷小比无穷小,之后进行洛必达。方法多了,往往会忽视洛必达,但有时洛必达反而会简单一些。
+        该形式为无穷大乘以无穷小,可以构造无穷大比无穷大,或无穷小比无穷小,之后进行洛必达。方法多了,往往会忽视洛必达,但有时洛必达反而会简单一些。
     \end{note}
     \begin{problem}
         设$y=f(x)$是方程$y''+2y'+y=e^{3x}$的解,且满足$y(0)=y'(0)=0$,则当$x\to 0$时,与$y(x)$为等价无穷小的是()\\
@@ -705,13 +740,13 @@
     \begin{align*} \boxed
         {
             \begin{aligned}
-                 & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad     \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1 \\
-                 & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)                                                                                                \\
-                 & \lim_{x \to 0} \dfrac{a^x-1}{x}=\ln a
+                 & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad    & &  \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1 \\
+                 & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad & & \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)\\
             \end{aligned}
         }
     \end{align*}
     \subsubsection{等价无穷小求极限}
+    \textcolor{red}{等价无穷小的本质是泰勒的低精度形式}\\
     关于等价无穷小,有以下两个定理
     \begin{defn}{等价无穷小的充要条件}{}
         $\beta$与$\alpha$是等价无穷小的充分必要条件为
@@ -724,7 +759,7 @@
         $$
             \lim\dfrac{\beta}{\alpha}=\lim\dfrac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.Í
         $$
-        求两个无穷小之比的极限时,分子及分母都可用等价无穷小来代替．但是需要遵循以下代换原则\footnote{其实没有什么替换原则,本质其实是因为超实数系下不能进行实数运算,只能进行替换运算}
+        \textcolor{red}{等价无穷小的本质还是在做恒等替换},所以一般情况下整式的乘除法可以直接用等价无穷小替换,分子及分母都可用等价无穷小来代替.但是需要遵循以下代换原则\footnote{其实没有什么替换原则,本质其实是因为超实数系下不能进行实数运算,只能进行替换运算}
         \begin{itemize}
             \item 乘除关系可以换:若$\alpha\sim\alpha_1,\beta\sim\beta_1,\text{则}\lim\dfrac\alpha\beta=\lim\dfrac{\alpha_1}\beta=\lim\dfrac\alpha{\beta_1}=\lim\dfrac{\alpha_1}{\beta_1}$
             \item 加减关系一定条件下可以换\footnote{这样的形式其实不经常用,看见加减最好使用泰勒公式进行替换运算}
@@ -743,7 +778,8 @@
     \begin{enumerate}
         \item     \begin{align*} \boxed{\begin{aligned}& x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\& \quad  \sim \ln (1+x)  \nonumber                                  \\& \quad \sim e^x -1 \nonumber\end{aligned} }\end{align*}
         \item     \begin{align*} \boxed{\begin{aligned}& (1+x)^a \sim  1+ax   \\& a^x - 1 \sim x \ln a \\& 1- \cos^{\alpha} x \sim \dfrac{\alpha}{2}x^2\end{aligned}}\end{align*}
-        \item     {上述结论的推广}{}当$x \to 0$时,若$(1+x)^a -1 \sim ax$,则$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0$,那么$[1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)$
+        \item  上述结论的推广:\\
+        当$x \to 0$时,若$$(1+x)^a -1 \sim ax,$$则$$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0,$$那么$$[1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)$$
         \item     \begin{align*} \boxed
             {
                 \begin{aligned}
@@ -772,7 +808,11 @@
         假设$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在
     \end{problem}
     \begin{solution}
-        若$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在,那么$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}=\lim_{x \to 0}(\dfrac{f(x)}{\frac{1}{2}x^2}\times\dfrac{\frac{1}{2}x^2}{1-\cos x})\xlongequal {\text{等价无穷小}}\lim_{x \to 0\dfrac{f(x)}{\frac{1}{2}x^2}}$
+        若$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在,那么构造恒等变形:
+        \begin{align*}
+            \text{原式} & = \lim_{x \to 0}(\dfrac{f(x)}{\frac{1}{2}x^2}\times\dfrac{\frac{1}{2}x^2}{1-\cos x}) \\
+            & \xlongequal {\text{等价无穷小}}\lim_{x \to 0}\dfrac{f(x)}{\frac{1}{2}x^2}
+        \end{align*}
     \end{solution}
     \begin{note}
         整体的乘除法本质是构造恒等变形
@@ -781,12 +821,14 @@
         求极限$\lim_{x\to 0}\dfrac{\sin(x^2\sin \dfrac{1}{x})}{x}$
     \end{problem}
     \begin{solution}
-        由常用不等式\ref{cybds1}的$x \to 0$,$|\sin x|\le|x|$,那么$|\dfrac{\sin(x^2\sin\dfrac{1}{x})}{x}|\leq|\lim_{x \to 0}\dfrac{x^2\sin\dfrac{1}{x}}{x}|$,由夹逼准则得:$0\leqslant \lim_{x \to 0}|\dfrac{\sin(x^2\sin\dfrac{1}{x})}{x}|\leqslant\lim_{x\to 0}|\dfrac{x^2\sin\dfrac{1}{x}}{x}|$左右极限都为0,因此$\lim_{x\to 0}\dfrac{\sin(x^2\sin \dfrac{1}{x})}{x}$极限为0
+        由常用不等式\ref{cybds1}的$x \to 0$,$|\sin x|\le|x|$,那么$|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leq|\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}|$,由夹逼准则得:$0\leqslant \lim_{x \to 0}|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leqslant\lim_{x\to 0}|\dfrac{x^2\sin\frac{1}{x}}{x}|$左右极限都为0,因此$\lim_{x\to 0}\dfrac{\sin(x^2\sin \frac{1}{x})}{x}$极限为0
     \end{solution}
     \begin{note}
-        \textbf{等价无穷小替换的本质是构造恒等变形.}\\
-        本题有一个常见的错误做法,就是直接把$\lim_{x \to 0}\dfrac{\sin(x^2\sin\dfrac{1}{x})}{x}$进行等价无穷小替代,写为$\lim_{x \to 0}\dfrac{x^2\sin\dfrac{1}{x}}{x}$,但是这是错误的,如果这样写,那么$\lim_{x\to0}\dfrac{\sin(x^2\sin\dfrac{1}{x})}{x^2\sin\dfrac{1}{x}}\times \dfrac{x^2\sin\dfrac{1}{x}}{x}$,在$\lim_{x\to0}\dfrac{\sin(x^2\sin\dfrac{1}{x})}{x^2\sin\dfrac{1}{x}}$的分母中,存在$x= \dfrac{1}{n\pi}$的间断点,根据极限定义,极限如果存在,那么去心邻域一定要有定义,那这样写就违背了极限的存在准则,因此极限$\lim_{x \to 0}\dfrac{x^2\sin\dfrac{1}{x}}{x}$不存在,不可以这样写.
+        \textcolor{red}{等价无穷小替换的本质是构造恒等变形}.\textcolor{red}{需要谨记:在使用等价无穷小时,需要按照上述步骤进行编写,不可以省去恒等变形步骤,如果省去则可能导致错误.如下:}\\
+        本题有一个常见的错误做法,就是直接把$\lim_{x \to 0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x}$进行等价无穷小替代,写为$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$,但是这是错误的,如果这样写,那么$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}\times \dfrac{x^2\sin\frac{1}{x}}{x}$,在$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}$的分母中,存在$x= \dfrac{1}{n\pi}$的间断点,根据极限定义,极限如果存在,那么去心邻域一定要有定义,那这样写就违背了极限的存在准则,因此极限$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$不存在,不可以这样写.
     \end{note}
+    \subsubsection{抽象函数使用等价无穷小求极限}
+    抽象函数等价的条件是\textcolor{red}{$f(x) \to 0$只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$},
     \begin{problem}
         设$\lim_{x\to0}\varphi(x)=0$,则下列命题中正确的个数为\\
         (1)$\lim_{x\to0}\dfrac{\sin\varphi(x)}{\varphi(x)}=1$\\
@@ -794,11 +836,8 @@
         (3)$\text{若 }f^{\prime}(x_{0})=A,\text{则}\operatorname*{lim}_{x\to0}\dfrac{f(x_{0}+\varphi(x))-f(x_{0})}{\varphi(x)}=A$\\
     \end{problem}
     \begin{solution}
-        这三个都是错的,因为$\varphi(x)$在分母上,都可能为0
+        这三个都是错的,因为$\varphi(x)$在分母上,都可能为0.比如函数$\varphi(x)=x\times\sin\dfrac{1}{x}$,其极限为0,但是又存在$x=\dfrac{1}{n\pi}$的无定义点.
     \end{solution}
-    \begin{note}
-        抽象函数等价的条件是\textbf{$f(x) \to 0$只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$},比如函数$\varphi(x)=x\times\sin\dfrac{1}{x}$,其极限为0,但是又存在$x=\dfrac{1}{n\pi}$的无定义点.
-    \end{note}
     \subsubsection{积分等价替换求极限}
     \begin{defn}{积分等价替换法则}{}
         设 $f(x)$ 和 $g(x)$ 在 $x=0$ 的某邻域内连续,且$\operatorname*{lim}_{x\rightarrow0}\dfrac{f(x)}{g(x)}=1$,则$\int_{0}^{x}f(t)\mathrm{d}t\sim\int_{0}^{x}g(t)\mathrm{d}t.$ \label{BSXJF1}
@@ -902,7 +941,7 @@
     $$
     \lim_{x\to\infty}\dfrac{a_0x^m+a_1x^{m-1}+\cdots+a_m}{b_0x^n+b_1x^{n-1}+\cdots+b_n}=\left.\left\{\begin{aligned}&0\text{ ,当 }n>m\\&\dfrac{a_0}{b_0}\text{,当}n=m\\&\infty\text{ ,当 }n<m\end{aligned}\right.\right.
     $$
-    \textbf{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{!n}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textbf{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}
+    \textcolor{red}{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{!n}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textcolor{red}{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}
     \begin{problem}
         求$\lim_{x\to \infty}\dfrac{4x^3+x^2+3x+10}{3x^3+2x+7}$
     \end{problem}
@@ -945,7 +984,7 @@
              & = \lim_{x\to0^{+}}\frac{\ln^{b}x}{x^{-a}} &\\
              & =\lim_{x\to0^{+}}\frac{b\ln^{b-1}x\cdot\frac{1}{x}}{-ax^{-a-1}}&\\
         \end{align*}
-    没洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
+    每洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
     \end{proof}
     
     \subsubsection{对数函数性质求极限}

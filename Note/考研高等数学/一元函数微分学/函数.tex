@@ -1,5 +1,5 @@
 \ifx\allfiles\undefined
-\documentclass[10pt, a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
+\documentclass[9pt a4paper, oneside, UTF8]{ctexbook}  % +  这一句是新增加的
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
@@ -13,7 +13,7 @@
     \begin{criterion}{等差数列相关性质}{}
         \begin{itemize}
             \item 通项公式$a_n=a_1+(n-1)d$
-            \item 前$n$项的和$S_n=\frac{n}{2}[2a_1+(n-1)d]=\frac{n}{2}(a_1+a_n)$
+            \item 前$n$项的和$S_n=\dfrac{n}{2}[2a_1+(n-1)d]=\frac{n}{2}(a_1+a_n)$
         \end{itemize}
     \end{criterion}
     \subsection{等比数列}
@@ -48,19 +48,19 @@
     $$
     \begin{criterion}{关于定义域的注意事项}{}
         \begin{itemize}
-            \item 定义域指的是$x$的定义域
-            \item 括号内定义域相同
+            \item 定义域\textbf{指的是$x$的定义域}
+            \item 括号内\textbf{定义域}相同
         \end{itemize}
     \end{criterion}
     \begin{problem}
-        已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为:
+        已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为
         \end{problem}
         \begin{solution}
             定义域指的是$x$的定义域,因此$x \in [0,a]$,那么$x+1 \in [1,a+1]$.括号内定义域相同,那么可以得知$f(x)$定义域为$[1,a+1]$.$f(x+10)$定义域为$[-9,a-9]$.
         \end{solution}
     \subsection{反函数}
     \begin{defn}{反函数定义}{}
-        设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}\footnote{该条件"唯一性"非常重要,如函数$y=x^2$,当$y=y_0$时,有不同的$x$值满足$f(x)=y_0$,因此$x^2$不存在反函数,而$y=\ln x$取任意$y_0 \in R_y$都存在唯一的$x$满足$f(x)=y_0$}\label{xxx1}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
+        设函数$y=f(x)$的定义域为$D$\footnote{\textbf{在求反函数时要标明区间,函数在区间上连续且单调,例如$y=\arctan x$默认的是在$y=\tan x$第一个区间$(-\frac{\pi}{2},\frac{\pi}{2})$上的反函数,因为在这个区间上没有间断点,是单调的}},值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}\footnote{该条件"唯一性"非常重要,如函数$y=x^2$,当$y=y_0$时,有不同的$x$值满足$f(x)=y_0$,因此$x^2$不存在反函数,而$y=\ln x$取任意$y_0 \in R_y$都存在唯一的$x$满足$f(x)=y_0$}\label{xxx1}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
     \end{defn}
     \begin{criterion}{关于反函数图像和$x,y$值转换的问题}{}
         基本解释:若以函数$y=e^x$为例,其中$y=e^x$为原函数,记为$y=f(x)$,其反函数为$x=\ln y$,记为$x=f^{-1}(y)$,自变量转换,转换为$y=\ln x$,记为$y=f(x)$.此时,在同一直角坐标系中，$y=f(x)$ 和$x=f^{-1}(y)$ 的图形重合，$y=f(x)$ 和$y=f^{-1}(x)$ 的图形关于直线$y=x$对称。\newline
@@ -83,17 +83,12 @@
         原函数为$y=2x+1$,其中自变量为$x$,定义域为$[1,2]$,因变量$y$,值域为$[3,5]$.\\
         如上图所示$x=f^{-1}(y)$中自变量为$y$,定义域为$[3,5]$,因变量$x$,值域为$[1,2]\footnote{此时仅发生了变量改变，$x=f^{-1}(y)$和$y=f(x)$图像在同一坐标轴中}$.\\
         \begin{center}
-            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \tikzset{every picture/.style={line width=0.75pt}}
             \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-                %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-                %Shape: Axis 2D [id:dp3683500595420659] 
                 \draw  (188.22,210.43) -- (337.19,210.43)(208.14,125.17) -- (208.14,233.46) (330.19,205.43) -- (337.19,210.43) -- (330.19,215.43) (203.14,132.17) -- (208.14,125.17) -- (213.14,132.17) (228.14,205.43) -- (228.14,215.43)(248.14,205.43) -- (248.14,215.43)(268.14,205.43) -- (268.14,215.43)(288.14,205.43) -- (288.14,215.43)(308.14,205.43) -- (308.14,215.43)(203.14,190.43) -- (213.14,190.43)(203.14,170.43) -- (213.14,170.43)(203.14,150.43) -- (213.14,150.43) ;
                 \draw   ;
-                %Straight Lines [id:da3729532890775762] 
                 \draw  [dash pattern={on 4.5pt off 4.5pt}]  (276.57,188.71) -- (277.57,213.71) ;
-                %Straight Lines [id:da7981448339387538] 
                 \draw  [dash pattern={on 4.5pt off 4.5pt}]  (276.57,188.71) -- (209.14,189.43) ;
-                %Straight Lines [id:da9335082876230565] 
                 \draw    (307.57,179.71) -- (208.14,210.43) ;
                 \draw (205,100) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
                 \draw (346.08,200.96) node [anchor=north west][inner sep=0.75pt]  [rotate=-0.51] [align=left] {$\displaystyle x$};
@@ -107,10 +102,21 @@
         \begin{itemize}
             \item \textbf{$f^{-1}f(x)=x$,$f(f^{-1}(x))=x$}
             \item \textbf{严格单调函数必有反函数,但是有反函数的函数不一定是单调函数}.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
-                  \begin{figure}[H]
-                      \centering \includegraphics[width=
-                          0.5 \linewidth]{1.1.1.eps} \caption{分段函数$f(x)$图像}
-                  \end{figure}
+                \begin{center}
+                    \tikzset{every picture/.style={line width=0.55pt}} %set default line width to 0.75pt        
+                        \begin{tikzpicture}[x=0.65pt,y=0.65pt,yscale=-1,xscale=1]
+                            \draw  (163,132.43) -- (361.86,132.43)(262.09,43) -- (262.09,224.43) (354.86,127.43) -- (361.86,132.43) -- (354.86,137.43) (257.09,50) -- (262.09,43) -- (267.09,50) (282.09,127.43) -- (282.09,137.43)(302.09,127.43) -- (302.09,137.43)(322.09,127.43) -- (322.09,137.43)(342.09,127.43) -- (342.09,137.43)(242.09,127.43) -- (242.09,137.43)(222.09,127.43) -- (222.09,137.43)(202.09,127.43) -- (202.09,137.43)(182.09,127.43) -- (182.09,137.43)(257.09,112.43) -- (267.09,112.43)(257.09,92.43) -- (267.09,92.43)(257.09,72.43) -- (267.09,72.43)(257.09,152.43) -- (267.09,152.43)(257.09,172.43) -- (267.09,172.43)(257.09,192.43) -- (267.09,192.43)(257.09,212.43) -- (267.09,212.43) ;
+                            \draw   ;
+                            \draw    (262.09,132.43) -- (338.09,50.43) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (263.2,112.8) -- (281.2,112.8) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (282.2,132.8) -- (281.2,112.8) ;
+                            \draw    (176.2,138.8) .. controls (254.2,139.8) and (251.2,151.8) .. (256.2,212.8) ;
+                            \draw (256,19) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                            \draw (369,123) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                            \draw (244,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+                        \end{tikzpicture}
+                \end{center}
             \item 连续可导的函数如果具有反函数，那么一定单调，但是单调函数不一定推出导数一定都不为0，如$f(x)=x^3$在$x=0$处的导数
             \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.\footnote{反函数的唯一性见此处定义\ref{xxx1}}
         \end{itemize}
@@ -145,12 +151,12 @@
                           \caption{双曲余弦函数$y=\dfrac{e^x+e^{-x}}{2}$}
                       \end{minipage}
                   \end{figure}
-            \item \textbf{下列有关反双曲正弦函数结论需要记住}
+            \item \textcolor{red}{下列有关反双曲正弦函数结论需要记住}
                   \begin{itemize}
                       \item $x\to0\text{时,}\ln\left(x+\sqrt{x^{2}+1}\right)\sim x.$
-                      \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\frac{1}{\sqrt{x^{2}+1}},\text{于是}\int\frac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
+                      \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\dfrac{1}{\sqrt{x^{2}+1}},\text{于是}\int\dfrac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
                       \item 由于$y=\ln\left(x+\sqrt{x^2+1}\right)$是奇函数,于是$\int_{-1}^1\left[\ln\left(x+\sqrt{x^2+1}\right)+x^2\right]\mathrm{d}x=\int_{-1}^1x^2\mathrm{d}x=\frac 23.$
-                      \item 泰勒展开前两项为$x-\dfrac{1}{6}x^3$\footnote{前两项和$\sin x$ 一样}
+                      \item 泰勒展开前两项为$x-\dfrac{1}{6}x^3$ \footnote{前两项和$\sin x$ 一样}
                   \end{itemize}
         \end{itemize}
     \end{note}
@@ -165,7 +171,7 @@
     \newline
     $(A)\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}\text{不存在}.\quad(\mathrm{C})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}\text{不存在}.$
     \end{problem}
-    \begin{solution}\footnote{看见复合函数,应把复合函数带入,把表达式求出来}
+    \begin{solution}\footnote{\textbf{看见复合函数,应把复合函数带入,把表达式求出来}}
         函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
     \end{solution}
     \subsection{函数的四种特性及重要结论}
@@ -179,7 +185,7 @@
         \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
         \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
     \end{itemize}
-    \begin{criterion}{\textcolor{red}{有界性的判断}}{}
+   \subsubsection{\textcolor{red}{有界性的判断}}
         \begin{itemize}
             \item 利用定义
             \item $f(x)$在$[a,b]$上连续$\Rightarrow f(x)$在$[a,b]$上有界
@@ -193,14 +199,23 @@
                       \end{itemize}
                   \end{proof}
         \end{itemize}
-    \end{criterion}
     \begin{problem}
     已知函数$f(x)=\dfrac{\int_0^x\ln(1+t^2)\operatorname{d}t}{x^a}\text{在}(0,+\infty)$上有界,则$a$的取值范围为
     \end{problem}
     \begin{solution}
-        如果说$f(x)$在$(0,+\infty)$上有界,那么$f(x)$应该在区间两端点连续单侧极限存在.则$\lim_{x \to +\infty}f(x)$与$\lim_{x \to 0+}f(x)$极限存在。下面进行分情况讨论：\\
-        $\lim_{x \to +\infty}f(x)=\lim_{x \to +\infty}\dfrac{\int_0^x \ln(1+t^2)dt}{x^\alpha}$对函数使用洛必达法则.化简为$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$.若要$\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}$有界,那么分母应趋近于无穷。则$\alpha -1>0$.\\
-        $\lim_{x \to 0^+}f(x)=\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}$由洛必达法则可知$\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}$.由等价无穷小可知$\ln(1+x^2)\sim x^2$.那么上述等式可化为$\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}$,若要该极限成立。$\alpha -1\leqslant2$使得极限整体趋于0.综上所述,$\alpha$的取值范围应为$(1,3]$.
+        如果说$f(x)$在$(0,+\infty)$上有界,那么$f(x)$应该在区间两端点连续单侧极限存在.即$\lim_{x \to +\infty}f(x)$与$\lim_{x \to 0+}f(x)$极限存在。下面进行分情况讨论：
+        \begin{align*}
+            \lim_{x \to +\infty}f(x) & =\lim_{x \to +\infty}\dfrac{\int_0^x \ln(1+t^2)dt}{x^\alpha} \\
+            & \xlongequal{\text{洛必达法则}}\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}\\
+            & =\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}
+        \end{align*}
+        若要$x \to \infty$时函数有界,那么分母应趋近于无穷。则$\alpha -1>0$.\\
+        \begin{align*}
+            \lim_{x \to 0^+}f(x) & =\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}   \\
+            & \xlongequal{\text{洛必达法则}}\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}\\
+            & \xlongequal{\text{等价无穷小}}\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}
+        \end{align*}
+        若要该极限成立。$\alpha -1\leqslant2$使得极限整体趋于0.综上所述,$\alpha$的取值范围应为$(1,3]$.
     \end{solution}
     \begin{problem}
     以下四个命题中正确的是:\\
@@ -210,6 +225,7 @@
     (D)若$f(x)$在$(0,1)$内有界,则$f'(x)$在$(0,1)$内有界
     \end{problem}
     \begin{solution}
+        A,B选项.无论是导数还是原函数在区间上连续,都不可以推出原函数在区间上有界,比如函数$\frac{1}{x}$其在$(0,1)$区间上连续,但是其原函数$\ln x$在区间上无界.\\
         \textbf{一元函数中,优先看导数,由导数推函数\footnote{导数可以决定函数的变化,因此出现该类型的题目时,优先看有导数的选项}}。同时此处可以使用有界性判断\ref{yjxpd1}的定理三,可以得出导函数如果在有限区间$I$上有界,那么函数在区间$I$上有界。本题选C。
     \end{solution}
     \begin{problem}
