@@ -377,7 +377,7 @@
         \item[3] 有限个无穷小的乘积是无穷小\footnote{这个地方虽然张宇老师给出了证明,但是好像存在一定的争议性}
     \end{itemize}
     \subsection{\textcolor{red}{无穷小的比阶}}
-    \begin{defn}{}{}
+    \begin{defn}{不同无穷小的比阶}{}
         \begin{itemize}
             \item 如果 $\lim \dfrac{\beta}{\alpha} =0$,那么就说 $\beta$是比$\alpha$高阶的无穷小,记作 $\beta=o(\alpha);$
             \item  如果 $\lim \dfrac\beta\alpha  =\infty$,那么就说 $\beta$是比 $\alpha$低阶的无穷小;
@@ -386,9 +386,9 @@
             \item 如果 $\lim \dfrac\beta\alpha = 1$,那么就说 $\beta$ 与 $\alpha$ 是等价无穷小,记作 $\alpha\sim\beta$
         \end{itemize}
     \end{defn}
-    前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.
+    前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.\\
+    同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$。
 
-    同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\dfrac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \dfrac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$。
     \subsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
     设$m,n$为无穷小,则
     \begin{itemize}
@@ -396,6 +396,44 @@
         \item[2.] $o(x^{m})\cdot o(x^{n})=o(x^{m+n}),x^{m}\cdot o(x^{n})=o(x^{m+n})$
         \item[3.] $o(x^{m})=o(kx^{m})=k\cdot o(x^{m}),k \neq 0$
     \end{itemize}
+    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.\\
+    \textcolor{red}{结论:若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小}
+    \begin{problem}
+        
+    \end{problem}
+    \begin{solution}
+        
+    \end{solution}
+    \begin{note}
+        
+    \end{note}
+    \begin{problem}
+            
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \begin{problem}
+            
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \begin{problem}
+            
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
     \subsection{无穷大}
     \begin{defn}{无穷大的定义}{}
         设函数$f(x)$在$x_0$的某一去心邻域内有定义(或$|x|$大于来一正数时有定义).如果对于任意给定的正数$M$(不论它多么大),总存在正数$\delta$(或数$X$),只要$x$适合不等式$0<|x-x_0|<\delta$(或$|x|>X$),对应的函数值$f(x)$总满足不等式
@@ -662,7 +700,7 @@
             $\lim_{x\to x_0}\dfrac{f(x)}{\left(x-x_0\right)^m}$到底能用多少次洛必达法则
             假设$m$ 和$n$ 均为正整数,并且 $f(x_0)=f^{\prime}(x_0)=\cdots=f^{(n)}(x_0)=0.$ 
             \begin{enumerate}
-                \item 如果$f(x)$在$x_0$的$n$阶导数连续，则：
+                \item 如果$f(x)$在$x_0$的$n$阶导数连续,则：
                     \begin{enumerate}
                         \item 若$m{\leqslant}n$,则$\lim_{x\to x_0}\dfrac{f(x)}{\left(x-x_0\right)^m}$可以用$m$ 次洛必达$\lim_{x\to x_0}\dfrac{f^{(m)}\left(x\right)}{m!}=\dfrac{f^{(m)}\left(x_0\right)}{m!}$
                         \item 若$m>n$,则$\lim_{x\to x_0}\dfrac{f(x)}{\left(x-x_0\right)^m}$则一次都不能用洛必达.
@@ -846,7 +884,7 @@
         设 $f(x)$ 和 $g(x)$ 在 $x=0$ 的某邻域内连续,且$\operatorname*{lim}_{x\rightarrow0}\dfrac{f(x)}{g(x)}=1$,则$\int_{0}^{x}f(t)\mathrm{d}t\sim\int_{0}^{x}g(t)\mathrm{d}t.$ \label{BSXJF1}
     \end{defn}
     \begin{defn}{变限积分求导公式}{}
-        设$F( x) = \int _{\varphi_1( x) }^{\varphi_2( x) }f( t) $d$t$ ,其中$f(x)$在$[a,b]$上连续，可导函数$\varphi_1(x)$和$\varphi_2(x)$的值域在$[a,b]$上，则在函数$\varphi_1(x)$和$\varphi_2(x)$的公共定义域上,有
+        设$F( x) = \int _{\varphi_1( x) }^{\varphi_2( x) }f( t) $d$t$ ,其中$f(x)$在$[a,b]$上连续,可导函数$\varphi_1(x)$和$\varphi_2(x)$的值域在$[a,b]$上,则在函数$\varphi_1(x)$和$\varphi_2(x)$的公共定义域上,有
         $$
         F'(x)=\frac{\mathrm{d}}{\mathrm{d}x}\biggl[\int_{\varphi_{1}(x)}^{\varphi_{2}(x)}f(t)\mathrm{d}t\biggr]=f\bigl[\varphi_{2}(x)\bigr]\varphi_{2}^{\prime}(x)-f\bigl[\varphi_{1}(x)\bigr]\varphi_{1}^{\prime}(x).
         $$
@@ -855,7 +893,7 @@
         求$\lim_{x\to+\infty}\dfrac{\int_0^x(1+t^2)\mathrm{e}^{t^2}\mathrm{d}t}{x\operatorname{e}^{x^2}+x^2}$导数
     \end{problem}
     \begin{solution}
-        看见变上限积分类型计算题应首先想到洛必达法则，对原式进行进行洛必达法则得：
+        看见变上限积分类型计算题应首先想到洛必达法则,对原式进行进行洛必达法则得：
             \begin{align*}
                 \text{原式} & =\lim_{x\to+\infty}\frac{\mathrm{e}^{x^2}+{x^2\mathrm{e}^{x^2}}}{\mathrm{e}^{x^2}+2x^2\mathrm{e}^{x^2}+2x}  & \\
                 & =\dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} & \\
@@ -909,7 +947,7 @@
         看见形如$x^2-\sin x^2$的形式,就应当想到$(x+\sin x)(x-\sin x)$的展开,然后可以通过泰勒展开进行计算
     \end{note}
     \begin{problem}
-        设函数 $f(x)$ 连续，且 $f(0)\neq0$,求极限$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
+        设函数 $f(x)$ 连续,且 $f(0)\neq0$,求极限$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
     \end{problem}
     \begin{solution}
         \textbf{由于分母有两个变量,因此不好进行洛必达,那么此时就要对分母进行换元},换元过程如下:
@@ -1040,7 +1078,7 @@
     \subsubsection{对数函数性质求极限}
     极限当中,见到$\ln A$,$A$趋于1时,优先想到构造成$\ln(1+\text{无穷小})$的形式,如果这个式子本身进行恒等变形之后的结果过于复杂,则要想到利用对数运算法则构造 $\ln(1+\text{无穷小})$。
     \begin{problem}
-        已知当$x\to0$ 时，$f(x)=\ln\dfrac{1+x}{1-x}-2\ln(x+\sqrt{1+x^2})$ 是$x$ 的$n$ 阶无穷小，则$n=$
+        已知当$x\to0$ 时,$f(x)=\ln\dfrac{1+x}{1-x}-2\ln(x+\sqrt{1+x^2})$ 是$x$ 的$n$ 阶无穷小,则$n=$
     \end{problem}
     \begin{solution}
         \begin{align*}
@@ -1168,32 +1206,42 @@
     \begin{solution}
             \begin{align*}
               \text{原式} & = \lim_{x\to+\infty}\sqrt{x}(\sqrt{1+\sqrt{\frac{1}{x}+\sqrt{\frac{1}{x\sqrt{x}}}}}-1)\\
-              & = \lim_{x\to+\infty} \sqrt{x}\times \frac{1}{2}\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}\\
+              & = \lim_{x\to+\infty} \sqrt{x}\times \frac{1}{2}\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}\footnotemark[1]\\
               & = \lim_{x\to+\infty} \frac{1}{2}\sqrt{1+\frac{1}{\sqrt{x}}} \\
               & = \frac{1}{2}
             \end{align*}
     \end{solution}
+    \footnotetext[1]{此处不能把后面的极限算出来的原因是$x^2$极限为不存在,因此如果拆分计算则违背了极限的运算法则}
     \begin{note}
-        上述解法为通法,即提最高阶无穷$\sqrt{x}$
+        上述解法为通法,即提最高阶无穷$\sqrt{x}$.除此之外,还可以使用有理化进行通分:
+        \begin{align*}
+          \text{原式} & =\lim_{x\to+\infty}\frac{\sqrt{x+\sqrt{x}}}{\sqrt{x+\sqrt{x+\sqrt{x}}}+\sqrt{x}}\\    
+          & = \lim_{x\to+\infty}\frac{\sqrt{1+\frac1{\sqrt{x}}}}{\sqrt{1+\sqrt{\frac1x+\frac1{x\sqrt{x}}}+1}} \\
+          & = \frac{1}{2}
+        \end{align*}
     \end{note}
     \begin{problem}
         $\lim_{x\to+\infty}x^{3/2}\left(\sqrt{1+x}+\sqrt{x-1}-2\sqrt{x}\right)$
     \end{problem}
     \begin{solution}
-            
+        \begin{align*}
+            \text{原式} & = \lim_{x\to+\infty}  x^2(\sqrt{1+\frac{1}{x}+\sqrt{1-\frac{1}{x}}}-2)  \\
+            & = [1+\frac{1}{2x}+\frac{\frac{1}{2}(\frac{1}{2}-1)}{2!}\frac{1}{x^{2}}+1-\frac{1}{2x}+\frac{\frac{1}{2}(\frac{1}{2}-1)}{2!}(-\frac{1}{x})^{2}+0(\frac{1}{x^{2}})-2] \\
+            & = \lim_{x\to+\infty}x^{2}\cdot[-\frac{1}{4}\frac{1}{x^{2}}+o(\frac{1}{x^{2}})] \\
+            & = \frac{1}{4}
+        \end{align*}
     \end{solution}
-    \begin{note}
-            
-    \end{note}
     \begin{problem}
         设$\lim_{n\to\infty}\dfrac{n^{2023}}{n^{\alpha}-(n-1)^{\alpha}}=\beta\neq0$,求$\alpha$及$\beta$
     \end{problem}
     \begin{solution}
-            
+        \begin{align*}
+          \text{原式} & = \lim_{n\to\infty} \dfrac{n^{2023}}{n^\alpha(1-(1-\frac{1}{n})^\alpha)}\\
+          & = \lim_{n\to\infty} \dfrac{n^{2023}}{-n^\alpha((1-\frac{1}{n})^\alpha-1)}\\
+          & = \lim_{n \to \infty} \dfrac{n^{2023}}{\frac{a}{n}}
+        \end{align*}
+        综上可知:$\alpha =2023$,$\beta=\dfrac{1}{2023}$
     \end{solution}
-    \begin{note}
-            
-    \end{note}
     \subsubsection{形如$\infty^0,0^0$}
           $\infty ^0$与$0^0$通常使用\textcolor{red}
               {$ u^v=e^{v \ln u}$}来计算
