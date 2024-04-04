@@ -1,5 +1,5 @@
 \ifx\allfiles\undefined
-\documentclass[9pt a4paper, oneside, UTF8]{ctexbook} 
+\documentclass[8pt a4paper, oneside, UTF8]{ctexbook} 
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
@@ -440,12 +440,14 @@
         \item $\operatorname*{lim}\dfrac{f(x)}{g(x)}=\dfrac{\operatorname*{lim}f(x)}{\operatorname*{lim}g(x)}=\dfrac{A}{B}(B\neq0)$
     \end{itemize}
     \begin{criterion}{常用结论}{}
-        \begin{itemize}
-            \item 存在 \pm 不存在 = 不存在(只有这一个是不存在,其余都是不一定或者存在)
-            \item 不存在 \pm 不存在 =不一定\footnote{反例：$\lim _{x \to 0}(\sin \dfrac{1}{x}-\sin \dfrac{1}{x})=0$}
-            \item 存在 \times (\div) 不存在 = 不一定
-            \item 不存在 \times (\div) 不存在 = 不一定
-        \end{itemize}
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{l|l}
+                    \text{存在} \pm \text{不存在} = \text{不存在}\footnote{只有这一个是\text{不存在},其余都是不一定或者存在} & \text{不存在} \pm \text{不存在} =\text{不一定}\footnote{反例:$\lim _{x \to 0}(\sin \dfrac{1}{x}-\sin \dfrac{1}{x})=0$} \\ \hline
+                    \text{存在} \times (\div) \text{不存在} = \text{不一定} & \text{不存在} \times(\div) \text{不存在} = \text{不一定}
+                \end{tabular}
+            \end{center}
+        \end{table}
     \end{criterion}
     \begin{problem}
         (1)证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$\\
@@ -536,11 +538,11 @@
     f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\dfrac{f''(x_{0})}{2!}(x-x_{0})^{2}+\cdots+\dfrac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}+o\left(\left(x-x_{0}\right)^{n}\right)
     $$
     \subsubsection{带有佩亚诺余项的麦克劳林公式}
-    对带有佩亚诺余项的泰勒公式取$x_0=0$,则可以得到带有佩亚诺余项的麦克劳林公式
+    对带有佩亚诺余项的泰勒公式取$x_0=0$,则可以得到带有佩亚诺余项的麦克劳林公式\footnote{此处有一个易被忽略的地方,只有函数在$x_0$处,$n$阶导数存在,才可以展开到$n$阶}
     $$
     f(x)=f(0)+f'(0)x+\cdots+\dfrac{f^{(n)}(0)}{n!}x^{n}+o(x^{n})
     $$
-    当$x\to 0$时,由麦克劳林公式可得,有以下结论
+    当$x\to 0$时,由带有佩亚诺余项的麦克劳林公式可得,有以下结论
     \begin{align*}
         \boxed{\begin{aligned}
                     & \sin x =x-\dfrac{x^3}{3!}+o(x^3)                                &  & \cos x =1-\dfrac{x^2}{2!}+\dfrac{x^4}{4!}+o(x^4)                  \\
@@ -548,9 +550,10 @@
                     & \arctan x =x-\dfrac{x^{3}}{3}+o(x^{3})                          &  & \tan x =x+\dfrac{x^3}3+o(x^3)              \\
                     & \mathrm{e}^{x} =1+x+\dfrac{x^{2}}{2!}+\dfrac{x^{3}}{3!}+o(x^{3}) &  & (1+x)^{a} =1+\alpha x+\dfrac{\alpha(\alpha-1)}{2!}x^{2}+o(x^{2}) \\
                     & \dfrac{1}{1+x}=1-x+x^{2}-\cdots+(-1)^{n}x^{n}+o(x^{n})          &  &       \dfrac{1}{1-x}=1+x+x^{2}+\cdots+x^{n}+o(x^{n}) \\
-                    & \ln (x+\sqrt{1+x^{2}})=x-\dfrac{1}{6}x^{3}+\dfrac{3}{40}x^{5}+\cdots  & & \ln(1+x) =x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}+o(x^{3}) \\
+                    & \ln (x+\sqrt{1+x^{2}})=x-\dfrac{1}{6}x^{3}+\dfrac{3}{40}x^{5}+\cdots \footnotemark[1]   & & \ln(1+x) =x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}+o(x^{3}) \\
                 \end{aligned}}
     \end{align*}
+    \footnotetext[1]{该函数为反双曲正弦函数}
     \begin{criterion}{泰勒公式应用时的展开原则}{}
         \begin{itemize}
             \item $\dfrac{A}{B}$型,适用于"上下同阶"原则:具体来说,如果分母或者分子是$x$的$k$次幂,则应把分子或分母展开到$x$的$k$次幂。如:$\lim_{x\to0}\dfrac{x-\ln(1+x)}{x^{2}}$,此处$\ln(1+x)$应展开为$x-\dfrac{x^2}{2}+o(x^2)$
@@ -590,7 +593,7 @@
         看见各阶导数应想到泰勒公式
     \end{note}
     \begin{problem}
-        已知函数$f(x)$在$x=0$的某领域内连续,且$\lim_{x \to 0}(\dfrac{\sin x}{x^2}+\dfrac{f(x)}{x})=2$,试求$f(0),f'(0)$
+        已知函数$f(x)$在$x=0$的某邻域内连续,且$\lim_{x \to 0}(\dfrac{\sin x}{x^2}+\dfrac{f(x)}{x})=2$,试求$f(0),f'(0)$
     \end{problem}
     \begin{solution}
         对原式进行通分然后对$\sin x$进行泰勒展开:
@@ -657,7 +660,7 @@
             \item \textcolor{red}{$n$阶导存在/$n$阶邻域内可导,则最多能洛到$n-1$阶}.
             \item 实际上,$n$阶等连续,不一定能够洛到$n$阶\footnote{但是考研中这点没有难为过人,因此可以粗略的认为上述两条是成立的}.结论如下:\\
             $\lim_{x\to x_0}\dfrac{f(x)}{\left(x-x_0\right)^m}$到底能用多少次洛必达法则
-            假设$m$ 和$n$ 均为正整数，并且 $f(x_0)=f^{\prime}(x_0)=\cdots=f^{(n)}(x_0)=0.$ 
+            假设$m$ 和$n$ 均为正整数,并且 $f(x_0)=f^{\prime}(x_0)=\cdots=f^{(n)}(x_0)=0.$ 
             \begin{enumerate}
                 \item 如果$f(x)$在$x_0$的$n$阶导数连续，则：
                     \begin{enumerate}
@@ -684,7 +687,7 @@
         $$f\left(x\right)=\begin{cases}x^a\sin\dfrac{1}{\sqrt[b]{x}}+x^c,x\neq0\\0,x=0\end{cases}$$
     \end{note}
     \begin{problem}
-        已知函数$f(x)$在$x=0$的某领域内可导,且$\lim_{x \to 0}(\dfrac{\sin x}{x^2}+\dfrac{f(x)}{x})=2$,试求$f(0),f'(0)$以及$\lim_{x\to0}\dfrac{x}{f(x)+e^x}$
+        已知函数$f(x)$在$x=0$的某邻域内可导,且$\lim_{x \to 0}(\dfrac{\sin x}{x^2}+\dfrac{f(x)}{x})=2$,试求$f(0),f'(0)$以及$\lim_{x\to0}\dfrac{x}{f(x)+e^x}$
     \end{problem}
     \begin{solution}
         本题中未说明$f(x)$在邻域内连续可导,只说明一阶导存在,因此一阶都不可以进行洛必达法则,但是可以使用泰勒公式对上述式子进行泰勒展开,因此上述式子的解法为
@@ -817,14 +820,14 @@
     \begin{note}
         整体的乘除法本质是构造恒等变形
     \end{note}
+    \textcolor{red}{等价无穷小替换的本质是构造恒等变形}.\textcolor{red}{需要谨记:在使用等价无穷小时,需要按照上述步骤进行编写,不可以省去恒等变形步骤,如果省去则可能导致错误.如下题}
     \begin{problem}
-        求极限$\lim_{x\to 0}\dfrac{\sin(x^2\sin \dfrac{1}{x})}{x}$
+        求极限$\lim_{x\to 0}\dfrac{\sin(x^2\sin \frac{1}{x})}{x}$
     \end{problem}
     \begin{solution}
-        由常用不等式\ref{cybds1}的$x \to 0$,$|\sin x|\le|x|$,那么$|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leq|\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}|$,由夹逼准则得:$0\leqslant \lim_{x \to 0}|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leqslant\lim_{x\to 0}|\dfrac{x^2\sin\frac{1}{x}}{x}|$左右极限都为0,因此$\lim_{x\to 0}\dfrac{\sin(x^2\sin \frac{1}{x})}{x}$极限为0
+        由常用不等式\ref{cybds1}的$x \to 0$,$|\sin x|\le|x|$,那么$$|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leq|\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}|$$由夹逼准则得:$$0\leqslant \lim_{x \to 0}|\dfrac{\sin(x^2\sin\frac{1}{x})}{x}|\leqslant\lim_{x\to 0}|\dfrac{x^2\sin\frac{1}{x}}{x}|$$左右极限都为0,因此$\lim_{x\to 0}\dfrac{\sin(x^2\sin \frac{1}{x})}{x}$极限为0
     \end{solution}
     \begin{note}
-        \textcolor{red}{等价无穷小替换的本质是构造恒等变形}.\textcolor{red}{需要谨记:在使用等价无穷小时,需要按照上述步骤进行编写,不可以省去恒等变形步骤,如果省去则可能导致错误.如下:}\\
         本题有一个常见的错误做法,就是直接把$\lim_{x \to 0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x}$进行等价无穷小替代,写为$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$,但是这是错误的,如果这样写,那么$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}\times \dfrac{x^2\sin\frac{1}{x}}{x}$,在$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}$的分母中,存在$x= \dfrac{1}{n\pi}$的间断点,根据极限定义,极限如果存在,那么去心邻域一定要有定义,那这样写就违背了极限的存在准则,因此极限$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$不存在,不可以这样写.
     \end{note}
     \subsubsection{抽象函数使用等价无穷小求极限}
@@ -861,7 +864,7 @@
             \end{align*}
     \end{solution}
     \begin{note}
-    在极限中,处理变上限积分的最好办法是洛必达。能洛则洛,不能洛的话就换元之后再洛。
+    \textcolor{red}{在极限中,处理变上限积分的最好办法是洛必达。能洛则洛,不能洛的话就换元之后再洛。}
     \end{note}
     \begin{problem}
         若$\operatorname*{lim}_{x \to 0}\dfrac{\int_{0}^{x}\dfrac{t^{2}}{\sqrt{a^{2}+t^{2}}}dt}{bx-\sin x}=1$,求a,b,其中a,b为正数
@@ -880,7 +883,7 @@
     \end{solution}
     \begin{note}
         对于本题,还可以可被积函数进行等价运算\ref{BSXJF1},但是这不是通法,因此应当对此类问题首先进行洛必达.以下为使用被积函数等价运算计算过程:
-        由于当$t \to 0$时,$\frac{t^2}{\sqrt{a^2+t^2}} \sim \frac{t^2}{a^2}$
+        由于当$t \to 0$时,$\dfrac{t^2}{\sqrt{a^2+t^2}} \sim \dfrac{t^2}{a^2}$
         \begin{align*}
          \text{原式} & =  \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}{\sqrt{a^2+t^2}}\mathrm{d}t}{bx-\sin x}&\\
         &  = \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}a\mathrm{d}t}{bx-\sin x} & \\
@@ -909,7 +912,7 @@
         设函数 $f(x)$ 连续，且 $f(0)\neq0$,求极限$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
     \end{problem}
     \begin{solution}
-        由于分母有两个变量,因此不好进行洛必达,那么此时就要对分母进行换元,换元过程如下:
+        \textbf{由于分母有两个变量,因此不好进行洛必达,那么此时就要对分母进行换元},换元过程如下:
         令$(x-t)=u$,对等式两边求微分得:$d(-t)=du$.\\
         首先,对分子展开,对分母换元得:
         \begin{align*}
@@ -927,7 +930,7 @@
         \end{align*}
     \end{solution}
     \begin{note}
-        如果出现两个变量则换元之后再洛,如果实在洛不了的话,再考虑使用积分中值定理。积分中值定理和拉格朗日中值定理中出现的$\varepsilon$,最后一步想说明最终结果时,严格来说需要夹逼准则。(卷面上可以不体现出来, 但脑子里必须把这些事情想明白)\\
+        \textbf{如果出现两个变量则换元之后再洛,如果实在洛不了的话,再考虑使用积分中值定理。积分中值定理和拉格朗日中值定理中出现的$\varepsilon$,最后一步想说明最终结果时,严格来说需要夹逼准则。(卷面上可以不体现出来, 但脑子里必须把这些事情想明白)}\\
         本题也可以积分替换进行计算,但是不推荐,写法如下:
         \begin{align*}
              \text{原式} & = \lim_{x\to0}\frac{x\int_{0}^{x}f(t)\mathrm{d}t-\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\!\int_{0}^{x}f(t)\mathrm{d}t}. & \\
@@ -954,7 +957,136 @@
     \begin{solution}
         上下同除以$x$得$\lim_{x\to 0}\dfrac{1+2x+3x^{3}}{2+4x^{2}+x^{4}}=\dfrac{1}{2}$
     \end{solution}
-    \subsection{利用函数和函数极限的性质求极限}
+    \subsection{利用函数性质求极限}
+    \subsubsection{幂指函数性质求极限}
+    一般主要是使用幂指函数的性质进行恒等变换,即\textcolor{red}{$a^b=e^{b\ln a}$}.\textbf{如果两个函数的指数相同,则可以提后项/前项}.\\
+    除此之外,还有一个常用的结论:\textcolor{red}{对于$\forall a,b>0$均有:$\lim_{x\to 0^+}x^a(\ln x)^b=0$},证明如下:
+    \begin{proof}
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0^{+}}x^{a}\cdot\ln^{b}x & \\
+             & = \lim_{x\to0^{+}}\frac{\ln^{b}x}{x^{-a}} &\\
+             & =\lim_{x\to0^{+}}\frac{b\ln^{b-1}x\cdot\frac{1}{x}}{-ax^{-a-1}}&\\
+        \end{align*}
+    每洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
+    \end{proof}
+    \begin{problem}
+    求极限$\lim_{x\to0^+}x^{(x^x-1)}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to0^+}x^{e^{x \ln x}-1}\\
+          & =\lim_{x\to0^+} x^{x \ln x} \\
+          & =\lim_{x\to0^+} e^{x \ln^2 x}=1
+        \end{align*}
+    \end{solution}
+    \begin{problem}
+        求极限$\operatorname*{lim}_{x\to0}(\cos2x+2x \sin x)^{\frac{1}{x^{4}}}$
+    \end{problem}
+    \begin{solution}
+            \begin{align*}
+              \text{原式} & =\lim_{x\to0}e^{\frac{1}{x^4}\ln(\cos 2x+2x\sin x)}\\
+              & = e^{lim_{x\to0}{\frac{1}{x^4} \ln((1-\frac{4x^2}{2}+\frac{(2x)^4}{24})+x-\frac{x^3}{6})}}\\
+              & = e^{lim_{x\to0}{\dfrac{\frac{2}{3}x^4-\frac{1}{3}x^4}{x^4}}}\\
+              & = e^{\frac{1}{3}}
+            \end{align*}
+    \end{solution}
+    \begin{problem}
+        求极限 $\lim_{x\to0^+}\frac{x^x-(\sin x)^x}{x^2\ln(1+x)}$
+    \end{problem}
+    \begin{solution}
+        本题方法较多,因此分阶段进行分析:
+        \begin{align*}
+          \text{原式} & =\lim_{x\to0} \dfrac{e^{x \ln x}-e^{x \ln \sin x} }{x^2\ln(1+x)}\\
+          & = \dfrac{e^{x \ln x}-e^{x \ln \sin x}}{x^3}
+        \end{align*}
+    接下来,可以对上述式子进行中值定理计算或者使用提后项的方法:\\
+    中值定理:
+    \begin{align*}
+      \text{原式} & =\lim_{x\to0} \dfrac{e^{\varepsilon}(x\ln x- x\ln sin x)}{x^3}   \\
+      & =  \dfrac{\ln x -\ln \sin x}{x^2}
+    \end{align*}
+    提后项:
+    \begin{align*}
+      \text{原式} & =\lim_{x\to0} \dfrac{e^{x\ln \sin x}(e^{x\ln x-x \ln \sin x}-1)}{x^3} \\
+      & =   \lim_{x\to0} \dfrac{(e^{x\ln x-x \ln \sin x}-1)}{x^3}\\
+      & =  \dfrac{\ln x -\ln \sin x}{x^2}
+    \end{align*}
+    然后对于$\dfrac{\ln x -\ln \sin x}{x^2}$可使用中值定理和对数运算法则进行计算:\\
+    拉格朗日中值定理:
+    \begin{align*}
+      \text{原式} & = \lim_{x \to 0}\dfrac{\frac{1}{\varepsilon}(x-\sin x)}{x^2} \qquad(x<\varepsilon < \sin x) \\
+      & =\lim_{x \to 0} \dfrac{x-x+\frac{1}{6}x^3}{x^2 \varepsilon}\\ 
+      & = \frac{1}{6}
+    \end{align*}
+    对数运算法则:
+    \begin{align*}
+      \text{原式} & =\lim_{x \to 0} \dfrac{\ln (\frac{x}{\sin x})}{x^2}\\
+      & =  \dfrac{\ln(1+\frac{x}{\sin x}-1)}{x^2}\\
+      & = \dfrac{\frac{x}{\sin x}-1}{x^2}\\
+      & = \dfrac{x-\sin x}{x^2\sin x}\\
+      &= \frac{1}{6}
+    \end{align*}
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{x\to 0}\dfrac{(3+x)^{\sin x} -3^{\sin x}}{x^2}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{x\to 0} \dfrac{3^{\sin x}[(1+\frac{x}{3})^{\sin x} -1]}{x^2} \\
+          & =  \lim_{x\to 0}\dfrac{\frac{x}{3}\sin x}{x^2} \\
+          & = \frac{1}{3}
+        \end{align*}
+    \end{solution}
+    \subsubsection{对数函数性质求极限}
+    极限当中,见到$\ln A$,$A$趋于1时,优先想到构造成$\ln(1+\text{无穷小})$的形式,如果这个式子本身进行恒等变形之后的结果过于复杂,则要想到利用对数运算法则构造 $\ln(1+\text{无穷小})$。
+    \begin{problem}
+        已知当$x\to0$ 时，$f(x)=\ln\dfrac{1+x}{1-x}-2\ln(x+\sqrt{1+x^2})$ 是$x$ 的$n$ 阶无穷小，则$n=$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to 0} (\ln(1+x)-\ln(1-x)-2\ln(x+\sqrt{1+x^2}))\\
+          & =  \lim_{x\to0} (x-\frac{x^2}{2}+\frac{x^3}{3}+x+\frac{x^2}{2}+\frac{x^3}{3}-2x+\frac{1}{3}x^3)\\
+          & = x^3
+        \end{align*}
+        综上易知:$n=3$
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{x\to0}\dfrac{\ln(\sin^2x+\mathrm{e}^x)-x}{\ln(\mathrm{e}^{2x}-x^2)-2x}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+            \text{原式} & = \lim_{x\to0}\dfrac{\ln(\sin^2 x+e^x)-\ln e^x}{\ln(\mathrm{e}^{2x}-x^2)-\ln e^{2x}}\\
+            & =\lim_{x\to0} \dfrac{\ln \frac{\sin^2 x+e^x}{e^x}}{\ln\frac{e^{2x}-x^2}{e^{2x}}}\\
+            & = \lim_{x \to 0} \dfrac{\ln (1+\frac{\sin ^2 x}{e^x})}{\ln (1-\frac{x^2}{e^{2x}})}\\
+            & =\lim_{x \to 0} \dfrac{\frac{\sin^2 x}{e^x}}{\frac{x^2}{e^{2x}}}\\
+            & =\lim_{x \to 0} e^x=1
+        \end{align*}
+    \end{solution}
+    \begin{problem}
+        已知$\lim_{x\to 0}\dfrac{2\arctan x-\ln\frac{1+x}{1-x}}{x^p}=c \neq 0$\\
+        A.$p=3,c=-\dfrac43$ \qquad B. $p=-3,c=\dfrac{4}{3}$ \qquad C.$p=\dfrac{4}{3},c=3$ \qquad D. $p= - \dfrac 43,c= - 3$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to0} \dfrac{2\arctan x-\ln(1+x)+\ln(1-x)}{x^p}=c\\    
+          & =   \lim_{x\to0} \dfrac{2x-\frac{2x^3}{3}-x+\frac{x^2}{2}-\frac{x^3}{3}-x-\frac{x^2}{2}-\frac{x^3}{3}}{x^p}\\
+          & = \lim_{x\to 0}\dfrac{-\frac{4}{3}x^3}{x^p}
+        \end{align*}
+        综上易知:$p=3,c=-\dfrac{4}{3}$
+    \end{solution}
+    \begin{problem}
+        $\lim_{x\to+\infty}\left(x^{\frac{1}{x}}-1\right)^{\frac{1}{\ln x}}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to+\infty} e^{\frac{1}{\ln x}\ln(x^\frac{1}{x}-1)} \\
+          & = \lim_{x\to+\infty} e^{\frac{\ln(e^{\frac{\ln x}{x}-1})}{\ln x}} \\
+          & = \lim_{x\to+\infty} e^{\frac{\ln{\frac{\ln x}{x}}}{\ln x}\times \frac{\ln(e^\frac{\ln x}{x}-1)}{\ln\frac{\ln x}{x}}}\\
+          & = \lim_{x\to+\infty} e^{\frac{\ln \ln x-\ln x}{\ln x}} = e^{-1}
+        \end{align*}
+    \end{solution}
+    \subsection{中值定理求极限}
+    中值定理求极限通常和夹逼准则配合求极限
     \subsubsection{夹逼准则}
     \begin{defn}{函数极限夹逼准则}{}
         如果
@@ -967,28 +1099,9 @@
         \end{itemize}
         那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
     \end{defn}
-    \begin{itemize}
-        \item 夹逼准则处主要通过放缩来求极限
-        \item 常用的结论有:若$\lim _{n \to \infty} \sqrt[n]{a_1^n+a_2^n+...+a_m^n}$,其中$a_i >0(i=1,2,3,...,m)$,令$\max{a_i}=a$,则$\sqrt[n]{a^n}\leqslant\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}\leqslant\sqrt[n]{ma^n}$,\\$\lim_{n\to\infty}\sqrt[n]{a^n}=a,\lim_{n\to\infty}\sqrt[n]{m\cdot a^n}=a$,则$\operatorname*{lim}_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}=a$
-    \end{itemize}
-    \subsubsection{\textcolor{red}{单调有界准则}}
-    \begin{defn}{函数的单调有界准则}{}
-        设函数$f(x)$在点$x_0$的某个左邻域内单调并且有界,则$f(x)$在$x_0$的左极限$f(x_0^-)$一定存在
-    \end{defn} 
-    \subsubsection{幂指函数求极限}
-    一般主要是进行恒等变换,即$a^b=e^{b\ln a}$.如果两个函数的指数相同,则可以提后项/前项
-    除此之外,还有一个常用的结论:\textcolor{red}{对于$\forall a,b>0$均有:$\lim_{x\to 0^+}x^a(\ln x)^b=0$},证明如下:
-    \begin{proof}
-        \begin{align*}
-            \text{原式} & = \lim_{x\to0^{+}}x^{a}\cdot\ln^{b}x & \\
-             & = \lim_{x\to0^{+}}\frac{\ln^{b}x}{x^{-a}} &\\
-             & =\lim_{x\to0^{+}}\frac{b\ln^{b-1}x\cdot\frac{1}{x}}{-ax^{-a-1}}&\\
-        \end{align*}
-    每洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
-    \end{proof}
-    
-    \subsubsection{对数函数性质求极限}
-    \subsection{拉格朗日中值定理求极限}
+    \subsubsection{积分中值定理}
+    \subsubsection{广义积分中值定理}
+    \subsubsection{拉格朗日中值定理求极限}
     如果两个函数的形式一样,那么可以使用拉格朗日中值定理进行计算,但是处理之后的$\varepsilon$需要可以使用夹逼准则.
     \begin{problem}
     $\lim_{x\to+\infty}x^{2}\left(a^{\frac{1}{x}}-a^{\frac{1}{x+1}}\right)\left(a>0\right)$        
@@ -1032,33 +1145,58 @@
     \subsubsection{形如$\dfrac{0}{0}$,$\dfrac{\infty}{\infty}$,$0 \times \infty$}
          $\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty$可以直接计算或者简单转换可以直接计算.
     \subsubsection{形如$\infty -\infty$}
-          $\infty -\infty$可以通过取倒数或者取对数进行计算
-              \begin{problem}
-              $\lim_{x\to+\infty}\left[x^2\left(\mathrm{e}^{\frac{1}{x}}-1\right)-x\right]$
-              \end{problem}
-              \begin{solution}
-                  $
-                      \begin{aligned}
-                          \text{原式}\overset{\text{令 }u=\frac1x}{\operatorname*{=}}\lim_{u\to0^+}\dfrac{\mathrm{e}^u-1-u}{u^2}=\lim_{u\to0^+}\dfrac{\mathrm{e}^u-1}{2u}=\dfrac12
-                      \end{aligned}
-                  $
-              \end{solution}
+    分式类型的$\infty -\infty$,直接通分:
+    \begin{problem}
+        $\lim_{x\to 0}(\dfrac{1}{x^2}-\dfrac{1}{\sin ^2 x})$        
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to 0}\dfrac{(\sin x +x)(x- \sin x)}{x^2 \times \sin^2 x}\\
+          & = \frac{(x+x-\frac{x^3}{6})(x-x+\frac{x^3}{6})}{x^4}\\
+          & = \frac{1}{3}
+        \end{align*}
+    \end{solution}
+    非分式的$\infty -\infty$:
+    \begin{enumerate}
+        \item 通法:\textcolor{red}{提最高阶无穷,构造无穷大乘以无穷小}.之后可以对后面的无穷小进行等价/泰勒,或者把无穷大乘以无穷小改造成无穷小比无穷小,或无穷大比无穷大,之后洛必达。提最高阶无穷之前,能算的极限要先算出来.
+        \item 见到两个根式相减,可以考虑有理化。但注意只能是平方根,立方根就不适用了。
+        \item 看见函数形式相同,可以考虑使用拉格朗日中值定理。
+    \end{enumerate}
+    \begin{problem}
+        求极限$\lim_{x\to+\infty}(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x})$
+    \end{problem}
+    \begin{solution}
+            \begin{align*}
+              \text{原式} & = \lim_{x\to+\infty}\sqrt{x}(\sqrt{1+\sqrt{\frac{1}{x}+\sqrt{\frac{1}{x\sqrt{x}}}}}-1)\\
+              & = \lim_{x\to+\infty} \sqrt{x}\times \frac{1}{2}\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}\\
+              & = \lim_{x\to+\infty} \frac{1}{2}\sqrt{1+\frac{1}{\sqrt{x}}} \\
+              & = \frac{1}{2}
+            \end{align*}
+    \end{solution}
+    \begin{note}
+        上述解法为通法,即提最高阶无穷$\sqrt{x}$
+    \end{note}
+    \begin{problem}
+        $\lim_{x\to+\infty}x^{3/2}\left(\sqrt{1+x}+\sqrt{x-1}-2\sqrt{x}\right)$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \begin{problem}
+        设$\lim_{n\to\infty}\dfrac{n^{2023}}{n^{\alpha}-(n-1)^{\alpha}}=\beta\neq0$,求$\alpha$及$\beta$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
     \subsubsection{形如$\infty^0,0^0$}
           $\infty ^0$与$0^0$通常使用\textcolor{red}
               {$ u^v=e^{v \ln u}$}来计算
-
-              \begin{problem}
-              求极限$\lim_{x\to0}\left(\dfrac{e^x+e^{2x}+\cdots+e^{nx}}n\right)^{\dfrac{1}{x}},$ 其中$n$是给定的自然数.
-              \end{problem}
-              \begin{solution}
-                  \begin{align*}
-                      \text{原式} & = e^{\lim_{x \to 0} \dfrac{\ln \left(\dfrac{e^x+e^{2x}+\cdots+e^{nx}}n\right)}{x}\qquad \text{(洛必达法则)} } \\
-                                & =\lim_{x\to0}\dfrac{\dfrac{e^{x}+2e^{2x}+\cdots+ne^{nx}}{n}}{\dfrac{e^{x}+e^{2x}+\cdots+e^{nx}}{n}}       \\
-                                & = \lim_{x\to0}\dfrac{e^{x}+2e^{2x}+\cdots ne^{nx}}{e^{x}+e^{2x}+\cdots+e^{nx}}                          \\
-                                & =\dfrac{1+2+\cdots+n}{1+1+\cdots+1}                                                                     \\
-                      \text{原式} & = e^{\dfrac{n+1}{2}}
-                  \end{align*}
-              \end{solution}
     \subsubsection{形如$1^{\infty}$}
          $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算,需要知道的是$1^\infty$可以化为第二个重要极限.
               \begin{problem}
@@ -1071,47 +1209,7 @@
                                 & = e^{\lim _{x \to \infty} \dfrac{ax}{x-a} } \times e^{\lim _{x \to \infty} \dfrac{(1-b)x}{x+b}}     \\
                                 & =e^{a+1-b}
                   \end{align*}
-              \end{solution}
-              \begin{problem}
-              $\lim_{n\to\infty}\left[\dfrac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}\right]^n,\text{ 其中}a>0,b>0,c>0.$
-              \end{problem}
-              \begin{solution}
-                  \begin{align*}
-                      \text{原式} & =   \lim_{n\rightarrow\infty}\dfrac{\ln\dfrac{\sqrt{n+a}+\sqrt{n+b}+\sqrt{n+c}}{3\sqrt{n}}}{\dfrac{1}{n}}              \\
-                                & = \lim_{n\to\infty}\dfrac{\ln\dfrac{\sqrt{1+\dfrac{a}{n}}+\sqrt{1+\dfrac{b}{n}}+\sqrt{1+\dfrac{c}{n}}}{3}}{\dfrac{1}{n}}  \\
-                                & = \lim_{x\to0}\dfrac{\ln\dfrac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}+3-3}{3}}{x}                                        \\
-                                & = \lim_{x\rightarrow0}\dfrac{\sqrt{1+ax}+\sqrt{1+bx}+\sqrt{1+cx}-3}{3x}                                              \\
-                                & = \operatorname*{lim}_{x\rightarrow0}\dfrac{\dfrac{a}{2\sqrt{1+ax}}+\dfrac{b}{2\sqrt{1+bx}}+\dfrac{c}{2\sqrt{1+cx}}}{3} \\
-                                & = \dfrac{a+b+c}{6}
-                  \end{align*}
-                  综上所述,答案为  $e^{\dfrac{a+b+c}{6}}$
-              \end{solution}
-              \begin{problem}
-              求极限$\operatorname*{lim}_{x\to0^+}\dfrac{x^{x}-(\sin x)^{x}}{x^{2}\ln(1+x)}$
-              \end{problem}
-              \begin{solution}
-                  \begin{align*}
-                      \text{原式} & = {lim}_{x\to0^+}\ \dfrac{x^x (1-(\dfrac{\sin x}{x})^x)}{x^3}                               \\
-                                & = {lim}_{x\to0^+}\ \dfrac{1-e^{x\ln \dfrac{\sin x}{x}}}{x^3}(\text{当x趋于0的时候}x^x,\text{趋于1}) \\
-                                & = {lim}_{x\to0^+}\ - \dfrac{\ln \dfrac{\sin}{x}}{x^2} (\text{此处不可以用等价无穷小})                  \\
-                                & = {lim}_{x\to0^+}\ \dfrac{\ln (1+\dfrac{\sin x - x}{x})}{x^2}                               \\
-                                & = {lim}_{x\to0^+}\ \dfrac{\sin x}{x^3}                                                     \\
-                                & = \dfrac{1}{6}
-                  \end{align*}
-                  综上所述,答案为$\dfrac{1}{6}$
-              \end{solution}
-              \begin{problem}
-              $\text{求极限}\lim_{x\to0}\left(\dfrac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x}n\right)^{\dfrac nx},\text{其中 }a_i>0,i=1,2,\cdotp\cdotp\cdotp,n$
-              \end{problem}
-              \begin{solution}
-                  \begin{align*}
-                      \text{原式} & = \lim_{x\to0}\left(1+\dfrac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}n\right)^{\frac n{a_1'+a_2'+\cdotp\cdotp+a_n'-n}\cdot\frac{a_1^{\prime}+a_1^{\prime}+\cdotp\cdotp\cdotp+a_n^{\prime}-n}x} \\
-                                & = \lim_{x\to0}\dfrac{a_1^x+a_2^x+\cdotp\cdotp\cdotp+a_n^x-n}x=\ln(a_1a_2\cdotp\cdotp\cdotp a_n)                                                                                               \\
-                                & = \lim_{x\to0}\left(1+\dfrac{a_1^x+a_2^x+\cdot\cdot\cdot+a_n^x-n}n\right)^{\frac n{a_1^{\prime}+a_2^{\prime}+\cdot\cdot\cdot+a_n^{\prime}{-n}}}=\mathrm{e}
-                  \end{align*}
-                  综上所述,答案为$a_1a_2a_3a_4...a_n$
-              \end{solution}
-    
+              \end{solution} 
     \section{数列极限的运算}
     \subsection{数列极限的运算法则}
     设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
