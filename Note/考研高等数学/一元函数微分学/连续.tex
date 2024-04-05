@@ -30,11 +30,11 @@
     \end{criterion}
     \section{函数的间断点}
     \subsection{间断点的相关概念}
-    \begin{defn}{}{}
+    \begin{defn}{可去间断点的定义}{}
         可去间断点:若$\lim_{x\to x_0}f(x)=A\neq f(x_0)(f(x_0)$甚至可以无定义),则这类间断点称为可去间断点
         \begin{center}
-            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \tikzset{every picture/.style={line width=0.5pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
             \draw  (151,148.43) -- (349.86,148.43)(250.09,67.87) -- (250.09,231.3) (342.86,143.43) -- (349.86,148.43) -- (342.86,153.43) (245.09,74.87) -- (250.09,67.87) -- (255.09,74.87) (270.09,143.43) -- (270.09,153.43)(290.09,143.43) -- (290.09,153.43)(310.09,143.43) -- (310.09,153.43)(330.09,143.43) -- (330.09,153.43)(230.09,143.43) -- (230.09,153.43)(210.09,143.43) -- (210.09,153.43)(190.09,143.43) -- (190.09,153.43)(170.09,143.43) -- (170.09,153.43)(245.09,128.43) -- (255.09,128.43)(245.09,108.43) -- (255.09,108.43)(245.09,88.43) -- (255.09,88.43)(245.09,168.43) -- (255.09,168.43)(245.09,188.43) -- (255.09,188.43)(245.09,208.43) -- (255.09,208.43) ;
             \draw   ;
             \draw    (250.09,148.43) -- (313.36,62.43) ;
@@ -48,11 +48,37 @@
             \end{tikzpicture}            
         \end{center}
     \end{defn}
-    \begin{defn}{}{}
+    \begin{problem}
+        函数 $f\left(x\right)=\dfrac{(x+1)|x-1|}{e^{\frac{1}{x-2}}\ln|x|}$的可去间断点的个数为
+    \end{problem}
+    \begin{solution}
+        该题中可疑点为$x = \pm 1,2,0$,对上述四点求极限可得:
+        $\lim_{x\to 0}=0$,但是函数$f(x)$在$x=0$点无定义.因此$x=0$是可去间断点.$\lim_{x\to 1}f(x)$时$\lim_{x\to1^+}\neq \lim_{x\to 1^-}$.因此$x=1$是跳跃间断点.$\lim_{x\to -1}=-2\sqrt[3]{e}$,因此$x=-1$是可去间断点.$\lim_{x\to2^+}f(x)=0,\lim_{x\to2^-}f(x)=\infty$,$x=2$是第二类间断点.
+    \end{solution}
+    \begin{note}
+        如何找间断点?主要是找可疑点
+        \begin{itemize}
+            \item \textcolor{red}{绝对值分段点}
+            \item \textcolor{red}{这一点本身没有定义，但邻域内都有定义的点}\footnote{比如分母为0的点}.
+        \end{itemize}
+        $\ln(x)$本身不需要讨论$x$等于$0$,因为只有$0$点右邻域有定义,$0$点的左邻域内连定义都没有,更不用谈$0$点的左极限,所以此时$0$不可能是间断点.
+        但出现$\ln |x|,\ln(x^2)$时,$0$点本身无定义,但$0$点左右邻域内都有定义,所以$0$可能是间断点.
+    \end{note}
+    \begin{problem}
+        函数$f(x)=\dfrac{\mid x\mid^{x}-1}{x(x+1)\ln\mid x\mid}$的可去间断点的个数为      
+    \end{problem}
+    \begin{solution}
+        $f(x)=\dfrac{\left|\:x\:\right|^{x}-1}{x(\:x+1)\ln\mid x\mid}\:$在 $x=-\:1,0,1$\:处无定义\:\\ 
+        $\operatorname*{lim}_{x\to-1}f(x)=\operatorname*{lim}_{x\to-1}\dfrac{\mathrm{e}^{x\ln\left|x\right|}-1}{x(x+1)\ln\left|x\right|}=\operatorname*{lim}_{x\to-1}\dfrac{x\mathrm{ln}\left|x\right|}{x(x+1)\mathrm{ln}\left|x\right|}=\operatorname*{lim}_{x\to-1}\dfrac{1}{x+1}=\infty$, \\
+        $\lim_{x\to0}f(x)=\lim_{x\to0}\dfrac{\left|x\right|^{x}-1}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{\mathrm{e}^{x\ln\left|x\right|}-1}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{x\ln\left|x\right|}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{1}{x+1}=1\:, $\\
+        $\operatorname*{lim}_{x\to1}f(x)\:=\operatorname*{lim}_{x\to1}{\dfrac{\left|\:x\:\right|^{x}-1}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{\mathrm{e}^{x\ln\left|\:x\:\right|}-1}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{x\ln\left|\:x\:\right|}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{1}{x+1}}={\dfrac{1}{2}}$
+        综上,$x=0$与$x=1$为可去间断点
+    \end{solution}
+    \begin{defn}{跳跃间断点的定义}{}
         跳跃间断点\footnote{一点极限存在\neq f(x)在$x_0$连续}:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
         \begin{center}
-            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \tikzset{every picture/.style={line width=0.5pt}} %set default line width to 0.5pt        
+            \begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
             \draw  (152.86,148.43) -- (351.71,148.43)(251.95,67.87) -- (251.95,231.3) (344.71,143.43) -- (351.71,148.43) -- (344.71,153.43) (246.95,74.87) -- (251.95,67.87) -- (256.95,74.87) (271.95,143.43) -- (271.95,153.43)(291.95,143.43) -- (291.95,153.43)(311.95,143.43) -- (311.95,153.43)(331.95,143.43) -- (331.95,153.43)(231.95,143.43) -- (231.95,153.43)(211.95,143.43) -- (211.95,153.43)(191.95,143.43) -- (191.95,153.43)(171.95,143.43) -- (171.95,153.43)(246.95,128.43) -- (256.95,128.43)(246.95,108.43) -- (256.95,108.43)(246.95,88.43) -- (256.95,88.43)(246.95,168.43) -- (256.95,168.43)(246.95,188.43) -- (256.95,188.43)(246.95,208.43) -- (256.95,208.43) ;
             \draw   ;
             \draw    (250.09,108.43) -- (352.36,109.43) ;
@@ -68,14 +94,14 @@
             \end{tikzpicture}
         \end{center}
     \end{defn}
-    \begin{defn}{}{}
+    \begin{defn}{无穷间断点的定义}{}
         无穷间断点:若$\lim_{x\to x_0}f(x)=\infty$,则这类间断点称为无穷间断点,如$y=\tan x$
               \begin{figure}[H]
                   \centering \includegraphics[width=
                       0.4 \linewidth]{1.3.6.eps} \caption{无穷间断点函数tan图像}
               \end{figure}
     \end{defn}
-    \begin{defn}{}{}
+    \begin{defn}{振荡间断点的定义}{}
         振荡间断点:若$\lim_{x\to x_0}f(x)$振荡不存在,则这类间断点称为振荡间断点
               \begin{figure}[H]
                   \centering \includegraphics[width=
@@ -92,6 +118,47 @@
               \end{itemize}
         \item 第二类间断点：除第一类以外的间断点$\implies \lim _ { x \rightarrow x _ { 0 } ^{-}} f ( x )$和$\lim _ { x \rightarrow x _ { 0 }^ {+}} f ( x )$​ 均至少一个不存在
     \end{itemize}
+    \begin{problem}
+        求函数 $f(x)=\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}$ 的间断点并指出其类型.
+    \end{problem}
+    \begin{solution}
+        当$n \to \infty$时,有$\lim_{x \to \infty}x^n=\begin{cases}
+            \infty ,|x|>1\\ 
+            0,|x|<1\\1,
+            x=1\\
+            (-1)^n,x=-1
+        \end{cases}$,那么$\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}=
+        \begin{cases} 
+            -1,0<|x|<-1\\x^2,|x|>1\\0,|x|=1
+        \end{cases}$
+    综上,$x= \pm 1$为跳跃间断点,$x=0$为可去间断点.
+    \end{solution}
+    \begin{note}
+        \textcolor{red}{对于$f(x)$是$x$的函数,表达式是以$n$的极限的形式给出的情况,方法为把$f(x)$分段解出来,$n$趋于无穷时,$x^n$要以$|x|=1$为界限进行分段.}
+    \end{note}
+    \begin{problem}
+        设 $f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}$,则 $f(x):$  \\
+        (A)仅有一个可去间断点.\quad(B) 仅有一个跳跃间断点．\quad(C) 有两个可去间断点.\quad(D)有两个跳跃间断点.
+    \end{problem}
+    \begin{solution}
+        $\lim_{x\to \infty}e^{nx}=\begin{cases}
+            0,x<0\\
+            1,x=0\\
+            +\infty,x>0
+        \end{cases}$,
+        $\lim_{x \to \infty}x^n=\begin{cases}
+            \infty ,|x|>1\\ 
+            0,|x|<1\\1,
+            x=1\\
+            (-1)^n,x=-1
+        \end{cases}$
+    \\综上可得:
+    $
+    \lim{n\to\infty}=f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}=\begin{cases}
+        0,x<-1\\1,-1<x<0\\2e^x,x>0
+    \end{cases}
+    $
+    \end{solution}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}

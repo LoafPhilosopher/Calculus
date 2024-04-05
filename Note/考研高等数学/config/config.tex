@@ -25,11 +25,12 @@
 \tcbuselibrary{breakable}
 \tcbuselibrary{most}
 \newcounter{problemname}
+
 \newenvironment{solution}{\par\noindent\textbf{解答. }}{\par}
 \newenvironment{note}{\par\noindent\textbf{题目\arabic{problemname}的注记. }}{\par}
 \definecolor{shadecolor}{RGB}{241, 241, 255}
 \newenvironment{problem}{\begin{shaded}\stepcounter{problemname}\par\noindent\textbf{题目\arabic{problemname}. }}{\end{shaded}\par}
-
+\allowdisplaybreaks
 \graphicspath{ {figure/},{../figure/}, {config/}, {../config/} }  % 配置图形文件检索目录
 \linespread{1.3} % 行高
 
