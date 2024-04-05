@@ -364,7 +364,7 @@
     \begin{criterion}{无穷小与函数极限的关系(脱帽法)}{}
         $\lim_{x\to\cdot}f(x)=A\Leftrightarrow f(x)=A+\alpha$,其中$\lim_{x\to\cdot}f(x)$为超实数值,其实数部分为$A$,函数$f(x)$的函数值为$A+\alpha$\label{wqx1}
     \end{criterion}
-    \subsection{\textcolor{red}{无穷小的性质}}
+    \subsubsection{\textcolor{red}{无穷小的性质}}
     \begin{itemize}
         \item[1] 有限个无穷小的和是无穷小\footnote{无穷个无穷小的和不一定是无穷小,如$\lim_{n \to \infty}=(\dfrac{1}{n+1}+\dfrac{1}{n+2}+\dfrac{1}{n+3}\dots +\dfrac{1}{n+n})=\ln 2$}
             \begin{proof}
@@ -376,7 +376,7 @@
             \end{proof}
         \item[3] 有限个无穷小的乘积是无穷小\footnote{这个地方虽然张宇老师给出了证明,但是好像存在一定的争议性}
     \end{itemize}
-    \subsection{\textcolor{red}{无穷小的比阶}}
+    \subsubsection{\textcolor{red}{无穷小的比阶}}
     \begin{defn}{不同无穷小的比阶}{}
         \begin{itemize}
             \item 如果 $\lim \dfrac{\beta}{\alpha} =0$,那么就说 $\beta$是比$\alpha$高阶的无穷小,记作 $\beta=o(\alpha);$
@@ -386,53 +386,51 @@
             \item 如果 $\lim \dfrac\beta\alpha = 1$,那么就说 $\beta$ 与 $\alpha$ 是等价无穷小,记作 $\alpha\sim\beta$
         \end{itemize}
     \end{defn}
-    前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha  =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.\\
-    同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}.例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$。
-
-    \subsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
+    前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}\footnote{例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在,其值为$\infty$和$0$}.
+    \newline
+    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.\\
+    \subsubsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
     设$m,n$为无穷小,则
     \begin{itemize}
         \item[1.] $o(x^{m})\pm o(x^{n})=o(x^{l}),l=\min\{m,n\}$
         \item[2.] $o(x^{m})\cdot o(x^{n})=o(x^{m+n}),x^{m}\cdot o(x^{n})=o(x^{m+n})$
         \item[3.] $o(x^{m})=o(kx^{m})=k\cdot o(x^{m}),k \neq 0$
     \end{itemize}
-    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.\\
+   
     \textcolor{red}{结论:若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小}
     \begin{problem}
-        
+        把$x\to 0^+$时的无穷小$a= \int _0^x \cos t^2dt$, $\beta= \int _0^{x^2} \tan\sqrt{t} dt$, $\gamma= \int _0^{\sqrt{x}} \sin t^3 dt$进行排序,使排在后面的是前一个的高阶无穷小，则正确的排列顺序是
     \end{problem}
     \begin{solution}
-        
+        $\alpha$:$n=1,\lim_{x\to 0} \cos x^2=1$,因此$m=0$,那么$n(m+1)=1$;$\beta$:$n=2,m=\frac{1}{2}$,那么$n(m+1)=3$.$\gamma$:$m=\frac{1}{2}x,n=2$,那么$n(m+1)=2$.因此顺序为$\alpha \gamma \beta$
+    \end{solution}
+    \begin{problem}
+        当 $x\to0$ 时,下列无穷小中最高阶的是:\\
+        $\left(A\right)\left(2+\tan x\right)^{x}-2^{x}$ \qquad $\left(B\right)\left(\cos x^{2}\right)^{\frac{1}{x}}-1$ \qquad $( C) \int _0^{1- \cos x}e^{x}\sin t^2$d$t$ \qquad$\left(D\right)\int_{\sin x}^{1-\sqrt{\cos x}}\ln(1+t^{3})dt$
+    \end{problem}
+    \begin{solution}
+        A选项:$2^x[(1+\dfrac{\tan x}{2})^x-1]=\dfrac{\tan x}{2}\times x=\frac{1}{2}x^2$.B选项:$-\dfrac{x^4}{2x}=-\dfrac{x^3}{2}$.C选项:$n=\frac{1}{2}x^2,m=x^2$那么$n(m+1)=6$.D选项:$\int_{\sin x}^{1-\sqrt{\cos x}}\ln(1+t^3) \mathrm{d}t=\int_{\sin x}^0\ln(1+t^3) \mathrm{d}t+\int_0^{1-\sqrt{\cos x}}\ln(1+t^3) \mathrm{d}t=\int_{0}^{1-\sqrt{\cos x}}\ln(1+t^{3})\mathrm{d}t-\int_{0}^{\sin x}\ln(1+t^{3})dt$那么$1-\sqrt{\cos x}\sim\frac{\frac12x^2}2,\int_0^{1-\sqrt{\cos x}}\ln(1+t^3) \mathrm{d}t$,那么$n(m+1)=8$,$\int_0^{\sin x}\ln\left(1+t^3\right)\mathrm{d}t$那么$n(m+1)=8$,$\int_{\sin x}^{1-\sqrt{\cos x}}\ln(1+t^3) \mathrm{d}t.$的阶数为4.综上C选项的阶数最高.
     \end{solution}
     \begin{note}
-        
+        D选项:如果为变上下限的形式,则转化为变上限的形式,然后使用结论进行计算,之后按照无穷小的运算法则计算即可.
     \end{note}
     \begin{problem}
-            
+        设 $p(x)=a+bx+cx^2+dx^3$.当$x\to0$ 时，若 $p(x)-\tan x$ 是比$x^{3}$ 高阶的无穷小，则下列结论中错误的是:\\
+        $(A)a=0 \qquad (B)b=1 \qquad (C)c=0 \qquad (D)d=\dfrac{1}{6}$
     \end{problem}
     \begin{solution}
-            
+        对$\dfrac{p(x)-\tan x}{x^3}$泰勒展开可得:$\dfrac{p(x)-(x+\frac13x^3+\frac2{15}x^5)}{x^3}=\dfrac{a+bx+cx^2+dx^3-x-\frac{1}{3}x^3-\frac{2}{15}x^5}{x^3}$\\
+        综上易知:$a=0,b=1,c=0,d=\dfrac{1}{3}$.因此,D选项是错误的.
     \end{solution}
-    \begin{note}
-            
-    \end{note}
     \begin{problem}
-            
+        当$x\to0^+$时，下列无穷小量中最高阶的是 \\
+        $(A)\int _0^{x^2}\ln ( 1+ {\sqrt {t}}) $d$t \qquad (B) \int_{x^{3}}^{x^{2}}\sqrt{1-\sqrt{\cos t}}\:\mathrm{d}t \qquad (C)\int _x^{2\sin x}\sin t^2$d$t \qquad (D) \int _x^{\sin x}( \mathrm{e} ^{t^2}- 1) $d$t$  
     \end{problem}
     \begin{solution}
-            
+        A:$\ln(1+\sqrt{x}) \sim \sqrt{x}$,其$n(m+1)=3$.B:$\sqrt{1-\sqrt{\cos t}}=\frac{1}{2}x,$其$n(m+1)$的最小值为4.C:使用积分中值定理可得:$\sin^2 \varepsilon \times (2\sin x- x),\varepsilon \in (2\sin x,x)$,使用等价无穷小可得:$2\sin x-x \sim x,\sin^2 \varepsilon \sim \varepsilon ^2 \sim x^2$,那么其最终化为$x^3$.D选项:$(\sin x - x)(e^{\varepsilon ^2}-1),\varepsilon \in (\sin x,x)$.使用等价无穷小可得:$(-\dfrac{1}{6}x^5 \times \varepsilon)\sim x^6$. 最终选择D选项.
     \end{solution}
     \begin{note}
-            
-    \end{note}
-    \begin{problem}
-            
-    \end{problem}
-    \begin{solution}
-            
-    \end{solution}
-    \begin{note}
-            
+        如果上下限同阶的情况,如本题的C,D选项,则不可进行拆分,需要使用积分中值定理\ref{jfzz1}进行计算.
     \end{note}
     \subsection{无穷大}
     \begin{defn}{无穷大的定义}{}
@@ -453,17 +451,17 @@
         $\forall M>0$令$\delta=\dfrac{1}{4M}>0$,当$0<|x-1|<\delta$时,即$0<|x-1|<\dfrac{1}{4M}$时,$|x-1|<\dfrac{1}{M}$,所以$\dfrac{1}{|x-1|}>M$
         这就证明了$\underset{x\rightarrow1}{\operatorname*{lim}}\dfrac{1}{x-1}=\infty$
     \end{solution}
-    \subsection{\textcolor{red}{无穷大的比阶}}
+    \subsubsection{\textcolor{red}{无穷大的比阶}}
     \begin{itemize}
         \item 当$x \to +\infty$时,$\mathrm{ln}^ax\ll x^\beta\ll a^x,\text{其中}\alpha>0,\beta>0,a>1.$\footnote{由洛必达公式证明}
         \item 当$n \to \infty$时,$\ln^an\ll n^\beta\ll a^n\ll n!\ll n^n,\text{其中 }\alpha>0,\beta>0,a>1.$
     \end{itemize}
-    \subsection{\textcolor{red}{无穷大的性质}}
+    \subsubsection{\textcolor{red}{无穷大的性质}}
     \begin{itemize}
         \item 两个无穷大量的积仍未无穷大量
         \item 无穷大量与有界变量的和仍是无穷大量
     \end{itemize}
-    \subsection{无穷大与无界变量的关系}
+    \subsubsection{无穷大与无界变量的关系}
     无穷大量一定是无界变量,但无界变量不一定是无穷大量.\footnote{如数列$x_n=\begin{cases}n,n\text{ 为奇数}\\0,n\text{ 为偶数}&\end{cases}$,是无界变量,但不是无穷大.无穷大是一个极限}
     \subsection{无穷大与无穷小的关系}
     在自变量的同一变化过程中,若$f(x)$是无穷大,则$\dfrac{1}{f(x)}$是无穷小;若$f(x)$是无穷小,且$f(x)\neq 0$,则$\dfrac{1}{f(x)}$是无穷大.
@@ -786,7 +784,7 @@
             \end{aligned}
         }
     \end{align*}
-    \subsubsection{等价无穷小求极限}
+    \subsubsection{等价无穷小}
     \textcolor{red}{等价无穷小的本质是泰勒的低精度形式}\\
     关于等价无穷小,有以下两个定理
     \begin{defn}{等价无穷小的充要条件}{}
@@ -1137,8 +1135,14 @@
         \end{itemize}
         那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
     \end{defn}
-    \subsubsection{积分中值定理}
-    \subsubsection{广义积分中值定理}
+    \subsubsection{积分中值定理}\label{jfzz1}
+    \begin{defn}{}{}
+        若函数 $f\left(x\right)$在闭区间 $[a,b]$ 上连续，则在积分区间 $[a,b]$ 上至少存在一个点 $\varepsilon$ , 使下式成立
+            $$
+                \int_a^bf\left(x\right)dx=f\left(\varepsilon\right)\left(b-a\right)
+            $$
+        其中,a、b、$\varepsilon$满足：$a\leq\varepsilon\leq b$
+    \end{defn}
     \subsubsection{拉格朗日中值定理求极限}
     如果两个函数的形式一样,那么可以使用拉格朗日中值定理进行计算,但是处理之后的$\varepsilon$需要可以使用夹逼准则.
     \begin{problem}

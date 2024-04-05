@@ -1,5 +1,5 @@
 \ifx\allfiles\undefined
-\documentclass[9pt a4paper, oneside, UTF8]{ctexbook} 
+\documentclass[8pt a4paper, oneside, UTF8]{ctexbook} 
 \input{../config/config}
 \begin{document}
 \begin{sloppypar}
@@ -16,9 +16,12 @@
         $$
         那就称为函数$y=f(x)$在点$x_0$连续.
     \end{defn}
-    \begin{criterion}{}{}
+    \begin{criterion}{函数连续的性质}{}
         \begin{itemize}
-            \item 当极限需要讨论时：$\lim_{x\to x_0^+}f\left(x\right)=\lim_{x\to x_0^-}f\left(x\right)=f\left(x_{0}\right)\Leftrightarrow f\left(x\right)$在点$x_{0}$处连续
+            \item 当极限需要讨论时：
+            $$
+            \lim_{x\to x_0^+}f\left(x\right)=\lim_{x\to x_0^-}f\left(x\right)=f\left(x_0\right)\Leftrightarrow f\left(x\right)\text{ 在点 }x_0\text{ 处连续}
+            $$
             \item 连续性的四则运算:设$f(x)$与$g(x)$都在点$x=x_0$处连续,则$f(x)\pm g(x)$与$f(x)g(x)$在点$x=x_{0}$处连续,当$g(x_0)\neq0$ 时,$f(x)/g(x)$在点$x=x_{0}$处也连续。
             \item 复合函数的连续性:设$u=\varphi(x)$在点$x=x_0$处连续,$y=f(u)$在点$u=u_0$处连续,且$u_{0}=\varphi(x_{0})$,则$f\left[\varphi(x)\right]$在点$x=x_{0}$处连续。
             \item 反函数的连续性:设$y=f(x)$在区间$I_x$上单调且连续,则反函数$x=\varphi(y)$在对应的区间 $I_{y}=\{y|y=f(x),x\in I_{x}\}$ 上连续且有相同的单调性
@@ -27,28 +30,58 @@
     \end{criterion}
     \section{函数的间断点}
     \subsection{间断点的相关概念}
-    \begin{itemize}
-        \item 可去间断点:若$\lim_{x\to x_0}f(x)=A\neq f(x_0)(f(x_0)$甚至可以无定义),则这类间断点称为可去间断点
-              \begin{figure}[H]
-                  \centering \includegraphics[width=
-                      0.4 \linewidth]{3.2.1.eps} \caption{可去间断点函数图像}
-              \end{figure}
-        \item 跳跃间断点\footnote{一点极限存在\neq f(x)在$x_0$连续}:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
-              \begin{figure}[H]
-                  \centering \includegraphics[width=
-                      0.4 \linewidth]{3.2.2.eps} \caption{跳跃间断点函数图像}
-              \end{figure}
-        \item 无穷间断点:若$\lim_{x\to x_0}f(x)=\infty$,则这类间断点称为无穷间断点,如$y=\tan x$
+    \begin{defn}{}{}
+        可去间断点:若$\lim_{x\to x_0}f(x)=A\neq f(x_0)(f(x_0)$甚至可以无定义),则这类间断点称为可去间断点
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \draw  (151,148.43) -- (349.86,148.43)(250.09,67.87) -- (250.09,231.3) (342.86,143.43) -- (349.86,148.43) -- (342.86,153.43) (245.09,74.87) -- (250.09,67.87) -- (255.09,74.87) (270.09,143.43) -- (270.09,153.43)(290.09,143.43) -- (290.09,153.43)(310.09,143.43) -- (310.09,153.43)(330.09,143.43) -- (330.09,153.43)(230.09,143.43) -- (230.09,153.43)(210.09,143.43) -- (210.09,153.43)(190.09,143.43) -- (190.09,153.43)(170.09,143.43) -- (170.09,153.43)(245.09,128.43) -- (255.09,128.43)(245.09,108.43) -- (255.09,108.43)(245.09,88.43) -- (255.09,88.43)(245.09,168.43) -- (255.09,168.43)(245.09,188.43) -- (255.09,188.43)(245.09,208.43) -- (255.09,208.43) ;
+            \draw   ;
+            \draw    (250.09,148.43) -- (313.36,62.43) ;
+            \draw   (297,81.43) .. controls (297,80.13) and (298.06,79.07) .. (299.36,79.07) .. controls (300.66,79.07) and (301.71,80.13) .. (301.71,81.43) .. controls (301.71,82.73) and (300.66,83.79) .. (299.36,83.79) .. controls (298.06,83.79) and (297,82.73) .. (297,81.43) -- cycle ;
+            \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (298.64,147.57) .. controls (298.64,146.55) and (299.47,145.71) .. (300.5,145.71) .. controls (301.53,145.71) and (302.36,146.55) .. (302.36,147.57) .. controls (302.36,148.6) and (301.53,149.43) .. (300.5,149.43) .. controls (299.47,149.43) and (298.64,148.6) .. (298.64,147.57) -- cycle ;
+            \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+            \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {可去间断点函数图像};
+            \end{tikzpicture}            
+        \end{center}
+    \end{defn}
+    \begin{defn}{}{}
+        跳跃间断点\footnote{一点极限存在\neq f(x)在$x_0$连续}:若$\lim_{x\to x_0^-}f(x)$与$\lim_{x\to x_0^+}f(x)$都存在,但$\lim_{x\to x_0^+}f(x)\neq\lim_{x\to x_0^-}f(x)$,则这类间断点称为跳跃间断点
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \draw  (152.86,148.43) -- (351.71,148.43)(251.95,67.87) -- (251.95,231.3) (344.71,143.43) -- (351.71,148.43) -- (344.71,153.43) (246.95,74.87) -- (251.95,67.87) -- (256.95,74.87) (271.95,143.43) -- (271.95,153.43)(291.95,143.43) -- (291.95,153.43)(311.95,143.43) -- (311.95,153.43)(331.95,143.43) -- (331.95,153.43)(231.95,143.43) -- (231.95,153.43)(211.95,143.43) -- (211.95,153.43)(191.95,143.43) -- (191.95,153.43)(171.95,143.43) -- (171.95,153.43)(246.95,128.43) -- (256.95,128.43)(246.95,108.43) -- (256.95,108.43)(246.95,88.43) -- (256.95,88.43)(246.95,168.43) -- (256.95,168.43)(246.95,188.43) -- (256.95,188.43)(246.95,208.43) -- (256.95,208.43) ;
+            \draw   ;
+            \draw    (250.09,108.43) -- (352.36,109.43) ;
+            \draw   (250.09,108.43) .. controls (250.09,107.13) and (251.15,106.07) .. (252.45,106.07) .. controls (253.75,106.07) and (254.81,107.13) .. (254.81,108.43) .. controls (254.81,109.73) and (253.75,110.79) .. (252.45,110.79) .. controls (251.15,110.79) and (250.09,109.73) .. (250.09,108.43) -- cycle ;
+            \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (250.09,148.43) .. controls (250.09,147.4) and (250.92,146.57) .. (251.95,146.57) .. controls (252.97,146.57) and (253.81,147.4) .. (253.81,148.43) .. controls (253.81,149.45) and (252.97,150.29) .. (251.95,150.29) .. controls (250.92,150.29) and (250.09,149.45) .. (250.09,148.43) -- cycle ;
+            \draw    (150.09,187.43) -- (252.36,188.43) ;
+            \draw   (250,188.43) .. controls (250,187.13) and (251.06,186.07) .. (252.36,186.07) .. controls (253.66,186.07) and (254.71,187.13) .. (254.71,188.43) .. controls (254.71,189.73) and (253.66,190.79) .. (252.36,190.79) .. controls (251.06,190.79) and (250,189.73) .. (250,188.43) -- cycle ;
+            \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+            \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {跳跃间断点函数图像};
+            \end{tikzpicture}
+        \end{center}
+    \end{defn}
+    \begin{defn}{}{}
+        无穷间断点:若$\lim_{x\to x_0}f(x)=\infty$,则这类间断点称为无穷间断点,如$y=\tan x$
               \begin{figure}[H]
                   \centering \includegraphics[width=
                       0.4 \linewidth]{1.3.6.eps} \caption{无穷间断点函数tan图像}
               \end{figure}
-        \item 振荡间断点:若$\lim_{x\to x_0}f(x)$振荡不存在,则这类间断点称为振荡间断点
+    \end{defn}
+    \begin{defn}{}{}
+        振荡间断点:若$\lim_{x\to x_0}f(x)$振荡不存在,则这类间断点称为振荡间断点
               \begin{figure}[H]
                   \centering \includegraphics[width=
                       0.4 \linewidth]{3.2.3.eps} \caption{振荡间断点函数$\sin \frac{1}{x}$图像}
               \end{figure}
-    \end{itemize}
+    \end{defn}    
     \subsection{间断点的分类}
     通过求函数在该点的左右极限来判断
     \begin{itemize}
