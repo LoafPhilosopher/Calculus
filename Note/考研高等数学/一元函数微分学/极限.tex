@@ -109,6 +109,13 @@
             \item \textcolor{red}{函数的极限值只与邻域内的函数值有关,而与该点的函数值无关}.
         \end{enumerate}
     \end{criterion}
+    \begin{problem}
+        设$\lim_{x \to 1}\dfrac{f(x)}{\ln x}=1$,则:\\
+        $(A) f(1)=0 \quad (B)\lim_{x\to 1}f(x)=0 \quad (C)f'(1)=1 \quad (D)\lim_{x \to 1}f'(x)=1$
+    \end{problem}
+    \begin{solution}
+        $\lim_{x\to 1}\ln x=0$,根据极限四则运算法则\ref{jxdsz1},$\lim_{x \to 1} f(x)=0$,对于其他选项,需要知道的是函数的极限值与该点的函数值无关,只与邻域内的函数值有关.
+    \end{solution}
     \subsubsection{单侧极限}
     \begin{defn}{单侧极限的定义}{}
         若当$x\to x_0^{-}$时,$f(x)$无限接近于某常数$A$,则常数$A$叫作函数$f(x)$当$x\to x_0$时的\textcolor{red}{左极限},记为
@@ -389,15 +396,7 @@
     前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}\footnote{例如,当 $x\to 0$ 时,$x\sin\frac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\frac{x \sin \frac{1}{x}}{x^2}=\lim_{x\to0}\frac1x\sin\frac1x$不存在,其值为$\infty$和$0$}.
     \newline
     \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.\\
-    \subsubsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
-    设$m,n$为无穷小,则
-    \begin{itemize}
-        \item[1.] $o(x^{m})\pm o(x^{n})=o(x^{l}),l=\min\{m,n\}$
-        \item[2.] $o(x^{m})\cdot o(x^{n})=o(x^{m+n}),x^{m}\cdot o(x^{n})=o(x^{m+n})$
-        \item[3.] $o(x^{m})=o(kx^{m})=k\cdot o(x^{m}),k \neq 0$
-    \end{itemize}
-   
-    \textcolor{red}{结论:若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小}
+    \textcolor{red}{无穷小比阶的结论:若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小}
     \begin{problem}
         把$x\to 0^+$时的无穷小$a= \int _0^x \cos t^2dt$, $\beta= \int _0^{x^2} \tan\sqrt{t} dt$, $\gamma= \int _0^{\sqrt{x}} \sin t^3 dt$进行排序,使排在后面的是前一个的高阶无穷小，则正确的排列顺序是
     \end{problem}
@@ -431,6 +430,38 @@
     \end{solution}
     \begin{note}
         如果上下限同阶的情况,如本题的C,D选项,则不可进行拆分,需要使用积分中值定理\ref{jfzz1}进行计算.
+    \end{note}
+    \subsubsection{无穷小的运算}\footnote{此处多用于泰勒公式的应用中,会对上述高阶无穷小的运算提出要求}
+    设$m,n$为无穷小,则
+    \begin{itemize}
+        \item[1.] $o(x^{m})\pm o(x^{n})=o(x^{l}),l=\min\{m,n\}$
+        \item[2.] $o(x^{m})\cdot o(x^{n})=o(x^{m+n}),x^{m}\cdot o(x^{n})=o(x^{m+n})$
+        \item[3.] $o(x^{m})=o(kx^{m})=k\cdot o(x^{m}),k \neq 0$
+    \end{itemize}
+    \begin{problem}
+        若当$x\to0$时,$\alpha(x),\beta(x)$是非零无穷小量,则以下的命题中正确的是:\\
+        A.若$\alpha(x)\sim\beta(x)$,则$\alpha^2(x)-\beta^2(x);$\quad B.若$\alpha^2(x)\sim\beta^2(x)$,则$\alpha(x)\sim\beta(x);$ \\ C.若$\alpha(x)\sim\beta(x)$,则$\alpha(x)-\beta(x)=o(\alpha(x));$ \quad D.若$\alpha(x) \sim \beta(x)=o(\alpha(x))$,则$\alpha(x)~-\beta(x)$
+    \end{problem}
+    \begin{solution}
+        \begin{enumerate}
+            \item $\lim_{x \to 0}\dfrac{\alpha(x)}{\beta(x)}=1$,那么$\lim_{x \to 0}[\dfrac{\alpha(x)}{\beta(x)}]^2=1$
+            \item $\lim_{x\to 0}\dfrac{\alpha(x)^2}{\beta(x)^2}=1 \Rightarrow \lim_{x \to 0}\dfrac{\alpha(x)}{\beta(x)} = \pm 1$
+            \item $\lim_{x \to 0}\dfrac{\alpha(x)-\beta(x)}{\beta(x)}=0$
+            \item $\lim_{x\to 0}\dfrac{\alpha(x)-\beta(x)}{\beta(x)}=1$
+        \end{enumerate}
+    \end{solution}
+    \begin{note}
+        \textcolor{red}{若$\alpha(x) \sim \beta (x)$,那么$\lim_{x \to 0}\dfrac{\alpha(x)}{\beta(x)}=1 \Leftrightarrow \lim_{x\to 0}\dfrac{\beta(x)}{\alpha(x)}$}
+    \end{note}
+    \begin{problem}
+        设对任意的$x$总有$\varphi(x)\leqslant f(x)\leqslant g(x)$,且$\lim_{x\to \infty}[g(x)-\varphi(x)]=0$,则$\lim_{x\to \infty}f(x)$\\
+        (A)存在且等于零.\quad (B) 存在但不一定为零.\quad(C)一定不存在.\quad(D)不一定存在
+    \end{problem}
+    \begin{solution}
+        令$\varphi(x)=f(x)=g(x)=\begin{cases} x\\1\\0 \end{cases}$,易知D选项正确
+    \end{solution}
+    \begin{note}
+        \textcolor{red}{遇见$\leq$,$\geq$的形式,可以一律取$=$}
     \end{note}
     \subsection{无穷大}
     \begin{defn}{无穷大的定义}{}
@@ -486,16 +517,30 @@
         \end{table}
     \end{criterion}
     \begin{problem}
-        (1)证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$\\
-        (2)证明:$\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
+        \begin{enumerate}
+            \item 证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$
+            \item 证明:$\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
+            \item 证明:若$\lim_{x \to x_0}g(x)=A,\lim_{x \to A}f(x)=B$,能否推出$\lim_{x\to x_0}f(g(x))=B$,若不能,则满足什么条件可以推出该结论?
+        \end{enumerate}
     \end{problem}
     \begin{proof}
-        (1)$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
-        \\
-        (2)由于$g(x)=\dfrac{f(x)}{\frac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\frac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\frac{f(x)}{g(x)}}=\dfrac{0}{A}=0$ 
+        \begin{enumerate}
+            \item \textcolor{red}{$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$}
+            \item \textbf{由于$g(x)=\dfrac{f(x)}{\frac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\frac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\frac{f(x)}{g(x)}}=\dfrac{0}{A}=0$}
+            \item 无法推出,有如下反例
+            \begin{itemize}
+                \item $g(x)=x \sin \dfrac{1}{x},f(x)=\begin{cases} x,x \neq 0\\1,x=0 \end{cases}$,$\lim_{x \to 0}g(x)=0,\lim_{x\to0}f(x)=0$,但是当$x \to 0$时,$g(x)=x\sin \frac{1}{x}$不仅趋于0,同时还能在$\dfrac{1}{n \pi}$这样的点处严格等于0.此时$\lim_{x \to 0}f(g(x))=1$,所以$\lim_{x\to 0}f(g(x))$不存在,其极限值在$(0,1)$之间反复横跳.
+                \item $g(x) \equiv 0$,$f(x)=\begin{cases} x,x \neq 0\\ 1,x=0 \end{cases}$,$\lim_{x\to 0}g(x)=0,\lim_{x\to 0}f(x)=0.$但$\lim_{x\to 0}f(g(x))=1$
+            \end{itemize}
+            因此结论不成立.若要成立,则应改为:
+            \begin{itemize}
+                \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,且$g(x)\neq A$}\footnote{从根本上排除了常值函数和振荡间断点的反例},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
+                \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,即$f(x)$在$x=A$处连续}\footnote{不管内函数能否取到极限值,只要外函数连续,复合之后极限一定存在},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
+            \end{itemize}
+        \end{enumerate}
     \end{proof}
     \begin{note}
-        此题的两个证明是常用结论
+        此题的三个证明是常用结论
     \end{note}
     \begin{problem}
         求$\lim_{x\to+\infty}\dfrac{e^x}{\left(1+\dfrac1x\right)^{x^2}}.$极限
