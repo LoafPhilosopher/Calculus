@@ -10,7 +10,7 @@
     \chapter{极限}
     \section{数列的极限}
     \subsection{数列极限的定义}
-    \begin{defn}{}{}
+    \begin{defn}{数列极限的定义}{}
         设$|x_n|$为一数列,若\uwave{存在常数$a$},对于\uwave{任意的$\varepsilon>0$(不论它多么小)},\uwave{总存在正整数$N$},使得当\uwave{$n>N$}时 \uwave{$|x_n-a|<\varepsilon$ 恒成立},则称数 $a$是数列$| x_n |$的极限,或者称数列$| x_n |$收敛于 $a$,记为
         $$
             \lim_{n\to\infty}x_n=a\text{或}x_n\to a(n\to\infty)
@@ -20,11 +20,14 @@
         $$\lim_{n\to\infty}x_n=a\Leftrightarrow\forall\varepsilon>0,\exists\text{正整数}N,\text{当}n>N\text{时},\text{有}|x_n,-a|<\varepsilon.$$
     \end{defn}
     在上面的定义中,$\varepsilon>0$的$\varepsilon$任意性是非常重要的,只有这样才能表示出\textcolor{red}{无限接近的意义}.总存在正整数$N$,使得$n>N$这个条件用于表达$n \to \infty$的过程.
-    \begin{criterion}{}{}
+    \begin{criterion}{数列极限的性质}{}
         \begin{itemize}
-            \item 数列的极限值与数列的前有限列无关,只与后面无穷项有关
-            \item 若数列$\{a_n\}$收敛,则其任何子列$\{a_{n_k}\}$也收敛,且$\lim_{k\to\infty}a_{n_k}=\lim_{n\to\infty}a_n$\footnote{ 此条定理提供了一个判断数列发散的方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.}
+            \item 数列收敛\footnote{区别于级数收敛}等价于数列极限存在
+            \item \textcolor{red}{数列的极限值与数列的前有限列无关,只与后面无穷项有关}
+            \item \textcolor{red}{数列的最值只能在前有限项中取得,前有限项有比极限值大的,则数列存在最大值.前有限项有比极限值小的,则数列存在最小值}
+            \item \textcolor{red}{若数列$\{a_n\}$收敛,则其任何子列$\{a_{n_k}\}$也收敛,且$\lim_{k\to\infty}a_{n_k}=\lim_{n\to\infty}a_n$}\footnote{ 此条定理提供了一个判断数列发散的方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.}
             \item $\underset{n\to\infty}{\operatorname*{\lim}}x_n=a\Leftrightarrow\underset{k\to\infty}{\operatorname*{\lim}}x_{2k-1}=\underset{k\to\infty}{\operatorname*{\lim}}x_{2k}=a$
+            \item $\lim_{n \to \infty }\sqrt[n]{n}=1.\lim_{n \to \infty} \sqrt[n]{a}=1(a>0)$
             \item 关于数列$(1+\dfrac{1}{n})^n$的结论
             \begin{itemize}
                 \item 单调增加
@@ -33,7 +36,14 @@
         \end{itemize}
     \end{criterion}
     \begin{problem}
-        证明:若$\lim_{n \to \infty}a_n=A$,则$\lim_{n \to \infty}|a_n|=|A|$
+        已知$a_{n}=\sqrt[n]{n}-\frac{(-1)^{n}}{n}(n=1,2,\cdots)$,则${a_n}$\\
+        (A) 有最大值,有最小值 \quad (B) 有最大值,没有最小值 \\ (C)没有最大值,有最小值 \quad (D)没有最大值,没有最小值
+    \end{problem}
+    \begin{solution}
+        $\lim_{n\to \infty}a_n=1-0$,$a_1=2,a_2=\sqrt{2}-\frac{1}{2}$,因此$a_n$既有最大值又有最小值
+    \end{solution}
+    \begin{problem}
+        证明:\textcolor{red}{若$\lim_{n \to \infty}a_n=A$,则$\lim_{n \to \infty}|a_n|=|A|$}
     \end{problem}
     \begin{proof}
         已知数列$a_n$极限为$A$,那么$|a_n-A|<\varepsilon$,由不等式\ref{lyzybds1}可得,$||a_n|-|A||\leqslant|a_n -A|<\varepsilon$,因此$\lim_{n \to \infty }|a_n|=|A|$.
@@ -46,23 +56,141 @@
             \lim_{n\to\infty}a_{n}=0\Leftrightarrow\lim_{n\to\infty}\lvert a_{n}\rvert=0\:,
             $$
             此结论常用,即若要证明$\lim _{n \to \infty}a_n=0$,可转换为证明$\lim_{n \to \infty}|a_n|=0$,由于$|a_n| \geq 0$,若使用了夹逼准则,只需证明$|a_n|\leqslant 0$即可
-            \item 此结论对函数亦成立,即若$\lim_{x\to x_0 }f\left(x\right)=A$,则$\lim_{x\to x_0}\left|f\left(x\right)\right|=\left|A\right|.$
+            \item 此结论对函数亦成立,即\textcolor{red}{若$\lim_{x\to x_0 }f\left(x\right)=A$,则$\lim_{x\to x_0}\left|f\left(x\right)\right|=\left|A\right|.$}
         \end{enumerate}
     \end{note}
+    \begin{problem}
+        设$\lim_{n \to +\infty} a_n=a$,且$a\neq0$,则当$n$ 充分大时有\\
+        $\mathrm{(A)}\mid a_n\mid>\dfrac{\mid a\mid}{2}.\quad\mathrm{(B)}\mid a_n\mid<\dfrac{\mid a\mid}{2}.\quad\mathrm{(C)}a_n>a-\dfrac{1}{n}.\quad\mathrm{(D)}a_n<a+\dfrac{1}{n}.$
+    \end{problem}
+    \begin{solution}
+        根据结论若$\lim_{x\to x_0 }f\left(x\right)=A$,则$\lim_{x\to x_0}\left|f\left(x\right)\right|=\left|A\right|.$可得$\lim_{n \to \infty}a_n=a \Rightarrow \lim_{n \to \infty}|a_n|=|a|$,即$|a_n|>|a| > \dfrac{|a|}{2}$.
+    \end{solution}
+    \begin{note}
+        对于C,D选项,只知道$a_n$的极限是$a$,那么就是说两者之间的距离是无穷小,但是题目中没有给出两者相距的量级,因此一定错误的.反例为$a_n= a \pm \dfrac{1}{n^2}$.\label{pro3}
+    \end{note} 
+    \begin{problem}
+        设数列${x_n} $与${y_n}$满足$\lim_{n \to \infty} x_ny_n=0$,则下列命题正确的是\\
+        (A)若$x_n$发散，则$y_n$,必发散\quad (B)若$x_n$无界，则 $y_n$必有界\\
+        (C)若$x_n$有界，则 $y_n$必为无穷小 \quad(D)若$\dfrac{1}{x_n}$为无穷小，则$y_{n}$必为无穷小
+    \end{problem}
+    \begin{solution}
+        A选项:令$x_n=\begin{cases}
+            0, n\text{为奇数}\\
+            n, n\text{为偶数}
+        \end{cases}$,$y_n \equiv 0$.显然$x_n$发散,但是$y_n$收敛.\\
+        B选项:令$x_n=\begin{cases}
+            0, n\text{为奇数}\\
+            n, n\text{为偶数}
+        \end{cases}$,$y_n=\begin{cases}
+            n, n\text{为偶数}\\
+            0, n\text{为奇数}
+        \end{cases}$.虽然二者都无界,但是也满足题意.\\
+        C选项:令$x_n \equiv 0$,$y_n=\begin{cases}
+            n, n\text{为奇数}\\
+            0, n\text{为偶数}
+        \end{cases}$.同理也满足题意,但是$y_n$为无穷大\\
+        D选项:$\lim_{n \to \infty}x_n y_n=\lim_{n \to \infty} \dfrac{y_n}{\frac{1}{x_n}}=0 \Rightarrow y_n=o(\dfrac{1}{x_n})$
+    \end{solution}
+    \begin{note}
+        数列极限概念题一个很好的办法是\textcolor{red}{举反例.经典反例:(1)分奇偶.(2)恒为0.}
+    \end{note}
+    \begin{problem}
+        设$x_n$与${y_n}$为两个数列，则下列说法正确的是\\
+        (A)若$ x_n$与${y_n}$无界，则{$ x_n+y_n$}无界\\
+        (B)若$x_n$ 与${y_n}$无界，则{$x_ny_n$}无界\\
+        (C)若${x_n}$ 与${y_n}$ 中，一个有界，一个无界，则{$x_ny_n$}无界\\
+        (D)若$x_n$ 与$ y_n$ 均为无穷大，则$ x_ny_n$ 一定为无穷大
+    \end{problem}
+    \begin{solution}
+        A选项:令$a_n=n$,$b_n=-n$,显然$x_n$,$y_n$无界,但是$x_n+y_n$有界\\
+        B选项:令$x_n=\begin{cases}
+            0, n\text{为奇数}\\
+            n,n\text{为偶数}
+        \end{cases}$,$y_n=\begin{cases}
+            n,n\text{为奇数}\\
+            0, n\text{为偶数}
+        \end{cases}$,显然$x_n,y_n$无界,但是$x_n y_n$有界\\
+        C选项:令$x_n=\begin{cases}
+            0, n\text{为奇数}\\
+            n,n\text{为偶数}
+        \end{cases}$,$y_n \equiv 0$,显然$x_n$一个有界,一个无界,但是二者相乘为有界\\
+        D选项:无穷大$\times$无穷大=无穷大
+    \end{solution}
+    \begin{problem}
+        设$x_n$与${y_n}$为两个数列，则下列说法正确的是\\
+        (A)若$\lim_{n\to\infty} x_ny_n=0$,则必有$\lim_{n\to\infty} x_n=0$ 或$\lim_{n\to\infty} y_n=0$\\
+        (B)若$\lim_{n\to\infty} x_ny_n=\infty$,则必有$\lim_{n\to\infty} x_n=\infty$ 或$\lim_{n\to\infty}y_n=\infty$\\
+        (C)若 $x_ny_n$ 有界，则必有 $x_n$ 与 $y_n$ 都有界.\\
+        (D)若 $x_ny_n$ 无界，则必有 $x_n$ 无界或 $y_n$ 无界
+    \end{problem}
+    \begin{solution}
+        A选项:令$x_n=\begin{cases}
+            0, n\text{为奇数}\\
+            n,n\text{为偶数}
+        \end{cases}$,$y_n=\begin{cases}
+            n,n\text{为奇数}\\
+            0, n\text{为偶数}
+        \end{cases}$,显然$x_n \cdot y_n \equiv 0$,但是$x_n y_n$两者都无界.\\
+        B选项: 令$x_n=\begin{cases}
+            1,n\text{为奇数}\\
+            n,n\text{为偶数}
+        \end{cases}$,$y_n=\begin{cases}
+            n,n\text{为奇数}\\            
+            1,n\text{为偶数}
+        \end{cases}$,显然二者相乘为$\infty$,但是二者都是无界,没有极限\\
+        C选项:同A选项\\
+        D选项:使用逆否命题:若$x_n$有界且$y_n$有界,则$x_n \cdot y_n$有界,显然成立,有界$\times$ 有界=有界
+    \end{solution}
+    \begin{note}
+       \textcolor{red}{在证明中,使用逆否命题可以减少复杂度},如本题的D选项.
+    \end{note}
+    \begin{problem}
+        设$\lim_{n\to\infty} a_n$ 与$\lim_{n\to\infty} b_n$ 均不存在，则下列选项正确的是\\
+        A.若$\lim_{n \to \infty}(a_n+b_n$)不存在，则$\lim_{n \to \infty}(a_n-b_n)$ 必不存在 \\ 
+        B.若$\lim_{n \to \infty}(a_n+b_n$)不存在，则$\lim_{n \to \infty}(a_n-b_n$)必存在\\
+        C.若$\lim_{n \to \infty}(a_n+b_n$)存在，则$\lim_{n \to \infty}(a_n-b_n)$ 必不存在 \\ 
+        D.若$\lim_{n \to \infty}(a_n+b_n$)存在，则$\lim(a_n-b_n)$ 必存在
+    \end{problem}
+    \begin{solution}
+        A选项:$a_n=e^n,b_n=e^n$,显然$\lim_{n \to \infty}(a_n+b_n)$不存在,但是$\lim_{n \to \infty}(a_n-b_n)$存在\\
+        B选项:$a_n=e^n,b_n=2e^{n}$,显然$\lim_{n \to \infty}(a_n+b_n)$不存在,但是$\lim_{n \to \infty}(a_n-b_n)$也不存在\\
+        C选项:若$\lim_{n \to \infty}(a_n+b_n)$存在,假设$\lim_{ n \to \infty}(a_n-b_n)$存在,那么$\lim_{n\to \infty}[(a_n+b_n)-(a_n-b_n)]$也应该存在,但是$\lim_{n \to \infty}=2 b_n$,根据题意可知不存在,因此假设错误\\
+        D选项:$a_n=e^n,b_n=-e^n$,显然$\lim_{n \to \infty}(a_n+b_n)$存在,但是$\lim_{n \to \infty}(a_n-b_n)$不存在
+    \end{solution}
     \subsection{收敛数列的性质}
     \subsubsection{唯一性}
-    \begin{defn}{}{}
+    \begin{defn}{数列极限唯一性的定义}{}
         如果数列$\{ x_n \}$收敛,那么它的极限唯一
     \end{defn}
     \subsubsection{有界性}
-    \begin{defn}{}{}
+    \begin{defn}{数列收敛的有界性的定义}{}
         如果数列$\{x_n\}$收敛,那么数列$\{x_n\}$一定有界\footnote{如果数列有界,但是不一定存在极限,如数列$(-1)^n$}.
     \end{defn}
     \subsubsection{保号性}
-    \begin{defn}{}{}
+    \begin{defn}{数列极限保号性的定义}{}
         如果$\lim_{n\to\infty}x_n=a$,且$a{>}b( $或 $a{<}b)$,那么存在正整数 $N$,当 $n{>}N$ 时 ,都有$x_n{>}b($ 或 $x_n{<}b$.\newline
         如果数列$\mid x_n\mid$从某项起有$x_n\geqslant b($或$x_n\leqslant b)$,且$\lim_{n\to\infty}x_n=a $,那么 $a\geqslant b( 或 a\leqslant b)$\footnote{其中b可以为任意实数,常考b=0的情况}.
     \end{defn}
+    \begin{problem}
+        下列结论中错误的是\\
+        (A)设$\lim _{n\to\infty}a_n=a>1$,则存在$M>1$,当$n$ 充分大时，有$a_n>M$\\
+        (B)设$a=\lim_{n\to\infty}a_n<\lim_{n\to\infty}b_n=b$,则当$n$ 充分大时，有$a_n<b_n$ \\
+        (C)设$M\leqslant a_n\leqslant N(n=1,2,...)$,若$\lim_{n\to\infty} a_n=a$,则$M\leqslant a\leqslant N$ \\
+        (D)若$\lim_{n\to\infty} a_n=a\neq0$,则当$n$充分大时，$a_n>a-\dfrac1n$ 
+    \end{problem}
+    \begin{solution}
+        A选项:若$\lim_{n \to \infty}a_n=a$,那么当$n$充分大时,$a_n$的值趋近于$a$,那么肯定存在一个$M$,满足$a_n = a \geqslant M > 1.$\\
+        B选项:若 $a_n$ 的极限$>b_n$ 的极限,则当$n$ 充分大时,$a_n>b_n$.\\
+        C选项:不等式左右取极限可得C选项正确\\
+        D选项:题目3解析\ref{pro3}出有解释,同理
+    \end{solution}
+    \begin{note}
+        数列极限的保号性可写为:\textcolor{red}{两个数列 $a_n$ 和 $b_n$,若 $a_i>b_i$ 恒成立,且$\lim_{n \to \infty}a_n$和$\lim_{n\to \infty}b_n$都存在.则 $n$ 趋于无穷时,$a_n$的极限$\geqslant b_n$ 的极限.(对不等式取极限时,$>$要变成$\geqslant$,<要变成$\leqslant,\geqslant$不用变,$\leqslant$不用变).}\\
+        \textcolor{red}{若 $a_n$ 的极限$>b_n$ 的极限,则当$n$ 充分大时,$a_n>b_n$.}\footnote{证明如下:令$x_n=b_n-a_n$,则$\lim_{n \to \infty}x_n=\lim_{n\to \infty}(b_n-a_n)=b-a>0$.由极限的保号性可知,当$n$充分大的时候,$x_n>0$,即$b_n>a_n$}\\
+        \textcolor{red}{若 $a_n$ 的极限$\geqslant b_n$ 的极限,则当$n$充分大时,$a_n$和$b_n$大小无法确定.}
+    \end{note}
+
     \section{函数的极限}
     \subsection{超实数系}
     \begin{defn}{超实数系的概念}{}
@@ -266,8 +394,9 @@
     \begin{corollary}{}{}
         如果$\lim_{x\to x_{0}}f(x)=A > 0(A \neq 0)$,那么就存在$x_0$的某一去心邻域$\mathring{U}\left(x_{0}\right)$,当$x\in U^{\circ}(x_{0})$时,就有$|f(x)|>\dfrac{|A|}{2}$
     \end{corollary}
-    \subsubsection{函数极限与数列极限的关系(海涅定理)}
-    \begin{them}{}{}
+    \subsection{函数极限与数列极限的关系(海涅定理)}
+    \textcolor{red}{需要知道一点,数列极限不可以直接使用洛必达法则,但是可以使用拉格朗日中值定理,泰勒公式,等价无穷小}.如果想使用洛必达法则,则需要使用海涅定理将数列极限改写为函数极限的形式.即$x$改写成$n$,考研数学中默认$n$为非负整数,所以$n$趋于无穷要改写成$x$趋于正无穷.
+    \begin{them}{海涅定理}{}
         设$f(x)$在$\mathring{U}(x_0,\delta)$内有定义,则$\lim_{x\to\ x_0}f(x)=A$存在$\Leftrightarrow$对任何$\mathring{U}(x_0,\delta)$内以$x_{0}$为极限的数列$\{x_{n}\}\left(x_{n}\neq x_{0}\right)$,极限$\lim_{n\to\infty}f(x_{n})=A$存在.
     \end{them}
     把这个定理简化一下,主要意思就是
@@ -280,8 +409,6 @@
     \begin{center}
         \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
         \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-        %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-        %Straight Lines [id:da6830558496778245] 
             \draw    (134.57,139) -- (188.82,108.97) ;
             \draw [shift={(190.57,108)}, rotate = 151.03] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
             \draw    (134.57,163) -- (180.92,194.87) ;
@@ -362,6 +489,56 @@
     \end{center}
     需要注意的是,是所有的数列（抽样）才能完全代表整体.不能说我选了某个数列有极限就代表函数有极限.
     总结:\textcolor{red}{海涅定理表述了离散与连续、数列极限与函数极限的关系.}
+    \begin{problem}
+        求极限$\lim_{n \to \infty}n(\arctan n -\dfrac{\pi}{2})$
+    \end{problem}
+    \begin{solution}
+          \begin{align*}
+            \text{原式} & = \lim_{n \to \infty}\dfrac{\arctan n-\frac{\pi}{2}}{\frac{1}{n}} \\     
+            & =  \lim_{x \to +\infty}\dfrac{\arctan x -\frac{\pi}{2}}{\frac{1}{x}}\\
+            & = \lim_{x\to+\infty}\dfrac{\frac1{1+x^2}}{-\frac1{x^2}}\\
+            & = -1
+          \end{align*}  
+    \end{solution}
+    \begin{note}
+        数列极限不可以直接使用洛必达法则,若要使用洛必达法则,则需要使用海涅定理进行替换.
+    \end{note}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\left[\dfrac{\left(1+\frac1n\right)^n}{\mathrm{e}}\right]^n$   
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{n\to\infty}\left[\dfrac{\mathrm{e}^{n\ln\left(1+\frac1n\right)}}{\mathrm{e}}\right]^n    \\
+          & = \lim_{n\to\infty}\dfrac{\mathrm{e}^{n^2\ln\left(1+\frac1n\right)}}{\mathrm{e^n}}\\
+          & =\lim_{n \to \infty} e^{n^2\ln(1+\frac{1}{n})-n}
+        \end{align*}
+        对$\lim_{n \to \infty} n^2\ln(1+\frac{1}{n})-n$求极限得:
+        \begin{align*}
+          \text{原式} & = \lim_{n\to\infty}\biggl[n-n^2\ln\biggl(1+\frac{1}{n}\biggr)\biggr] \\
+          & =  \lim_{n\to\infty}n^2\biggl[\frac{1}{n}-\ln\biggl(1+\frac{1}{n}\biggr)\biggr] \\
+          & = \lim_{n\to\infty}n^2\cdot\frac12\left(\frac1n\right)^2 \\
+          &= \dfrac{1}{2}
+        \end{align*}
+        综上函数极限为$e^{-\frac{1}{2}}$
+    \end{solution}
+    \begin{note}
+        数列极限可以直接使用等价无穷小和泰勒公式
+    \end{note}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\tan^n\left(\frac\pi4+\frac2n\right)$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+            \text{原式} & = \lim_{n\to\infty} e^{n \ln(\tan(\frac{\pi}{4}+\frac{2}{n}))}\\
+            & =  \lim_{n\to\infty}e^{n\cdot (\tan(\frac{\pi}{4}+\frac{2}{n}) -1)}\\
+            & = \lim_{n\to\infty}e^{n\cdot (\tan(\frac{\pi}{4}+\frac{2}{n}) -\tan \frac{\pi}{4})} \\
+            & = \lim_{n\to\infty}e^{n \cdot \sec^2 \varepsilon \cdot \frac{2}{n}} \quad \varepsilon \in(\frac{\pi}{4},\frac{\pi}{4}+\frac{2}{n})\\
+            &=e^4
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        数列极限可以使用拉格朗日中值定理
+    \end{note}
     \section{无穷小与无穷大}
     \subsection{无穷小}
     \begin{defn}{无穷小的定义}{}
@@ -820,12 +997,11 @@
         除此之外,还可以这样解决,已知二阶导连续,那么对$\dfrac{y(x)}{A/B/C/D}$进行洛必达可知D选项正确。
     \end{solution}
     \subsection{等价替代求极限}
-    \subsubsection{利用基本极限求极限}
+    \subsubsection{两个重要极限}
     \begin{align*} \boxed
         {
             \begin{aligned}
                  & \lim_{\square \to \infty }(1+|\square|)^{\frac{1}{\square}}=e^{|\square| \frac{1}{\square}} \qquad    & &  \lim _ { \square \rightarrow 0 } \dfrac { \sin \square } { \square } = 1 \\
-                 & \lim_{n \to \infty }\sqrt[n]{n}=1 \qquad & & \lim_{n \to \infty} \sqrt[n]{a}=1(a>0)\\
             \end{aligned}
         }
     \end{align*}
@@ -1025,7 +1201,7 @@
     $$
     \lim_{x\to\infty}\dfrac{a_0x^m+a_1x^{m-1}+\cdots+a_m}{b_0x^n+b_1x^{n-1}+\cdots+b_n}=\left.\left\{\begin{aligned}&0\text{ ,当 }n>m\\&\dfrac{a_0}{b_0}\text{,当}n=m\\&\infty\text{ ,当 }n<m\end{aligned}\right.\right.
     $$
-    \textcolor{red}{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{!n}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textcolor{red}{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}
+    \textcolor{red}{还有一个重要的等价为$\lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n$}该等价由斯特林公式$\lim_{n\to\infty}\dfrac{n!}{\sqrt{2\pi n}\left(\dfrac ne\right)^n}=1$而来,又可写为\textcolor{red}{$\lim_{n\rightarrow\infty}\dfrac{\sqrt[n]{n!}}{n}=e^{-1}$}\label{stlgs1}
     \begin{problem}
         求$\lim_{x\to \infty}\dfrac{4x^3+x^2+3x+10}{3x^3+2x+7}$
     \end{problem}
@@ -1308,30 +1484,150 @@
                   \end{align*}
               \end{solution} 
     \section{数列极限的运算}
-    \subsection{数列极限的运算法则}
-    设$\underset{n\to\infty}{\operatorname*{lim}}x_{n}=a,\underset{n\to\infty}{\operatorname*{lim}}y_{n}=b$,则
-    \begin{itemize}
-        \item $\operatorname*{lim}_{n\to\infty}(x_n\pm y_n)=a\pm b$
-        \item $\lim_{n\to\infty}x_{n}y_{n}=ab$
-        \item 若$b \neq 0,y_n \neq 0$,则$\lim_{n\to\infty}\dfrac{x_n}{y_n}=\dfrac{a}{b}$
-    \end{itemize}
-    上述运算规则可推广至有限个数列的情况
-    \subsection{夹逼准则}
-    \begin{them}{数列极限夹逼准则}{}
-        如果数列$\{|x_n|\},\{y_n\}$及$\{z_n\}$满足下列条件:
+    \subsection{\texorpdfstring{$n$}\text{项数列极限求解}}
+    \subsubsection{$n$项连乘的数列极限}
+    常用结论:
+    \begin{align*}
+        \boxed{\begin{aligned}
+                    & 1+2+3+...+n=\dfrac{n(n+1)}{2} &  & 1^2+2^2+3^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}6\\
+                    & 1+\frac12+\frac13+\cdots+\frac1n=\ln n +c & &(n \to \infty \text{时}) n^n \gg n! \gg k_{(k>1)}^n \gg n_{(k>1)}^k \gg \ln n \\
+                    & \lim_{n\to\infty}n\sqrt{a_{1}^{n}+a_{2}^{n}\cdots+a_{n}^{n}}=\max\{a_{1},a_{2}\cdots a_{n}\} & & \text{斯特林公式}\ref{stlgs1}: \lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n \\
+                \end{aligned}}
+    \end{align*}
+    放缩技巧:
+    $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
+    处理手法:
+    \begin{enumerate}
+        \item 优先看变化部分\footnote{分母中随项的变化而变化,称其为变化部分}的最大值是主体部分\footnote{不随项的变化而变化,称其为主体部分}的同量级或次量级
         \begin{itemize}
-            \item 从某项开始,即$\exists n_0 \in N_+(\text{即}n \to \infty),$当$n>n_0$时,有
-                  $$
-                      y_n \leqslant x_n \leqslant z_n
-                  $$
-            \item $\lim_{n\to\infty}y_{n}=a,\operatorname*{lim}_{n\to\infty}z_{n}=a$
+            \item 次量级使用夹逼进行求解
+            \item 同量级使用定积分定义进行求解\footnote{可爱因子$\dfrac{1}{n}$,然后构造形如\textcolor{red}{$\lim_{n\to\infty}\dfrac{1}{n}\sum_{k=1}^{n-c}f(\dfrac{\varepsilon}{n})=\int_{0}^{1}f(x)dx$}的表达式进行求解,其中$C$为任意常数,$\varepsilon \in [k-1,k]$.}
         \end{itemize}
-        那么数列$\{ x_n \}$的极限存在,且$\lim_{n\to\infty}x_{n}=a$
-    \end{them}
+        \item 放缩的通用手法是分子/分母取最大的或最小的,即取两头
+    \end{enumerate}
+     \begin{problem}
+        求极限$\lim_{n\to\infty}\left(\dfrac n{n^2+1}+\dfrac n{n^2+2}+\cdots+\dfrac n{n^2+n}\right)$
+    \end{problem}
+    \begin{solution}
+        对原式进行放缩可得:
+        $$
+            \dfrac{n^2}{n^2+n} \leqslant \left(\dfrac n{n^2+1}+\dfrac n{n^2+2}+\cdots+\dfrac n{n^2+n}\right) \leqslant \dfrac{n^2}{n^2+1}
+        $$
+        对不等式两侧取极限可得:
+        $$
+            \lim_{n \to \infty} \dfrac{n^2}{n^2+n} \leqslant \lim_{n \to \infty} \left(\dfrac n{n^2+1}+\dfrac n{n^2+2}+\cdots+\dfrac n{n^2+n}\right) \leqslant \lim_{n \to \infty} \dfrac{n^2}{n^2+1}
+        $$
+        易知左右两侧不等式极限均为1,解得不等式极限为1
+    \end{solution}
+    \begin{note}
+        对本题的分析:主体部分与变化部分的最大值是次量级关系.即$n^2$与$n$不是同一个变化量级.那么就可以使用夹逼准则进行夹逼运算出最大值
+    \end{note}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\Big(\dfrac n{n^2+1^2}+\dfrac n{n^2+2^2}+\cdots+\dfrac n{n^2+n^2}\Big).$    
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{n \to \infty}\dfrac{1}{n}(\dfrac{1}{1+(\frac{1}{n})^2}+\dfrac{1}{1+(\frac{2}{n})^2}+...+\dfrac{1}{1+(\frac{n}{n})^2})\\
+          & = \lim_{n \to \infty} \sum_{1}^{n}f(\frac{\varepsilon}{n}) \quad f(x)\text{函数表达式为}\dfrac{1}{1+x^2}\\
+          & = \int_0 ^1 \dfrac{1}{1+x^2} dx =\dfrac{\pi}{4}
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        主体部分与变化部分的最大值是同量级关系.即$n^2$与$n^2$不是同一个变化量级.那么就可以使用夹逼准则进行夹逼运算出最大值
+    \end{note}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\left(\dfrac{e}{e^{n}+1^{2}}+\dfrac{e^{2}}{e^{n}+2^{2}}+\cdots+\dfrac{e^{n}}{e^{n}+n^{2}}\right)$
+    \end{problem}
+    \begin{solution}
+        $$\lim_{n \to \infty} \dfrac{\frac{e-e^{n+1}}{1-e}}{e^n+n^2} \leqslant \lim_{n\to\infty}\left(\dfrac{e}{e^{n}+1^{2}}+\dfrac{e^{2}}{e^{n}+2^{2}}+\cdots+\dfrac{e^{n}}{e^{n}+n^{2}}\right) \leqslant \lim_{n \to \infty} \dfrac{\frac{e-e^{n+1}}{1-e}}{e^n+1^2}$$
+        根据抓大头的思路可化为
+        $$
+        \dfrac{-e}{1-e} \leqslant \lim_{n\to\infty}\left(\dfrac{e}{e^{n}+1^{2}}+\dfrac{e^{2}}{e^{n}+2^{2}}+\cdots+\dfrac{e^{n}}{e^{n}+n^{2}}\right) \leqslant \dfrac{-e}{1-e}
+        $$
+        可知原式极限为$\dfrac{-e}{1-e}$
+    \end{solution}
+    \begin{problem}
+        求极限$\operatorname*{lim}_{n\to\infty}\Bigl(\dfrac{1}{\sqrt{n^{6}+n}}+\dfrac{2^{2}}{\sqrt{n^{6}+2n}}+\cdots+\dfrac{n^{2}}{\sqrt{n^{6}+n^{2}}}\Bigr)$
+    \end{problem}
+    \begin{solution}
+        $$
+            \dfrac{\frac{n(n+1)(2n+1)}6}{\sqrt{n^6+n^2}} \leqslant \Bigl(\dfrac{1}{\sqrt{n^{6}+n}}+\dfrac{2^{2}}{\sqrt{n^{6}+2n}}+\cdots+\dfrac{n^{2}}{\sqrt{n^{6}+n^{2}}}\Bigr) \leqslant \dfrac{\frac{n(n+1)(2n+1)}6}{\sqrt{n^6+n}}
+        $$
+        取极限得:
+        $$
+        \lim_{n\to\infty} \dfrac{\frac{n(n+1)(2n+1)}6}{\sqrt{n^6+n^2}} \leqslant  \lim_{n\to\infty} \Bigl(\dfrac{1}{\sqrt{n^{6}+n}}+\dfrac{2^{2}}{\sqrt{n^{6}+2n}}+\cdots+\dfrac{n^{2}}{\sqrt{n^{6}+n^{2}}}\Bigr) \leqslant \lim_{n\to\infty} \dfrac{\frac{n(n+1)(2n+1)}6}{\sqrt{n^6+n}}
+        $$
+        $$
+        \dfrac{2n^3+3n^2+n}{\sqrt{n^6+n^2}} \leqslant \lim_{n\to\infty} \Bigl(\dfrac{1}{\sqrt{n^{6}+n}}+\dfrac{2^{2}}{\sqrt{n^{6}+2n}}+\cdots+\dfrac{n^{2}}{\sqrt{n^{6}+n^{2}}}\Bigr) \leqslant \dfrac{2n^3+3n^2+n}{\sqrt{n^6+n}}
+        $$
+        根据抓大头的思路可知原式极限为$\dfrac{1}{3}$
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\left(\dfrac{1}{\sqrt{n^{2}+1^{2}}}+\dfrac{1}{\sqrt{n^{2}+2^{2}}}+\cdots+\dfrac{1}{\sqrt{n^{2}+n^{2}}}\right)$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{n \to \infty} \dfrac{1}{n}\left(\dfrac{1}{\sqrt{1+(\frac{1}{n})^2}}+\dfrac{1}{\sqrt{1+(\frac{2}{n})^2}}+...+\dfrac{1}{\sqrt{1+(\frac{n}{n})^2}}\right)\\
+          & = \int_{0}^{1}\frac{1}{\sqrt{1+x^{2}}}dx\\
+          & = \ln (x+\sqrt{1+x^{2}})|_{0}^{1}\\
+          & =\ln(1+\sqrt{2})
+        \end{align*}
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\sum_{k=1}^n\dfrac{k}{n^2}\ln\left(1+\dfrac{k}{n}\right)$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{n\to\infty}\frac1n\sum_{k=1}^n\frac kn\ln\left(1+\frac kn\right)\\
+          & = \int_0^1x\ln(1+x)\mathrm{d}x\\
+          & = \frac12\int_0^1\ln\left(1+x\right)\mathrm{d}x^2\\
+          & =\dfrac{x^2}2\mathrm{ln}(1+x)\Bigg|_0^1-\dfrac12\int_0^1\dfrac{x^2}{1+x}\mathrm{d}x  \\
+          & = \dfrac{1}{4}
+        \end{align*}
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right)$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{problem}
+        求极限$\lim_{n\to\infty}\left(\dfrac{n+1}{1^{2}+n^{2}}+\dfrac{n+\frac{1}{2}}{2^{2}+n^{2}}+\cdots+\dfrac{n+\frac{1}{n}}{n^{2}+n^{2}}\right)$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \subsubsection{$n$项和的数列极限}
+    \begin{problem}
+        求$a_n=\sqrt[n]{\dfrac12\times\dfrac34\times\cdots\times\dfrac{2n-1}{2n}}$,求极限$\lim_{n \to \infty}a_n$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \begin{problem}
+        求$\lim_{n\to\infty}\frac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \begin{problem}
+        证明$\lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n$
+    \end{problem}
+    \begin{solution}
+            
+    \end{solution}
+    \begin{note}
+            
+    \end{note}
+    \subsection{常用不等式}
     以下为放缩的常用方法
     \begin{itemize}
-        \item 利用简单放大与缩小
-        $$\begin{cases}n\times u_{\min}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max},\\\text{当}u_i\geqslant0\text{时,1}\times u_{\max}\leqslant u_1+u_2+\cdots+u_n\leqslant n\times u_{\max}.\end{cases}$$
         \item 利用如下重要不等式\label{cybds1}
         \begin{enumerate}
             \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\label{lyzybds1} \footnote{
@@ -1373,7 +1669,10 @@
             
         \end{proof}
 
-    \subsection{\textcolor{red}{单调有界准则}}
+
+    \subsection{递推关系式的数列极限}
+    
+    \subsection{单调有界准则}
     \begin{them}{数列的单调有界准则}{}
         单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
     \end{them}
@@ -1396,41 +1695,27 @@
                         \draw    (78,180) -- (77.44,32.29) ;
                         \draw [shift={(77.43,30.29)}, rotate = 89.78] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
                         \draw    (78,180) -- (212.43,49.29) ;
-                        %Curve Lines [id:da7704215631271267] 
                         \draw    (78,180) .. controls (90,121.9) and (137.33,63.9) .. (221.33,61.9) ;
-                        %Straight Lines [id:da2831087629577018] 
                         \draw  [dash pattern={on 0.84pt off 2.51pt}]  (113.33,147.24) -- (114,177.9) ;
-                        %Straight Lines [id:da6660865713370505] 
                         \draw  [dash pattern={on 0.84pt off 2.51pt}]  (186,79.9) -- (189.43,178.29) ;
-                        %Straight Lines [id:da26125076153606486] 
                         \draw  [dash pattern={on 0.84pt off 2.51pt}]  (149.1,115.95) -- (151.1,178.95) ;
-                        %Straight Lines [id:da38209158646408303] 
                         \draw    (122,192.9) -- (140,192.6) ;
                         \draw [shift={(142,192.57)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da11125951335664341] 
                         \draw    (159.33,191.57) -- (177.33,191.27) ;
                         \draw [shift={(179.33,191.24)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da06058325921149521] 
                         \draw    (201.33,192.24) -- (219.33,191.94) ;
                         \draw [shift={(221.33,191.9)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da21962621799856286] 
                         \draw    (114,143.24) -- (113.37,112.57) ;
                         \draw [shift={(113.33,110.57)}, rotate = 88.83] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da7988448367256045] 
                         \draw    (113.33,110.57) -- (147.33,109.31) ;
                         \draw [shift={(149.33,109.24)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da9848328080167736] 
                         \draw    (149.33,109.24) -- (148.71,81.24) ;
                         \draw [shift={(148.67,79.24)}, rotate = 88.73] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da41973272999117306] 
                         \draw    (148.67,79.24) -- (182.67,77.98) ;
                         \draw [shift={(184.67,77.9)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da05044170456757757] 
                         \draw    (184.67,77.9) -- (184.67,68.57) ;
                         \draw [shift={(184.67,66.57)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da5131243480057099] 
                         \draw  [dash pattern={on 4.5pt off 4.5pt}]  (76.67,111.24) -- (113.33,110.57) ;
-                        %Straight Lines [id:da9296527121059901] 
                         \draw  [dash pattern={on 4.5pt off 4.5pt}]  (78.67,79.9) -- (148.67,79.24) ;
                         \draw (63,180) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
                         \draw (73,9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
