@@ -1471,7 +1471,7 @@
           $\infty ^0$与$0^0$通常使用\textcolor{red}
               {$ u^v=e^{v \ln u}$}来计算
     \subsubsection{形如$1^{\infty}$}
-         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算,需要知道的是$1^\infty$可以化为第二个重要极限.
+         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算.
               \begin{problem}
               $\lim _{x \to \infty}\left[ \dfrac{x^2 + x}{(x-a)(x-b)}\right]^x$
               \end{problem}
@@ -1589,42 +1589,105 @@
         求极限$\lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right)$
     \end{problem}
     \begin{solution}
-            
+        首先对等式进行化简,使用夹逼准则可以得到:
+        $$
+        \lim_{n \to \infty}\dfrac{\sum_{1}^{k}\sin \frac{k \pi}{n}}{n+1} \leqslant \lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right) \leqslant \lim_{n\to \infty}\dfrac{\sum_{1}^{k} \sin\frac{k \pi}{n}}{n+\frac1n}
+        $$
+        等式左右两侧可等价为如下形式:
+        $$
+        \lim_{n \to \infty}\dfrac{\sum_{1}^{k}\sin \frac{k \pi}{n}}{n} \leqslant \lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right) \leqslant \dfrac{\sum_{1}^{k}\sin \frac{k \pi}{n}}{n}
+        $$
+        左右两侧使用定积分定义可得:
+        $$
+            \int_0 ^1 \sin (\pi x) dx \leqslant \lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right) \leqslant \int_0 ^1 \sin (\pi x) dx
+        $$
+        其中$\int_0 ^1 \sin (\pi x) dx=\dfrac{2}{\pi}$,综上,等式极限为$\dfrac{2}{\pi}$
     \end{solution}
+    \begin{note}
+        本题分析,首先看到分母的变化部分的最大值与主体部分是次量级关系的,那么如果想使用夹逼进行计算,那么就会发现分子的大小无法计算,没有一个等差或者等比数列的公式可以计算出分子的各项和,因此应该最终应该使用定积分定义进行计算.
+    \end{note}
     \begin{problem}
         求极限$\lim_{n\to\infty}\left(\dfrac{n+1}{1^{2}+n^{2}}+\dfrac{n+\frac{1}{2}}{2^{2}+n^{2}}+\cdots+\dfrac{n+\frac{1}{n}}{n^{2}+n^{2}}\right)$
     \end{problem}
     \begin{solution}
-            
+        令$\lim_{n\to\infty}\left(\dfrac{n+1}{1^{2}+n^{2}}+\dfrac{n+\frac{1}{2}}{2^{2}+n^{2}}+\cdots+\dfrac{n+\frac{1}{n}}{n^{2}+n^{2}}\right)$=$I$
+            $$
+                \lim_{n \to \infty} (n+\frac{1}{n})(\dfrac{1}{1+n^2}+\dfrac{1}{2^2+n^2}+...+\dfrac{1}{n^2+n^2}) \leqslant   \lim_{n\to \infty}I \leqslant \lim_{n \to \infty} (n+1)(\dfrac{1}{1+n^2}+\dfrac{1}{2^2+n^2}+...+\dfrac{1}{n^2+n^2})
+            $$
+            $$
+                \lim_{n \to \infty} \dfrac{1}{n^2}(n+\frac{1}{n})(\dfrac{1}{1+\frac{1^2}{n^2}}+\dfrac{1}{1+\frac{2^2}{n^2}}+...+\dfrac{1}{1+\frac{n^2}{n^2}}) \leqslant \lim_{n\to \infty}I \leqslant \lim_{n \to \infty}\frac{1}{n^2} (n+1)(\dfrac{1}{1+\frac{1}{n^2}}+\dfrac{1}{1+\frac{2^2}{n^2}}+...+\dfrac{1}{1+\frac{n^2}{n^2}})
+            $$
+            左右两侧等价得:
+            $$
+            \lim_{n \to \infty} \dfrac{1}{n}(\dfrac{1}{1+\frac{1^2}{n^2}}+\dfrac{1}{1+\frac{2^2}{n^2}}+...+\dfrac{1}{1+\frac{n^2}{n^2}}) \leqslant \lim_{n\to \infty} I \leqslant \lim_{n \to \infty}\frac{1}{n}(\dfrac{1}{1+\frac{1}{n^2}}+\dfrac{1}{1+\frac{2^2}{n^2}}+...+\dfrac{1}{1+\frac{n^2}{n^2}})
+            $$
+            使用定积分定义可得:
+            $$
+            \int_0 ^1 \dfrac{1}{1+x^2}dx \leqslant \lim_{n\to \infty} I \leqslant \int_0^1 \dfrac{1}{1+x^2}dx
+            $$
+        $\int_0 ^1 \dfrac{1}{1+x^2}dx=\frac{\pi}{4}$,综上,等式极限为$\dfrac{\pi}{4}$
     \end{solution}
     \subsubsection{$n$项和的数列极限}
+    主要有以下两种方法:
+    \begin{enumerate}
+        \item 夹逼准则
+        \item 取对数化为$n$项和\footnote{通法}
+    \end{enumerate}
     \begin{problem}
         求$a_n=\sqrt[n]{\dfrac12\times\dfrac34\times\cdots\times\dfrac{2n-1}{2n}}$,求极限$\lim_{n \to \infty}a_n$
     \end{problem}
     \begin{solution}
-            
+        显然$a_n \leqslant 1$,又
+        $$
+            a_n=\sqrt[n]{\dfrac12\times\dfrac34\times\cdots\times\dfrac{2n-1}{2n}}=\sqrt[n]{\dfrac32\times\dfrac54\times\cdots\times\dfrac{2n-1}{2n-2}\times\dfrac1{2n}}\geqslant\sqrt[n]{\dfrac1{2n}}
+        $$
+        又
+        $$
+            \lim_{n\to\infty}\sqrt[n]{\dfrac1{2n}}=\lim_{n\to\infty}\dfrac1{\sqrt[n]{2}\cdot\sqrt[n]{n}}=1
+        $$
+        则$\lim_{n\to\infty}a_n=1$
     \end{solution}
     \begin{note}
-            
+        这题的方法不是常规方法,如果按照一般的处理方法,应该写为
+        \begin{align*}
+            \lim_{n \to \infty}\ln a_n & =\lim_{n \to \infty}\dfrac{1}{n}\ln(\frac{1}{2}\times \frac{3}{4} \times ... \times \frac{2n-1}{2n})\\
+            & = \lim_{n \to \infty} \dfrac{1}{n}[\ln \frac{1}{2}+\ln \frac{3}{4}+...+\ln \frac{2n-1}{2n}]\\
+            & = \lim_{n \to \infty}\dfrac{\ln \frac{1}{2}}{n}+\lim_{n \to \infty}\dfrac{\ln \frac{3}{4}}{n}+...+\lim_{n \to \infty}\dfrac{\ln \frac{2n-1}{2n}}{n}\\
+            & = 0+0+0+...+0\\
+            &=0
+        \end{align*}
+        但是这显然是错误的,无穷多个无穷小相加,结果仍是未定式.
     \end{note}
     \begin{problem}
         求$\lim_{n\to\infty}\frac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
     \end{problem}
     \begin{solution}
-            
+        令$a_n=\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)(n+3)...(n+n)}$,则
+        \begin{align*}
+          \ln_{n \to \infty}a_n & = \lim_{n \to \infty} \{ \ln\frac{1}{n}+\frac{1}{n} \ln[(n+1)(n+2)\cdots(n+n)]\}\\
+          & = \lim_{n\to \infty}\frac{1}{n} \ln[(n+1)(n+2)\cdots(n+n)]- \ln n\\
+          & = \lim_{n \to \infty}\frac{1}{n}[\ln(n+1)+\ln(n+2)+...+\ln(n+n)-n\ln n]\\
+          & = \lim_{n\to \infty}[\ln(1+\frac{1}{n})+\ln(1+\frac{2}{n})+...+\ln(1+\frac{n}{n})]\\
+          & = \int_0^1 \ln(1+x)dx \\
+          & = \int_0^1 \ln(1+x)d(x+1)\\
+          & = (x+1)\ln(1+x)|_0^1 -1\\
+          & = 2\ln2 -1
+        \end{align*}
+    综上$\lim_{n\to \infty}a_n=e^{2\ln2-1}=\dfrac{4}{e}$
     \end{solution}
-    \begin{note}
-            
-    \end{note}
     \begin{problem}
         证明$\lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n$
     \end{problem}
     \begin{solution}
-            
+        \begin{align*}
+            a_n=\dfrac{\sqrt[n]{n!}}{n} \Rightarrow \lim_{n\to \infty}\ln a_n & =\lim_{n\to \infty}\dfrac{1}{n}\ln(n\times (n-1)\times ...\times 1)-\ln n    \\
+            & =  \lim_{n \to \infty}[\ln n+\ln(n-1)+...+\ln 1-n\ln n]\\
+            & = \lim_{n\to \infty}\dfrac{1}{n}[\ln\frac{n}{n}+\ln\frac{n-1}{n}+...+\ln \frac{1}{n}]\\
+            & =\int _0 ^1 \ln x dx\\
+            & = x \ln x|_0^1-1 = -1
+        \end{align*}
+    综上$\lim_{n \to \infty}a_n=e^{-1} \Rightarrow \lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\cdot n$
     \end{solution}
-    \begin{note}
-            
-    \end{note}
     \subsection{常用不等式}
     以下为放缩的常用方法
     \begin{itemize}
