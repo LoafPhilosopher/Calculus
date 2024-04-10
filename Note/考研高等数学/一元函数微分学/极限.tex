@@ -981,7 +981,7 @@
         (3)直接洛:
         \begin{align*}
           \text{原式} & = \lim_{x\to +\infty}\frac{e^{\frac{\pi+\arctan x}{2}}-e^\pi}{\frac{1}{x}} \\
-          & = \frac{e^{\frac{\pi}{2}+\arctan x}\times\frac{1}{1+x^{2}}}{-\frac{1}{x^{2}}} \\
+          & = \dfrac{e^{\frac{\pi}{2}+\arctan x}\times\dfrac{1}{1+x^{2}}}{-\dfrac{1}{x^{2}}} \\
           & = -e^\pi
         \end{align*}
     \end{solution}
@@ -1117,7 +1117,7 @@
                 \text{原式} & =\lim_{x\to+\infty}\frac{\mathrm{e}^{x^2}+{x^2\mathrm{e}^{x^2}}}{\mathrm{e}^{x^2}+2x^2\mathrm{e}^{x^2}+2x}  & \\
                 & =\dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} & \\
                 \text{对极限取大头可得} & \\
-                & \lim_{x\to +\infty} \dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} = \dfrac{1}{2}  & \\
+                & \lim_{x\to +\infty} \dfrac{1+x^2}{1+2x^2+\frac{2x}{e^{x^2}}} = \dfrac{1}{2} 
             \end{align*}
     \end{solution}
     \begin{note}
@@ -1129,7 +1129,7 @@
     \begin{solution}
             \begin{align*}
               \text{原式} & = \dfrac{\frac{x^2}{\sqrt{a^2+x^2}}}{b-\cos x}  & \\
-              & = \dfrac{1}{a} \cdot \lim_{x\to 0} \dfrac{x^2}{b-\cos x}  & \\
+              & = \dfrac{1}{a} \cdot \lim_{x\to 0} \dfrac{x^2}{b-\cos x} 
             \end{align*}
             若分子趋近于零,但是该等式的极限为1,那么该分母的极限一定趋近于0,那么b一定为1
         \begin{align*}
@@ -1144,11 +1144,11 @@
         \begin{align*}
          \text{原式} & =  \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}{\sqrt{a^2+t^2}}\mathrm{d}t}{bx-\sin x}&\\
         &  = \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}a\mathrm{d}t}{bx-\sin x} & \\
-        & = \frac1{3a}\lim_{x\to0}\frac{x^3}{bx-\sin x} \xlongequal{b \neq 1} \dfrac1{3a}\lim_{x\to0}\frac{x^3}{bx-x}=0 & \\ 
+        & = \frac1{3a}\lim_{x\to0}\frac{x^3}{bx-\sin x} \xlongequal{b \neq 1} \dfrac1{3a}\lim_{x\to0}\frac{x^3}{bx-x}=0
         \end{align*}
         等式矛盾,因此$b=1$,对上式进行泰勒展开得:\\
         \begin{align*}
-            &  1=\frac1{3a}\lim_{x\to0}\frac{x^3}{x-\sin x}=\frac1{3a}\lim_{x\to0}\frac{x^3}{\frac{x^3}6}=\frac2a & \\
+            &  1=\frac1{3a}\lim_{x\to0}\frac{x^3}{x-\sin x}=\frac1{3a}\lim_{x\to0}\frac{x^3}{\frac{x^3}6}=\frac2a 
         \end{align*}
         综上所述$a=2,b=1$
         \end{note}
@@ -1491,7 +1491,7 @@
         \boxed{\begin{aligned}
                     & 1+2+3+...+n=\dfrac{n(n+1)}{2} &  & 1^2+2^2+3^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}6\\
                     & 1+\frac12+\frac13+\cdots+\frac1n=\ln n +c & &(n \to \infty \text{时}) n^n \gg n! \gg k_{(k>1)}^n \gg n_{(k>1)}^k \gg \ln n \\
-                    & \lim_{n\to\infty}n\sqrt{a_{1}^{n}+a_{2}^{n}\cdots+a_{n}^{n}}=\max\{a_{1},a_{2}\cdots a_{n}\} & & \text{斯特林公式}\ref{stlgs1}: \lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n \\
+                    & \lim_{n\to\infty}\sqrt[n]{a_{1}^{n}+a_{2}^{n}\cdots+a_{n}^{n}}=\max\{a_{1},a_{2}\cdots a_{n}\} & & \text{斯特林公式}\ref{stlgs1}: \lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\times n \\
                 \end{aligned}}
     \end{align*}
     放缩技巧:
@@ -1710,230 +1710,323 @@
                 令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有$\ln\left(1+\dfrac{1}{x}\right)=\ln(1+x)-\ln x=\dfrac{1}{\xi}$其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\dfrac{1}{1+x}<\ln\left(1+\dfrac{1}{x}\right)=\dfrac{1}{\xi}<\dfrac{1}{x}$}
             \item 在处理如下数列时,可以在前面加一个减项,如$(1+\dfrac{1}{2^2})(1+\dfrac{1}{2^{2^2}})...(1+\dfrac{1}{2^{2^n}})$,可化为$(1-\dfrac{1}{4})(1+\dfrac{1}{2^2})(1+\dfrac{1}{2^{2^2}})...(1+\dfrac{1}{2^{2^n}})*\dfrac{4}{3}$
             \item 关于重要数列$\left\{\left(1+\dfrac{1}{n}\right)^{n}\right\}$的重要结论:
-\begin{itemize}
-    \item 单调递增
-    \item $\lim_{n\to\infty}\biggl(1+\dfrac{1}{n}\biggr)^{n}=\mathrm{e}$
-\end{itemize}
+                \begin{itemize}
+                    \item 单调递增
+                    \item $\lim_{n\to\infty}\biggl(1+\dfrac{1}{n}\biggr)^{n}=\mathrm{e}$
+                \end{itemize}
         \end{enumerate}
-        \item 利用闭区间上连续函数必有最大值与最小值
-        \item 利用压缩映射原理
-        % //TODO
     \end{itemize}
-        \begin{problem}
-            $\lim\limits_{n\to\infty}\Bigg(\dfrac{1}{n^2+n+1}+\dfrac{2}{n^2+n+2}+\cdots+\dfrac{n}{n^2+n+n}\Bigg)$
-        \end{problem}
-        \begin{proof}
-            
-        \end{proof}
-        \begin{problem}
-            求极限$\lim_{n\to\infty}\sqrt[n]{a_1^n+a_2^n+\cdots+a_m^n}$,其中$a_i(i=1,2,\cdots,m)$都是非负数
-        \end{problem}
-        \begin{proof}
-            
-        \end{proof}
+    \subsection{递推关系式\texorpdfstring{$x_{n+1}=f(x_n)$}的数列极限}
+    \begin{enumerate}
 
 
-    \subsection{递推关系式的数列极限}
-    
-    \subsection{单调有界准则}
-    \begin{them}{数列的单调有界准则}{}
-        单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
-    \end{them}
-    证明数列单调性的方法:
-        \begin{enumerate}
-            \item $x_{n+1}-x_{n}\underset{(<)}{\operatorname*{>}}0\text{ 或}\dfrac{x_{n+1}}{x_{n}}\underset{(<)}{\operatorname*{>}}1\text{(同号})$
-            \item 利用数学归纳法
-            \item 利用重要不等式
-            \item $x_n-x_{n-1}$与$x_{n-1}-x_{n-2}$同号,则${x_n}$单调
-            \item 利用结论:对$x_{n+1}=f(x_n)(n=1,2,...)$,$x_n \in \text{区间}I$
-            \begin{itemize}
-                \item $\text{若} f^{\prime}(x) > 0, x \in \text{区间}I, \text{则数列} \{x_n\} \text{单调,且}\left\{\begin{array}{l}\text{当}x_2>x_1\text{时,数列}\left\{x_n\right\}\text{单调增加}\\\\\text{当}x_2<x_1\text{时,数列}\left\{x_n\right\}\text{单调减少}\end{array}\right.$
-                \begin{proof}
-                    若$f(x)$单调增加,且$x_1<x_2$,则数列单增的图像是这样的:
-                    \begin{center}
-                        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-                        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-                        \draw    (78,180) -- (279.43,179.29) ;
-                        \draw [shift={(281.43,179.29)}, rotate = 179.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (78,180) -- (77.44,32.29) ;
-                        \draw [shift={(77.43,30.29)}, rotate = 89.78] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (78,180) -- (212.43,49.29) ;
-                        \draw    (78,180) .. controls (90,121.9) and (137.33,63.9) .. (221.33,61.9) ;
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (113.33,147.24) -- (114,177.9) ;
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (186,79.9) -- (189.43,178.29) ;
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (149.1,115.95) -- (151.1,178.95) ;
-                        \draw    (122,192.9) -- (140,192.6) ;
-                        \draw [shift={(142,192.57)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (159.33,191.57) -- (177.33,191.27) ;
-                        \draw [shift={(179.33,191.24)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (201.33,192.24) -- (219.33,191.94) ;
-                        \draw [shift={(221.33,191.9)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (114,143.24) -- (113.37,112.57) ;
-                        \draw [shift={(113.33,110.57)}, rotate = 88.83] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (113.33,110.57) -- (147.33,109.31) ;
-                        \draw [shift={(149.33,109.24)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (149.33,109.24) -- (148.71,81.24) ;
-                        \draw [shift={(148.67,79.24)}, rotate = 88.73] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (148.67,79.24) -- (182.67,77.98) ;
-                        \draw [shift={(184.67,77.9)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw    (184.67,77.9) -- (184.67,68.57) ;
-                        \draw [shift={(184.67,66.57)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (76.67,111.24) -- (113.33,110.57) ;
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (78.67,79.9) -- (148.67,79.24) ;
-                        \draw (63,180) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-                        \draw (73,9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-                        \draw (285,170) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-                        \draw (187,29) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
-                        \draw (106.67,181.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
-                        \draw (142,181.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
-                        \draw (181.71,182.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
-                        \draw (35.95,101.24) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize] [align=left] {$\displaystyle {\textstyle x_{2} =f( x_{1})}$};
-                        \draw (31.28,67.9) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize] [align=left] {$\displaystyle {\textstyle x_{3} =f( x_{2})}$};
-                        \draw (101.33,44.3) node [anchor=north west][inner sep=0.75pt]    {$y=f( x)$};
-                        \draw (227.33,181.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {....};
-                        \end{tikzpicture}
-                    \end{center}
-                    若$f(x)$单调增加,且$x_1>x_2$,则数列单增的图像是这样的
-                    \begin{center}
-                        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-                        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-                        %uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
-                        %Shape: Axis 2D [id:dp9234827208201275] 
-                        \draw  (138.86,238.57) -- (336.19,238.57)(138.86,94.57) -- (138.86,238.57) -- cycle (329.19,233.57) -- (336.19,238.57) -- (329.19,243.57) (133.86,101.57) -- (138.86,94.57) -- (143.86,101.57)  ;
-                        %Straight Lines [id:da09071235989883286] 
-                        \draw    (138.86,239.24) -- (290.86,86.57) ;
-                        %Curve Lines [id:da659506363732995] 
-                        \draw    (138.86,239.24) .. controls (176.86,165.9) and (178.86,175.24) .. (328.86,115.24) ;
-                        %Straight Lines [id:da49963906625594423] 
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (248.86,145.24) -- (251.52,238.57) ;
-                        %Straight Lines [id:da23363784087784234] 
-                        \draw    (248.86,130.57) -- (248.86,143.24) ;
-                        \draw [shift={(248.86,145.24)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da1524053604905904] 
-                        \draw    (284.19,130.57) -- (250.86,130.57) ;
-                        \draw [shift={(248.86,130.57)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da5954335856425181] 
-                        \draw    (283.52,95.24) -- (284.16,131.91) ;
-                        \draw [shift={(284.19,133.9)}, rotate = 269.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da7191880825280614] 
-                        \draw    (248.86,145.24) -- (234.19,145.24) ;
-                        \draw [shift={(232.19,145.24)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da9044107380803708] 
-                        \draw    (232.19,145.24) -- (232.59,156.24) ;
-                        \draw [shift={(232.67,158.24)}, rotate = 267.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da9892733225672854] 
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (232.19,153.24) -- (234.19,238.57) ;
-                        %Straight Lines [id:da26508620122494464] 
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (284.19,133.9) -- (286.86,237.24) ;
-                        %Straight Lines [id:da7397728895838473] 
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (139.52,145.9) -- (232.19,145.24) ;
-                        %Straight Lines [id:da20908519096055334] 
-                        \draw  [dash pattern={on 4.5pt off 4.5pt}]  (138.19,131.24) -- (248.86,130.57) ;
-                        %Straight Lines [id:da9186769864047437] 
-                        \draw    (282.38,252.67) -- (264,252.67) ;
-                        \draw [shift={(262,252.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da4453591464323112] 
-                        \draw    (251.05,253.33) -- (236.67,253.33) ;
-                        \draw [shift={(234.67,253.33)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da4673424394700476] 
-                        \draw    (218.38,252.67) -- (200,252.67) ;
-                        \draw [shift={(198,252.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        \draw (123.33,237.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-                        \draw (134,72.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-                        \draw (340.67,228.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-                        \draw (141.33,165.57) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y=f( x)$};
-                        \draw (60.67,140.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3} =f( x_{2})$};
-                        \draw (60.67,118.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2} =f( x_{1})$};
-                        \draw (282,242.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
-                        \draw (248.67,242.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
-                        \draw (221.33,242.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
-                        \draw (176.67,243.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle ....$};
-                        \draw (268,66) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
-                        \end{tikzpicture}
-                    \end{center}
-                \end{proof}
-                \item 若$f^{\prime}(x)<0$,$x\in $区间$I$, 则数列$\{x_n\}$ 不单调
-                \begin{proof}
-                    若$f(x)$单调递减,且$x_1<x_2$时,则图像为
-                    \begin{center}
-                        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-                        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-                        %uncomment if require: \path (0,310); %set diagram left start at 0, and has height of 310
-                        %Shape: Axis 2D [id:dp729630396618496] 
-                        \draw  (125.33,214.67) -- (293.71,214.67)(125.33,78.67) -- (125.33,214.67) -- cycle (286.71,209.67) -- (293.71,214.67) -- (286.71,219.67) (120.33,85.67) -- (125.33,78.67) -- (130.33,85.67)  ;
-                        %Straight Lines [id:da47372104703489026] 
-                        \draw    (125.33,215.33) -- (245.71,93.33) ;
-                        %Curve Lines [id:da4042525418331284] 
-                        \draw    (124.38,104.67) .. controls (171.05,115.33) and (249.71,185.33) .. (251.71,214.67) ;
-                        %Straight Lines [id:da17944530430249017] 
-                        \draw    (135.71,204) -- (135.71,112.67) ;
-                        \draw [shift={(135.71,110.67)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da5204670255466619] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (135.71,204) -- (135.71,216) ;
-                        %Straight Lines [id:da24021481992864668] 
-                        \draw    (135.71,110.67) -- (223.05,111.97) ;
-                        \draw [shift={(225.05,112)}, rotate = 180.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da6271476805722207] 
-                        \draw    (225.05,112) -- (226.34,171.33) ;
-                        \draw [shift={(226.38,173.33)}, rotate = 268.75] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da6401429270766978] 
-                        \draw    (226.38,173.33) -- (169.71,173.33) ;
-                        \draw [shift={(167.71,173.33)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da5532540208338461] 
-                        \draw    (167.71,173.33) -- (167.71,126) ;
-                        \draw [shift={(167.71,124)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da3850567355256218] 
-                        \draw    (167.71,124) -- (213.05,124) ;
-                        \draw [shift={(215.05,124)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da8339481829169255] 
-                        \draw    (215.05,124) -- (215.68,160) ;
-                        \draw [shift={(215.71,162)}, rotate = 268.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da1155673534463253] 
-                        \draw    (215.71,162) -- (181.05,162) ;
-                        \draw [shift={(179.05,162)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da9981393146468767] 
-                        \draw    (179.05,162) -- (179.67,134) ;
-                        \draw [shift={(179.71,132)}, rotate = 91.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da7011120349892757] 
-                        \draw    (179.71,132) -- (203.71,132.62) ;
-                        \draw [shift={(205.71,132.67)}, rotate = 181.47] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da44356489337210836] 
-                        \draw    (205.71,132.67) -- (205.71,150.67) ;
-                        \draw [shift={(205.71,152.67)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da08683081469866893] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,173.33) -- (168.38,215.33) ;
-                        %Straight Lines [id:da017947708784031402] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (179.05,162) -- (180.38,214.67) ;
-                        %Straight Lines [id:da3499452563394201] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (215.71,162) -- (217.05,214) ;
-                        %Straight Lines [id:da6810098074509638] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (226.38,173.33) -- (227.71,215.33) ;
-                        %Straight Lines [id:da7644520763214744] 
-                        \draw    (205.71,152.67) -- (191.05,152.67) ;
-                        \draw [shift={(189.05,152.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-                        %Straight Lines [id:da6689339430309678] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (135.71,110.67) -- (123.71,110.67) ;
-                        %Straight Lines [id:da4100840279378384] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,124) -- (128.71,123.33) ;
-                        %Straight Lines [id:da678998487747666] 
-                        \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,173.33) -- (126.38,174) ;
-                        \draw (110.67,214) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-                        \draw (129.33,215.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
-                        \draw (224.67,213) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
-                        \draw (158.67,214.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
-                        \draw (175.33,214.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{5}$};
-                        \draw (207.33,213) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{4}$};
-                        \draw (226,73.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
-                        \draw (285.33,221.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-                        \draw (110.67,71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-                        \draw (44.67,165.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3} =f( x_{2})$};
-                        \draw (46,120.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{4} =f( x_{3})$};
-                        \draw (44.67,102.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2} =f( x_{1})$};
-                        \end{tikzpicture}
-                    \end{center}
-                \end{proof}
-            \end{itemize}
-        \end{enumerate}
+        \item 单调有界(先证明极限存在,之后对$x_{n+1}=f(x_n)$两端取极限)
+        \begin{them}{数列的单调有界准则}{}
+            单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在
+        \end{them}
+        证明数列单调性的方法:
+            \begin{enumerate}
+                \item $x_{n+1}-x_{n}\underset{(<)}{\operatorname*{>}}0\text{ 或}\dfrac{x_{n+1}}{x_{n}}\underset{(<)}{\operatorname*{>}}1\text{(同号})$
+                \item 利用数学归纳法
+                \begin{defn}{第一数学归纳法的定义}{}
+                    第一数学归纳法是证明当$n$等于任意一个自然数时某命题成立。证明分下面两步:
+                    \begin{enumerate}
+                        \item 证明:当$n=1$时命题成立.\footnote{选择数字1因其作为自然数中的最小值}
+                        \item 证明:若假设在$n=m$时命题成立,可推导出在$n=m+1$时命题成立.
+                    \end{enumerate}
+                    这种方法的原理在于:首先证明在某个起点值时命题成立，然后证明从一个值到下一个值的过程有效。当这两点都已经证明，那么任意值都可以通过反复使用这个方法推导出来。
+                \end{defn}
+                \item 利用重要不等式
+                \item $x_n-x_{n-1}$与$x_{n-1}-x_{n-2}$同号,则${x_n}$单调
+                \item 利用结论:对$x_{n+1}=f(x_n)(n=1,2,...)$,$x_n \in \text{区间}I$
+                \begin{itemize}
+                    \item $\text{若} f^{\prime}(x) > 0, x \in \text{区间}I, \text{则数列} \{x_n\} \text{单调,且}\left\{\begin{array}{l}\text{当}x_2>x_1\text{时,数列}\left\{x_n\right\}\text{单调增加}\\\\\text{当}x_2<x_1\text{时,数列}\left\{x_n\right\}\text{单调减少}\end{array}\right.$
+                    \begin{proof}
+                        若$f(x)$单调增加,且$x_1<x_2$,则数列单增的图像是这样的:
+                        \begin{center}
+                            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+                            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                            \draw    (78,180) -- (279.43,179.29) ;
+                            \draw [shift={(281.43,179.29)}, rotate = 179.8] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (78,180) -- (77.44,32.29) ;
+                            \draw [shift={(77.43,30.29)}, rotate = 89.78] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (78,180) -- (212.43,49.29) ;
+                            \draw    (78,180) .. controls (90,121.9) and (137.33,63.9) .. (221.33,61.9) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (113.33,147.24) -- (114,177.9) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (186,79.9) -- (189.43,178.29) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (149.1,115.95) -- (151.1,178.95) ;
+                            \draw    (122,192.9) -- (140,192.6) ;
+                            \draw [shift={(142,192.57)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (159.33,191.57) -- (177.33,191.27) ;
+                            \draw [shift={(179.33,191.24)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (201.33,192.24) -- (219.33,191.94) ;
+                            \draw [shift={(221.33,191.9)}, rotate = 179.05] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (114,143.24) -- (113.37,112.57) ;
+                            \draw [shift={(113.33,110.57)}, rotate = 88.83] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (113.33,110.57) -- (147.33,109.31) ;
+                            \draw [shift={(149.33,109.24)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (149.33,109.24) -- (148.71,81.24) ;
+                            \draw [shift={(148.67,79.24)}, rotate = 88.73] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (148.67,79.24) -- (182.67,77.98) ;
+                            \draw [shift={(184.67,77.9)}, rotate = 177.88] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (184.67,77.9) -- (184.67,68.57) ;
+                            \draw [shift={(184.67,66.57)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (76.67,111.24) -- (113.33,110.57) ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (78.67,79.9) -- (148.67,79.24) ;
+                            \draw (63,180) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                            \draw (73,9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                            \draw (285,170) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                            \draw (187,29) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
+                            \draw (106.67,181.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+                            \draw (142,181.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+                            \draw (181.71,182.64) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
+                            \draw (35.95,101.24) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize] [align=left] {$\displaystyle {\textstyle x_{2} =f( x_{1})}$};
+                            \draw (31.28,67.9) node [anchor=north] [inner sep=0.75pt]  [font=\normalsize] [align=left] {$\displaystyle {\textstyle x_{3} =f( x_{2})}$};
+                            \draw (101.33,44.3) node [anchor=north west][inner sep=0.75pt]    {$y=f( x)$};
+                            \draw (227.33,181.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {....};
+                            \end{tikzpicture}
+                        \end{center}
+                        若$f(x)$单调增加,且$x_1>x_2$,则数列单增的图像是这样的
+                        \begin{center}
+                            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+                            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                            \draw  (138.86,238.57) -- (336.19,238.57)(138.86,94.57) -- (138.86,238.57) -- cycle (329.19,233.57) -- (336.19,238.57) -- (329.19,243.57) (133.86,101.57) -- (138.86,94.57) -- (143.86,101.57)  ;
+                            \draw    (138.86,239.24) -- (290.86,86.57) ;
+                            \draw    (138.86,239.24) .. controls (176.86,165.9) and (178.86,175.24) .. (328.86,115.24) ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (248.86,145.24) -- (251.52,238.57) ;
+                            \draw    (248.86,130.57) -- (248.86,143.24) ;
+                            \draw [shift={(248.86,145.24)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (284.19,130.57) -- (250.86,130.57) ;
+                            \draw [shift={(248.86,130.57)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (283.52,95.24) -- (284.16,131.91) ;
+                            \draw [shift={(284.19,133.9)}, rotate = 269.01] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (248.86,145.24) -- (234.19,145.24) ;
+                            \draw [shift={(232.19,145.24)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (232.19,145.24) -- (232.59,156.24) ;
+                            \draw [shift={(232.67,158.24)}, rotate = 267.9] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (232.19,153.24) -- (234.19,238.57) ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (284.19,133.9) -- (286.86,237.24) ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (139.52,145.9) -- (232.19,145.24) ;
+                            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (138.19,131.24) -- (248.86,130.57) ;
+                            \draw    (282.38,252.67) -- (264,252.67) ;
+                            \draw [shift={(262,252.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (251.05,253.33) -- (236.67,253.33) ;
+                            \draw [shift={(234.67,253.33)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (218.38,252.67) -- (200,252.67) ;
+                            \draw [shift={(198,252.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw (123.33,237.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                            \draw (134,72.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                            \draw (340.67,228.57) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                            \draw (141.33,165.57) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle y=f( x)$};
+                            \draw (60.67,140.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3} =f( x_{2})$};
+                            \draw (60.67,118.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2} =f( x_{1})$};
+                            \draw (282,242.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+                            \draw (248.67,242.9) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+                            \draw (221.33,242.24) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
+                            \draw (176.67,243.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle ....$};
+                            \draw (268,66) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
+                            \end{tikzpicture}
+                        \end{center}
+                    \end{proof}
+                    \item 若$f^{\prime}(x)<0$,$x\in $区间$I$, 则数列$\{x_n\}$ 不单调
+                    \begin{proof}
+                        若$f(x)$单调递减,且$x_1<x_2$时,则图像为
+                        \begin{center}
+                            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+                            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                            \draw  (125.33,214.67) -- (293.71,214.67)(125.33,78.67) -- (125.33,214.67) -- cycle (286.71,209.67) -- (293.71,214.67) -- (286.71,219.67) (120.33,85.67) -- (125.33,78.67) -- (130.33,85.67)  ;
+                            \draw    (125.33,215.33) -- (245.71,93.33) ;
+                            \draw    (124.38,104.67) .. controls (171.05,115.33) and (249.71,185.33) .. (251.71,214.67) ;
+                            \draw    (135.71,204) -- (135.71,112.67) ;
+                            \draw [shift={(135.71,110.67)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (135.71,204) -- (135.71,216) ;
+                            \draw    (135.71,110.67) -- (223.05,111.97) ;
+                            \draw [shift={(225.05,112)}, rotate = 180.86] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (225.05,112) -- (226.34,171.33) ;
+                            \draw [shift={(226.38,173.33)}, rotate = 268.75] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (226.38,173.33) -- (169.71,173.33) ;
+                            \draw [shift={(167.71,173.33)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (167.71,173.33) -- (167.71,126) ;
+                            \draw [shift={(167.71,124)}, rotate = 90] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (167.71,124) -- (213.05,124) ;
+                            \draw [shift={(215.05,124)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (215.05,124) -- (215.68,160) ;
+                            \draw [shift={(215.71,162)}, rotate = 268.99] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (215.71,162) -- (181.05,162) ;
+                            \draw [shift={(179.05,162)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (179.05,162) -- (179.67,134) ;
+                            \draw [shift={(179.71,132)}, rotate = 91.27] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (179.71,132) -- (203.71,132.62) ;
+                            \draw [shift={(205.71,132.67)}, rotate = 181.47] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw    (205.71,132.67) -- (205.71,150.67) ;
+                            \draw [shift={(205.71,152.67)}, rotate = 270] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,173.33) -- (168.38,215.33) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (179.05,162) -- (180.38,214.67) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (215.71,162) -- (217.05,214) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (226.38,173.33) -- (227.71,215.33) ;
+                            \draw    (205.71,152.67) -- (191.05,152.67) ;
+                            \draw [shift={(189.05,152.67)}, rotate = 360] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (135.71,110.67) -- (123.71,110.67) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,124) -- (128.71,123.33) ;
+                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (167.71,173.33) -- (126.38,174) ;
+                            \draw (110.67,214) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                            \draw (129.33,215.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+                            \draw (224.67,213) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+                            \draw (158.67,214.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3}$};
+                            \draw (175.33,214.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{5}$};
+                            \draw (207.33,213) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{4}$};
+                            \draw (226,73.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y=x$};
+                            \draw (285.33,221.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                            \draw (110.67,71) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                            \draw (44.67,165.33) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{3} =f( x_{2})$};
+                            \draw (46,120.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{4} =f( x_{3})$};
+                            \draw (44.67,102.67) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2} =f( x_{1})$};
+                            \end{tikzpicture}
+                        \end{center}
+                    \end{proof}
+                \end{itemize}
+            \end{enumerate}
+        \item 利用压缩映射(先斩后奏):先令$\lim_{n\to\infty} x_n=A$,然后等式$x_{n+1}=f(x_n)$两端取极限解得$A$,得到极限初步结果,最后再证明$\lim_{n\to\infty} x_n=A$.\textcolor{red}{核心是用$x_n=f(x_{n-1})$证明一个递推不等式$|x_n-a| \leqslant A|x_{n-1}-a|$,其中$0<A<1$}
+    \end{enumerate}
+    \begin{problem}
+        设$0<x_1<3,x_{n+1}=\sqrt{x_n\left(3-x_n\right)}\left(n=1,2,...\right)$,证明:数列$x_n$极限存在并求此极限
+    \end{problem}
+    \begin{solution}
+        由$0<x_1<3,x_{n+1}=\sqrt{x_n(3-x_n)}$可得:
+        $$
+            x_{n+1}=\sqrt{x_n(3-x_n)}\leqslant \dfrac{3}{2}
+        $$
+        可知数列$x_n$存在上界,令$x_{n+1}-x_n$可得:
+        \begin{align*}
+            x_{n+1}-x_n & = \sqrt{x_n(3-x_n)}-x_n \\
+          & = \dfrac{x_n(3-x_n)-x_n^2}{\sqrt{x_n(3-x_n)}+x_n}\\ 
+          & = \dfrac{x_n(3-2x_n)}{\sqrt{x_n(3-x_n)}+x_n}\geqslant0
+        \end{align*}
+        故$x_n$单调递增,根据数列单调有界定理,该数列极限存在,因此设$\lim_{x_n}=a$,对等式$x_{n+1}=\sqrt{x_n(3-x_n)}$左右两边取极限得:$a=\sqrt{a(3-a)}$.解得$a=\dfrac{3}{2}$\\综上,数列极限为$\dfrac{3}{2}$
+    \end{solution}
+    \begin{note}
+        出现本题的形式$x_{n+1}=\sqrt{x_n(3-x_n)}$可以使用常用不等式\ref{cybds1},对不等式放缩计算极限.
+    \end{note}
+    \begin{problem}
+        设$x_1=\sqrt{6},x_2=\sqrt{6+\sqrt{6}},\cdotp\cdotp\cdotp,x_n=\sqrt{6+\sqrt{6+\sqrt{6+\cdots+\sqrt{6}}}}$,求极限$\lim_{n \to \infty}x_n$
+    \end{problem}
+    \begin{solution}
+        由题意可知,讲数列的表达式可抽象为$x_{n+1}=\sqrt{6+x_n}$,其函数表达式为$f(x)=\sqrt{6+x}$,对其求导可得:$f'(x)=\dfrac{1}{2\sqrt{6+x}}>0$,由于$x_1<x_2$因此数列单调递增.又因为$x_1=\sqrt{6}<3$,若$x_n<3$,则$x_{n+1}=\sqrt{6+x_n}<3$,从而$x_n<3$,即数列$x_n$有上界,则$\lim_{n\to \infty} x_n$存在,设$\lim_{n\to \infty}x_n=a$,由于$0<x_n<3$,故由极限的保序性可得:$0\leqslant a \leqslant 3$.$x_{n+1}=\sqrt{6+x_n}$,两侧取极限得:$a=\sqrt{6+a}$,解得a=3,综上数列极限为$\lim_{n\to \infty }x_n=3$
+    \end{solution}
+    \begin{note}
+        除此之外,本题还可以使用压缩映射进行求解:
+        \begin{solution}
+            直接证明$\lim_{n\to \infty}x_n=3$,由$x_{n+1}=\sqrt{6+x_n}$知:\begin{align*}
+              \text{原式} & =|x_n-3|=|\sqrt{6+x_{n-1}}-3|
+            \end{align*}
+            对于此处的运算,我们可以使用拉格朗日中值定理进行化简,即
+            \begin{align*}
+              \text{原式} & =|\sqrt{6+x_{n-1}}-3| \\
+              & = |\sqrt{6+x_{n-1}}-\sqrt{9}|\\
+              & = \dfrac{1}{2\sqrt{\varepsilon}}|x_{n-1}-3|<\dfrac{1}{2}|x_{n-1}-3|<\dfrac{1}{2^2}|x_{n-2}-3|<...<\dfrac{1}{2^{n-1}}|x_1-3|\to 0 \quad (n\to \infty)
+            \end{align*}
+            则$\lim_{n\to \infty}x_n=3$\\
+            当然也可以使用有理化进行化简:
+            \begin{align*}
+              \text{原式} & =\dfrac{|x_{n-1}-3|}{\sqrt{6+x_{n-1}}+3}<\frac{1}{3}\mid x_{n-1}-3\mid<\frac{1}{3^{2}}\mid x_{n-2}-3\mid<\cdots<\frac{1}{3^{n-1}}\mid x_{1}-3\mid\to0 \quad (n\to \infty)
+            \end{align*}
+            综上
+            $$
+                0 \leqslant \lim_{n\to \infty}|x_n-3| \leqslant \lim_{n\to \infty} \dfrac{1}{3^{n-1}}|x_1-3|
+            $$使用夹逼准则可以得到$\lim_{n\to \infty}x_n=3$
+        \end{solution}
+    \end{note}
+    \begin{problem}
+        设$x_1=2,x_{n+1}=2+\frac1{x_n}(n=1,2,...)$,求极限$\lim_{n\to\infty}x_n$
+    \end{problem}
+    \begin{solution}
+        令 $f(x)=2+\dfrac1x$,则 $x_{n+1}=f(x_n)$,显然 $f(x)$ 在$(0,+\infty)$上单调减，故$\{x_n\}$不具有单调性,因此只能使用压缩映射.\\
+        令$\lim_{n\to \infty}x_n=a$,则$\lim_{n \to \infty}x_{n+1}=2+\dfrac{1}{\lim_{n\to \infty}x_n} \Rightarrow a=2+\dfrac{1}{a}$,解得$a=1\pm \sqrt{2}$.\\
+        由题设知$x_n\geq2$,故由极限的保号性知，$a\geq2$,从而$a=1 \pm \sqrt{2}$,以下证明$\lim_{n\to \infty}x_n=1+\sqrt{2}$\\
+        $\mid x_n-a\mid=\left|\left(2+\dfrac{1}{x_{n-1}}\right)-\left(2+\dfrac{1}{a}\right)\right|=\left|\dfrac{x_{n-1}-a}{ax_{n-1}}\right|\leqslant\dfrac{\left|x_{n-1}-a\right|}{2a}\leqslant\dfrac{\left|x_{n-1}-a\right|}{2} \leqslant \dfrac{\mid x_{n-2}-a\mid}{2^2} \leqslant \cdots \leqslant \dfrac{\mid x_1-a\mid}{2^{n-1}}\to0$
+    \end{solution}
+    \begin{note}
+        \textcolor{red}{需要切记的是在压缩映射中,极限值为根式时,要用极限时的等式对极限值进行替换},比如在本题中在证明数列极限为$1+\pm \sqrt{2}$中,应写为$|x_n -a|$,而不是$|x_n -1 -\sqrt{2}|$
+    \end{note}
+    \begin{problem}
+        设$x_1=\sqrt{a}(a>0),x_{n+1}=\sqrt{a+x_n}$,证明:$\lim_{n\to\infty} x_n$ 存在,并求其值.
+    \end{problem}
+        本题有四种方法,下面依次给出求解:
+        \begin{solution}{\textbf{法1:数学归纳法找上界:}}
+            数列形式可写为$f(x)=\sqrt{a+x}$,则$f'(x)=\dfrac{1}{2\sqrt{a+x}}>0$,因此$f(x)$单增,又$x_1=\sqrt{a},x_2=\sqrt{a+\sqrt{a}},x_2>x_1$,因此$x_n$单增.\\
+            假设$\lim_{n\to \infty}x_n=A=\dfrac{1+\sqrt{1+4a}}{2}$.由第一数学归纳法可得:\\
+            验证$x_1=\sqrt{a}<\dfrac{1+\sqrt{1+4a}}{2}$,即证:$$
+                2\sqrt{a}<1+\sqrt{1+4a}
+            $$
+            $$
+                4a<2+4a+2\sqrt{1+4a}
+            $$
+            假设$x_n<\dfrac{1+\sqrt{1+4a}}{2}$成立,验证$x_{n+1}<\dfrac{1+\sqrt{1+4a}}{2}$
+            即证:$$
+                2\sqrt{a+x_n}<1+\sqrt{1+4a}
+            $$
+            $$
+                4a+4x_n<2+4a+2\sqrt{1+4a}
+            $$
+            $$
+                4x_n<2+2\sqrt{1+4a}
+            $$
+            即证:$x_n <\dfrac{1+\sqrt{1+4a}}{2}$,显然成立.\\
+            综上:$x_n < \dfrac{1+\sqrt{1+4a}}{2}$,且$x_n$单增,那么$\lim_{n\to \infty}x_n$存在,令$\lim_{n\to \infty}x_n=A$,则$A=\sqrt{a+A}$,解得$A=\dfrac{1+\sqrt{1+4a}}{2}$\\
+            综上$\lim_{n\to \infty}x_n=\dfrac{1+\sqrt{1+4a}}{2}$
+        \end{solution}
+        \begin{solution}{\textbf{法2:对方法一进行化简(最佳):}}
+            数列形式可写为$f(x)=\sqrt{a+x}$,则$f'(x)=\dfrac{1}{2\sqrt{a+x}}>0$,因此$f(x)$单增,又$x_1=\sqrt{a},x_2=\sqrt{a+\sqrt{a}},x_2>x_1$,因此$x_n$单增.\\
+            设$A=\sqrt{a+A}$ 假设$\lim_{n\to \infty}x_n=A=\dfrac{1+\sqrt{1+4a}}{2}$.由第一数学归纳法可得:\\
+            验证$x_1<A$,即证:$$
+                x_1=\sqrt{a},A=\sqrt{a+A}
+            $$
+            $$
+                \sqrt{a}<\sqrt{a+A} \Rightarrow x_1 <A
+            $$
+            假设$x_n<A$成立,验证$x_{n+1} < A $
+            即证:$$
+                x_{n+1}=\sqrt{x+x_n}<\sqrt{a+A}=A
+            $$
+            即证:$x_n < A$,显然成立.\\
+            综上:$x_n < A$,且$x_n$单增,那么$\lim_{n\to \infty}x_n$存在,令$\lim_{n\to \infty}x_n=M$,则$M=\sqrt{a+M}$,解得$M=\dfrac{1+\sqrt{1+4a}}{2}$
+        \end{solution}
+        \begin{solution}{\textbf{法3:构造不等式进行放缩\footnote{其实不好放缩,但是可以硬往条件上凑}}}
+            易知$x_n$,单调递增,且$x_n>0 \Rightarrow \begin{cases}
+                x_{n+1}>x_n>...>x_1=\sqrt{a}\\
+                \dfrac{x_n}{x_{n+1}}<1
+            \end{cases}$
+        \begin{align*}
+          x_{n+1} & = \sqrt{a+x_n} \\
+          & \Rightarrow x^2_{n+1}=a+x_n\\
+          & \Rightarrow \dfrac{a}{x_{n+1}}+\dfrac{x_n}{x_{n+1}}\\
+          & \Rightarrow x_{n+1}<\dfrac{a}{x_{n+1}}+1
+        \end{align*}
+        $x_n$单增且有上界,因此$\lim_{n\to \infty}x_n$存在.
+        设$\lim_{n\to \infty}x_n=A$,则$A=\sqrt{a+A}$,解得$A=\dfrac{1+\sqrt{1+4a}}{2}$\\
+        综上$\lim_{n\to \infty}x_n=\dfrac{1+\sqrt{1+4a}}{2}$
+        \end{solution}
+        \begin{solution}{\textbf{法4:压缩映射+有理化}}
+            \begin{align*}
+              |x_n -A| & = |\sqrt{a+x_{n+1}}-\sqrt{a+A}|\\
+              & = \dfrac{|x_{n-1}-A|}{\sqrt{a+x_{n-1}}+\sqrt{a+A}} \leqslant \dfrac{1}{2\sqrt{a}}|x_{n+1}-A|
+            \end{align*}
+        \end{solution}
+    \begin{problem}
+        设数列$\{x_n\}$ 满足$:x_1>0,x_ne^{x_{n+1}}=e^{x_n}-1(n=1,2,\cdots)$.证明$\{x_n\}$收敛,并求$\lim_{n\to\infty} x_n$     
+    \end{problem}
+    \begin{solution}
+        $$ 
+           x_{n+1} - x_{n} = \ln\biggl(\frac{\mathrm{e}^{x_{n}} - 1}{x_{n}}\biggr)- x_{n} = \ln\biggl(\frac{\mathrm{e}^{x_{n}} - 1}{x_{n}\mathrm{e}^{x_{n}}}\biggr).
+        $$
+        令$f(x)=e^x-1-xe^x$,则$f'(x)=-xe^x$.当$x>0$时,$f(x)$ 在$[0,+\infty)$ 上单调减少,于是,$f(x)<f\left(0\right)=0.$从而,当$x>0$ 时
+        $$
+            \dfrac{\mathrm{e}^x-1}{x\mathrm{e}^x}-1 = \dfrac{\mathrm{e}^x-1-x\mathrm{e}^x}{x\mathrm{e}^x}<0
+        $$即$\dfrac{e^x-1}{xe^x}<1$
+        又因为对所有的正整数$n$,都有$x_n>0$,所以$\ln\left(\dfrac{\mathrm{e}^{x_n}-1}{x_n\mathrm{e}^{x_n}}\right)<\ln1=0$,即$x_{n+1}-x_n<0.$ 因此,数列$|x_n|$单调减少。\\
+        由单调有界准则可知,数列$|x_n|$收敛.由于对所有的正整数$n$,都有$x_n>0$,故$\lim_{n\to\infty}x_n=a\geqslant0.$\\
+        对$x_n\mathrm{e}^{x_n+1}=\mathrm{e}^{x_n}-1$ 两端同时令$n\to\infty$,可得$a\mathrm{e}^n=\mathrm{e}^a-1$,由前面的结果可知，$x=0$ 是$f(x)=e^x-1-xe^x$ 在$[0,+\infty)$上的唯一零点，因此，$a=0$,即$\lim_{n\to \infty}x_n=0.$
+    \end{solution}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}
