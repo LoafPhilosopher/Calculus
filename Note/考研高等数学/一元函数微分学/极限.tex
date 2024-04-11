@@ -27,7 +27,7 @@
             \item \textcolor{red}{数列的最值只能在前有限项中取得,前有限项有比极限值大的,则数列存在最大值.前有限项有比极限值小的,则数列存在最小值}
             \item \textcolor{red}{若数列$\{a_n\}$收敛,则其任何子列$\{a_{n_k}\}$也收敛,且$\lim_{k\to\infty}a_{n_k}=\lim_{n\to\infty}a_n$}\footnote{ 此条定理提供了一个判断数列发散的方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.}
             \item $\underset{n\to\infty}{\operatorname*{\lim}}x_n=a\Leftrightarrow\underset{k\to\infty}{\operatorname*{\lim}}x_{2k-1}=\underset{k\to\infty}{\operatorname*{\lim}}x_{2k}=a$
-            \item $\lim_{n \to \infty }\sqrt[n]{n}=1.\lim_{n \to \infty} \sqrt[n]{a}=1(a>0)$
+            \item \textbf{$\lim_{n \to \infty }\sqrt[n]{n}=1.\lim_{n \to \infty} \sqrt[n]{a}=1(a>0)$}\label{jl1}
             \item 关于数列$(1+\dfrac{1}{n})^n$的结论
             \begin{itemize}
                 \item 单调增加
@@ -158,6 +158,7 @@
         C选项:若$\lim_{n \to \infty}(a_n+b_n)$存在,假设$\lim_{ n \to \infty}(a_n-b_n)$存在,那么$\lim_{n\to \infty}[(a_n+b_n)-(a_n-b_n)]$也应该存在,但是$\lim_{n \to \infty}=2 b_n$,根据题意可知不存在,因此假设错误\\
         D选项:$a_n=e^n,b_n=-e^n$,显然$\lim_{n \to \infty}(a_n+b_n)$存在,但是$\lim_{n \to \infty}(a_n-b_n)$不存在
     \end{solution}
+
     \subsection{收敛数列的性质}
     \subsubsection{唯一性}
     \begin{defn}{数列极限唯一性的定义}{}
@@ -767,11 +768,11 @@
       \begin{align*}
          \text{原式} & = \lim_{x\to 0}(\dfrac{1}{x^2}-\cot ^2 x)=(\dfrac{1}{x^2}-\dfrac{\cos^2 x}{\sin^2 x})  & \\ 
         & =\lim_{x\to 0}\dfrac{\sin^2 x-x^2 \cos^2 x}{x^2 \sin^2 x} & \\
-        & =\lim_{x\to 0}(\dfrac{\sin^2 x-x^2\cos^2x}{x^4}) & \\
+        & =\lim_{x\to 0}(\dfrac{\sin^2 x-x^2\cos^2x}{x^4})
     \end{align*}
     此处有一个常见的错误,就是能不能把 $\cos^2 x$代换为1,其实是不能的,即使最后答案正确,此时$x \to 0$时,分母也趋于0,如果进行替换,则违背了极限的运算法则,因此不能进行替换
         \begin{align*}
-            \text{原式} & =  \lim_{x\to 0}\dfrac{(\sin x-x\cos x)(\sin x+x\cos x)}{x^4}\xlongequal {\text{泰勒公式}}\dfrac{2}{3}  &\\
+            \text{原式} & =  \lim_{x\to 0}\dfrac{(\sin x-x\cos x)(\sin x+x\cos x)}{x^4}\xlongequal {\text{泰勒公式}}\dfrac{2}{3} 
         \end{align*}
     \end{note}
     \begin{problem}
@@ -1050,7 +1051,7 @@
         \item     \begin{align*} \boxed
             {
                 \begin{aligned}
-                     & \dfrac{1}{6} x^3 \sim x-\sin \sim \arcsin x -x
+                     & \dfrac{1}{6} x^3 \sim x-\sin x \sim \arcsin x -x
                 \end{aligned}
             }
         \end{align*}
@@ -1224,7 +1225,7 @@
              & = \lim_{x\to0^{+}}\frac{\ln^{b}x}{x^{-a}} &\\
              & =\lim_{x\to0^{+}}\frac{b\ln^{b-1}x\cdot\frac{1}{x}}{-ax^{-a-1}}&\\
         \end{align*}
-    每洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\frac{\ln^m x}{x^{-a}}=0$),最终结果都是0
+    每洛一次,分子次数-1.分母次数不变,一直洛下去,分子次数要么洛到0(即$\lim_{x\to 0^+}\dfrac{c}{x^{-a}}=\lim_{x\to o^+} cx^a=0$),要么洛成负数($\lim_{x\to 0^+ }c\dfrac{\ln^m x}{x^{-a}}=0$),最终结果都是0
     \end{proof}
     \begin{problem}
     求极限$\lim_{x\to0^+}x^{(x^x-1)}$
@@ -1407,6 +1408,23 @@
     主要有以下类型$\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty,\infty -\infty,\infty ^0,1^\infty$
     \subsubsection{形如$\dfrac{0}{0}$,$\dfrac{\infty}{\infty}$,$0 \times \infty$}
          $\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty$可以直接计算或者简单转换可以直接计算.
+    \begin{problem}
+        设函数$f(x)=\operatorname*{lim}_{n\to\infty} \dfrac{x^2+nx(1-x)\sin^2\pi x}{1+n\sin^{2}\pi x}$,则$f(x)=$        
+    \end{problem}
+    \begin{solution}
+        分情况讨论,当$\sin^2 \pi x=0$和$\sin^2 \pi x \neq 0$时进行讨论.\\
+        当$\sin^2 \pi x=0$时:
+        \begin{align*}
+          \text{原式} & = x^2
+        \end{align*}
+        当$\sin^2 \pi x \neq 0$时:
+        \begin{align*}
+          \text{原式} & =\lim_{n\to\infty}\dfrac{\dfrac{x^{2}}{n}+x(1-x)\sin^{2}\pi x}{\dfrac{1}{n}+\sin^{2}\pi x}\\
+          & =\frac{x(1-x)\sin^{2}\pi x}{\sin^{2}\pi x}\\
+          & =x(1-x)    
+        \end{align*}
+        综上$f(x)$表达式为: $$f(x)=\begin{cases}x^2,&x=0, \pm1, \pm2, \cdots\\x(1-x),&x\text{取其他值}.\end{cases}$$
+    \end{solution}
     \subsubsection{形如$\infty -\infty$}
     分式类型的$\infty -\infty$,直接通分:
     \begin{problem}
@@ -1425,6 +1443,22 @@
         \item 见到两个根式相减,可以考虑有理化。但注意只能是平方根,立方根就不适用了。
         \item 看见函数形式相同,可以考虑使用拉格朗日中值定理。
     \end{enumerate}
+    \begin{problem}
+        求极限$\lim_{x\to0}\left(\dfrac{\mathrm{e}^x+x\mathrm{e}^x}{\mathrm{e}^x-1}-\dfrac1x\right)$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =  \lim_{x\to0} (\dfrac{x(e^x+xe^x)-e^x+1}{x(e^x-1)})  \\
+          & = \lim_{x\to0} \dfrac{xe^x+x^2e^x-e^x+1}{x^2}\\
+          & = \lim_{x\to0} \dfrac{e^x(x+x^2-1)+1}{x^2}\\
+          & = \lim_{x\to0}\dfrac{3x\mathrm{e}^{x}+x^{2}\mathrm{e}^{x}}{2x}\\
+          & =\lim_{x\to0}\frac{3\mathrm{e}^{x}+x\mathrm{e}^{x}}{2}\\
+          & =\frac{3}{2}
+        \end{align*}    
+    \end{solution}
+    \begin{note}
+        本题可能上去第一步就把$e^x-1$直接给替换,但是不能这样写,因为等价无穷小不可以进行部分替代
+    \end{note}
     \begin{problem}
         求极限$\lim_{x\to+\infty}(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x})$
     \end{problem}
@@ -1471,21 +1505,52 @@
           $\infty ^0$与$0^0$通常使用\textcolor{red}
               {$ u^v=e^{v \ln u}$}来计算
     \subsubsection{形如$1^{\infty}$}
-         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算.
-              \begin{problem}
-              $\lim _{x \to \infty}\left[ \dfrac{x^2 + x}{(x-a)(x-b)}\right]^x$
-              \end{problem}
-              \begin{solution}
-                  \begin{align*}
-                      \text{原式} & = \lim _{x \to \infty} \left(\dfrac{x}{x-a}\right)^x \times \left(\dfrac{x+1}{x-b}\right)^x         \\
-                                & =  \lim _{x \to \infty} \left(1+\dfrac{a}{x-a} \right)^x \times \left( 1+\dfrac{1-b}{x+b} \right)^x \\
-                                & = e^{\lim _{x \to \infty} \dfrac{ax}{x-a} } \times e^{\lim _{x \to \infty} \dfrac{(1-b)x}{x+b}}     \\
-                                & =e^{a+1-b}
-                  \end{align*}
-              \end{solution} 
+         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算\footnote{其实本质还是使用了幂指函数的性质进行计算,因为$\lim u^v=e^{\lim v\ln(u)}=e^{\lim v \ln(1 + u -1)}=e^{\lim v (u-1)}$}.
+        \begin{problem}
+            求极限$\lim_{x\to0}\Bigg(\dfrac{\mathrm{e}^x+\mathrm{e}^{2x}+\mathrm{e}^{3x}}3\Bigg)^{\frac{\mathrm{e}}{x}}.$
+        \end{problem}
+        \begin{solution}
+            \begin{align*}
+              \text{原式} & = \lim_{x\to0} e^{\frac{e}{x} \ln \frac{e^x+e^{2x}+e^{3x}}{3}}\\
+              & = \lim_{x\to0} e^{\frac{e}{x}(\frac{e^x+e^{2x}+e^{3x}}{3}-1)}\\
+            \end{align*}
+        把分子摘出来:
+        \begin{align*}
+          \dfrac{e}{3} \lim_{x\to 0}(\dfrac{e^x+e^{2x}+e^{3x}}{x} -3) & =\dfrac{e}{3} \lim_{x\to 0} (\frac{\mathrm{e}^x-1}x+\frac{\mathrm{e}^{2x}-1}x+\frac{\mathrm{e}^{3x}-1}x)\\
+          & = \lim_{x\to0}\frac{\mathrm{e}^{x}-1}{x}+\lim_{x\to0}\frac{\mathrm{e}^{2x}-1}{x}+\lim_{x\to0}\frac{\mathrm{e}^{3x}-1}{x}\\
+        \end{align*}
+        综上原式为$e^{\frac{e}{3}(1+2+3)}=e^{2e}$
+        \end{solution}
+        \begin{problem}
+            求极限$\lim_{x\to\infty}(\dfrac{x^2}{(x-a)(x+b)})^x$
+        \end{problem}
+        \begin{solution}
+            \begin{align*}
+              \text{原式} & =e^{x \ln (\dfrac{x^2}{(x-a)(x-b)})}\\
+              & =e^{x(\dfrac{x^2}{(x-a)(x-b)}-1)}\\
+              & = e^{\dfrac{ax^2-bx^2+abx}{x^2-ax+bx}}\\
+              & = e^{\dfrac{2ax-2bx+ab}{2x+b-a}}\\
+              & = e^{a-b}
+            \end{align*}
+        \end{solution} 
+        \begin{problem}
+            求极限$\lim_{n\to\infty}\left[\dfrac{\left(1+\frac1n\right)^n}e\right]^n$        
+        \end{problem}
+        \begin{solution}
+            \begin{align*}
+                \text{原式} & = \lim_{n\to \infty} \dfrac{e^{n^2\ln(1+\frac{1}{n})}}{e^n}\\
+                & = \lim_{n\to \infty} e^{n^2\ln(1+\dfrac{1}{n})-n}\\
+                & = e^{\lim_{n\to\infty}-n^2{\left[\frac1n-\ln(1+\frac1n)\right]}}\\
+                & = e^{\lim_{n\to\infty}-n^2\cdot\frac12(\frac1n)^2}\\
+                & =e^{-\dfrac{1}{2}}
+            \end{align*}   
+        \end{solution}
+        \begin{note}
+            本题有两个易错点,一是直接把$(1+\dfrac{1}{n})^n$直接替换成e,二是在计算$\dfrac{e^{n^2\ln(1+\frac{1}{n})}}{e^n}$时,替换成$\dfrac{e^{n^2\frac{1}{n}}}{e^n}$,这两个错误的点都是在计算时进行了部分替代.
+        \end{note}
     \section{数列极限的运算}
     \subsection{\texorpdfstring{$n$}\text{项数列极限求解}}
-    \subsubsection{$n$项连乘的数列极限}
+    \subsubsection{$n$项连加的数列极限}
     常用结论:
     \begin{align*}
         \boxed{\begin{aligned}
@@ -1625,14 +1690,36 @@
             $$
             \int_0 ^1 \dfrac{1}{1+x^2}dx \leqslant \lim_{n\to \infty} I \leqslant \int_0^1 \dfrac{1}{1+x^2}dx
             $$
-        $\int_0 ^1 \dfrac{1}{1+x^2}dx=\frac{\pi}{4}$,综上,等式极限为$\dfrac{\pi}{4}$
+        $\int_0 ^1 \dfrac{1}{1+x^2}dx=\dfrac{\pi}{4}$,综上,等式极限为$\dfrac{\pi}{4}$
     \end{solution}
-    \subsubsection{$n$项和的数列极限}
+    \begin{problem}
+        已知$\dfrac1{n+1}<\ln(1+\dfrac1n)<\dfrac1n$,设$a_n=1+\dfrac12+...+\dfrac1n-\ln n(n=1,2,...)$,证明数列$\{a_n\}$收敛
+    \end{problem}
+    \begin{solution}
+        令$a_{n+1}-a_n$ 得 $(\dfrac{1}{n+1}-\ln(1+\dfrac{1}{n}))<0$
+        \begin{align*}
+          & a_n= 1+\dfrac{1}{2}+\dfrac{1}{2}+...+\dfrac{1}{n}-\ln n\\
+          & > \ln(1+1)+\ln(1+\dfrac{1}{2})+...+\ln(1+\dfrac{1}{n})-\ln n \\
+          & =\ln(2 \times \dfrac{3}{2} \times \dfrac{4}{3} \times ... \times \dfrac{n+1}{n})-\ln n\\
+          & = \ln(1+n)-\ln n >0
+        \end{align*}
+    综上所诉,由于数列单调递减且有下界,因此收敛
+    \end{solution}
+    \begin{note}
+        此题的方法为非常规的方法,需要考虑上下问,结合进行分析.
+    \end{note}
+    \subsubsection{$n$项连乘的数列极限}
     主要有以下两种方法:
     \begin{enumerate}
         \item 夹逼准则
         \item 取对数化为$n$项和\footnote{通法}
     \end{enumerate}
+    \begin{problem}
+        设函数$f(x)$在$[a,b]$上连续，$x_1,x_2,...,x_n$是$[a,b]$上的一个点列，求$\lim_{n\to\infty}\sqrt[n]{\dfrac1n\sum_{k=1}^n\mathrm{e}^{f(x_k)}}$ 
+    \end{problem}
+    \begin{solution}
+        $f(x)$在$[a,b]$上连续,已知$e^{f(x)}$在$[a,b]$上非负连续,且$0<m \leqslant e^{f(x)} \leqslant M$,其中$M,m$分别是$e^{f(x)}$在$[a,b]$上的最大值和最小值,于是$0<m\leqslant \dfrac{1}{n} \sum_{k=1}^{n}e^{f(x)} \leqslant M$,故$\sqrt[n]{m}\leqslant\sqrt[n]{\frac1n\sum_{k=1}^n\mathrm{e}^{f(x_k)}}\leqslant\sqrt[n]{M}$,又$\lim_{n\to\infty}\sqrt[n]{m}=\lim_{n\to\infty}\sqrt[n]{M}=1$\footnote{写成幂函数形式配合泰勒公式即可看出,来自此处数列的性质:\ref{jl1}}, 根据夹逼准则，得$\lim_{n\to\infty}\sqrt[n]{\dfrac1n\sum_{k=1}^n\mathrm{e}^{f(x_k)}}=1$ 
+    \end{solution}
     \begin{problem}
         求$a_n=\sqrt[n]{\dfrac12\times\dfrac34\times\cdots\times\dfrac{2n-1}{2n}}$,求极限$\lim_{n \to \infty}a_n$
     \end{problem}
@@ -1664,7 +1751,7 @@
     \begin{solution}
         令$a_n=\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)(n+3)...(n+n)}$,则
         \begin{align*}
-          \ln_{n \to \infty}a_n & = \lim_{n \to \infty} \{ \ln\frac{1}{n}+\frac{1}{n} \ln[(n+1)(n+2)\cdots(n+n)]\}\\
+            \lim_{n \to \infty}\ln a_n & = \lim_{n \to \infty} \{ \ln\frac{1}{n}+\frac{1}{n} \ln[(n+1)(n+2)\cdots(n+n)]\}\\
           & = \lim_{n\to \infty}\frac{1}{n} \ln[(n+1)(n+2)\cdots(n+n)]- \ln n\\
           & = \lim_{n \to \infty}\frac{1}{n}[\ln(n+1)+\ln(n+2)+...+\ln(n+n)-n\ln n]\\
           & = \lim_{n\to \infty}[\ln(1+\frac{1}{n})+\ln(1+\frac{2}{n})+...+\ln(1+\frac{n}{n})]\\
@@ -1689,7 +1776,6 @@
     综上$\lim_{n \to \infty}a_n=e^{-1} \Rightarrow \lim_{n\to \infty}\sqrt[n]{n!}\sim e^{-1}\cdot n$
     \end{solution}
     \subsection{常用不等式}
-    以下为放缩的常用方法
     \begin{itemize}
         \item 利用如下重要不等式\label{cybds1}
         \begin{enumerate}
@@ -1718,8 +1804,6 @@
     \end{itemize}
     \subsection{递推关系式\texorpdfstring{$x_{n+1}=f(x_n)$}的数列极限}
     \begin{enumerate}
-
-
         \item 单调有界(先证明极限存在,之后对$x_{n+1}=f(x_n)$两端取极限)
         \begin{them}{数列的单调有界准则}{}
             单调有界数列必有极限,即若数列$\{x_n\}$单调增加(减少)且有上界(下界),则$\lim_{n \to \infty} x_n$存在

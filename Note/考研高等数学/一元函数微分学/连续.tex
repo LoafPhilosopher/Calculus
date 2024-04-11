@@ -134,7 +134,12 @@
     综上,$x= \pm 1$为跳跃间断点,$x=0$为可去间断点.
     \end{solution}
     \begin{note}
-        \textcolor{red}{对于$f(x)$是$x$的函数,表达式是以$n$的极限的形式给出的情况,方法为把$f(x)$分段解出来,$n$趋于无穷时,$x^n$要以$|x|=1$为界限进行分段.}
+        \textcolor{red}{对于$f(x)$是$x$的函数,表达式是以$n$的极限的形式给出的情况,方法为把$f(x)$分段解出来,$n$趋于无穷时,$x^n$要以$|x|=1$为界限进行分段.}.\\同时应该结合$x^n$的解析式进行求解:$\lim_{x \to \infty}x^n=\begin{cases}
+            \infty ,|x|>1\\ 
+            0,|x|<1\\1,
+            x=1\\
+            (-1)^n,x=-1
+        \end{cases}$
     \end{note}
     \begin{problem}
         设 $f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}$,则 $f(x):$  \\
@@ -160,7 +165,7 @@
     $
     \end{solution}
     %  ############################ 正文部分
-    \ifx\allfiles\undefined
-\end{sloppypar}
+        \ifx\allfiles\undefined
+    \end{sloppypar}
 \end{document}
 \fi
