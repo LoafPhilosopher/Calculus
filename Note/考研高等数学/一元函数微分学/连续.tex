@@ -119,6 +119,27 @@
         \item 第二类间断点：除第一类以外的间断点$\implies \lim _ { x \rightarrow x _ { 0 } ^{-}} f ( x )$和$\lim _ { x \rightarrow x _ { 0 }^ {+}} f ( x )$​ 均至少一个不存在
     \end{itemize}
     \begin{problem}
+        设函数 $f(x)=\lim_{n\to\infty}\dfrac{x^2+nx(1-x)\sin^2\pi x}{1+ n \sin^2 \pi x}$ ,则 $f(x)=$ 
+    \end{problem}
+    \begin{solution}
+        分情况讨论,当$\sin^2 \pi x = 0$和$\sin^2 \pi x \neq 0$\\
+        当$\sin^2 \pi x = 0$时,
+        \begin{align*}
+          \text{原式} & = \lim_{n\to \infty}\dfrac{x^2}{1} \\
+          & =  x^2
+        \end{align*}
+        当$\sin^2 \pi x \neq 0$时,
+        \begin{align*}
+          \text{原式} & = \lim_{n\to \infty} \dfrac{\frac{x^2}{n}+x(1-x)\sin^2 \pi x}{\frac{1}{n}+\sin^2 \pi x} \\
+          & = \lim_{n\to \infty} \dfrac{x(1-x)\sin^2 \pi x}{\sin^2 \pi x}\\
+          & = x(1-x)
+        \end{align*}
+    综上函数$f(x)=\begin{cases}
+        x^2 ,\sin^2 \pi x=0\\
+        x(1-x),\sin^2 \pi x \neq 0
+    \end{cases}$
+    \end{solution}
+    \begin{problem}
         求函数 $f(x)=\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}$ 的间断点并指出其类型.
     \end{problem}
     \begin{solution}

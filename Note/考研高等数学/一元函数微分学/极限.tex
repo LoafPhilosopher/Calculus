@@ -1016,9 +1016,9 @@
         $$
     \end{defn}
     \begin{defn}{等价无穷小的替换准则}{}
-        设$\alpha\sim\widetilde{\alpha}$,$\beta\sim\widetilde{\beta}$,且$\lim\dfrac{\widetilde{\beta}}{\underset{\alpha}{\operatorname*{\sim}}}$存在,则
+        设$\alpha\sim\widetilde{\alpha}$,$\beta\sim\widetilde{\beta}$,且$\lim\dfrac{\widetilde{\beta}}{\widetilde{\alpha}}$存在,则
         $$
-            \lim\dfrac{\beta}{\alpha}=\lim\dfrac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.Í
+            \lim\dfrac{\beta}{\alpha}=\lim\dfrac{\widetilde{\beta}}{\overset{\sim}{\alpha}}.
         $$
         \textcolor{red}{等价无穷小的本质还是在做恒等替换},所以一般情况下整式的乘除法可以直接用等价无穷小替换,分子及分母都可用等价无穷小来代替.但是需要遵循以下代换原则\footnote{其实没有什么替换原则,本质其实是因为超实数系下不能进行实数运算,只能进行替换运算}
         \begin{itemize}
@@ -1215,6 +1215,7 @@
     \begin{solution}
         上下同除以$x$得$\lim_{x\to 0}\dfrac{1+2x+3x^{3}}{2+4x^{2}+x^{4}}=\dfrac{1}{2}$
     \end{solution}
+
     \subsection{利用函数性质求极限}
     \subsubsection{幂指函数性质求极限}
     一般主要是使用幂指函数的性质进行恒等变换,即\textcolor{red}{$a^b=e^{b\ln a}$}.\textbf{如果两个函数的指数相同,则可以提后项/前项}.\\
@@ -1425,6 +1426,19 @@
         \end{align*}
         综上$f(x)$表达式为: $$f(x)=\begin{cases}x^2,&x=0, \pm1, \pm2, \cdots\\x(1-x),&x\text{取其他值}.\end{cases}$$
     \end{solution}
+    \begin{problem}
+        求极限$\lim_{x\to-\infty}\dfrac{\sqrt{4x^2+x-1}+x+1}{\sqrt{x^2+\sin x}}$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{x\to-\infty} \dfrac{\sqrt{4+\frac{1}{x}-\frac{1}{x^2}}-\frac{1}{x}-1}{\sqrt{1+\frac{\sin x}{x^2}}}\\
+          & =  \dfrac{2-1}{1}\\
+          & = 1
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        这个题直接用抓大头会错,因为后面还有一个同阶的$x$,然后还有就是下面是趋于$- \infty$
+    \end{note}
     \subsubsection{形如$\infty -\infty$}
     分式类型的$\infty -\infty$,直接通分:
     \begin{problem}
@@ -1501,11 +1515,25 @@
         \end{align*}
         综上可知:$\alpha =2023$,$\beta=\dfrac{1}{2023}$
     \end{solution}
+    \begin{problem}
+        求极限$\lim_{x\to+\infty}[\dfrac{x^{1+x}}{\left(1+x\right)^x}-\dfrac xe]$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & =\lim_{x\to+\infty}\left[\dfrac{x}{\left(1+\frac{1}{x}\right)^{x}}-\dfrac{x}{e}\right] \\
+          & =\lim_{x\to+\infty}\dfrac{x\left[\mathrm{e}-\left(1+\frac{1}{x}\right)^{x}\right]}{\mathrm{e}\left(1+\frac{1}{x}\right)^{x}} \\
+          & =\dfrac1{\mathrm{e}^2}\lim_{x\to+\infty}\dfrac{\mathrm{e}-\left(1+\frac1x\right)^x}{\frac1x} \\
+          & = \frac{-1}{\mathrm{e}^2}\lim_{t\to0^+}\frac{(1+t)^{\frac1t}-\mathrm{e}}t\\
+          & =\frac{-1}{\mathrm{e}^2}\lim_{t\to0^+}\frac{\mathrm{e}^{\frac{\ln(1+t)}t}-\mathrm{e}}t\\
+          & = -\frac1{\mathrm{e}}\lim_{t\to0^+}\frac{\mathrm{e}^{\frac{\ln(1+t)-t}t}-1}t\\
+          & = -\frac{1}{\mathrm{e}}\lim_{t\to0^{+}}\frac{\ln(1+t)-t}{t^{2}} \\
+          & =-\frac1{\mathrm{e}}\operatorname*{lim}_{t\to0^+}\frac{-\frac12t^2}{t^2}=\frac1{2\mathrm{e}}
+        \end{align*}
+    \end{solution}
     \subsubsection{形如$\infty^0,0^0$}
-          $\infty ^0$与$0^0$通常使用\textcolor{red}
-              {$ u^v=e^{v \ln u}$}来计算
+          $\infty ^0$与$0^0$通常使用\textcolor{red}{$ u^v=e^{v \ln u}$}来计算
     \subsubsection{形如$1^{\infty}$}
-         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算\footnote{其实本质还是使用了幂指函数的性质进行计算,因为$\lim u^v=e^{\lim v\ln(u)}=e^{\lim v \ln(1 + u -1)}=e^{\lim v (u-1)}$}.
+         $1 ^ \infty$通常使用\textcolor{red}{$\lim u^v=e^{\lim (u-1)v}$}来计算\footnote{其实本质还是使用了幂指函数的性质进行计算,因为$\lim u^v=e^{\lim v\ln(u)}=e^{\lim v \ln(1 + u -1)}=e^{\lim v (u-1)}$}.之后将$(u-1)v$摘出,然后使用替换法则或者泰勒公式进行求解
         \begin{problem}
             求极限$\lim_{x\to0}\Bigg(\dfrac{\mathrm{e}^x+\mathrm{e}^{2x}+\mathrm{e}^{3x}}3\Bigg)^{\frac{\mathrm{e}}{x}}.$
         \end{problem}
@@ -1546,8 +1574,23 @@
             \end{align*}   
         \end{solution}
         \begin{note}
-            本题有两个易错点,一是直接把$(1+\dfrac{1}{n})^n$直接替换成e,二是在计算$\dfrac{e^{n^2\ln(1+\frac{1}{n})}}{e^n}$时,替换成$\dfrac{e^{n^2\frac{1}{n}}}{e^n}$,这两个错误的点都是在计算时进行了部分替代.
+            本题有两个易错点,一是直接把$(1+\dfrac{1}{n})^n$直接替换成$e$,二是在计算$\dfrac{e^{n^2\ln(1+\frac{1}{n})}}{e^n}$时,替换成$\dfrac{e^{n^2\frac{1}{n}}}{e^n}$,这两个错误的点都是在计算时进行了部分替代.
         \end{note}
+    \begin{problem}
+        求极限$\lim_{x\to0}\left(\dfrac{a_1 ^x+a_2^x+\cdots+a_n^x}n\right)^{\dfrac nx}$,其中$a_i>0,i=1,2,\cdots,n.$ 
+    \end{problem}
+    \begin{solution}
+        已知$\lim_{x\to 0} a_i^x = 1$,则函数形式为$1^{\infty}$型
+        \begin{align*}
+          \text{原式} & = \lim_{x\to 0} e^{\frac{n}{x}(\dfrac{a_1^x+a_2^x+a_3^x+...+a_n^x}{n}-1)}\\
+          & = e^{\left\{\lim_{x\to0}\frac{a_{1}^{x}-1}{x}+\lim_{x\to0}\frac{a_{2}^{x}-1}{x}+\cdots+\lim_{x\to0}\frac{a_{n}^{x}-1}{x}\right\}}\\
+          & = e^{\lim_{x\to0}a_{1}^{x}\ln a_{1}+a_{2}^{x}\ln a_{2}+\cdots+a_{n}^{x}\ln a_{n}}\\
+          & = a_1 a_2 a_3 ... a_n
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        本题需注意的是$\lim_{x\to 0} a_i^x = 1$,然后可以观察出该极限类型为$1^{\infty}$型,之后可以利用等价无穷小替换求的极限
+    \end{note}
     \section{数列极限的运算}
     \subsection{\texorpdfstring{$n$}\text{项数列极限求解}}
     \subsubsection{$n$项连加的数列极限}
@@ -1746,7 +1789,7 @@
         但是这显然是错误的,无穷多个无穷小相加,结果仍是未定式.
     \end{note}
     \begin{problem}
-        求$\lim_{n\to\infty}\frac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
+        求$\lim_{n\to\infty}\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
     \end{problem}
     \begin{solution}
         令$a_n=\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)(n+3)...(n+n)}$,则
@@ -2021,7 +2064,7 @@
         \end{solution}
     \end{note}
     \begin{problem}
-        设$x_1=2,x_{n+1}=2+\frac1{x_n}(n=1,2,...)$,求极限$\lim_{n\to\infty}x_n$
+        设$x_1=2,x_{n+1}=2+\dfrac1{x_n}(n=1,2,...)$,求极限$\lim_{n\to\infty}x_n$
     \end{problem}
     \begin{solution}
         令 $f(x)=2+\dfrac1x$,则 $x_{n+1}=f(x_n)$,显然 $f(x)$ 在$(0,+\infty)$上单调减，故$\{x_n\}$不具有单调性,因此只能使用压缩映射.\\
