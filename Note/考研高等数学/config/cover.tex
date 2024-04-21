@@ -2,7 +2,6 @@
 \author{作者：LoafPhilosopher }
 \date{\today}
 \maketitle                   % 在单独的标题页上生成一个标题
-
 \thispagestyle{empty}        % 前言页面不使用页码
 \begin{center}
 	\Huge\textbf{前言}
@@ -20,8 +19,9 @@
 \setcounter{page}{1}          % 重新定义页码从第一页开始
 \pagenumbering{Roman}         % 使用大写的罗马数字作为页码
 
-
-\tableofcontents              % 生成目录
+\begin{spacing}{1.5}
+	\tableofcontents
+\end{spacing}           % 生成目录
 \newpage                      % 以下是正文
 \pagestyle{plain}
 \setcounter{page}{1}          % 使用阿拉伯数字作为页码
