@@ -67,8 +67,8 @@
     \end{problem}
     \begin{solution}
         易知函数的单调区间为$(0,\dfrac{\pi}{2}),(\dfrac{\pi}{2},\dfrac{3 \pi}{2}),(\dfrac{3\pi}{2},2\pi)$,在第一个区间上,当$0\leqslant x\leqslant\dfrac\pi2$时，对$y=\sin x$,有$x=\arcsin y,y\in[0,1];$.\\
-        当$\frac\pi2<x\leqslant\dfrac{3\pi}2$时,有$-\dfrac\pi2<x-\pi\leqslant\dfrac\pi2$, 此时$\sin(x-\pi)=-\sin(\pi-x)=-\sin x=-y$, 于是有$x-\pi=-\arcsin y$,故$x=\pi-\arcsin y,y\in[-1,1).$\\
-        当$\frac{3\pi}{2}<x\leq2\pi$时,有$-\frac\pi2<x-2\pi\leqslant0$, 此时$\sin(x-2\pi)=\sin x=y$, 于是有$x-2\pi=$ arcsin $y$ , 故$x=2\pi+\arcsin y,\:y\in(-1,0]$ \\
+        当$\dfrac\pi2<x\leqslant\dfrac{3\pi}2$时,有$-\dfrac\pi2<x-\pi\leqslant\dfrac\pi2$, 此时$\sin(x-\pi)=-\sin(\pi-x)=-\sin x=-y$, 于是有$x-\pi=-\arcsin y$,故$x=\pi-\arcsin y,y\in[-1,1).$\\
+        当$\dfrac{3\pi}{2}<x\leq2\pi$时,有$-\dfrac\pi2<x-2\pi\leqslant0$, 此时$\sin(x-2\pi)=\sin x=y$, 于是有$x-2\pi=$ arcsin $y$ , 故$x=2\pi+\arcsin y,\:y\in(-1,0]$ \\
         综上所述$$x=\begin{cases}\arcsin y ,&0\leqslant x\leqslant\dfrac{\pi}{2} ,\\ \pi-\arcsin y ,&\dfrac{\pi}{2}<x\leqslant\dfrac{3\pi}{2} ,\\ 2\pi+\arcsin y ,&\dfrac{3}{2}\pi<x\leqslant2\pi.\end{cases}$$
     \end{solution}
     \begin{note}
@@ -96,6 +96,7 @@
         如上图所示$x=f^{-1}(y)$中自变量为$y$,定义域为$[3,5]$,因变量$x$,值域为$[1,2]\footnote{此时仅发生了变量改变，$x=f^{-1}(y)$和$y=f(x)$图像在同一坐标轴中}$.\\
         \begin{center}
             \tikzset{every picture/.style={line width=0.75pt}}
+            \vspace{-0.5cm}
             \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
                 \draw  (188.22,210.43) -- (337.19,210.43)(208.14,125.17) -- (208.14,233.46) (330.19,205.43) -- (337.19,210.43) -- (330.19,215.43) (203.14,132.17) -- (208.14,125.17) -- (213.14,132.17) (228.14,205.43) -- (228.14,215.43)(248.14,205.43) -- (248.14,215.43)(268.14,205.43) -- (268.14,215.43)(288.14,205.43) -- (288.14,215.43)(308.14,205.43) -- (308.14,215.43)(203.14,190.43) -- (213.14,190.43)(203.14,170.43) -- (213.14,170.43)(203.14,150.43) -- (213.14,150.43) ;
                 \draw   ;
@@ -108,7 +109,7 @@
                 \draw (273,222) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
             \end{tikzpicture}
         \end{center}
-        最终化为$y=f^{-1}(x)$，其中自变量为$x$,定义域为$[3,5]$,因变量$y$,值域为$[1,2]$.此时反函数改写为$y=f^{-1}(x)$,该函数图像与$y=f(x)$关于直线$y=x$对称\\
+        最终化为$y=f^{-1}(x)$，其中自变量为$x$,定义域为$[3,5]$,因变量$y$,值域为$[1,2]$.此时反函数改写为$y=f^{-1}(x)$,该函数图像与$y=f(x)$关于直线$y=x$对称
     \end{criterion}
     \begin{defn}{反函数的性质}{}
         \begin{itemize}
@@ -138,15 +139,15 @@
     求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
     \end{problem}
     \begin{solution}
-        已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \frac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
+        已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \dfrac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
         对两边可以进行如下操作
         \begin{center}
             $e^{-y}=\sqrt{x^2+1}-x$\\
             $e^{y}=\sqrt{x^2+1}+x$\\
         \end{center}
-        那么可以得到$x=\frac{1}{2}(e^y-e^{-y})$
+        那么可以得到$x=\dfrac{1}{2}(e^y-e^{-y})$
         交换之后可以得到函数$f(x)$的反函数,即
-        $y=f^{-1}(x)=\frac{1}{2}(e^x-e^{-x})$.
+        $y=f^{-1}(x)=\dfrac{1}{2}(e^x-e^{-x})$.
     \end{solution}
     \begin{note}
         \begin{itemize}
@@ -173,9 +174,9 @@
         \end{itemize}
     \end{note}
     \subsection{复合函数}
-    设函数 $y=f(u)$的定义域为$D_1$,,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
+    设函数$y=f(u)$的定义域为$D_1$,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
     $$
-        y=f[\operatorname{g}(x)](x{\in}D)
+        y=f[g(x)](x{\in}D)
     $$
     确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集\footnote{需要注意的是,不是任何两个函数都可以进行复合,如果函数$A$的定义域与函数$B$的值域的交集为$\varnothing$,则两个函数不可进行复合}.
     \begin{problem}
@@ -183,9 +184,12 @@
     \newline
     $(A)\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}\text{不存在}.\quad(\mathrm{C})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}\text{不存在}.$
     \end{problem}
-    \begin{solution}\footnote{\textbf{看见复合函数,应把复合函数带入,把表达式求出来}}
+    \begin{solution}
         函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
     \end{solution}
+    \begin{note}
+        看见复合函数,应把复合函数带入,把表达式求出来
+    \end{note}
     \subsection{函数的四种特性及重要结论}
     \subsubsection{有界性}
     有界性分为三种情况,一种是有上界,一种是有下界,一种是有界。其中有界包含了有上界和有下界。
@@ -195,7 +199,7 @@
     \begin{itemize}\label{yjxpd1}
         \item \textbf{有界是指,同时有上界和下界}
         \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
-        \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\frac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
+        \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\dfrac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
     \end{itemize}
    \subsubsection{\textcolor{red}{有界性的判断}}
         \begin{itemize}
@@ -248,7 +252,7 @@
     (D)对任意的$x\in (-\delta,0)$有$f(x)>f(0)$
     \end{problem}
     \begin{solution}
-        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \frac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \dfrac{f(x)-f(0)}{x}$。
+        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \dfrac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \dfrac{f(x)-f(0)}{x}$。
     \end{solution}
     \subsubsection{单调性}
     \begin{defn}{单调性的定义}{}
@@ -263,8 +267,8 @@
         \end{itemize}
         \item 利用导数的定义,对任意$x_1,x_2\in D,x_1\neq x_2$,有
         \begin{itemize}
-            \item $f\left(x\right)$是单调增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]>0$
-            \item $f(x)$是单调减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]<0$
+            \item $f\left(x\right)$是单调增函数(严格单调)$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]>0$
+            \item $f(x)$是单调减函数(严格单调)$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]<0$
             \item $f(x)$是单调不减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]\geqslant0$
             \item $f\left(x\right)$是单调不增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]\leqslant0$
         \end{itemize}
@@ -434,14 +438,13 @@
                   $$
         \end{itemize}
     \end{criterion}
-
     \subsection{对数函数}
     $$
         y=\log_a x (a>0,a \neq 1)
     $$
     \begin{figure}[H]
         \centering \includegraphics[width=
-            0.6 \linewidth]{1.3.3.eps} \caption{对数函数图像}
+            0.5 \linewidth]{1.3.3.eps} \caption{对数函数图像}
     \end{figure}
     \begin{criterion}{对数函数相关性质}{}
         \begin{itemize}
@@ -530,7 +533,7 @@
     \end{figure}
     \begin{criterion}{正余割函数相关性质}{}
         \begin{itemize}
-            \item 定义域:$y=\sec x$的定义域是$\left\{x\left|x\neq k\pi+\frac{\pi}{2}\left(k\in\mathbf{Z}\right)\right\}\right.$;$y=\csc x$ 的定义域为$\{x|x\neq k\pi,(k \in \mathbf{Z})\}$值域均为:$(-\infty,-1]\cup[1,+\infty)$
+            \item 定义域:$y=\sec x$的定义域是$\left\{x\left|x\neq k\pi+\dfrac{\pi}{2}\left(k\in\mathbf{Z}\right)\right\}\right.$;$y=\csc x$ 的定义域为$\{x|x\neq k\pi,(k \in \mathbf{Z})\}$值域均为:$(-\infty,-1]\cup[1,+\infty)$
             \item 奇偶性:$y=\sec x$为偶函数,$y=\csc x$为奇函数
             \item 周期性:最小正周期均为$ 2\pi$
             \item $1+\tan^{2}\alpha=\sec^{2}\alpha;1+\cot^{2}\alpha=\csc^{2}\alpha $
@@ -555,7 +558,7 @@
     由于这两个函数分别是$\sin x$和 $\cos x$的反函数,因此可以知道的是,$\sin x$的值域是$\arcsin x$的定义域.因此可以得到下面的结论
     \begin{criterion}{反正余弦函数相关性质}{}
         \begin{itemize}
-            \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)\footnote{描述一个函数所有值的区间}$[-\frac{\pi}{2},\frac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$需要注意的是其值需要在值域内.因为只有在这个区间上,函数才满足反函数定义\ref{xxx1}中的唯一性.那么可以推断出如下的反函数:
+            \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)\footnote{描述一个函数所有值的区间}$[-\dfrac{\pi}{2},\dfrac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$需要注意的是其值需要在值域内.因为只有在这个区间上,函数才满足反函数定义\ref{xxx1}中的唯一性.那么可以推断出如下的反函数:
             $$
             \text{当}x \in [-\frac{\pi}{2},\frac{\pi}{2}]\text{时},x=\arcsin y
             $$
