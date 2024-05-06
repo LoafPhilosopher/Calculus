@@ -126,7 +126,21 @@
     % enhanced, drop fuzzy shadow,  % 显示阴影
 }
 {cor}
-% colback=red!5,colframe=red!75!black
+\newtcbtheorem[auto counter, number within=section, list type=subsubsection, list inside=toc]{conclusion}{结论}
+{
+    colback=red!5,colframe=red!75!black,fonttitle=\bfseries, title={Comment \thetcbcounter}, list entry={Comment \thetcbcounter\quad}, %标题
+    breakable, %支持跨页
+    before upper={\parindent10pt\noindent},  % 支持缩进。\noindent：首行不缩进
+    % left = 2mm, %文字离线框左边的边距
+    % right = 1mm,%同上
+    % top = 1mm,%同上
+    % bottom = 1mm,%同上
+    % arc is angular = 1mm, % 棱角线框
+    % sharp corners, % 直角线框
+    % enhanced,frame hidden, % 隐藏线框
+    % enhanced, drop fuzzy shadow,  % 显示阴影
+}
+{con}
 
 % ######### 定理环境 end  #####################################
 

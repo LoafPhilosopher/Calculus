@@ -101,10 +101,10 @@
     \end{them}
         上述定理可解释为导函数如果在某点极限存在,那么在该点导函数一定连续.因为导数存在要么有震荡间断点,要么连续.如果说该点导函数极限存在,那么一定连续.
     \begin{problem}
-        设$f(x)$ 在 $x=x_0$ 处有二阶导数，则\\
+        设$f(x)$ 在 $x=x_0$ 处有二阶导数,则\\
         (A) 当$f(x)$在$x_0$的某邻域内单调增加时,$f^\prime(x_0)>0.$
         (C)当$f(x)$在$x_0$的某邻域内是凹函数时,$f^{\prime\prime}(x_0)>0.$\\
-        (B)当$f^\prime(x_0)>0$时，$f(x)$在$x_0$的某邻域内单调增加
+        (B)当$f^\prime(x_0)>0$时,$f(x)$在$x_0$的某邻域内单调增加
         (D)当$f^{\prime\prime}(x_0)>0$时,$f(x)$在$x_0$的某邻域内是凹函数
     \end{problem}
     \begin{solution}
@@ -114,8 +114,8 @@
             
     \end{note}
     \begin{problem}
-        已知 $f(x)$ 在 $x=0$ 处连续，且$\lim_{x\to 0}\dfrac{x^2}{f(x)}=1$,则下列结论中正确的个数为\\
-        (1)$f^{\prime}(0)$ 存在，且 $f^\prime(0)=0.$ \quad (2)$f^{\prime\prime}(0)$ 存在，且 $f^{\prime\prime}(0)=2.$\\
+        已知 $f(x)$ 在 $x=0$ 处连续,且$\lim_{x\to 0}\dfrac{x^2}{f(x)}=1$,则下列结论中正确的个数为\\
+        (1)$f^{\prime}(0)$ 存在,且 $f^\prime(0)=0.$ \quad (2)$f^{\prime\prime}(0)$ 存在,且 $f^{\prime\prime}(0)=2.$\\
         (3)$f(x)$在$x=0$处取得极小值\quad (4)$f\left(x\right)$在 $x=0$ 的某邻域内连续.
     \end{problem}
     \begin{solution}
@@ -125,7 +125,7 @@
             
     \end{note}
     \begin{problem}
-        设函数$f(x)$在$(-1,1)$上有定义，且$\lim_{x\to0}f(x)=0$,则\\
+        设函数$f(x)$在$(-1,1)$上有定义,且$\lim_{x\to0}f(x)=0$,则\\
         (A)当$\lim_x\to0\dfrac{f(x)}{\sqrt{|x|}}=0$时$,f(x)$在$x=0$处可导
         (B)当$\lim_x\to0\dfrac{f(x)}{x^{2}}=0$时$,f(x)$在$x=0$处可导\\
         (C)当$f(x)$在$x=0$处可导时$,\lim_{x\to0}\dfrac{f(x)}{\sqrt{|x|}}=0$\quad
@@ -162,9 +162,9 @@
     \end{note}
     \begin{problem}
         下列命题正确的个数为:\\
-        1.设$\lim_{x\to x_0^-}f^{\prime}(x)$与$\lim_{x\to x_0^+}f^{\prime}(x)$均存在，则 $f(x)$ 在 $x=x_0$ 处必连续\\
+        1.设$\lim_{x\to x_0^-}f^{\prime}(x)$与$\lim_{x\to x_0^+}f^{\prime}(x)$均存在,则 $f(x)$ 在 $x=x_0$ 处必连续\\
         2.设$f^{\prime}_-(x_{0})$与$f^{\prime}_{+}(x_{0})$ 均存在,则$f(x)$在$x=x_{0}$处必连续\\
-        3.设$f(x_{0}^{-})$与$f(x_{0}^{+})$均存在，则$f(x)$在$x=x_{0}$处必连续\\
+        3.设$f(x_{0}^{-})$与$f(x_{0}^{+})$均存在,则$f(x)$在$x=x_{0}$处必连续\\
         4.设$\lim_{x\to x_{0}^{-}}f^{\prime}(x)$与$\lim_{x\to x_{0}^{+}}f^{\prime}(x)$中至少有一个不存在,则 $f(x)$ 在 $x=x_0$ 处必不可导
     \end{problem}
     \begin{solution}
@@ -251,6 +251,10 @@
         f^{\prime\prime}(x_0)=\lim_{\Delta x\to0}\dfrac{f^{\prime}(x_0+\Delta x)-f^{\prime}(x_0)}{\Delta x}\text{或}f^{\prime\prime}(x_0)=\lim_{x\to x_0}\dfrac{f^{\prime}(x)-f^{\prime}(x_0)}{x-x_0}
         $$
     \end{defn}
+    \begin{criterion}{$n$阶导数与$n-1$阶导数的关系}{}
+        如果$f(x)$在点$x_0$处有二阶导数,则$f(x)$在$x_0$的某个邻域内有一阶导数且$f^\prime(x)$在$x_0$处连续.\\
+        如果$f(x)$在点$x_{0}$处有$n$阶导数,则$f(x)在x_0$的某个邻域内有$1 \sim (n-1)$阶的各阶导数.
+    \end{criterion}
     \section{微分}
     \subsection{微分的概念}
     \begin{defn}{微分的定义}{}
@@ -334,7 +338,7 @@
         \left(uv\right)^{\prime}=u^{\prime}v+uv^{\prime}
     $$
     $$
-        \left(\frac uv\right)^{\prime}=\dfrac{u^{\prime}v-uv^{\prime}}{v^2}\quad(v\neq0)
+        \left(\dfrac uv\right)^{\prime}=\dfrac{u^{\prime}v-uv^{\prime}}{v^2}\quad(v\neq0)
     $$
     \subsection{复合函数的导数与微分形式不变性}
     \subsubsection{复合函数导数}
@@ -421,15 +425,281 @@
         \end{itemize}
     \end{defn}
     \subsection{高阶导数求导}
+    \subsubsection{归纳法求高阶导数}
+    常用高阶导数:
+    $$
+    \begin{aligned}
+        &\left[\sin(ax+b)\right]^{(n)}=a^{n}\sin\left(ax+b+\frac{n\pi}{2}\right)&  &\left[\cos(ax+b)\right]^{(n)}=a^{n}\cos\left(ax+b+\frac{n\pi}{2}\right)  \\
+        &\left[\ln(ax+b)\right]^{(n)}=(-1)^{n-1}a^{n}\frac{(n-1)!}{(ax+b)^{n}}  &  &\left(\frac{1}{ax+b}\right)^{(n)}=(-1)^{n}a^{n}\frac{n!}{(ax+b)^{n+1}}   \\
+        & \left(e^{ax+b}\right)^{(n)}=a^{n}e^{ax+b}&  & 
+       \end{aligned}
+    $$
+    \subsubsection{莱布尼兹公式求高阶导数}
+    设$u=u(x),\nu=\nu(x)$均$n$阶可导,则
+    $$
+        (u\pm v)^{(n)}=u^{(n)}\pm v^{(n)}
+    $$
+    $$
+        (u\nu)^{(n)}=u^{(n)}\nu+C_{n}^{1}u^{(n-1)}\nu^{\prime}+C_{n}^{2}u^{(n-2)}\nu^{\prime\prime}+\cdots+C_{n}^{k}u^{(n-k)}\nu^{(k)}+\cdots+C_{n}^{n-1}u^{\prime}\nu^{(n-1)}+u\nu^{(n)}=\sum_{k=0}^{n}C_{n}^{k}u^{(n-k)}\nu^{(k)}
+    $$
+    \subsubsection{泰勒公式求高阶导数}
+    已知带佩亚诺余项的$n$阶泰勒展开式的条件为,如果函数$f(x)$在$x_0$处具有$n$阶导数,那么该函数的抽象展开为
+    $$
+        y=f(x)=\sum_{n=0}^{\infty}\dfrac{f^{(n)}(x_0)}{n!}(x-x_0)^n
+    $$
+    具体展开为:
+    $$
+        f(x)=f(x_{0})+f'(x_{0})(x-x_{0})+\dfrac{f''(x_{0})}{2!}(x-x_{0})^{2}+\cdots+\dfrac{f^{(n)}(x_{0})}{n!}(x-x_{0})^{n}+o\left(\left(x-x_{0}\right)^{n}\right)
+    $$
+    当$x_0=0$时
+    $$
+        y=f(x)=\sum_{n=0}^\infty\dfrac{f^{(n)}(0)}{n!}x^n
+    $$
+    具体展开为:
+    $$
+        f(x)=f(0)+f'(0)x+\cdots+\dfrac{f^{(n)}(0)}{n!}x^{n}+o(x^{n}) 
+    $$
+    函数泰勒展开式的唯一性:无论$f(x)$由何种方法展开,其泰勒展开式具有唯一性,那么就可以通过比较抽象展开和具体展开的系数,获得$f^{(n)}(x_0)$或者$f^{(n)}(0)$
     \section{导数的几何应用}
     \subsection{极值}
+    \subsubsection{极值的定义}
+    \begin{defn}{极值的定义}{}
+        对于函数$f(x)$,若存在点$x_0$的某个邻域,使得在该邻域内任意一点$x$,均有
+        $$
+            f(x)\leqslant f(x_0)(\text{或}f(x)\geqslant f(x_0))
+        $$
+        成立,则称点$x_0$为$f(x)$的极大值点(或极小值点),$f(x_0)$为$f(x)$的极大值(或极小值).
+    \end{defn}
+    \begin{criterion}{极值的注意事项}{}
+        \begin{itemize}
+            \item 端点出不讨论极值,因为单侧可能不存在
+            \item 常函数某任一邻域内处处都是极值点
+            \item 间断点也可以极值点,只要满足其邻域内最大值即可.
+            \item 极值点只能有两种情况,即驻点和不可导点:
+            \begin{enumerate}
+                \item 驻点:$f^{\prime}(x_{0})=0$,如$y=x^{2}$在$(0,0)$处的情形
+                \item 不可导点:$f^{\prime}(x_{0})$不存在,如$y=\left|x\right|$在$(0,0)$处的情形
+            \end{enumerate}
+        \end{itemize}
+    \end{criterion}
+    \subsubsection{极值的判定}
+    \begin{defn}{极值判定的必要条件}{}
+        设$f(x)$在$x=x_0$处可导,且在点$x_0$处取得极值,则必有$f^{\prime}(x_0)=0$
+    \end{defn}
+    \begin{defn}{极值判定的第一充分条件}{}
+            设$f(x)$在$x=x_0$处连续,且在$x_0$的某去心邻域$\mathring U(x_0,\delta)(\delta>0)$内可导.
+            \begin{enumerate}
+                \item 若$x\in(x_0-\delta,x_0)$时$,f^\prime(x)<0$,而$x\in(x_0,x_0+\delta)$时$,f^\prime(x)>0$,则$f(x)$在$x=x_0$处取得极小值
+                \item 若$x\in(x_0-\delta,x_0)$时$,f^\prime(x)>0$,而$x\in(x_0,x_0+\delta)$时$,f^\prime(x)<0$,则$f(x)$在$x=x_0$处取得极大值
+                \item 若$f^\prime(x)$在$(x_0-\delta,x_0)$和$(x_0,x_0+\delta)$内不变号,则点$x_0$不是极值点
+            \end{enumerate}
+    \end{defn}
+    \begin{defn}{极值判定的第二充分条件}{}
+        设$f(x)$在$x=x_0$处二阶可导,且$f^\prime(x_{0})=0,f^{\prime\prime}(x_{0})\neq0$ 
+        \begin{enumerate}
+            \item 若$f^{\prime\prime}(x_{0})<0,则f(x)$在$x_0$处取得极大值
+            \item 若$f^{\prime\prime}(x_{0})>0,则f(x)$在$x_{0}$处取得极小值.
+        \end{enumerate}
+        \begin{proof}{极值判定的第二充分条件}
+            \begin{align*}
+              f^{\prime\prime} (x_0)& =  \lim_{x\to x_0} \dfrac{f'(x)-f'(x_0)}{x-x_0} \\
+              & =   \lim_{x\to x_0} \dfrac{f'(x)}{x-x_0} 
+            \end{align*}
+            若$x-x_0>0$且$f^{\prime\prime} (x_0)<0$,则$f'(x)<0$.若$x-x_0<0$且$f^{\prime\prime} (x_0)<0$,则$f'(x)>0$,那么$x_0$为极小值点.同理可得极大值点.
+        \end{proof}
+    \end{defn}
+    \begin{defn}{极值判定的第三充分条件}{}
+        设$f(x)$在$x=x_0$处$n$ 阶可导,且$f^{(m)}(x_0)=0(m=1,2,\cdots,n-1),f^{(n)}(x_0)\neq0(n\geqslant2)$,则
+        \begin{enumerate}
+            \item 当$n$为偶数且$f^{(n)}(x_0)<0$时,$f(x)$在$x_0$处取得极大值
+            \item 当$n$为偶数且$f^{(n)}(x_0)>0$ 时,$f(x)$在 $x_0$处取得极小值
+        \end{enumerate}
+    \end{defn}
     \subsection{单调性判别}
+    设函数$y=f(x)$在$[a,b]$上连续,在$(a,b)$内可导.
+    \begin{itemize}
+        \item 如果在(a,b)内$f^{\prime}(x)\geqslant0$,且等号仅在有限个点处成立,那么函数$y=f(x)$在$[a,b]$上严格单调增加
+        \item 如果在(a,b)内$f^{\prime}(x)\leqslant0$,且等号仅在有限个点处成立,那么函数$y=f(x)$在$[a,b]$上严格单调减少
+    \end{itemize} 
     \subsection{凹凸性}
+    \subsubsection{凹凸性第一种的定义}
+    \begin{defn}{凹凸性的定义}{}
+        设函数$f(x)$在区间$I$ 上连续.如果对 $I$ 上任意不同两点$x_1,x_2$,恒有
+        $$
+            f\left(\frac{x_{1}+x_{2}}{2}\right)<\dfrac{f(x_{1})+f(x_{2})}{2}
+        $$
+        则称 $y=f(x)$在$I$ 上的图形是凹的(或凹弧),即如下图所示
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \draw  (54,203.94) -- (261.57,203.94)(74.76,32.43) -- (74.76,223) (254.57,198.94) -- (261.57,203.94) -- (254.57,208.94) (69.76,39.43) -- (74.76,32.43) -- (79.76,39.43)  ;
+            \draw    (90,101) .. controls (163.57,156.43) and (210.57,108.43) .. (231.57,50.43) ;
+            \draw    (119,117) -- (223.57,70.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (119,117) -- (119.57,205.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (223.57,70.43) -- (223.57,204.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (161.57,99.43) -- (162.57,203.43) ;
+            \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (158.79,99.43) .. controls (158.79,97.89) and (160.03,96.64) .. (161.57,96.64) .. controls (163.11,96.64) and (164.36,97.89) .. (164.36,99.43) .. controls (164.36,100.97) and (163.11,102.21) .. (161.57,102.21) .. controls (160.03,102.21) and (158.79,100.97) .. (158.79,99.43) -- cycle ;
+            \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (159,124.79) .. controls (159,123.25) and (160.25,122) .. (161.79,122) .. controls (163.32,122) and (164.57,123.25) .. (164.57,124.79) .. controls (164.57,126.32) and (163.32,127.57) .. (161.79,127.57) .. controls (160.25,127.57) and (159,126.32) .. (159,124.79) -- cycle ;
+            \draw (55,210) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (255,211) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (56,29) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (112,205) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+            \draw (215,207) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+            \draw (140,207) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {$\displaystyle \dfrac{x_{1} +x_{2}}{2}$};
+            \draw (163.57,128.43) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle f\left(\dfrac{x_{1} +x_{2}}{2}\right)$};
+            \draw (120,55) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {$\displaystyle \dfrac{f( x_{1}) +f( x_{2})}{2}$};
+            \end{tikzpicture}
+        \end{center}
+        如果恒有
+        $$
+            f\left(\frac{x_1+x_2}2\right)>\frac{f(x_1)+f(x_2)}2
+        $$
+        则称 $y=f(x)$在$I$上的图形是凸的(或凸弧),即如下图所示
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            \draw  (54,203.94) -- (261.57,203.94)(74.76,32.43) -- (74.76,223) (254.57,198.94) -- (261.57,203.94) -- (254.57,208.94) (69.76,39.43) -- (74.76,32.43) -- (79.76,39.43)  ;
+            \draw    (113,130.14) .. controls (149,43.29) and (217,63.14) .. (250.57,79.43) ;
+            \draw    (119,117) -- (223.57,70.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (119,117) -- (119.57,205.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (223.57,70.43) -- (223.57,204.43) ;
+            \draw  [dash pattern={on 4.5pt off 4.5pt}]  (169.57,74.21) -- (173,205.14) ;
+            \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (166.79,71.43) .. controls (166.79,69.89) and (168.03,68.64) .. (169.57,68.64) .. controls (171.11,68.64) and (172.36,69.89) .. (172.36,71.43) .. controls (172.36,72.97) and (171.11,74.21) .. (169.57,74.21) .. controls (168.03,74.21) and (166.79,72.97) .. (166.79,71.43) -- cycle ;
+            \draw  [color={rgb, 255:red, 0; green, 0; blue, 0 }  ,draw opacity=1 ][fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (167,96.79) .. controls (167,95.25) and (168.25,94) .. (169.79,94) .. controls (171.32,94) and (172.57,95.25) .. (172.57,96.79) .. controls (172.57,98.32) and (171.32,99.57) .. (169.79,99.57) .. controls (168.25,99.57) and (167,98.32) .. (167,96.79) -- cycle ;
+            \draw (55,210) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+            \draw (255,211) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+            \draw (56,29) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+            \draw (112,205) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{1}$};
+            \draw (215,207) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{2}$};
+            \draw (149,208) node [anchor=north west][inner sep=0.75pt]  [font=\footnotesize] [align=left] {$\displaystyle \dfrac{x_{1} +x_{2}}{2}$};
+            \draw (141.79,15.79) node [anchor=north west][inner sep=0.75pt]  [font=\tiny] [align=left] {$\displaystyle f\left(\dfrac{x_{1} +x_{2}}{2}\right)$};
+            \draw (136.79,107.57) node [anchor=north west][inner sep=0.75pt]  [font=\scriptsize] [align=left] {$\displaystyle \dfrac{f( x_{1}) +f( x_{2})}{2}$};
+            \end{tikzpicture}
+        \end{center}
+    \end{defn}
+    \begin{defn}{凹凸性的第二种定义}{}
+        设$f(x)$在$[a,b]$上连续,在$(a,b)$内可导,若对$(a,b)$内的任意$x$ 及$x_0(x\neq x_0)$,均有
+        $$
+            f(x_0)+f^{\prime}(x_0)(x-x_0)<f(x)
+        $$
+        则称$f(x)$在$[a,b]$的图形上是凹的\\
+        同理,当上式$>0$时,则称$f(x)$在$[a,b]$的图形上是凸的
+    \end{defn}
+    \begin{criterion}{凹凸性第二种定义的几何意义}{}
+        $y=f(x_0)+f^\prime(x_0)(x-x_0)$是曲线$y=f(x)$在点$(x_0,f(x_0))$处的切线方程,因此该表达式的几何意义如下图所示.若曲线 $y=f(x)(a<x<b)$在任意点处的切线(除该点外)总在曲线的下方(上方),则该曲线是凹(凸)的.
+        \begin{center}
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+                \draw  (54,203.94) -- (261.57,203.94)(74.76,32.43) -- (74.76,223) (254.57,198.94) -- (261.57,203.94) -- (254.57,208.94) (69.76,39.43) -- (74.76,32.43) -- (79.76,39.43)  ;
+                \draw    (91,142.14) .. controls (125,98.29) and (188,92.14) .. (235,112.14) ; 
+                \draw    (360,131.14) .. controls (425,158.14) and (474,141.14) .. (504,101.14) ;
+                \draw  (326,204.94) -- (533.57,204.94)(346.76,33.43) -- (346.76,224) (526.57,199.94) -- (533.57,204.94) -- (526.57,209.94) (341.76,40.43) -- (346.76,33.43) -- (351.76,40.43)  ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (91,142.14) -- (91,203.14) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (235,112.14) -- (235,202.14) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (360,131.14) -- (361,204.14) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (504,101.14) -- (505,204.14) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (168,103.14) -- (168,202.14) ;
+                \draw  [dash pattern={on 4.5pt off 4.5pt}]  (431,146.14) -- (432,207.14) ;
+                \draw    (86,112.14) -- (260,92.14) ;
+                \draw    (344,156.14) -- (518,133.14) ;
+                \draw (55,210) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                \draw (255,211) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                \draw (56,29) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (333,208) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                \draw (86,208) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle a$};
+                \draw (357,209) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle a$};
+                \draw (230,210) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle b$};
+                \draw (501,212) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle b$};
+                \draw (159,208) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{0}$};
+                \draw (423,212) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x_{0}$};
+                \draw (243,106) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f( x)$};
+                \draw (369,115) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle f( x)$};
+            \end{tikzpicture}
+        \end{center}
+    \end{criterion}
+    \subsubsection{凹凸性的判别}
+    \begin{defn}{凹凸性的判别}{}
+        设函数$f(x)$在$I$ 上二阶可导:
+        \begin{enumerate}
+            \item 若在$I$上$f^{\prime\prime}(x)>0$,则$f(x)$在$I$上的图形是凹的
+            \item 若在$I$上$f^{\prime\prime}(x)<$0,则$f(x)$在$I$上的图形是凸的
+        \end{enumerate}
+    \end{defn}
     \subsection{拐点}
+    \subsubsection{拐点的定义}
+    \begin{defn}{拐点的定义}{}
+        连续曲线的凹弧与凸弧的分界点称为该曲线的拐点
+    \end{defn}
+    \begin{criterion}{拐点存在的情况}{}
+        若点$(x_0,f(x_0))$为曲线 $y=f(x)$的拐点,则只有以下两种情况
+        \begin{enumerate}
+            \item $f^{\prime\prime}\left(x_{0}\right)=0$,如 $y=x^{3}$ 在$\left(0,0\right)$处的情形
+            \item $f^{\prime\prime}(x_0)$不存在,如$y=\sqrt[3]{x}$在$(0,0)$处的情形
+        \end{enumerate}
+    \end{criterion}
+    \subsubsection{拐点的判别}
+    \begin{defn}{拐点的判别的必要条件}{}
+        设$f^{\prime\prime}(x_0)$存在,且点$(x_0,f(x_0))$为曲线的拐点,则$f^{\prime\prime}(x_0)=0$
+    \end{defn}
+    \begin{defn}{拐点的判别的第一充分条件}{}
+        设$f(x)$在点 $x=x_0$处连续,在点 $x=x_0$的某去心邻域$\mathring U(x_0,\delta)$内二阶导数存在,且在该点的左、右邻域内$f^{\prime\prime}(x)$变号 (无论是由正变负,还是由负变正 ),则点 $(x_0,f(x_0))$为曲线的拐点\footnote{$(x_0,f(x_0))$为曲线$y=f(x)$的拐点,并不要求$f(x)$在点$x_0$的导数存在}.
+    \end{defn}
+    \begin{defn}{拐点的判别的第二充分条件}{}
+        设$f(x)$在 $x=x_0$ 的某邻域内三阶可导,且$f^{\prime\prime}(x_0)=0,f^{\prime\prime\prime}(x_0)\neq0$,则点$(x_0,f(x_0))$为曲线的拐点.
+    \end{defn}
+    \begin{defn}{拐点的判别的第三充分条件}{}
+        设$f(x)$在$x_0$处$n$ 阶可导,且$f^{(m)}(x_0)=0(m=2,\cdots,n-1),f^{(n)}(x_0)\neq0(n\geqslant3)$,则当$n$为奇数时,点$(x_0,f(x_0))$为曲线的拐点 .
+    \end{defn}    
+    \subsubsection{极值点和拐点的重要结论}
+    \begin{conclusion}{极值点和拐点的重要结论}{}
+        \begin{enumerate}
+            \item 曲线的可导点不可同时为极值点和拐点；曲线的不可导点可同时为极值点和拐点
+            \item 设多项式函数$f(x)=(x-a)^n g(x)(n>1)$,且$g(a)\neq0$,则当$n$为偶数时,$x=a$是$f(x)$的极值点;当$n$为奇数时,点$(a,0)$是曲线$f(x)$的拐点.
+            \item 设多项式函数$f(x)=(x-a_1)^{n_1}(x-a_2)^{n_2}...(x-a_k)^{n_k}$,其中$n_i$是正整数,$a_i$是实数且$a_i$两两不等,$i= 1, 2, \cdots,k$.\\记$k_1$为$n_i=1$ 的个数,$k_2$为$n_i>1$且$n_i$为偶数的个数,$k_3$为$n_i>1$且$n_i$为奇数的个数,则$f(x)$的极值
+            点个数为$k_1+2k_2+k_3-1$,拐点个数为$k_1+2k_2+3k_3-2.$
+        \end{enumerate}
+    \end{conclusion}
     \subsection{渐近线}
+    
+    \subsubsection{铅直渐近线}  
+    \begin{defn}{铅直渐近线定义}{}
+        若$\lim_{x\to x_0^+}f(x)=\infty($或$\lim_{x\to x_0^-}f(x)=\infty)$,则$x=x_0$为一条铅直渐近线.
+    \end{defn}
+    \subsubsection{水平渐近线}
+        \begin{defn}{水平渐近线定义}{}
+            若$\lim_{x\to+\infty} f(x)=y_{1}$,则$y=y_1$为一条水平渐近线.\\
+            若$\lim_{x\to-\infty} f(x)=y_{2}$,则$y=y_{2}$为一条水平渐近线.\\
+            ${\text{若 }}\lim _{x\to + \infty }f( x) = \lim _{x\to - \infty }f( x) = y_{0}$ , ${\text{则  }y= y_{0}}$为一条水平渐近线
+        \end{defn}
+    \subsubsection{斜渐近线}
+        \begin{defn}{斜渐近线定义}{}
+            若$\lim_{x\to+\infty}\dfrac{f(x)}{x}=a_{1}(a_{1}\neq0),\lim_{x\to+\infty}\Big[f(x)-a_{1}x\Big]=b_{1}$,则$y=a_{1}x+b_{1}$是曲线$y=f(x)$的一条斜渐近线\\
+            若$\lim\limits_{x\to-\infty}\dfrac{f(x)}{x}=a_2(a_2 \neq 0),\lim\limits_{x\to-\infty}\left[f(x)-a_2x\right]=b_2$,则$y=a_2x+b_2$是曲线$y=f(x)$的一条斜渐近线\\
+            若$\lim_{x\to+\infty} \dfrac{f(x)}x=\lim_{x\to-\infty}\dfrac{f(x)}x=a(a\neq0),\lim_{x\to+\infty}\left[f(x)-ax\right]=\lim_{x\to-\infty}\left[f(x)-ax\right]=b,则y=ax+b$ 是曲线$y=f(x)$的一条斜渐近线.
+        \end{defn}
     \subsection{最值}
-    \subsection{函数图像绘制}
+    \subsubsection{最值的定义}
+    \begin{defn}{最值的定义}{}
+        设$x_0$为$f(x)$定义域内一点,若对于$f(x)$的定义域内任意一点$x$,均有
+        $$
+            f(x)\leqslant f(x_0)(\text{或}f(x)\geqslant f(x_0))
+        $$
+        成立,则称$f(x_0$)为$f(x)$的最大值(或最小值).
+    \end{defn}
+    \begin{conclusion}{有关极值点和最值点的结论}{}
+        如果$f(x)$在区间$I$上有最值点$x_0$,并且此最值点$x_0$不是区间$I$的端点而是$I$ 内部的点,那么此$x_0$必是$f(x)$的一个极值点.
+    \end{conclusion}
     \subsection{曲率与曲率半径}
+    \begin{defn}{曲率与曲率半径的计算公式}{}
+        设$y(x)$二阶可导,则曲线$y=y(x)$在点$(x,y(x))$处的曲率公式为
+        $$
+            k=\dfrac{\left|y^{\prime\prime}\right|}{\left[1+(y^{\prime})^2\right]^{\frac{3}{2}}}
+        $$
+        曲率半径的计算公式
+        $$
+            R=\dfrac{1}{k}=\dfrac{\left[1+(y')^2\right]^{\frac{3}{2}}}{\left|y''\right|}(y''\neq0)
+        $$
+    \end{defn}
     %  ############################ 正文部分
         \ifx\allfiles\undefined
     \end{sloppypar}
