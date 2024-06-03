@@ -28,34 +28,27 @@
         $$
             f^{\prime}(x_{0})=\lim_{x\to x_{0}}\dfrac{f\left(x\right)-f\left(x_{0}\right)}{x-x_{0}}
         $$
+        观察上式,可以观察到上式有以下特点:
+        \begin{itemize}
+            \item 分母同时趋近于$0^+$和$0^-$
+            \item $\Delta x$在趋于0的过程中没有间断点
+            \item 分子为一个动点一个定点
+        \end{itemize}
         \item 以下的三种说法是等价的:
             \begin{itemize}
                 \item  $y=f\left(x\right)$在点$x_{0}$处可导
                 \item $y=f\left(x\right)$在点$x_{0}$处导数存在
                 \item  $f^{\prime}\left(x_{0}\right)=A\left(A\text{为有限数}\right)$
             \end{itemize}
-        \item \textcolor{red}{导数若存在,则导数要么连续,要么只可能有震荡间断点}
-        \begin{proof}[导数若存在有震荡间断点的证明:]
-            以函数$F(x)=\begin{cases}
-                x^2 \sin \dfrac{1}{x} ,x \neq 0\\
-                0,x=0
-            \end{cases}$为例:
-            \\根据导数定义对函数在$x=0$处求导:$F'(0)=\lim_{x\to 0}\dfrac{F(x)-F(0)}{x-0}=\lim_{x\to 0}\dfrac{x^2 \sin \frac1x - 0}{x}=\lim_{x\to 0}x \sin \dfrac{1}{x}=0$因此函数$F(x)$在$x=0$处导数存在.那么对函数求导:\\
-            $F'(x)=\begin{cases}
-                2x \sin \dfrac{1}{x} -\cos \dfrac{1}{x} ,x\neq 0\\
-                0 ,x=0
-            \end{cases}$,那么易知$\lim_{x\to 0}\left(2 x \sin \dfrac{1}{x} -\cos \dfrac{1}{x} \right)$是震荡的.虽然函数导数存在,但是这是震荡间断点.
-        \end{proof}
-        同时,导数震荡的话,则导数极限不存在,由此可以推出衍生推论:导数极限定理\ref{dsjxdl}
         \item 原函数可导无法推出导函数连续
-        \item \textbf{函数在一点可导的必要条件:若$f(x)$在一点可导,则$f(x)$在该点连续}
         \item \textcolor{red}{需要区分一点处的右导数和导数的右极限}
             \begin{itemize}
                 \item $f_+'(x_0) \Rightarrow$表示一点处的右导数$\Rightarrow \lim_{x \to x_0^+}\dfrac{f(x)-f(x_0)}{x-x_0}$
                 \item $f'(x_0 ^+)=f'(x_0+0) \Rightarrow$导数的右极限$\Rightarrow \lim_{x\to x_0^+}f'(x)$
                 \item $f(x_{0}^{+})=f(x_{0}+0) \Rightarrow$函数的右极限$\Rightarrow \lim_{x\to x ^+ _0}f(x)$
             \end{itemize}
-        如果函数$f(x)$连续可导或者$f'(x)$连续,那么$f_+'(x_0)=f'(x_0^+)$,即右导数等于右极限.如果不连续,以函数$f(x)=\begin{cases}
+        如果函数$f(x)$连续可导或者$f'(x)$连续,那么$f_+'(x_0)=f'(x_0^+)$,即一点处的右导数等于导数的右极限.此处如果可以这样理解:把导数降一个纬度理解,令$f'(x)=F(x)$,那么如果$F(x)$在$x_0$处左侧的值和$F(x)$左侧极限相等,则$F(x)$必须可导或者连续,那么可以得到$f'(x)$连续或$f(x)$连续可导.
+        如果不连续,以函数$f(x)=\begin{cases}
             x,x \leqslant 0\\
             x+1,x >0
         \end{cases}$为例:
@@ -72,7 +65,7 @@
         (A) 可导 \quad (B)连续 \quad  (C)不可导 \quad (D)不一定连续
     \end{problem}
     \begin{solution}
-        左右导数存在说明左右可导,左可导说明左连续,右可导说明右连续.左连续说明左侧极限等于该点函数值,右连续说明右侧极限等于该点函数值,那么左右极限相等且等于该点函数值,那么函数在该点连续.因此B选项正确.
+        左右导数存在说明左右可导,左可导说明左连续,右可导说明右连续\footnote{一点可导的必要条件}.左连续说明左侧极限等于该点函数值,右连续说明右侧极限等于该点函数值,那么左右极限相等且等于该点函数值,那么函数在该点连续.因此B选项正确.
     \end{solution}
     \begin{problem}
         设$f(0)=0$,则$f(x)$在点$x=0$可导的充要条件为\\
@@ -86,8 +79,7 @@
         D:若$\lim_{h \to 0}\dfrac{1}{h}[f(2h)-f(h)]$存在,那么其实什么都推不出来,因为不知道$\dfrac{f(2h)}{h}$和$\dfrac{f(h)}{h}$是否存在,如果写成下列形式$\lim_{h \to 0}\dfrac{[f(2h)-f(0)]-[f(h)-f(0)]}{h}=\lim_{h \to 0}\left(\dfrac{f(2h)-f(0)}{h}-\dfrac{f(h)-f(0)}{h}\right)$,则违反了极限的运算法则.\\
         综上答案选择B选项
     \end{solution}
-    \begin{note}
-        \textcolor{red}{若想推出$f(x)$在$x=0$处可导,则必须满足下面的四个条件:}
+    \begin{conclusion}{若$f(x)$在$x=0$处可导,则必须满足下面的四个条件:}{}
         \begin{enumerate}
             \item 一动减一定:必须是一个动点减一个定点.比如上题中的D选项,本质上是两个动点相减.
             \item 可正可负:指的是分母,即定义中的$\square$,需要同时趋近于$0^+$和$0^-$,如果只能趋近于一个,则为单侧导数.
@@ -95,23 +87,53 @@
             若$\lim_{x\to 0}\dfrac{f(x-\sin x)-f(0)}{x^4}$存在,那么$\lim_{x\to 0}\dfrac{f(x-\sin x)-f(0)}{x-\sin x}\cdot \dfrac{x - \sin x}{x^4}$,其中$ x - \sin x \sim \dfrac{1}{6}x^3$,那么$\lim_{x\to 0}\dfrac{f(x-\sin x)-f(0)}{(x-\sin x)-0}\cdot \dfrac{1}{6x}$,其中$\lim_{x\to 0} \dfrac{1}{6x} \to \infty$,那么$\lim_{x\to 0}\dfrac{f(x-\sin x)-f(0)}{(x-\sin x)-0}$必定存在且$\dfrac{f(x-\sin x)-f(0)}{(x-\sin x)-0}=0 \Rightarrow f'(0)=0$
             \item 填满邻域:在定义中的$\square$需要把其附近邻域都给填满.比如下面的例子:$\lim_{n\to \infty}\dfrac{f(\frac{1}{n})-f(0)}{\frac{1}{n}}=0$,无法推出$f'_+(0)=0$存在,因为$\dfrac{1}{n}$取不到无理数,无法包含$\square$邻域
         \end{enumerate}
-    \end{note}
+        上述结论的本质还是导数的定义表达式的特点.
+    \end{conclusion}
+    \begin{problem}
+        设函数$f(x)$连续,且$f'(0)>0$,则存在$\delta >0 $使得:\\
+        (A)$f(x)$在$(0,\delta)$内单调增加 \quad (B)$f(x)$在$(0,\delta)$内单调减少\\
+        (C)对任意的$x \in (0,\delta)$有$f(x)>f(0)$ \quad    (D)对任意的$x\in (-\delta,0)$有$f(x)>f(0)$
+        \end{problem}
+        \begin{solution}
+            A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题(但是本题中例子并不重要，重要的是思想)即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \dfrac{1}{x^b}\pm M \pm f(x)$}}:已知函数$f(x)$连续,且函数在$f'(0)$处的导数大于0,那么只能说明函数在$x=0$点导数存在且大于0,0可能是函数的震荡间断点.因此函数无法说明函数在邻域内单增或者单减.C,D选项:对函数在$x=0$求导数,即$\lim_{x\to 0} \dfrac{f(x)-f(0)}{x}>0$,则C选项成立.
+        \end{solution}
+    \begin{criterion}{函数可导性与连续的关系}{}
+        \begin{enumerate}
+            \item \textcolor{red}{导数若存在,则导数要么连续,要么只可能有震荡间断点}
+            \begin{proof}[导数若存在有震荡间断点的证明:]
+                以函数$F(x)=\begin{cases}
+                    x^2 \sin \dfrac{1}{x} ,x \neq 0\\
+                    0,x=0
+                \end{cases}$为例:
+                \\根据导数定义对函数在$x=0$处求导:$F'(0)=\lim_{x\to 0}\dfrac{F(x)-F(0)}{x-0}=\lim_{x\to 0}\dfrac{x^2 \sin \frac1x - 0}{x}=\lim_{x\to 0}x \sin \dfrac{1}{x}=0$因此函数$F(x)$在$x=0$处导数存在.那么对函数求导:\\
+                $F'(x)=\begin{cases}
+                    2x \sin \dfrac{1}{x} -\cos \dfrac{1}{x} ,x\neq 0\\
+                    0 ,x=0
+                \end{cases}$,那么易知$\lim_{x\to 0}\left(2 x \sin \dfrac{1}{x} -\cos \dfrac{1}{x} \right)$是震荡的.虽然函数导数存在,但是这是震荡间断点.
+            \end{proof}
+            同时,导数震荡的话,则导数极限不存在,由此可以推出衍生推论:导数极限定理\ref{dsjxdl}
+            \item \textcolor{red}{函数在一点可导的必要条件:若$f(x)$在一点可导,则$f(x)$在该点连续}\footnote{上面两个结论非常重要,经常和高阶导数一起考察}
+        \end{enumerate}
+    \end{criterion}
     \begin{them}{导数极限定理}{}\label{dsjxdl}
         如果$f(x)$在$x_0$的邻域内连续,在$x_{0}$的去心邻域内可导,且导函数在$x_{0}$处的极限存在(等于$a$),则$f(x)$在$x_0$处的导数也存在并且等于导函数的极限(等于$a$)
     \end{them}
-        上述定理可解释为导函数如果在某点极限存在,那么在该点导函数一定连续.因为导数存在要么有震荡间断点,要么连续.如果说该点导函数极限存在,那么一定连续.
+        上述定理可解释为导数如果在某点极限存在,那么在该点导函数一定连续.因为导数存在要么有震荡间断点,要么连续.如果说该点导函数极限存在,那么一定连续.
     \begin{problem}
         设$f(x)$ 在 $x=x_0$ 处有二阶导数,则\\
         (A) 当$f(x)$在$x_0$的某邻域内单调增加时,$f^\prime(x_0)>0.$
-        (C)当$f(x)$在$x_0$的某邻域内是凹函数时,$f^{\prime\prime}(x_0)>0.$\\
-        (B)当$f^\prime(x_0)>0$时,$f(x)$在$x_0$的某邻域内单调增加
+        (B)当$f^\prime(x_0)>0$时,$f(x)$在$x_0$的某邻域内单调增加\\
+        (C)当$f(x)$在$x_0$的某邻域内是凹函数时,$f^{\prime\prime}(x_0)>0.$
         (D)当$f^{\prime\prime}(x_0)>0$时,$f(x)$在$x_0$的某邻域内是凹函数
     \end{problem}
     \begin{solution}
-        A:当$f(x)$在$x_0$某邻域内单调增加时,
+        A:当函数$f(x)$在$x_0$处的邻域内单增,$f'(x_0)$的值可以为0,这样函数也是单调递增.\\
+        B:已知$f(x)$ 在 $x=x_0$ 处有二阶导数,那么$f'(x)$在$x_0$处连续.当函数$f'(x_0)>0$时,排除了震荡的情况,因此B选项正确\\
+        C:领域内$f''(x)>0$,则$f(x)$为凹函数,反之则不行,因为可能存在二阶导为0的点,但是依然为凹函数,如$f(x)=x^2$\\
+        D:$f''(x_0)>0$可能存在震荡间断点,因此不能推出邻域内$f''(x)>0$
     \end{solution}
     \begin{note}
-            
+      D选项,如果增加条件,$f''(x)$在$x=x_0$处连续或$f'''(x_0)$存在,则D选项也成立.
     \end{note}
     \begin{problem}
         已知 $f(x)$ 在 $x=0$ 处连续,且$\lim_{x\to 0}\dfrac{x^2}{f(x)}=1$,则下列结论中正确的个数为\\

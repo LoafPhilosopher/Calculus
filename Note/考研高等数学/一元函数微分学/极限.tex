@@ -16,7 +16,6 @@
             \lim_{n\to\infty}x_n=a\text{或}x_n\to a(n\to\infty)
         $$
         该定义的$\varepsilon-N$\footnote{$\varepsilon - N$\textcolor{red}{几何意义: 对于点$a$的任何$\varepsilon$邻域即开区间$(a-\varepsilon,a+\varepsilon)$一定存在$N$,当$n < N$即第$N$项以后的点$x_n$都落在开区间$(a-\varepsilon,a+\varepsilon)$内,而只有有限个(最多有$N$个)在区间之外.}}语言描述是
-        \newline
         $$\lim_{n\to\infty}x_n=a\Leftrightarrow\forall\varepsilon>0,\exists\text{正整数}N,\text{当}n>N\text{时},\text{有}|x_n,-a|<\varepsilon.$$
     \end{defn}
     在上面的定义中,$\varepsilon>0$的$\varepsilon$任意性是非常重要的,只有这样才能表示出\textcolor{red}{无限接近的意义}.总存在正整数$N$,使得$n>N$这个条件用于表达$n \to \infty$的过程.
@@ -27,6 +26,10 @@
             \item \textcolor{red}{数列的最值只能在前有限项中取得,前有限项有比极限值大的,则数列存在最大值.前有限项有比极限值小的,则数列存在最小值}
             \item \textcolor{red}{若数列$\{a_n\}$收敛,则其任何子列$\{a_{n_k}\}$也收敛,且$\lim_{k\to\infty}a_{n_k}=\lim_{n\to\infty}a_n$}\footnote{ 此条定理提供了一个判断数列发散的方法:1.至少一个子数列发散.2.两个子数列收敛,但是收敛值不同.}
             \item $\underset{n\to\infty}{\operatorname*{\lim}}x_n=a\Leftrightarrow\underset{k\to\infty}{\operatorname*{\lim}}x_{2k-1}=\underset{k\to\infty}{\operatorname*{\lim}}x_{2k}=a$
+        \end{itemize}
+    \end{criterion}
+    \begin{conclusion}{数列极限常用结论}{}
+        \begin{itemize}
             \item \textbf{$\lim_{n \to \infty }\sqrt[n]{n}=1.\lim_{n \to \infty} \sqrt[n]{a}=1(a>0)$}\label{jl1}
             \item 关于数列$(1+\dfrac{1}{n})^n$的结论
             \begin{itemize}
@@ -34,9 +37,9 @@
                 \item $\lim_{n\to \infty}(1+\dfrac{1}{n})^n=e$
             \end{itemize}
         \end{itemize}
-    \end{criterion}
+    \end{conclusion}
     \begin{problem}
-        已知$a_{n}=\sqrt[n]{n}-\frac{(-1)^{n}}{n}(n=1,2,\cdots)$,则${a_n}$\\
+        已知$a_{n}=\sqrt[n]{n}-\dfrac{(-1)^{n}}{n}(n=1,2,\cdots)$,则${a_n}$\\
         (A) 有最大值,有最小值 \quad (B) 有最大值,没有最小值 \\ (C)没有最大值,有最小值 \quad (D)没有最大值,没有最小值
     \end{problem}
     \begin{solution}
@@ -48,7 +51,7 @@
     \begin{proof}
         已知数列$a_n$极限为$A$,那么$|a_n-A|<\varepsilon$,由不等式\ref{lyzybds1}可得,$||a_n|-|A||\leqslant|a_n -A|<\varepsilon$,因此$\lim_{n \to \infty }|a_n|=|A|$.
         \end{proof}
-    \begin{note}
+    \begin{corollary}{上题题目推论}{}
         \begin{enumerate}
             \item 此命题反过来则错误,如取$a_n=(-1)^n$,则$\lim_{n\to\infty}\left|(-1)^n\right|=1$.但$\lim_{n\to\infty}(-1)^n$不存在.
             \item 在本题中若$A=0$,则$||a_n|-|A||=||a_n|-0|=|a_n-0|$,即有
@@ -58,7 +61,7 @@
             此结论常用,即若要证明$\lim _{n \to \infty}a_n=0$,可转换为证明$\lim_{n \to \infty}|a_n|=0$,由于$|a_n| \geq 0$,若使用了夹逼准则,只需证明$|a_n|\leqslant 0$即可
             \item 此结论对函数亦成立,即\textcolor{red}{若$\lim_{x\to x_0 }f\left(x\right)=A$,则$\lim_{x\to x_0}\left|f\left(x\right)\right|=\left|A\right|.$}
         \end{enumerate}
-    \end{note}
+    \end{corollary}
     \begin{problem}
         设$\lim_{n \to +\infty} a_n=a$,且$a\neq0$,则当$n$ 充分大时有\\
         $\mathrm{(A)}\mid a_n\mid>\dfrac{\mid a\mid}{2}.\quad\mathrm{(B)}\mid a_n\mid<\dfrac{\mid a\mid}{2}.\quad\mathrm{(C)}a_n>a-\dfrac{1}{n}.\quad\mathrm{(D)}a_n<a+\dfrac{1}{n}.$
@@ -197,7 +200,7 @@
     \begin{defn}{超实数系的概念}{}
         超实数(Hyperreal number)是一个包含实数以及无穷大和无穷小的域,它们的绝对值分别大于和小于任何正实数.
     \end{defn}
-    \begin{criterion}{}{}
+    \begin{criterion}{超实数集}{}
         \begin{itemize}
             \item 超实数集\textcolor{red}{是为了严格处理无穷量(无穷大量和无穷小量)而提出的}.
             \item 超实数集,或称为非标准实数集,记为$^{*}\mathbb{R}$,是实数集$\mathbb{R}$的一个扩张.
@@ -232,7 +235,7 @@
         $$
         $\forall\varepsilon>0,\exists\delta>0$在证明中,这两句是白给,直接写.后面的才是关键.
     \end{defn}
-    \begin{criterion}{}{}
+    \begin{criterion}{函数极限注意事项}{}
         \begin{enumerate}
             \item 在函数极限中$x \to \infty$指的是$|x| \to \infty$,需要$x$趋于正无穷和负无穷,但在数列中的$n \to \infty$是$n \to +\infty$
             \item \textcolor{red}{函数的极限值只与邻域内的函数值有关,而与该点的函数值无关}.
@@ -569,8 +572,10 @@
     \end{defn}
     前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}\footnote{例如,当 $x\to 0$ 时,$x\sin\dfrac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \dfrac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$}.
     \newline
-    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.\\
-    \textcolor{red}{无穷小比阶的结论:若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小}
+    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.
+    \begin{conclusion}{无穷小比阶的结论}{}
+        若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小
+    \end{conclusion}
     \begin{problem}
         把$x\to 0^+$时的无穷小$a= \int _0^x \cos t^2dt$, $\beta= \int _0^{x^2} \tan\sqrt{t} dt$, $\gamma= \int _0^{\sqrt{x}} \sin t^3 dt$进行排序,使排在后面的是前一个的高阶无穷小,则正确的排列顺序是
     \end{problem}
@@ -712,7 +717,7 @@
     \end{problem}
     \begin{proof}
         \begin{enumerate}
-            \item \textcolor{red}{$\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$}
+            \item $\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
             \item \textbf{由于$g(x)=\dfrac{f(x)}{\frac{f(x)}{g(x)}}$,则$\lim g(x)=\lim\dfrac{f(x)}{\frac{f(x)}{g(x)}}=\dfrac{\lim f(x)}{\lim\frac{f(x)}{g(x)}}=\dfrac{0}{A}=0$}
             \item 无法推出,有如下反例
             \begin{itemize}
@@ -721,14 +726,18 @@
             \end{itemize}
             因此结论不成立.若要成立,则应改为:
             \begin{itemize}
-                \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,且$g(x)\neq A$}\footnote{从根本上排除了常值函数和振荡间断点的反例},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
-                \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,即$f(x)$在$x=A$处连续}\footnote{\textcolor{red}{不管内函数能否取到极限值,只要外函数连续,复合之后极限一定存在}},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
+                \item 若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,且$g(x)\neq A$,则$\lim_{x\to x_0}f(g(x))=B$
+                \item 若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,即$f(x)$在$x=A$处连续,则$\lim_{x\to x_0}f(g(x))=B$
             \end{itemize}
         \end{enumerate}
     \end{proof}
-    \begin{note}
-        此题的三个证明是常用结论
-    \end{note}
+    \begin{conclusion}{上题的三个结论}{}
+        \begin{itemize}
+            \item $\lim f(x)=\lim\dfrac{f(x)}{g(x)}\cdot g(x)=\lim\dfrac{f(x)}{g(x)}\cdot\lim g(x)=A\cdot0=0.$
+            \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,且$g(x)\neq A$}\footnote{从根本上排除了常值函数和振荡间断点的反例},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
+            \item \textcolor{red}{若$\lim_{x \to x_0}g(x)=A,\lim_{x\to A}f(x)=B$,即$f(x)$在$x=A$处连续}\footnote{\textcolor{red}{不管内函数能否取到极限值,只要外函数连续,复合之后极限一定存在}},\textcolor{red}{则$\lim_{x\to x_0}f(g(x))=B$}
+        \end{itemize}
+    \end{conclusion}
     \begin{problem}
         求$\lim_{x\to+\infty}\dfrac{e^x}{\left(1+\dfrac1x\right)^{x^2}}.$极限
     \end{problem}
@@ -748,7 +757,7 @@
         如果想把分子写$x \to 0$时的导数形式,然后进行计算,即$\lim_{x \to 0}\dfrac{\frac{f(x)-f(0)}{x-0}}{f'(0)}=\dfrac{f'(0)}{f'(0)}=1$进行运算,则不满足极限四则运算法则\ref{jxdsz1},因为其分母为0,违背了极限的四则运算法则,因此不可这样计算,需要对其进行恒等变形计算.即
         \begin{equation*}
             \begin{split}
-                \text{原式} & =\lim_{x \to 0}\dfrac{\frac{f(x)}{x^2}}{\frac{f'(x)-f'(0)}{x}} \\
+                \text{原式} & =\lim_{x \to 0}\dfrac{\dfrac{f(x)}{x^2}}{\dfrac{f'(x)-f'(0)}{x}} \\
                 & =\dfrac{1}{f''(0)}\lim_{x \to x_0}\dfrac{f(x)}{x^2} \\
                 & \xlongequal {\text{洛必达法则}}\frac{1}{f''(0)}\lim_{x\to 0}\dfrac{1}{2}\dfrac{f'(x)-f'(0)}{x}\quad (\text{易错:此处的处理不可再次使用洛必达,因为二阶导在此不连续})  \\
                 & =\frac{1}{f''(0)}\dfrac{1}{2}f''(0) \\
@@ -926,7 +935,7 @@
     \begin{solution}
         该函数也是$\dfrac{0}{0}$型,但是如果使用洛必达法则,则$2x \times \sin \dfrac{1}{x}-\cos \dfrac{1}{x}$,极限显然不存在,因此不可以使用洛必达法则.则正确求法为$\lim _{x\to 0}\dfrac{x^2\times \sin \dfrac{1}{x}}{x}=\lim_{x\to 0}x\times\sin\dfrac{1}{x}=0$.
     \end{solution}
-    \begin{criterion}{洛必达可以洛到几阶}{}
+    \begin{conclusion}{洛必达可以洛到几阶}{}
         \begin{itemize}
             \item \textcolor{red}{$n$阶导连续,则最多可以洛到$n$阶}.
             \item \textcolor{red}{$n$阶导存在/$n$阶邻域内可导,则最多能洛到$n-1$阶}.
@@ -947,7 +956,7 @@
                     \end{enumerate}
             \end{enumerate}
         \end{itemize}
-    \end{criterion}
+    \end{conclusion}
     \begin{problem}
         设$f(x)$有二阶连续导数,并且$f(0){=}0, f^{\prime}(0){=}0$, $f^{''}(0){=}0$, 并且$\lim_{x\to0}\dfrac{f(x)}{x^3}=1$,问$\dfrac{f(x)}{x^3}$是否可以进行洛必达法则?如果可以请求出$f^{'''}(0)$;如果不存在,请说明理由.
     \end{problem}
@@ -982,8 +991,8 @@
         (1)拉格朗日中值定理:
         \begin{align*}
             \text{原式} & = \lim_{x\to +\infty}x\times e^{(\varepsilon)}(\arctan x -\dfrac{\pi}{2})\\
-            & = e^{\pi} \lim_{x\to +\infty}\dfrac{\arctan x -\frac{\pi}{2}}{\frac1x}\\
-            & =\lim_{x\to +\infty} \dfrac{\frac{1}{1+x^2}}{-\frac{1}{x^2}}\\
+            & = e^{\pi} \lim_{x\to +\infty}\dfrac{\arctan x -\dfrac{\pi}{2}}{\dfrac1x}\\
+            & =\lim_{x\to +\infty} \dfrac{\dfrac{1}{1+x^2}}{-\dfrac{1}{x^2}}\\
             & =-e^\pi 
         \end{align*}
         (2)提后项:
@@ -1102,7 +1111,9 @@
         本题有一个常见的错误做法,就是直接把$\lim_{x \to 0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x}$进行等价无穷小替代,写为$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$,但是这是错误的,如果这样写,那么$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}\times \dfrac{x^2\sin\frac{1}{x}}{x}$,在$\lim_{x\to0}\dfrac{\sin(x^2\sin\frac{1}{x})}{x^2\sin\frac{1}{x}}$的分母中,存在$x= \dfrac{1}{n\pi}$的间断点,根据极限定义,极限如果存在,那么去心邻域一定要有定义,那这样写就违背了极限的存在准则,因此极限$\lim_{x \to 0}\dfrac{x^2\sin\frac{1}{x}}{x}$不存在,不可以这样写.
     \end{note}
     \subsubsection{抽象函数使用等价无穷小求极限}
-    抽象函数等价的条件是\textcolor{red}{$f(x) \to 0$只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$},
+    \begin{conclusion}{抽象函数等价的条件}{}
+       若$f(x) \to 0$,只有$f(x) \neq 0$,才能将$\sin(f(x))\sim f(x)$
+    \end{conclusion}
     \begin{problem}
         设$\lim_{x\to0}\varphi(x)=0$,则下列命题中正确的个数为\\
         (1)$\lim_{x\to0}\dfrac{\sin\varphi(x)}{\varphi(x)}=1$\\
@@ -1142,7 +1153,7 @@
     \end{problem}
     \begin{solution}
             \begin{align*}
-              \text{原式} & = \dfrac{\frac{x^2}{\sqrt{a^2+x^2}}}{b-\cos x}  & \\
+              \text{原式} & = \dfrac{\dfrac{x^2}{\sqrt{a^2+x^2}}}{b-\cos x}  & \\
               & = \dfrac{1}{a} \cdot \lim_{x\to 0} \dfrac{x^2}{b-\cos x} 
             \end{align*}
             若分子趋近于零,但是该等式的极限为1,那么该分母的极限一定趋近于0,那么b一定为1
@@ -1173,7 +1184,7 @@
         \begin{align*}
             \text{原式} & =  \lim_{x\to0}\dfrac{x\int_0^x\ln{(1+t^2)}dt}{(x-\sin x)(x + \sin x)} & \\
             & =  \lim_{x\to0}\dfrac{x\int_0^x\ln{(1+t^2)}dt}{2x \times \frac{1}{6}x^3} & \\
-            & = \dfrac{\ln(1+x^2)}{x^2}=1  & \\
+            & = \dfrac{\ln(1+x^2)}{x^2}=1
         \end{align*}
     \end{solution}
     \begin{note}
@@ -1187,12 +1198,12 @@
         令$(x-t)=u$,对等式两边求微分得:$d(-t)=du$.\\
         首先,对分子展开,对分母换元得:
         \begin{align*}
-            \text{原式} & = \lim_{x\to0}\dfrac{x\int_{0}^{x}f(t)\mathrm{d}t-\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f(t)\mathrm{d}t}  & \\ 
+            \text{原式} & = \lim_{x\to0}\dfrac{x\int_{0}^{x}f(t)\mathrm{d}t-\int_{0}^{x}tf\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f(t)\mathrm{d}t} 
         \end{align*}
         对原式进行进行洛必达法则得
         \begin{align*}
             \text{原式} & = \lim_{x\to0}\dfrac{\int_0^xf(t)\mathrm{d}t+xf(x)-xf(x)}{\int_0^xf(t)\mathrm{d}t+xf(x)} & \\
-            & =  \lim\limits_{x\to0}\dfrac{\int_0^xf(t)\mathrm{d}t}{\int_0^xf(t)\mathrm{d}t+xf(x)} & \\  
+            & =  \lim\limits_{x\to0}\dfrac{\int_0^xf(t)\mathrm{d}t}{\int_0^xf(t)\mathrm{d}t+xf(x)}
         \end{align*}
         如果此时还要进行洛必达,那么分母则会出现$f'(x)$,那么最后是不可计算的,因此此时应进行积分中值定理,则$\int _0 ^x f(t)dt=xf(\varepsilon) (\varepsilon \in (0,x))$\footnote{这个地方一定要可以夹起来,如果夹起来的极限不一样,那么则不可以使用积分中值定理}
         \begin{align*}
@@ -1396,7 +1407,7 @@
         综上,函数极限为$\ln a$
     \end{solution}
     \begin{problem}
-        $\lim_{n\to\infty}n^{2}\left(\arctan\frac{a}{n}-\arctan\frac{a}{n+1}\right)\left(a>0\right)$
+        $\lim_{n\to\infty}n^{2}\left(\arctan\dfrac{a}{n}-\arctan\dfrac{a}{n+1}\right)\left(a>0\right)$
     \end{problem}
     \begin{solution}
         该题存在相近的函数形式,使用拉格朗日中值定理进行解析$\arctan \dfrac{a}{n}-\arctan \dfrac{a}{a+1}=-\dfrac{a}{ \varepsilon^2 +a^2}$
@@ -1658,7 +1669,7 @@
     \section{数列极限的运算}
     \subsection{\texorpdfstring{$n$}\text{项数列极限求解}}
     \subsubsection{$n$项连加的数列极限}
-    常用结论:
+    常用等式:
     \begin{align*}
         \boxed{\begin{aligned}
                     & 1+2+3+...+n=\dfrac{n(n+1)}{2} &  & 1^2+2^2+3^2+\cdots+n^2=\dfrac{n(n+1)(2n+1)}6\\
@@ -1927,11 +1938,6 @@
             \item $\dfrac{1}{1+x}<\ln(1+\dfrac{1}{x})<\dfrac{1}{x}(x>0)$或 $\dfrac{x}{1+x}<\ln(1+x)<x(x>0)$\footnote{
                 令$f(x)=\ln x$,并在区间$[x,x+1]$上对其使用拉格朗日中值定理,有$\ln\left(1+\dfrac{1}{x}\right)=\ln(1+x)-\ln x=\dfrac{1}{\xi}$其中$0<x<\xi<x+1$,因此对任意的$x>0$,有$\dfrac{1}{1+x}<\ln\left(1+\dfrac{1}{x}\right)=\dfrac{1}{\xi}<\dfrac{1}{x}$}
             \item 在处理如下数列时,可以在前面加一个减项,如$(1+\dfrac{1}{2^2})(1+\dfrac{1}{2^{2^2}})...(1+\dfrac{1}{2^{2^n}})$,可化为$(1-\dfrac{1}{4})(1+\dfrac{1}{2^2})(1+\dfrac{1}{2^{2^2}})...(1+\dfrac{1}{2^{2^n}})*\dfrac{4}{3}$
-            \item 关于重要数列$\left\{\left(1+\dfrac{1}{n}\right)^{n}\right\}$的重要结论:
-                \begin{itemize}
-                    \item 单调递增
-                    \item $\lim_{n\to\infty}\biggl(1+\dfrac{1}{n}\biggr)^{n}=\mathrm{e}$
-                \end{itemize}
         \end{enumerate}
     \end{itemize}
     \subsection{递推关系式\texorpdfstring{$x_{n+1}=f(x_n)$}的数列极限}

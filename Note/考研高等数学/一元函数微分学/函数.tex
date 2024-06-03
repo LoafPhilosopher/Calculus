@@ -164,15 +164,16 @@
                           \caption{双曲余弦函数$y=\dfrac{e^x+e^{-x}}{2}$}
                       \end{minipage}
                   \end{figure}
-            \item \textcolor{red}{下列有关反双曲正弦函数结论需要记住}
-                  \begin{itemize}
-                      \item $x\to0\text{时,}\ln\left(x+\sqrt{x^{2}+1}\right)\sim x.$
-                      \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\dfrac{1}{\sqrt{x^{2}+1}},\text{于是}\int\dfrac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
-                      \item 由于$y=\ln\left(x+\sqrt{x^2+1}\right)$是奇函数,于是$\int_{-1}^1\left[\ln\left(x+\sqrt{x^2+1}\right)+x^2\right]\mathrm{d}x=\int_{-1}^1x^2\mathrm{d}x=\frac 23.$
-                      \item 泰勒展开前两项为$x-\dfrac{1}{6}x^3$ \footnote{前两项和$\sin x$ 一样}
-                  \end{itemize}
         \end{itemize}
     \end{note}
+    \begin{conclusion}{有关反双曲正弦函数结论}{}
+        \begin{itemize}
+            \item $x\to0\text{时,}\ln\left(x+\sqrt{x^{2}+1}\right)\sim x.$
+            \item $\left[\ln\left(x+\sqrt{x^{2}+1}\right)\right]^{\prime}=\dfrac{1}{\sqrt{x^{2}+1}},\text{于是}\int\dfrac{1}{\sqrt{x^{2}+1}}dx=\ln\left(x+\sqrt{x^{2}+1}\right)+C.$
+            \item 由于$y=\ln\left(x+\sqrt{x^2+1}\right)$是奇函数,于是$\int_{-1}^1\left[\ln\left(x+\sqrt{x^2+1}\right)+x^2\right]\mathrm{d}x=\int_{-1}^1x^2\mathrm{d}x=\frac 23.$
+            \item 泰勒展开前两项为$x-\dfrac{1}{6}x^3$ \footnote{前两项和$\sin x$ 一样}
+        \end{itemize}
+    \end{conclusion}
     \subsection{复合函数}
     设函数$y=f(u)$的定义域为$D_1$,函数$u=g(x)$在$D$上有定义,且$g(D) \subset D_1$,则由
     $$
@@ -180,9 +181,8 @@
     $$
     确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集\footnote{需要注意的是,不是任何两个函数都可以进行复合,如果函数$A$的定义域与函数$B$的值域的交集为$\varnothing$,则两个函数不可进行复合}.
     \begin{problem}
-    $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则
-    \newline
-    $(A)\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}\text{不存在}.\quad(\mathrm{C})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\frac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}\text{不存在}.$
+        $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则\\
+        $(A)\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}$不存在.$\quad(\mathrm{C})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}$不存在
     \end{problem}
     \begin{solution}
         函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
@@ -225,7 +225,7 @@
             & \xlongequal{\text{洛必达法则}}\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}\\
             & =\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}
         \end{align*}
-        若要$x \to \infty$时函数有界,那么分母应趋近于无穷。则$\alpha -1>0$.\\
+        若要$x \to \infty$时函数有界,那么分母应趋近于无穷。则$\alpha -1>0$.
         \begin{align*}
             \lim_{x \to 0^+}f(x) & =\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}   \\
             & \xlongequal{\text{洛必达法则}}\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}\\
@@ -243,16 +243,6 @@
     \begin{solution}
         A,B选项.无论是导数还是原函数在区间上连续,都不可以推出原函数在区间上有界,比如函数$\frac{1}{x}$其在$(0,1)$区间上连续,但是其原函数$\ln x$在区间上无界.\\
         \textbf{一元函数中,优先看导数,由导数推函数\footnote{导数可以决定函数的变化,因此出现该类型的题目时,优先看有导数的选项}}。同时此处可以使用有界性判断\ref{yjxpd1}的定理三,可以得出导函数如果在有限区间$I$上有界,那么函数在区间$I$上有界。本题选C。
-    \end{solution}
-    \begin{problem}
-    设函数$f(x)$连续,且$f'(0)>0$,则存在$\delta >0 $使得:\\
-    (A)$f(x)$在$(0,\delta)$内单调增加\\
-    (B)$f(x)$在$(0,\delta)$内单调减少\\
-    (C)对任意的$x \in (0,\delta)$有$f(x)>f(0)$\\
-    (D)对任意的$x\in (-\delta,0)$有$f(x)>f(0)$
-    \end{problem}
-    \begin{solution}
-        \textbf{导数若存在,则导数要么连续,要么只可能有振荡间断点}。A,B选项\footnote{在本题中,答案给出了一个例子可以满足该题,即$\left.f\left(x\right)=\left\{\begin{matrix}x+2x^{2}\sin\frac{1}{x},&x\neq0,\\0,&x=0,\end{matrix}\right.\right.$,在考研中常用的一个例子是\textcolor{red}{$k \times \sin \dfrac{1}{x^b}\pm M \pm f(x)$}}：一点可导推不出区间可导,已知$f'(0)>0$那么假若函数$f(x)$在邻域内震荡,显然也满足$x=0$该点可导,但是在邻域内震荡,若$A$选项要正确.则需要增加条件$f(x)$在$x=0$处连续。$C,D$选项,由导数的定义得:$f'(0)=\lim_{x\to 0} \dfrac{f(x)-f(0)}{x}$。
     \end{solution}
     \subsubsection{单调性}
     \begin{defn}{单调性的定义}{}
@@ -318,7 +308,7 @@
     \begin{defn}{周期函数的定义}{}
         设$f(x)$的定义域为$D$,如果存在一个正数$T$,使得对于任一$x \in D$,有$x \pm T \in D$,且$f(x+T)=f(x)$,则称$f(x)$为周期函数,$T$称为$f(x)$的周期.从几何图形上看,在周期函数的定义域内,相邻两个长度为$T$的区间上,函数的图形完全一样.
     \end{defn}
-    需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\frac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
+    需要注意的是函数的周期性只与$x$的参数有关,比如若函数$f(x)$以$T$为周期,则$f(ax+b)$以$\dfrac{T}{|a|}$为周期.\textbf{可以观察到其周期只与$x$的系数有关}
     \subsubsection{重要结论}
     \begin{itemize}
         \item 若$f(x)$是可导的周期为$T$的周期函数,则$f'(x)$也是以$T$为周期的周期函数.\label{zyjl1}
@@ -383,12 +373,10 @@
             \draw (363,130) node [anchor=north west][inner sep=0.75pt]   [align=left] {x};
         \end{tikzpicture}
     \end{center}
-
     \subsubsection{狄利克雷函数}\footnote{本函数图像无法绘制}
     $$
         D\left(x\right)=\left\{\begin{matrix}{1,}&x\in\mathbf{Q},\\{0,}&x\in\mathbf{Q}^{c}.\end{matrix}\right.
     $$
-
     \section{初等函数图像及其性质}
     \subsection{常数函数}
     $y=A$,$A$为常数,其图形为平行于$x$轴的水平直线
@@ -424,7 +412,7 @@
     $$
     \begin{figure}[H]
         \centering \includegraphics[width=
-            0.5 \linewidth]{1.3.2.eps} \caption{指数函数图像}
+            0.6 \linewidth]{1.3.2.eps} \caption{指数函数图像}
     \end{figure}
     \begin{criterion}{指数函数相关性质}{}
         \begin{itemize}
