@@ -10,6 +10,7 @@
 \usepackage{unicode-math}
 \usepackage{extarrows}
 \usepackage{subfigure}
+\usepackage{pifont}
 \usepackage{pdfpages} %本文最重要的一个包，就是将PDF文件加入到封面位置
 \usepackage{extarrows}
 \usepackage{footnote}
@@ -167,3 +168,20 @@
 
 % 用于空行\myspace{1} 表示空一行 填 2 表示空两行  
 \newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}}
+
+\ExplSyntaxOn
+    \clist_set:Nn \l_tmpa_clist {72, 72, 72, 72, 72, 73, 73, 73, 73, 73}
+    \cs_new:Npn \__ljguo_get_rating:n #1 {
+        \int_set:Nn \l_tmpa_int { 6 - #1 }
+        \int_set:Nn \l_tmpb_int { 10 - #1 }
+        \group_begin:
+        \color_select:n { red }
+        \int_step_inline:nnn { \l_tmpa_int } { \l_tmpb_int }
+        {
+            \ding{\clist_item:Nn \l_tmpa_clist { ##1  }}
+        }
+        \group_end:
+    }
+    \let\getRating\__ljguo_get_rating:n
+    % 评级命令:\getRating{n}
+\ExplSyntaxOff

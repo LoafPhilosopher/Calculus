@@ -614,7 +614,7 @@
         $(A)\int _0^{x^2}\ln ( 1+ {\sqrt {t}}) $d$t \qquad (B) \int_{x^{3}}^{x^{2}}\sqrt{1-\sqrt{\cos t}}\:\mathrm{d}t \qquad (C)\int _x^{2\sin x}\sin t^2$d$t \qquad (D) \int _x^{\sin x}( \mathrm{e} ^{t^2}- 1) $d$t$  
     \end{problem}
     \begin{solution}
-        A:$\ln(1+\sqrt{x}) \sim \sqrt{x}$,其$n(m+1)=3$.\\B:$\sqrt{1-\sqrt{\cos t}}=\frac{1}{2}x,$其$n(m+1)$的最小值为4.\\C:使用积分中值定理可得:$\sin^2 \varepsilon \times (2\sin x- x),\varepsilon \in (2\sin x,x)$,使用等价无穷小可得:$2\sin x-x \sim x,\sin^2 \varepsilon \sim \varepsilon ^2 \sim x^2$,那么其最终化为$x^3$.\\D选项:$(\sin x - x)(e^{\varepsilon ^2}-1),\varepsilon \in (\sin x,x)$.使用等价无穷小可得:$(-\dfrac{1}{6}x^5 \times \varepsilon)\sim x^6$. 最终选择D选项.
+        A:$\ln(1+\sqrt{x}) \sim \sqrt{x}$,其$n(m+1)=3$.\\B:$\sqrt{1-\sqrt{\cos t}}=\dfrac{1}{2}x,$其$n(m+1)$的最小值为4.\\C:使用积分中值定理可得:$\sin^2 \varepsilon \times (2\sin x- x),\varepsilon \in (2\sin x,x)$,使用等价无穷小可得:$2\sin x-x \sim x,\sin^2 \varepsilon \sim \varepsilon ^2 \sim x^2$,那么其最终化为$x^3$.\\D选项:$(\sin x - x)(e^{\varepsilon ^2}-1),\varepsilon \in (\sin x,x)$.使用等价无穷小可得:$(-\dfrac{1}{6}x^5 \times \varepsilon)\sim x^6$. 最终选择D选项.
     \end{solution}
     \begin{note}
         如果上下限同阶的情况,如本题的C,D选项,则不可进行拆分,需要使用积分中值定理\ref{jfzz1}进行计算.
@@ -711,7 +711,7 @@
     \begin{problem}
         \begin{enumerate}
             \item 证明:$\lim f(x)=A \neq 0 \Rightarrow \lim f(x)g(x)=A \lim g(x)$
-            \item 证明:$\lim \frac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
+            \item 证明:$\lim \dfrac{f(x)}{g(x)}$存在,$\lim g(x)=0 \Rightarrow \lim f(x)=0$
             \item 证明:若$\lim_{x \to x_0}g(x)=A,\lim_{x \to A}f(x)=B$,能否推出$\lim_{x\to x_0}f(g(x))=B$,若不能,则满足什么条件可以推出该结论?
         \end{enumerate}
     \end{problem}
@@ -1060,7 +1060,21 @@
     \\当$x \to 0$时,有
     \begin{enumerate}
         \item     \begin{align*} \boxed{\begin{aligned}& x \sim \sin x \sim \tan x \sim \arcsin x \sim \arctan x \nonumber \\& \quad  \sim \ln (1+x)  \nonumber                                  \\& \quad \sim e^x -1 \nonumber\end{aligned} }\end{align*}
-        \item     \begin{align*} \boxed{\begin{aligned}& (1+x)^a \sim  1+ax   \\& a^x - 1 \sim x \ln a \\& 1- \cos^{\alpha} x \sim \dfrac{\alpha}{2}x^2\end{aligned}}\end{align*}
+        \item     
+        \begin{align*} 
+            \boxed{
+                \begin{aligned}
+                    & (1+x)^a \sim  1+ax   \\
+                    & a^x - 1 \sim x \ln a \\
+                    & 1- \cos^{\alpha} x \sim \dfrac{\alpha}{2}x^2 
+                \end{aligned}
+                }
+        \end{align*}
+        \begin{proof}{$1- \cos^{\alpha} x \sim \dfrac{\alpha}{2}x^2$}
+            \\ 该等价替换主要由洛必达法则证明:$$
+                \lim_{x\to0}\dfrac{1-(\cos x)^a}{\dfrac12ax^2}=\lim_{x\to0}\dfrac{-a(\cos x)^{a-1}(-\sin x)}{ax}=\lim_{x\to0}(\cos x)^{a-1}=1.
+            $$
+        \end{proof}
         \item  上述结论的推广:\\
         当$x \to 0$时,若$$(1+x)^a -1 \sim ax,$$则$$\alpha (x) \to 0,\alpha(x)\beta(x) \to 0,$$那么$$[1+\alpha(x)]^{\beta(x)} -1 \sim \alpha(x) \beta(x)$$
         \item     \begin{align*} \boxed
@@ -1164,7 +1178,7 @@
         综上所述$a=2,b=1$
     \end{solution}
     \begin{note}
-        对于本题,还可以可被积函数进行等价运算\ref{BSXJF1},但是这不是通法,因此应当对此类问题首先进行洛必达.以下为使用被积函数等价运算计算过程:
+        对于本题,还可以可被积函数进行等价运算\ref{BSXJF1},但是这不是通法,因此应当对此类问题首先进行洛必达. 以下为使用被积函数等价运算计算过程: 
         由于当$t \to 0$时,$\dfrac{t^2}{\sqrt{a^2+t^2}} \sim \dfrac{t^2}{a^2}$
         \begin{align*}
          \text{原式} & =  \lim_{x\to0}\dfrac{\int_0^x\dfrac{t^2}{\sqrt{a^2+t^2}}\mathrm{d}t}{bx-\sin x}&\\
@@ -1435,7 +1449,7 @@
     主要有以下类型$\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty,\infty -\infty,\infty ^0,1^\infty$
     \subsubsection{形如$\dfrac{0}{0}$,$\dfrac{\infty}{\infty}$,$0 \times \infty$}
          $\dfrac{0}{0},\dfrac{\infty}{\infty},0 \times \infty$可以直接计算或者简单转换可以直接计算.
-    \begin{problem}
+    \begin{problem}\getRating{2}
         设函数$f(x)=\operatorname*{lim}_{n\to\infty} \dfrac{x^2+nx(1-x)\sin^2\pi x}{1+n\sin^{2}\pi x}$,则$f(x)=$        
     \end{problem}
     \begin{solution}
@@ -1447,7 +1461,7 @@
         当$\sin^2 \pi x \neq 0$时:
         \begin{align*}
           \text{原式} & =\lim_{n\to\infty}\dfrac{\dfrac{x^{2}}{n}+x(1-x)\sin^{2}\pi x}{\dfrac{1}{n}+\sin^{2}\pi x}\\
-          & =\frac{x(1-x)\sin^{2}\pi x}{\sin^{2}\pi x}\\
+          & =\dfrac{x(1-x)\sin^{2}\pi x}{\sin^{2}\pi x}\\
           & =x(1-x)    
         \end{align*}
         综上$f(x)$表达式为: $$f(x)=\begin{cases}x^2,&x=0, \pm1, \pm2, \cdots\\x(1-x),&x\text{取其他值}.\end{cases}$$
@@ -1489,7 +1503,7 @@
             \end{align*}
     \end{solution}
     \begin{note}
-        本题是分式的$\infty-\infty$类型,因此需要通分计算,本题易错处在于,看见两个等级别的$\infty-\infty$,直接写0,最后导致答案为$\dfrac{\pi}{2}$
+        本题是分式的$\infty-\infty$类型,因此需要通分计算,本题易错处在于,看见两个等级别的$\infty-\infty$,直接写0,\textcolor{red}{因此看见两个等级别的$\infty-\infty$,千万不要写0!!!}\footnote{此处已经错n次了!!!尤其是三大计算!!!}最后导致答案为$\dfrac{\pi}{2}$
     \end{note}
     非分式的$\infty -\infty$:
     \begin{enumerate}
@@ -1597,7 +1611,7 @@
             \end{align*}
         \end{solution}
          \begin{problem}
-            已知曲线$y=f(x)$在点$(0,0)$处的切线过点$(1,2)$,则$\lim_{x\to0}\left(\cos x+\int_0^xf(t)\mathrm{d}t\right)^{\dfrac{1}{x^2}}$
+            已知曲线$y=f(x)$在点$(0,0)$处的切线过点$(1,2)$,则$\lim_{x\to0}\left(\cos x+\int_0^xf(t)\mathrm{d}t\right)^{\frac{1}{x^2}}$
         \end{problem}
         \begin{solution}
             已知$f(0)=0$,$f'(0)=2$
@@ -1609,8 +1623,8 @@
                 & = \lim_{x\to 0}e^{\frac{1}{2}}
             \end{align*}
         \end{solution}
-         \begin{problem}
-            \uline{求极限}$\lim_{x\to0}\Bigg(\dfrac{\mathrm{e}^x+\mathrm{e}^{2x}+\mathrm{e}^{3x}}3\Bigg)^{\frac{\mathrm{e}}{x}}.$
+         \begin{problem}\getRating{4}
+            求极限$\lim_{x\to0}\Bigg(\dfrac{\mathrm{e}^x+\mathrm{e}^{2x}+\mathrm{e}^{3x}}3\Bigg)^{\frac{\mathrm{e}}{x}}.$
         \end{problem}
         \begin{solution}
             \begin{align*}
@@ -1922,9 +1936,19 @@
     \begin{itemize}
         \item 利用如下重要不等式\label{cybds1}
         \begin{enumerate}
-            \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\label{lyzybds1} \footnote{
-                可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
+            \item 设$a,b$为实数,则$|a+b|\leq |a|+|b|$;$\mid|a|-|b|\mid\leqslant|a-b|$\label{lyzybds1} \footnote{可以将上述式子推广为n个实数的情况:$|a_1\pm a_2\pm\cdots\pm a_n|\leqslant|a_1|+|a_2|+\cdots+|a_n|.$}
             \item $\sqrt{ab}{\leqslant}\dfrac{a+b}{2}{\leqslant}\sqrt{\dfrac{a^{2}+b^{2}}{2}}(a,b{>}0)\footnote{还有一个不等式是$|ab|\leqslant \dfrac{a^2+b^2}{2}$}$
+            \begin{problem}
+                证明函数$f(x)=\dfrac{x}{1+x^2}$在$(-\infty,+\infty)$内有界
+            \end{problem}
+            \begin{solution}
+                当$x \neq 0$时,令$|f(x)|=\dfrac{|x|}{1+x^2}=\dfrac{1}{\frac{1}{|x|}+|x|}$,由不等式$\dfrac{1}{x}+x > 2\sqrt{\dfrac{1}{x} \times x}=2$可得$\dfrac{1}{\frac{1}{|x|}+|x|} < \dfrac{1}{2}$,即$|f(x)|\leqslant \dfrac{1}{2}$
+                当$x=0$时,$f(x)=0$\\
+                综上,$f(x)$在$(-\infty,+\infty)$内有界
+            \end{solution}
+            \begin{note}
+                本题利用了绝对值和不等式来证明函数有界
+            \end{note}
             \item $\sqrt[3]{abc}\leqslant\dfrac{a+b+c}3\leqslant\sqrt{\dfrac{a^2+b^2+c^2}3}(a,b,c>0)$
             \item $\text{设 }a\geq b\geq 0,\text{则}\left\{\begin{aligned}&\text{当 }n\geq 0\text{ 时 },a^n\geq b^n,\\&\text{当 }n \leqslant 0\text{ 时 },a^n \leqslant b^n.\end{aligned}\right.$
             \item $\text{若 }0<a<x<b,0<c<y<d,\text{则}\dfrac{c}{b}<\dfrac{y}{x}<\dfrac{d}{a}.\footnote{$\text{当 }n\pi<x<(n+1)\pi,2n<S(x)<2(n+1)\text{时 },\dfrac{2n}{(n+1)\pi}<\dfrac{S(x)}{x}<\dfrac{2(n+1)}{n\pi}.$}$
