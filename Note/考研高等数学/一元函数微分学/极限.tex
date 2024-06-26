@@ -43,7 +43,7 @@
         (A) 有最大值,有最小值 \quad (B) 有最大值,没有最小值 \\ (C)没有最大值,有最小值 \quad (D)没有最大值,没有最小值
     \end{problem}
     \begin{solution}
-        $\lim_{n\to \infty}a_n=1-0$,$a_1=2,a_2=\sqrt{2}-\frac{1}{2}$,因此$a_n$既有最大值又有最小值
+        $\lim_{n\to \infty}a_n=1-0$,$a_1=2,a_2=\sqrt{2}-\dfrac{1}{2}$,因此$a_n$既有最大值又有最小值
     \end{solution}
     \begin{problem}
         证明:\textcolor{red}{若$\lim_{n \to \infty}a_n=A$,则$\lim_{n \to \infty}|a_n|=|A|$}
@@ -490,6 +490,21 @@
     需要注意的是,是所有的数列（抽样）才能完全代表整体.不能说我选了某个数列有极限就代表函数有极限.
     总结:\textcolor{red}{海涅定理表述了离散与连续、数列极限与函数极限的关系.}
     \begin{problem}
+        求$\lim_{n\to\infty}\sqrt[n]{\left(\cos\dfrac1{\sqrt{n}}\right)^{n^2}}.$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{n\to \infty} \left( \cos\dfrac{1}{\sqrt{n}} \right)^n\\ 
+          & = \lim_{n\to \infty} e^{n \ln \cos \dfrac{1}{\sqrt{n}}}\\
+          & = \lim_{n\to \infty} e^{n \cos \left(\dfrac{1}{\sqrt{n}} - 1 \right)}\\
+          & = \lim_{x\to+\infty}e^{x \left(\cos\dfrac{1}{\sqrt{x}}-1\right)} \\ 
+          & = \lim_{x\to+\infty}e^{x \times \left[-\dfrac12{\left(\dfrac1{\sqrt{x}}\right)}^2\right]}=e^{-\dfrac12}
+        \end{align*}
+    \end{solution}
+    \begin{note}
+        本题有一个易错点在于$x\Bigg(\cos\dfrac{1}{\sqrt{x}}-1\Bigg)$的极限求解时,会认为括号内的极限为0,计算后的极限为0,导致错误
+    \end{note}
+    \begin{problem}
         求极限$\lim_{n \to \infty}n(\arctan n -\dfrac{\pi}{2})$
     \end{problem}
     \begin{solution}
@@ -572,7 +587,7 @@
     \end{defn}
     前三个定义解释:$\lim \dfrac{\beta}{\alpha} =0$是指分子趋于$0$的速度比分母快,$\lim \dfrac\beta\alpha =\infty$是指分子趋于$0$的速度比分母慢,$\lim\dfrac{\beta}{\alpha} =c\neq 0$是指趋于$0$的速度一样.同时需要注意的是,\textcolor{red}{并不是任意两个无穷小都可进行比阶的}\footnote{例如,当 $x\to 0$ 时,$x\sin\dfrac1x$与$x^2$虽然都是无穷小,但是却不可以比阶,也就是说既无高低阶之分,也无同阶可言,因为$\lim_{x \to 0}\dfrac{x \sin \dfrac{1}{x}}{x^2}=\lim_{x\to0}\dfrac1x\sin\dfrac1x$不存在,其值为$\infty$和$0$}.
     \newline
-    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\frac13x^3+\frac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\frac{1}{3}x^{3}-\frac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.
+    \textbf{对$o(x)$的理解}:它是一个无穷小,但是它趋向于0的速度比 $x$ 要快,也就是$\lim_{x\to0}\dfrac{o(x)}{x}=0$ ,也就是精度更高.举一个实际的例子：$\tan x=x+\dfrac13x^3+\dfrac2{15}x^5+o\left(x^5\right)$, 那么就应该知道$\tan x-x-\dfrac{1}{3}x^{3}-\dfrac{2}{15}x^{5}=o\left(x^{5}\right)$,也就是这玩意趋于0 的速度非常之快！速度相当于 $x^5$ ,这给我们的精度分析提供了一些帮助. 由此可以解释加减法不推荐用等价无穷小,例如$\lim_{x\to0}\dfrac{\tan x-x}{x^3}\neq\lim_{x\to0}\dfrac{x-x}{x^3}$等价无穷小本身就是一种近似替换,直接把 $\tan x$ 近似成 $x$ 显然精度太低 (毕竟分母可是以 $x^3$ 的速度趋于0), 那么我们就需要更高精度的近似了,也就是 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\lim_{x\to0}\dfrac{x+\frac13x^3+o\left(x^3\right)-x}{x^3}$, 这样我们就得到 $\lim_{x\to0}\dfrac{\tan x-x}{x^3}=\dfrac13+\lim_{x\to0}\dfrac{o(x^5)}{x^3}$, 显然,后者分子趋于0的速度大概是 $x^5$ 级别比分母更快所以忽略不计.
     \begin{conclusion}{无穷小比阶的结论}{}
         若 $f(x)$ 在 $x=0$ 的某邻域内连续,且当$x\to0$ 时 $f(x)$ 是$x$的$m$ 阶无穷小,$\varphi(x)$ 是$x$ 的$n$阶无穷小,则当$x\to0$ 时$F( x) = \int _0^{\varphi(x)}f(t)$d$t$ 是$x$ 的$n(m+1)$阶无穷小
     \end{conclusion}
@@ -580,7 +595,7 @@
         把$x\to 0^+$时的无穷小$a= \int _0^x \cos t^2dt$, $\beta= \int _0^{x^2} \tan\sqrt{t} dt$, $\gamma= \int _0^{\sqrt{x}} \sin t^3 dt$进行排序,使排在后面的是前一个的高阶无穷小,则正确的排列顺序是
     \end{problem}
     \begin{solution}
-        $\alpha$:$n=1,\lim_{x\to 0} \cos x^2=1$,因此$m=0$,那么$n(m+1)=1$;$\beta$:$n=2,m=\frac{1}{2}$,那么$n(m+1)=3$.$\gamma$:$m=\frac{1}{2}x,n=2$,那么$n(m+1)=2$.因此顺序为$\alpha \gamma \beta$
+        $\alpha$:$n=1,\lim_{x\to 0} \cos x^2=1$,因此$m=0$,那么$n(m+1)=1$;$\beta$:$n=2,m=\dfrac{1}{2}$,那么$n(m+1)=3$.$\gamma$:$m=\dfrac{1}{2}x,n=2$,那么$n(m+1)=2$.因此顺序为$\alpha \gamma \beta$
     \end{solution}
     \begin{problem}
         当 $x\to0$ 时,下列无穷小中最高阶的是:\\
@@ -1098,7 +1113,8 @@
                 \end{aligned}
             }
         \end{align*}
-        \item $x \to 1$时,$\ln x \sim x-1$,因为$\ln(1+x-1)\sim x-1$
+        \item \textcolor{red}{$x \to 1$时,$\ln x \sim x-1$,因为$\ln(1+x-1)\sim x-1$}
+        \label{dsys}
         \item 当$A\to 0,B \to 0$时,$e^A-e^B \sim A-B$,因为$e^B(e^{A-B}-1)\sim A-B$
     \end{enumerate}
     \begin{problem}
@@ -1398,8 +1414,18 @@
         \end{itemize}
         那么$\lim_{x\to x_0(x\to\infty)}f(x)$存在,且等于$A$.
     \end{defn}
+    \begin{problem}
+        设 $0<a_n<\dfrac{\pi}{2},0<b_n<\dfrac{\pi}{2} , \cos a_n-a_n=\cos b_n$,且$\lim_{n\to\infty}b_n=0$, 求$\lim_{n\to\infty}a_n , \lim_{n\to\infty}\dfrac{a_n}{b_n^2}$.
+    \end{problem}
+    \begin{solution}
+       由 $\cos a_n-\cos b_n=a_n>0$,知 $0<a_n<b_n$,则由夹逼准则,得$\lim_{n\to \infty} a_n =0.$\\
+       $\lim_{n\to\infty}\dfrac{a_n}{b_n^2}=\lim_{n\to\infty}\dfrac{1-\cos b_n}{b_n^2} \cdot \dfrac{a_n}{1-\cos b_n}=\dfrac{1}{2}\lim_{n\to\infty}\dfrac{a_n}{1-\cos a_n+a_n}=\dfrac{1}{2}\lim_{n\to\infty}\dfrac{1}{\dfrac{1-\cos a_n}{a_n}+1}=\dfrac{1}{2}.$
+    \end{solution}
+    \begin{note}
+        本题以数列极限为例,使用夹逼准则进行求解
+    \end{note}
     \subsubsection{积分中值定理}\label{jfzz1}
-    \begin{defn}{}{}
+    \begin{defn}{积分中值定理}{}
         若函数 $f\left(x\right)$在闭区间 $[a,b]$ 上连续,则在积分区间 $[a,b]$ 上至少存在一个点 $\varepsilon$ , 使下式成立
             $$
                 \int_a^bf\left(x\right)dx=f\left(\varepsilon\right)\left(b-a\right)
@@ -1466,8 +1492,8 @@
         \end{align*}
         综上$f(x)$表达式为: $$f(x)=\begin{cases}x^2,&x=0, \pm1, \pm2, \cdots\\x(1-x),&x\text{取其他值}.\end{cases}$$
     \end{solution}
-    \begin{problem}
-        \uline{求极限}$\lim_{x\to-\infty}\dfrac{\sqrt{4x^2+x-1}+x+1}{\sqrt{x^2+\sin x}}$
+    \begin{problem}\getRating{2}
+        求极限$\lim_{x\to-\infty}\dfrac{\sqrt{4x^2+x-1}+x+1}{\sqrt{x^2+\sin x}}$
     \end{problem}
     \begin{solution}
         \begin{align*}
@@ -1628,16 +1654,19 @@
         \end{problem}
         \begin{solution}
             \begin{align*}
-              \text{原式} & = \lim_{x\to0} e^{\frac{e}{x} \ln \frac{e^x+e^{2x}+e^{3x}}{3}}\\
-              & = \lim_{x\to0} e^{\frac{e}{x}(\frac{e^x+e^{2x}+e^{3x}}{3}-1)}
+              \text{原式} & = \lim_{x\to0} e^{\dfrac{e}{x} \ln \dfrac{e^x+e^{2x}+e^{3x}}{3}}\\
+              & = \lim_{x\to0} e^{\dfrac{e}{x}\Bigg(\dfrac{e^x+e^{2x}+e^{3x}}{3}-1\Bigg)}
             \end{align*}
         把分子摘出来:
         \begin{align*}
-          \dfrac{e}{3} \lim_{x\to 0}(\dfrac{e^x+e^{2x}+e^{3x}}{x} -3) & =\dfrac{e}{3} \lim_{x\to 0} (\frac{\mathrm{e}^x-1}x+\frac{\mathrm{e}^{2x}-1}x+\frac{\mathrm{e}^{3x}-1}x)\\
-          & = \lim_{x\to0}\frac{\mathrm{e}^{x}-1}{x}+\lim_{x\to0}\frac{\mathrm{e}^{2x}-1}{x}+\lim_{x\to0}\frac{\mathrm{e}^{3x}-1}{x}
+          \dfrac{e}{3} \lim_{x\to 0}\Bigg(\dfrac{e^x+e^{2x}+e^{3x}}{x} -3\Bigg) & =\dfrac{e}{3} \lim_{x\to 0} (\dfrac{\mathrm{e}^x-1}x+\dfrac{\mathrm{e}^{2x}-1}x+\dfrac{\mathrm{e}^{3x}-1}x)\\
+          & = \lim_{x\to0}\dfrac{\mathrm{e}^{x}-1}{x}+\lim_{x\to0}\dfrac{\mathrm{e}^{2x}-1}{x}+\lim_{x\to0}\dfrac{\mathrm{e}^{3x}-1}{x}
         \end{align*}
-        综上原式为$e^{\frac{e}{3}(1+2+3)}=e^{2e}$
+        综上原式为$e^{\dfrac{e}{3}\Bigg(1+2+3\Bigg)}=e^{2e}$
         \end{solution}
+        \begin{note}
+            本题的关键在于对数函数形式\ref{dshs}的变换和对于等式\ref{dsys}的使用
+        \end{note}
         \begin{problem}
             求极限$\lim_{x\to\infty}\left(\dfrac{x^2}{(x-a)(x+b)}\right)^x$
         \end{problem}
