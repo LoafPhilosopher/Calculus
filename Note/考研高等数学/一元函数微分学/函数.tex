@@ -282,7 +282,7 @@
                   奇[偶]$\Rightarrow$ 偶;偶[奇]$\Rightarrow$ 偶;奇[奇]$\Rightarrow$ 奇;偶[偶]$\Rightarrow$ 偶;非奇非偶[偶]$\Rightarrow$ 偶}
             \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数\footnote{证明如下:令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$}.
             \item \textbf{求导后奇偶性互换}
-            \item \textbf{连续的奇函数的一切原函数都是偶函数}\\\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{证明如下:设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,F(x)为奇函数.}}\label{jox1}
+            \item \textbf{连续的奇函数的一切原函数都是偶函数}\\\textbf{连续的偶函数的原函数中仅有一个原函数是奇函数\footnote{证明如下:设$f(x)$是连续函数，则其一个原函数可以表示为$F( x) = \int _a^xf( t) $d$t.$ 若$f(x)$是连续的奇函数，即有$f(x)=-f(-x)$,且$\int _{- a}^af( t) $d$t= 0$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=\int_{-a}^a f(u) \mathrm{d} u+\int_a^x f(u) \mathrm{d} u=0+F(x)=F(x)$.若$f(x)$是连续的偶函数，即有$f(-x)=f(x)$,且$\int _{- a}^af( t) $d$t= 2\int _0^af( t) $d$t$,则$F(-x)=\int_a^{-x} f(t) \mathrm{d} t \xlongequal{t=-u}-\int_{-a}^x f(-u) \mathrm{d} u=-\int_{-a}^a f(u) \mathrm{d} u-\int_a^x f(u) \mathrm{d} u=-2 \int_0^a f(u) \mathrm{d} u-F(x)$则当$\int _0 ^a f(u)du \equiv 0$时,$F(x)$为奇函数.}}\label{jox1}
             \item \textbf{设$f(x)$连续,若$f(x)$是奇函数,则$\int_{a}^{x}f\left(t\right)\mathrm{d}t$是偶函数;\\若$f(x)$是偶函数,则$\int_{0}^{x}f\left(t\right)\mathrm{d}t$是奇函数}\footnote{证明如下:设$F(x)=\int_a ^x f(t)dt$由变上限积分求导公式可得:$(\int _a ^x f(t)dt)'=f(x)$,已知$f(x)$为奇/偶函数,由奇偶性的性质 \ref{jox2} 中第\ref{jox1}条可得}
             \item \textbf{对于任意函数$f(x)$,令$u(x)=\dfrac{1}{2}[f(x)+f(-x)]$,$v(x)=\dfrac{1}{2}[f(x)-f(-x)]$,其中,$u(x)$是偶函数,$v(x)$是奇函数.因为$f(x)=\dfrac{1}{2}[f(x)+f(-x)]+\dfrac{1}{2}[f(x)-f(-x)]=u(x)+v(x)$}
             \item 奇函数$y=f(x)$的图形关于坐标原点对称,当$f(x)$在$x=0$处有定义时,必有$f(0)=0$.
@@ -685,8 +685,8 @@
     \begin{center}
         \boxed{
             \begin{aligned}
-                \sin\alpha\cos\beta= & \frac{1}{2}\big[\sin(\alpha+\beta)+\sin(\alpha-\beta)\big],\cos\alpha\sin\beta= & \frac{1}{2}\big[\sin(\alpha+\beta)-\sin(\alpha-\beta)\big], \\
-                \cos\alpha\cos\beta= & \frac{1}{2}\big[\cos(\alpha+\beta)+\cos(\alpha-\beta)\big],\sin\alpha\sin\beta= & \frac{1}{2}\big[\cos(\alpha-\beta)-\cos(\alpha+\beta)\big].
+                \sin\alpha\cos\beta= & \frac{1}{2}\big[\sin(\alpha+\beta)+\sin(\alpha-\beta)\big],\cos\alpha\sin\beta= & \dfrac{1}{2}\big[\sin(\alpha+\beta)-\sin(\alpha-\beta)\big], \\
+                \cos\alpha\cos\beta= & \frac{1}{2}\big[\cos(\alpha+\beta)+\cos(\alpha-\beta)\big],\sin\alpha\sin\beta= & \dfrac{1}{2}\big[\cos(\alpha-\beta)-\cos(\alpha+\beta)\big].
             \end{aligned}
         }
     \end{center}

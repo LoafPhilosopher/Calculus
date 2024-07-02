@@ -73,6 +73,17 @@
         对于C,D选项,只知道$a_n$的极限是$a$,那么就是说两者之间的距离是无穷小,但是题目中没有给出两者相距的量级,因此一定错误的.反例为$a_n= a \pm \dfrac{1}{n^2}$.\label{pro3}
     \end{note} 
     \begin{problem}
+        设 $a_n>0(n=1,2,...),S_n=a_1+a_2+...+a_n$,则数列${S_n}$有界是数列${a_n}$收敛的\\
+        (A)充分必要条件 \quad (B) 充分非必要条件\\
+        (C) 必要非充分条件 \quad (D)既非充分也非必要条件
+    \end{problem}
+    \begin{solution}
+        由$S_n-S_{n-1}=a_n$,且$a_n>0$.易知$S_n$单调递增有界,则$a_n$收敛.但是如果$a_n$收敛,且$a_n$,但是无法得到$S_n$有界.
+    \end{solution}
+    \begin{note}
+        本题的易错点在于不用实际的例子或者算式进行推导而是基于直觉去计算.即,若$S_n$有界,那么$a_n$不一定收敛,因为可能存在$-1^n$,但是根据题意,这显然是不可能的,因为$S_n$单调递增.最终可能错误的认为应该选择C选项.
+    \end{note}
+    \begin{problem}
         设数列${x_n} $与${y_n}$满足$\lim_{n \to \infty} x_ny_n=0$,则下列命题正确的是\\
         (A)若$x_n$发散,则$y_n$,必发散\quad (B)若$x_n$无界,则 $y_n$必有界\\
         (C)若$x_n$有界,则 $y_n$必为无穷小 \quad(D)若$\dfrac{1}{x_n}$为无穷小,则$y_{n}$必为无穷小
@@ -1115,7 +1126,7 @@
         \end{align*}
         \item \textcolor{red}{$x \to 1$时,$\ln x \sim x-1$,因为$\ln(1+x-1)\sim x-1$}
         \label{dsys}
-        \item 当$A\to 0,B \to 0$时,$e^A-e^B \sim A-B$,因为$e^B(e^{A-B}-1)\sim A-B$
+        \item \textcolor{red}{当$A\to 0,B \to 0$时,$e^A-e^B \sim A-B$,因为$e^B(e^{A-B}-1)\sim A-B$}
     \end{enumerate}
     \begin{problem}
         假设$\lim_{x \to 0}\dfrac{f(x)}{1-\cos x}$存在
@@ -1221,7 +1232,7 @@
         看见形如$x^2-\sin x^2$的形式,就应当想到$(x+\sin x)(x-\sin x)$的展开,然后可以通过泰勒展开进行计算
     \end{note}
     \begin{problem}
-        \uline{设函数 $f(x)$ 连续,且 $f(0)\neq0$,求极限}$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
+        \getRating{3}设函数 $f(x)$ 连续,且 $f(0)\neq0$,求极限$\operatorname*{lim}_{x\to0}{\dfrac{\int_{0}^{x}\left(x-t\right)f\left(t\right)\mathrm{d}t}{x\int_{0}^{x}f\left(x-t\right)\mathrm{d}t}}$
     \end{problem}
     \begin{solution}
         \textbf{由于分母有两个变量,因此不好进行洛必达,那么此时就要对分母进行换元},换元过程如下:
@@ -1251,6 +1262,17 @@
              & =\dfrac{1}{2}
         \end{align*}
     \end{note}
+    \begin{problem}
+        若$\lim_{x\to+\infty}[(x^n+7x^4+1)^m-x]=b,(n>4,b\neq0)$,求 $n,m,b.$
+    \end{problem}
+    \begin{solution}
+        \begin{align*}
+          \text{原式} & = \lim_{x \to +\infty} [(x^n+7x^4+1)^{\frac{1}{n}}-x]=b \\    
+          & =   \lim_{x \to +\infty} x[(\sqrt[n]{\dfrac{1}{x}+\dfrac{7x^4}{x^n}+\dfrac{1}{x^n}})-1]\\
+          & = \lim_{x\to+\infty}x\cdot\frac1n\Big(\frac{7x^4}{x^n}+\frac1{x^n}\Big)=b\neq0 
+        \end{align*}
+        则$n=5,b=\dfrac{7}{5},m=\dfrac{1}{5}$
+    \end{solution}
     \subsection{抓大头和抓小头}
     本质是同时处以最高阶/最低阶
     $$
@@ -1350,7 +1372,7 @@
         \end{align*}
     \end{solution}
     \subsubsection{对数函数性质求极限}
-    极限当中,见到$\ln A$,$A$趋于1时,优先想到构造成$\ln(1+\text{无穷小})$的形式,如果这个式子本身进行恒等变形之后的结果过于复杂,则要想到利用对数运算法则构造 $\ln(1+\text{无穷小})$.
+    极限当中,见到$\ln A$,$A$趋于1时,优先想到构造成$\ln(1+\text{无穷小})$的形式\footnote{即$\ln(x)=\ln(1+x-1)\sim x-1$},如果这个式子本身进行恒等变形之后的结果过于复杂,则要想到利用对数运算法则构造 $\ln(1+\text{无穷小})$.
     \begin{problem}
         已知当$x\to0$ 时,$f(x)=\ln\dfrac{1+x}{1-x}-2\ln(x+\sqrt{1+x^2})$ 是$x$ 的$n$ 阶无穷小,则$n=$
     \end{problem}
@@ -1387,14 +1409,14 @@
         综上易知:$p=3,c=-\dfrac{4}{3}$
     \end{solution}
     \begin{problem}
-        $\lim_{x\to+\infty}\left(x^{\frac{1}{x}}-1\right)^{\frac{1}{\ln x}}$
+        \getRating{2}$\lim_{x\to \infty}\left(x^{\frac{1}{x}}-1\right)^{\frac{1}{\ln x}}$
     \end{problem}
     \begin{solution}
         \begin{align*}
-          \text{原式} & =\lim_{x\to+\infty} e^{\frac{1}{\ln x}\ln(x^\frac{1}{x}-1)} \\
-          & = \lim_{x\to+\infty} e^{\frac{\ln(e^{\frac{\ln x}{x}-1})}{\ln x}} \\
-          & = \lim_{x\to+\infty} e^{\frac{\ln{\frac{\ln x}{x}}}{\ln x}\times \frac{\ln(e^\frac{\ln x}{x}-1)}{\ln\frac{\ln x}{x}}}\\
-          & = \lim_{x\to+\infty} e^{\frac{\ln \ln x-\ln x}{\ln x}} = e^{-1}
+          \text{原式} & =\lim_{x\to \infty} e^{\frac{1}{\ln x}\ln(x^\frac{1}{x}-1)} \\
+          & = \lim_{x\to \infty} e^{\frac{\ln(e^{\frac{\ln x}{x}-1})}{\ln x}} \\
+          & = \lim_{x\to \infty} e^{\frac{\ln{\frac{\ln x}{x}}}{\ln x}\times \frac{\ln(e^\frac{\ln x}{x}-1)}{\ln\frac{\ln x}{x}}}\\
+          & = \lim_{x\to \infty} e^{\frac{\ln \ln x-\ln x}{\ln x}} = e^{-1}
         \end{align*}
     \end{solution}
     \begin{note}
@@ -1554,18 +1576,18 @@
         本题可能上去第一步就把$e^x-1$直接给替换,但是不能这样写,因为等价无穷小不可以进行部分替代
     \end{note}
     \begin{problem}
-        求极限$\lim_{x\to+\infty}(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x})$
+        \getRating{1}求极限$\lim_{x\to+\infty}(\sqrt{x+\sqrt{x+\sqrt{x}}}-\sqrt{x})$
     \end{problem}
     \begin{solution}
             \begin{align*}
               \text{原式} & = \lim_{x\to+\infty}\sqrt{x}(\sqrt{1+\sqrt{\frac{1}{x}+\sqrt{\frac{1}{x\sqrt{x}}}}}-1)\\
-              & = \lim_{x\to+\infty} \sqrt{x}\times \frac{1}{2}\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}\footnotemark[1]\\
+              & = \lim_{x\to+\infty} \sqrt{x}\times \frac{1}{2}\sqrt{\frac{1}{x}+\frac{1}{x\sqrt{x}}}\\
               & = \lim_{x\to+\infty} \frac{1}{2}\sqrt{1+\frac{1}{\sqrt{x}}} \\
               & = \frac{1}{2}
             \end{align*}
     \end{solution}
-    \footnotetext[1]{此处不能把后面的极限算出来的原因是$\dfrac{1}{x}$极限为不存在,因此如果拆分计算则违背了极限的运算法则}
     \begin{note}
+        注意:$\dfrac{1}{2}\sqrt{\dfrac{1}{x}+\dfrac{1}{x\sqrt{x}}}$处不能把极限算出来的原因是$\dfrac{1}{x}$极限为不存在,因此如果拆分计算则违背了极限的运算法则.\\
         上述解法为通法,即提最高阶无穷$\sqrt{x}$.除此之外,还可以使用有理化进行通分:
         \begin{align*}
           \text{原式} & =\lim_{x\to+\infty}\frac{\sqrt{x+\sqrt{x}}}{\sqrt{x+\sqrt{x+\sqrt{x}}}+\sqrt{x}}\\    
@@ -1605,7 +1627,7 @@
         综上可知:$\alpha =2023$,$\beta=\dfrac{1}{2023}$
     \end{solution}
     \begin{problem}
-        \uline{求极限}$\lim_{x\to+\infty}[\dfrac{x^{1+x}}{\left(1+x\right)^x}-\dfrac xe]$
+        \getRating{3}求极限$\lim_{x\to+\infty}[\dfrac{x^{1+x}}{\left(1+x\right)^x}-\dfrac xe]$
     \end{problem}
     \begin{solution}
         \begin{align*}
@@ -1680,7 +1702,7 @@
             \end{align*}
         \end{solution} 
         \begin{problem}
-           \uline{求极限}$\lim_{n\to\infty}\left[\dfrac{\left(1+\frac1n\right)^n}e\right]^n$        
+           \getRating{2}$\lim_{n\to\infty}\left[\dfrac{\left(1+\frac1n\right)^n}e\right]^n$        
         \end{problem}
         \begin{solution}
             \begin{align*}
@@ -1812,7 +1834,7 @@
         \end{align*}
     \end{solution}
     \begin{problem}
-        \uline{求极限}$\lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right)$
+        \getRating{3}求极限$\lim_{n\to\infty}\left(\dfrac{\sin\dfrac\pi n}{n+1}+\dfrac{\sin\dfrac{2\pi}n}{n+\dfrac12}+\cdots+\dfrac{\sin\dfrac{n\pi}n}{n+\dfrac1n}\right)$
     \end{problem}
     \begin{solution}
         首先对等式进行化简,使用夹逼准则可以得到:
@@ -1932,7 +1954,7 @@
         但是这显然是错误的,无穷多个无穷小相加,结果仍是未定式.
     \end{note}
     \begin{problem}
-        \uline{求}$\lim_{n\to\infty}\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
+        \getRating{3}求$\lim_{n\to\infty}\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)\cdots(n+n)}$
     \end{problem}
     \begin{solution}
         令$a_n=\dfrac{1}{n}\sqrt[n]{(n+1)(n+2)(n+3)...(n+n)}$,则
