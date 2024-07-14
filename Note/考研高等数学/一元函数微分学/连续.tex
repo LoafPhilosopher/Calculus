@@ -19,9 +19,9 @@
     \begin{criterion}{函数连续的性质}{}
         \begin{itemize}
             \item 当极限需要讨论时:
-            $$
-                \lim_{x\to x_0^+}f\left(x\right)=\lim_{x\to x_0^-}f\left(x\right)=f\left(x_0\right)\Leftrightarrow f\left(x\right)\text{ 在点 }x_0\text{ 处连续}
-            $$
+                  $$
+                      \lim_{x\to x_0^+}f\left(x\right)=\lim_{x\to x_0^-}f\left(x\right)=f\left(x_0\right)\Leftrightarrow f\left(x\right)\text{ 在点 }x_0\text{ 处连续}
+                  $$
             \item \textbf{一点连续不能推出邻域连续}:以函数$f(x)=x D(x)$为例,其中$D(x)$为狄利克雷函数:该函数在$x=0$时极限为0,函数值也为0,因此函数在$x=0$点连续,但是其邻域内所有点都不连续.
             \item 连续性的四则运算:设$f(x)$与$g(x)$都在点$x=x_0$处连续,则$f(x)\pm g(x)$与$f(x)g(x)$在点$x=x_{0}$处连续,当$g(x_0)\neq0$ 时,$f(x)/g(x)$在点$x=x_{0}$处也连续。
             \item 复合函数的连续性:设$u=\varphi(x)$在点$x=x_0$处连续,$y=f(u)$在点$u=u_0$处连续,且$u_{0}=\varphi(x_{0})$,则$f\left[\varphi(x)\right]$在点$x=x_{0}$处连续。
@@ -37,23 +37,23 @@
         \begin{center}
             \tikzset{every picture/.style={line width=0.5pt}} %set default line width to 0.75pt        
             \begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
-            \draw  (151,148.43) -- (349.86,148.43)(250.09,67.87) -- (250.09,231.3) (342.86,143.43) -- (349.86,148.43) -- (342.86,153.43) (245.09,74.87) -- (250.09,67.87) -- (255.09,74.87) (270.09,143.43) -- (270.09,153.43)(290.09,143.43) -- (290.09,153.43)(310.09,143.43) -- (310.09,153.43)(330.09,143.43) -- (330.09,153.43)(230.09,143.43) -- (230.09,153.43)(210.09,143.43) -- (210.09,153.43)(190.09,143.43) -- (190.09,153.43)(170.09,143.43) -- (170.09,153.43)(245.09,128.43) -- (255.09,128.43)(245.09,108.43) -- (255.09,108.43)(245.09,88.43) -- (255.09,88.43)(245.09,168.43) -- (255.09,168.43)(245.09,188.43) -- (255.09,188.43)(245.09,208.43) -- (255.09,208.43) ;
-            \draw   ;
-            \draw    (250.09,148.43) -- (313.36,62.43) ;
-            \draw   (297,81.43) .. controls (297,80.13) and (298.06,79.07) .. (299.36,79.07) .. controls (300.66,79.07) and (301.71,80.13) .. (301.71,81.43) .. controls (301.71,82.73) and (300.66,83.79) .. (299.36,83.79) .. controls (298.06,83.79) and (297,82.73) .. (297,81.43) -- cycle ;
-            \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (298.64,147.57) .. controls (298.64,146.55) and (299.47,145.71) .. (300.5,145.71) .. controls (301.53,145.71) and (302.36,146.55) .. (302.36,147.57) .. controls (302.36,148.6) and (301.53,149.43) .. (300.5,149.43) .. controls (299.47,149.43) and (298.64,148.6) .. (298.64,147.57) -- cycle ;
-            \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-            \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-            \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
-            \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {可去间断点函数图像};
-            \end{tikzpicture}            
+                \draw  (151,148.43) -- (349.86,148.43)(250.09,67.87) -- (250.09,231.3) (342.86,143.43) -- (349.86,148.43) -- (342.86,153.43) (245.09,74.87) -- (250.09,67.87) -- (255.09,74.87) (270.09,143.43) -- (270.09,153.43)(290.09,143.43) -- (290.09,153.43)(310.09,143.43) -- (310.09,153.43)(330.09,143.43) -- (330.09,153.43)(230.09,143.43) -- (230.09,153.43)(210.09,143.43) -- (210.09,153.43)(190.09,143.43) -- (190.09,153.43)(170.09,143.43) -- (170.09,153.43)(245.09,128.43) -- (255.09,128.43)(245.09,108.43) -- (255.09,108.43)(245.09,88.43) -- (255.09,88.43)(245.09,168.43) -- (255.09,168.43)(245.09,188.43) -- (255.09,188.43)(245.09,208.43) -- (255.09,208.43) ;
+                \draw   ;
+                \draw    (250.09,148.43) -- (313.36,62.43) ;
+                \draw   (297,81.43) .. controls (297,80.13) and (298.06,79.07) .. (299.36,79.07) .. controls (300.66,79.07) and (301.71,80.13) .. (301.71,81.43) .. controls (301.71,82.73) and (300.66,83.79) .. (299.36,83.79) .. controls (298.06,83.79) and (297,82.73) .. (297,81.43) -- cycle ;
+                \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (298.64,147.57) .. controls (298.64,146.55) and (299.47,145.71) .. (300.5,145.71) .. controls (301.53,145.71) and (302.36,146.55) .. (302.36,147.57) .. controls (302.36,148.6) and (301.53,149.43) .. (300.5,149.43) .. controls (299.47,149.43) and (298.64,148.6) .. (298.64,147.57) -- cycle ;
+                \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+                \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {可去间断点函数图像};
+            \end{tikzpicture}
         \end{center}
     \end{defn}
     \begin{problem}
-        函数 $f\left(x\right)=\dfrac{(x+1)|x-1|}{e^{\frac{1}{x-2}}\ln|x|}$的可去间断点的个数为
+    函数 $f\left(x\right)=\dfrac{(x+1)|x-1|}{e^{\frac{1}{x-2}}\ln|x|}$的可去间断点的个数为
     \end{problem}
-    \be gin{solution}
+    \begin{solution}
         该题中可疑点为$x = \pm 1,2,0$,对上述四点求极限可得:
         $\lim_{x\to 0}=0$,但是函数$f(x)$在$x=0$点无定义.因此$x=0$是可去间断点.$\lim_{x\to 1}f(x)$时$\lim_{x\to1^+}\neq \lim_{x\to 1^-}$.因此$x=1$是跳跃间断点.$\lim_{x\to -1}=-2\sqrt[3]{e}$,因此$x=-1$是可去间断点.$\lim_{x\to2^+}f(x)=0,\lim_{x\to2^-}f(x)=\infty$,$x=2$是第二类间断点.
     \end{solution}
@@ -67,10 +67,10 @@
         但出现$\ln |x|,\ln(x^2)$时,$0$点本身无定义,但$0$点左右邻域内都有定义,所以$0$可能是间断点.
     \end{note}
     \begin{problem}
-        \getRating{3}函数$f(x)=\dfrac{\mid x\mid^{x}-1}{x(x+1)\ln\mid x\mid}$的可去间断点的个数为
+    \getRating{3}函数$f(x)=\dfrac{\mid x\mid^{x}-1}{x(x+1)\ln\mid x\mid}$的可去间断点的个数为
     \end{problem}
     \begin{solution}
-        $f(x)=\dfrac{\left|\:x\:\right|^{x}-1}{x(\:x+1)\ln\mid x\mid}\:$在 $x=-\:1,0,1$\:处无定义\:\\ 
+        $f(x)=\dfrac{\left|\:x\:\right|^{x}-1}{x(\:x+1)\ln\mid x\mid}\:$在 $x=-\:1,0,1$\:处无定义\:\\
         $\operatorname*{lim}_{x\to-1}f(x)=\operatorname*{lim}_{x\to-1}\dfrac{\mathrm{e}^{x\ln\left|x\right|}-1}{x(x+1)\ln\left|x\right|}=\operatorname*{lim}_{x\to-1}\dfrac{x\mathrm{ln}\left|x\right|}{x(x+1)\mathrm{ln}\left|x\right|}=\operatorname*{lim}_{x\to-1}\dfrac{1}{x+1}=\infty$, \\
         $\lim_{x\to0}f(x)=\lim_{x\to0}\dfrac{\left|x\right|^{x}-1}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{\mathrm{e}^{x\ln\left|x\right|}-1}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{x\ln\left|x\right|}{x(x+1)\ln\left|x\right|}=\lim_{x\to0}\dfrac{1}{x+1}=1\:, $\\
         $\operatorname*{lim}_{x\to1}f(x)\:=\operatorname*{lim}_{x\to1}{\dfrac{\left|\:x\:\right|^{x}-1}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{\mathrm{e}^{x\ln\left|\:x\:\right|}-1}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{x\ln\left|\:x\:\right|}{x(x+1)\ln\left|\:x\:\right|}}=\operatorname*{lim}_{x\to1}{\dfrac{1}{x+1}}={\dfrac{1}{2}}$
@@ -81,35 +81,35 @@
         \begin{center}
             \tikzset{every picture/.style={line width=0.5pt}} %set default line width to 0.5pt        
             \begin{tikzpicture}[x=0.5pt,y=0.5pt,yscale=-1,xscale=1]
-            \draw  (152.86,148.43) -- (351.71,148.43)(251.95,67.87) -- (251.95,231.3) (344.71,143.43) -- (351.71,148.43) -- (344.71,153.43) (246.95,74.87) -- (251.95,67.87) -- (256.95,74.87) (271.95,143.43) -- (271.95,153.43)(291.95,143.43) -- (291.95,153.43)(311.95,143.43) -- (311.95,153.43)(331.95,143.43) -- (331.95,153.43)(231.95,143.43) -- (231.95,153.43)(211.95,143.43) -- (211.95,153.43)(191.95,143.43) -- (191.95,153.43)(171.95,143.43) -- (171.95,153.43)(246.95,128.43) -- (256.95,128.43)(246.95,108.43) -- (256.95,108.43)(246.95,88.43) -- (256.95,88.43)(246.95,168.43) -- (256.95,168.43)(246.95,188.43) -- (256.95,188.43)(246.95,208.43) -- (256.95,208.43) ;
-            \draw   ;
-            \draw    (250.09,108.43) -- (352.36,109.43) ;
-            \draw   (250.09,108.43) .. controls (250.09,107.13) and (251.15,106.07) .. (252.45,106.07) .. controls (253.75,106.07) and (254.81,107.13) .. (254.81,108.43) .. controls (254.81,109.73) and (253.75,110.79) .. (252.45,110.79) .. controls (251.15,110.79) and (250.09,109.73) .. (250.09,108.43) -- cycle ;
-            \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (250.09,148.43) .. controls (250.09,147.4) and (250.92,146.57) .. (251.95,146.57) .. controls (252.97,146.57) and (253.81,147.4) .. (253.81,148.43) .. controls (253.81,149.45) and (252.97,150.29) .. (251.95,150.29) .. controls (250.92,150.29) and (250.09,149.45) .. (250.09,148.43) -- cycle ;
-            \draw    (150.09,187.43) -- (252.36,188.43) ;
-            \draw   (250,188.43) .. controls (250,187.13) and (251.06,186.07) .. (252.36,186.07) .. controls (253.66,186.07) and (254.71,187.13) .. (254.71,188.43) .. controls (254.71,189.73) and (253.66,190.79) .. (252.36,190.79) .. controls (251.06,190.79) and (250,189.73) .. (250,188.43) -- cycle ;
-            \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-            \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-            \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
-            \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {跳跃间断点函数图像};
+                \draw  (152.86,148.43) -- (351.71,148.43)(251.95,67.87) -- (251.95,231.3) (344.71,143.43) -- (351.71,148.43) -- (344.71,153.43) (246.95,74.87) -- (251.95,67.87) -- (256.95,74.87) (271.95,143.43) -- (271.95,153.43)(291.95,143.43) -- (291.95,153.43)(311.95,143.43) -- (311.95,153.43)(331.95,143.43) -- (331.95,153.43)(231.95,143.43) -- (231.95,153.43)(211.95,143.43) -- (211.95,153.43)(191.95,143.43) -- (191.95,153.43)(171.95,143.43) -- (171.95,153.43)(246.95,128.43) -- (256.95,128.43)(246.95,108.43) -- (256.95,108.43)(246.95,88.43) -- (256.95,88.43)(246.95,168.43) -- (256.95,168.43)(246.95,188.43) -- (256.95,188.43)(246.95,208.43) -- (256.95,208.43) ;
+                \draw   ;
+                \draw    (250.09,108.43) -- (352.36,109.43) ;
+                \draw   (250.09,108.43) .. controls (250.09,107.13) and (251.15,106.07) .. (252.45,106.07) .. controls (253.75,106.07) and (254.81,107.13) .. (254.81,108.43) .. controls (254.81,109.73) and (253.75,110.79) .. (252.45,110.79) .. controls (251.15,110.79) and (250.09,109.73) .. (250.09,108.43) -- cycle ;
+                \draw  [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ,fill opacity=1 ] (250.09,148.43) .. controls (250.09,147.4) and (250.92,146.57) .. (251.95,146.57) .. controls (252.97,146.57) and (253.81,147.4) .. (253.81,148.43) .. controls (253.81,149.45) and (252.97,150.29) .. (251.95,150.29) .. controls (250.92,150.29) and (250.09,149.45) .. (250.09,148.43) -- cycle ;
+                \draw    (150.09,187.43) -- (252.36,188.43) ;
+                \draw   (250,188.43) .. controls (250,187.13) and (251.06,186.07) .. (252.36,186.07) .. controls (253.66,186.07) and (254.71,187.13) .. (254.71,188.43) .. controls (254.71,189.73) and (253.66,190.79) .. (252.36,190.79) .. controls (251.06,190.79) and (250,189.73) .. (250,188.43) -- cycle ;
+                \draw (246,43) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                \draw (353,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                \draw (233,149) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+                \draw (181,236) node [anchor=north west][inner sep=0.75pt]   [align=left] {跳跃间断点函数图像};
             \end{tikzpicture}
         \end{center}
     \end{defn}
     \begin{defn}{无穷间断点的定义}{}
         无穷间断点:若$\lim_{x\to x_0}f(x)=\infty$,则这类间断点称为无穷间断点,如$y=\tan x$
-              \begin{figure}[H]
-                  \centering \includegraphics[width=
-                      0.4 \linewidth]{1.3.6.eps} \caption{无穷间断点函数$\tan$图像}
-              \end{figure}
+        \begin{figure}[H]
+            \centering \includegraphics[width=
+                0.4 \linewidth]{1.3.6.eps} \caption{无穷间断点函数$\tan$图像}
+        \end{figure}
     \end{defn}
     \begin{defn}{振荡间断点的定义}{}
         振荡间断点:若$\lim_{x\to x_0}f(x)$振荡不存在,则这类间断点称为振荡间断点
-              \begin{figure}[H]
-                  \centering \includegraphics[width=
-                      0.4 \linewidth]{3.2.3.eps} \caption{振荡间断点函数$\sin \dfrac{1}{x}$图像}
-              \end{figure}
-    \end{defn}    
+        \begin{figure}[H]
+            \centering \includegraphics[width=
+                0.4 \linewidth]{3.2.3.eps} \caption{振荡间断点函数$\sin \dfrac{1}{x}$图像}
+        \end{figure}
+    \end{defn}
     \subsection{间断点的分类}
     通过求函数在该点的左右极限来判断
     \begin{itemize}
@@ -121,74 +121,74 @@
         \item 第二类间断点：除第一类以外的间断点$\implies \lim _ { x \rightarrow x _ { 0 } ^{-}} f ( x )$和$\lim _ { x \rightarrow x _ { 0 }^ {+}} f ( x )$​ 均至少一个不存在
     \end{itemize}
     \begin{problem}
-        \getRating{2} 设函数 $f(x)=\lim_{n\to\infty}\dfrac{x^2+nx(1-x)\sin^2\pi x}{1+ n \sin^2 \pi x}$ ,则 $f(x)=$ 
+    \getRating{2} 设函数 $f(x)=\lim_{n\to\infty}\dfrac{x^2+nx(1-x)\sin^2\pi x}{1+ n \sin^2 \pi x}$ ,则 $f(x)=$
     \end{problem}
     \begin{solution}
         分情况讨论,当$\sin^2 \pi x = 0$和$\sin^2 \pi x \neq 0$\\
         当$\sin^2 \pi x = 0$时,
         \begin{align*}
-          \text{原式} & = \lim_{n\to \infty}\dfrac{x^2}{1} \\
-          & =  x^2
+            \text{原式} & = \lim_{n\to \infty}\dfrac{x^2}{1} \\
+                      & =  x^2
         \end{align*}
         当$\sin^2 \pi x \neq 0$时,
         \begin{align*}
-          \text{原式} & = \lim_{n\to \infty} \dfrac{\frac{x^2}{n}+x(1-x)\sin^2 \pi x}{\frac{1}{n}+\sin^2 \pi x} \\
-          & = \lim_{n\to \infty} \dfrac{x(1-x)\sin^2 \pi x}{\sin^2 \pi x}\\
-          & = x(1-x)
+            \text{原式} & = \lim_{n\to \infty} \dfrac{\frac{x^2}{n}+x(1-x)\sin^2 \pi x}{\frac{1}{n}+\sin^2 \pi x} \\
+                      & = \lim_{n\to \infty} \dfrac{x(1-x)\sin^2 \pi x}{\sin^2 \pi x}                           \\
+                      & = x(1-x)
         \end{align*}
-    综上函数$f(x)=\begin{cases}
-        x^2 ,\sin^2 \pi x=0\\
-        x(1-x),\sin^2 \pi x \neq 0
-    \end{cases}$
+        综上函数$f(x)=\begin{cases}
+                x^2 ,\sin^2 \pi x=0 \\
+                x(1-x),\sin^2 \pi x \neq 0
+            \end{cases}$
     \end{solution}
     \begin{problem}
-        \uline{求函数} $f(x)=\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}$ 的间断点并指出其类型.
+    \uline{求函数} $f(x)=\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}$ 的间断点并指出其类型.
     \end{problem}
     \begin{solution}
         当$n \to \infty$时,有$\lim_{x \to \infty}x^n=\begin{cases}
-            \infty ,|x|>1\\ 
-            0,|x|<1\\1,
-            x=1\\
-            (-1)^n,x=-1
-        \end{cases}$,那么$\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}=
-        \begin{cases} 
-            -1,0<|x|<-1\\x^2,|x|>1\\0,|x|=1
-        \end{cases}$
-    综上,$x= \pm 1$为跳跃间断点,$x=0$为可去间断点.
+                \infty ,|x|>1 \\
+                0,|x|<1       \\1,
+                x=1           \\
+                (-1)^n,x=-1
+            \end{cases}$,那么$\lim_{n\to\infty}\dfrac{x^{n+2}-x^{-n}}{x^n+x^{-n}}=
+            \begin{cases}
+                -1,0<|x|<-1 \\x^2,|x|>1\\0,|x|=1
+            \end{cases}$
+        综上,$x= \pm 1$为跳跃间断点,$x=0$为可去间断点.
     \end{solution}
     \begin{note}
         \textcolor{red}{对于$f(x)$是$x$的函数,表达式是以$n$的极限的形式给出的情况,方法为把$f(x)$分段解出来,$n$趋于无穷时,$x^n$要以$|x|=1$为界限进行分段.}\\同时应该结合$x^n$的解析式进行求解:$\lim_{x \to \infty}x^n=\begin{cases}
-            \infty ,|x|>1\\ 
-            0,|x|<1\\1,
-            x=1\\
-            (-1)^n,x=-1
-        \end{cases}$
+                \infty ,|x|>1 \\
+                0,|x|<1       \\1,
+                x=1           \\
+                (-1)^n,x=-1
+            \end{cases}$
     \end{note}
     \begin{problem}
-        \uline{设} $f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}$,则 $f(x):$  \\
-        (A)仅有一个可去间断点.\quad(B) 仅有一个跳跃间断点．\quad(C) 有两个可去间断点.\quad(D)有两个跳跃间断点.
+    \uline{设} $f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}$,则 $f(x):$  \\
+    (A)仅有一个可去间断点.\quad(B) 仅有一个跳跃间断点．\quad(C) 有两个可去间断点.\quad(D)有两个跳跃间断点.
     \end{problem}
     \begin{solution}
         $\lim_{x\to \infty}e^{nx}=\begin{cases}
-            0,x<0\\
-            1,x=0\\
-            +\infty,x>0
-        \end{cases}$,
+                0,x<0 \\
+                1,x=0 \\
+                +\infty,x>0
+            \end{cases}$,
         $\lim_{x \to \infty}x^n=\begin{cases}
-            \infty ,|x|>1\\ 
-            0,|x|<1\\1,
-            x=1\\
-            (-1)^n,x=-1
-        \end{cases}$
-    \\综上可得:
-    $
-    \lim{n\to\infty}=f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}=\begin{cases}
-        0,x<-1\\1,-1<x<0\\2e^x,x>0
-    \end{cases}
-    $
+                \infty ,|x|>1 \\
+                0,|x|<1       \\1,
+                x=1           \\
+                (-1)^n,x=-1
+            \end{cases}$
+        \\综上可得:
+        $
+            \lim{n\to\infty}=f(x)=\lim_{n\to\infty}\dfrac{2\mathrm{e}^{(n+1)x}+1}{\mathrm{e}^{nx}+x^{n}+1}=\begin{cases}
+                0,x<-1 \\1,-1<x<0\\2e^x,x>0
+            \end{cases}
+        $
     \end{solution}
     %  ############################ 正文部分
-        \ifx\allfiles\undefined
-    \end{sloppypar}
+    \ifx\allfiles\undefined
+\end{sloppypar}
 \end{document}
 \fi

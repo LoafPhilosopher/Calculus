@@ -28,8 +28,8 @@
     \subsection{常见数列前$n$项和}
     \begin{center}
         \boxed{\begin{aligned}
-                 & \sum_{k=1}^nk=1+2+3+\cdots+n=\frac{n(n+1)}{2}.\\
-                 & \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{n(n+1)\left(2n+1\right)}{6}.\\
+                 & \sum_{k=1}^nk=1+2+3+\cdots+n=\frac{n(n+1)}{2}.                                                                                 \\
+                 & \sum_{k=1}^{n}k^{2}=1^{2}+2^{2}+3^{2}+\cdots+n^{2}=\frac{n(n+1)\left(2n+1\right)}{6}.                                          \\
                  & \sum_{k=1}^{n}\frac{1}{k(k+1)}=\frac{1}{1\times2}+\frac{1}{2\times3}+\frac{1}{3\times4}+\cdots+\frac{1}{n(n+1)}=\frac{n}{n+1}.
             \end{aligned}}
     \end{center}
@@ -53,22 +53,22 @@
         \end{itemize}
     \end{criterion}
     \begin{problem}
-        已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为
-        \end{problem}
-        \begin{solution}
-            已知定义域指的是$x$的定义域,因此$x \in [0,a]$,那么$x+1 \in [1,a+1]$.括号内定义域相同,那么可以得知$f(x)$定义域为$[1,a+1]$.$f(x+10)$定义域为$[-9,a-9]$.
-        \end{solution}
+    已知$f(x+1)$的定义域为$[0,a](a>0)$,则$f(x)$的定义域为,$f(x+10)$的定义域为
+    \end{problem}
+    \begin{solution}
+        已知定义域指的是$x$的定义域,因此$x \in [0,a]$,那么$x+1 \in [1,a+1]$.括号内定义域相同,那么可以得知$f(x)$定义域为$[1,a+1]$.$f(x+10)$定义域为$[-9,a-9]$.
+    \end{solution}
     \subsection{反函数}
     \begin{defn}{反函数定义}{}
         设函数$y=f(x)$的定义域为$D$,值域为$R$.如果对于每一个$y \in R $,必存在\textbf{唯一的$x \in D$}\footnote{该条件"唯一性"非常重要,如函数$y=x^2$,当$y=y_0$时,有不同的$x$值满足$f(x)=y_0$,因此$x^2$不存在反函数,而$y=\ln x$取任意$y_0 \in R_y$都存在唯一的$x$满足$f(x)=y_0$}\label{xxx1}使得$y=f(x)$成立,则由此定义了一个新的函数$x=\varphi(y)$,这个函数称为函数$y=f(x)$的\textbf{反函数}\footnote{\textcolor{red}{一般地,$y=f(x),x \in D$的反函数记成$y=f^{-1}\left(x\right),x\in f(D)$}},一般记作$x=f^{-1}(y)$,它的定义域为$R$,值域为$D$.相对于反函数来说,原来的函数也被称为\textbf{直接函数}.
-    \end{defn}    
+    \end{defn}
     \begin{problem}{\getRating{3}}
-        设 $y=\sin x,0{\leqslant}x{\leqslant}2\pi$ ,求其所有单调区间上的反函数
+    设 $y=\sin x,0{\leqslant}x{\leqslant}2\pi$ ,求其所有单调区间上的反函数
     \end{problem}
     \begin{solution}
         易知函数的单调区间为$(0,\dfrac{\pi}{2}),(\dfrac{\pi}{2},\dfrac{3 \pi}{2}),(\dfrac{3\pi}{2},2\pi)$,在第一个区间上,当$0\leqslant x\leqslant\dfrac\pi2$时，对$y=\sin x$,有$x=\arcsin y,y\in[0,1];$.\\
         当$\dfrac\pi2<x\leqslant\dfrac{3\pi}2$时,有$-\dfrac\pi2<x-\pi\leqslant \dfrac\pi2$, 此时$\sin(x-\pi)=-\sin(\pi-x)=-\sin x=-y$, 于是有$x-\pi=-\arcsin y$,故$x=\pi-\arcsin y,y\in[-1,1).$\\
-        当$\dfrac{3\pi}{2}<x\leqslant 2\pi$时,有$-\dfrac\pi2<x-2\pi\leqslant0$, 此时$\sin(x-2\pi)=\sin x=y$, 于是有$x-2\pi=$ arcsin $y$ , 故$x=2\pi+\arcsin y,\:y\in(-1,0]$ \\
+                    当$\dfrac{3\pi}{2}<x\leqslant 2\pi$时,有$-\dfrac\pi2<x-2\pi\leqslant0$, 此时$\sin(x-2\pi)=\sin x=y$, 于是有$x-2\pi=$ arcsin $y$ , 故$x=2\pi+\arcsin y,\:y\in(-1,0]$ \\
         综上所述$$x=\begin{cases}\arcsin y ,&0\leqslant x\leqslant\dfrac{\pi}{2} ,\\ \pi-\arcsin y ,&\dfrac{\pi}{2}<x\leqslant\dfrac{3\pi}{2} ,\\ 2\pi+\arcsin y ,&\dfrac{3}{2}\pi<x\leqslant2\pi.\end{cases}$$
     \end{solution}
     \begin{note}
@@ -115,34 +115,34 @@
         \begin{itemize}
             \item \textbf{$f^{-1}f(x)=x$,$f(f^{-1}(x))=x$}
             \item \textbf{严格单调函数必有反函数,但是有反函数的函数不一定是单调函数}.如函数$f(x)=\begin{cases}x,&x\geqslant0, \\ \dfrac{1}{x},&x<0,\end{cases}$,其函数图像为
-                \begin{center}
-                    \tikzset{every picture/.style={line width=0.55pt}} %set default line width to 0.75pt        
-                        \begin{tikzpicture}[x=0.65pt,y=0.65pt,yscale=-1,xscale=1]
-                            \draw  (163,132.43) -- (361.86,132.43)(262.09,43) -- (262.09,224.43) (354.86,127.43) -- (361.86,132.43) -- (354.86,137.43) (257.09,50) -- (262.09,43) -- (267.09,50) (282.09,127.43) -- (282.09,137.43)(302.09,127.43) -- (302.09,137.43)(322.09,127.43) -- (322.09,137.43)(342.09,127.43) -- (342.09,137.43)(242.09,127.43) -- (242.09,137.43)(222.09,127.43) -- (222.09,137.43)(202.09,127.43) -- (202.09,137.43)(182.09,127.43) -- (182.09,137.43)(257.09,112.43) -- (267.09,112.43)(257.09,92.43) -- (267.09,92.43)(257.09,72.43) -- (267.09,72.43)(257.09,152.43) -- (267.09,152.43)(257.09,172.43) -- (267.09,172.43)(257.09,192.43) -- (267.09,192.43)(257.09,212.43) -- (267.09,212.43) ;
-                            \draw   ;
-                            \draw    (262.09,132.43) -- (338.09,50.43) ;
-                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (263.2,112.8) -- (281.2,112.8) ;
-                            \draw  [dash pattern={on 0.84pt off 2.51pt}]  (282.2,132.8) -- (281.2,112.8) ;
-                            \draw    (176.2,138.8) .. controls (254.2,139.8) and (251.2,151.8) .. (256.2,212.8) ;
-                            \draw (256,19) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
-                            \draw (369,123) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
-                            \draw (244,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
-                            \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
-                        \end{tikzpicture}
-                \end{center}
+                  \begin{center}
+                      \tikzset{every picture/.style={line width=0.55pt}} %set default line width to 0.75pt        
+                      \begin{tikzpicture}[x=0.65pt,y=0.65pt,yscale=-1,xscale=1]
+                          \draw  (163,132.43) -- (361.86,132.43)(262.09,43) -- (262.09,224.43) (354.86,127.43) -- (361.86,132.43) -- (354.86,137.43) (257.09,50) -- (262.09,43) -- (267.09,50) (282.09,127.43) -- (282.09,137.43)(302.09,127.43) -- (302.09,137.43)(322.09,127.43) -- (322.09,137.43)(342.09,127.43) -- (342.09,137.43)(242.09,127.43) -- (242.09,137.43)(222.09,127.43) -- (222.09,137.43)(202.09,127.43) -- (202.09,137.43)(182.09,127.43) -- (182.09,137.43)(257.09,112.43) -- (267.09,112.43)(257.09,92.43) -- (267.09,92.43)(257.09,72.43) -- (267.09,72.43)(257.09,152.43) -- (267.09,152.43)(257.09,172.43) -- (267.09,172.43)(257.09,192.43) -- (267.09,192.43)(257.09,212.43) -- (267.09,212.43) ;
+                          \draw   ;
+                          \draw    (262.09,132.43) -- (338.09,50.43) ;
+                          \draw  [dash pattern={on 0.84pt off 2.51pt}]  (263.2,112.8) -- (281.2,112.8) ;
+                          \draw  [dash pattern={on 0.84pt off 2.51pt}]  (282.2,132.8) -- (281.2,112.8) ;
+                          \draw    (176.2,138.8) .. controls (254.2,139.8) and (251.2,151.8) .. (256.2,212.8) ;
+                          \draw (256,19) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle y$};
+                          \draw (369,123) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle x$};
+                          \draw (244,134) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\displaystyle O$};
+                          \draw (122,138) node [anchor=north west][inner sep=0.75pt]   [align=left] {$ $};
+                      \end{tikzpicture}
+                  \end{center}
             \item 连续可导的函数如果具有反函数，那么一定单调，但是单调函数不一定推出导数一定都不为0，如$f(x)=x^3$在$x=0$处的导数
             \item 若函数$f(x)$有反函数,则$f(x)$与任意水平线有且仅有一个交点.\footnote{反函数的唯一性见此处定义\ref{xxx1}}
         \end{itemize}
     \end{defn}
-    \begin{problem} 
+    \begin{problem}
     \getRating{1}    求函数$y=f(x)=\ln(x+\sqrt{x^2+1})$的反函数的表达式以及定义域
     \end{problem}
     \begin{solution}
         已知$y=f(x)=\ln(x+\sqrt{x^2+1})$,则$-y=\ln \dfrac{1}{x+\sqrt{x^2+1}}=\ln(\sqrt{x^2+1}-x)$\\
-       根据对数函数运算法则\ref{dshs},对两边可以进行如下操作
+        根据对数函数运算法则\ref{dshs},对两边可以进行如下操作
         \begin{center}
             $e^{-y}=\sqrt{x^2+1}-x$\\
-            $e^{y}=\sqrt{x^2+1}+x$\\ 
+            $e^{y}=\sqrt{x^2+1}+x$\\
         \end{center}
         那么可以得到$x=\dfrac{1}{2}(e^y-e^{-y})$
         交换之后可以得到函数$f(x)$的反函数,即
@@ -180,8 +180,8 @@
     $$
     确定的函数,称为由函数$u=g(x)$和函数$y=f(u)$构成的\textbf{复合函数},它的定义域为D,u称为中间变量.内层函数的值域是外层函数的子集\footnote{需要注意的是,不是任何两个函数都可以进行复合,如果函数$A$的定义域与函数$B$的值域的交集为$\varnothing$,则两个函数不可进行复合}.
     \begin{problem}
-        $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则\\
-        $(A)\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}$不存在.$\quad(\mathrm{C})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}$不存在
+    $\text{设}f(x)=\begin{cases}x^2,&x\geqslant0,\\x^4,&x<0,\end{cases}g(x)=\begin{cases}-\sqrt{x},&x>0,\\x^2,&x\leqslant0,\end{cases}\text{若}y=f(g(x)),$则\\
+    $(A)\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}=1.\quad(\mathrm{B})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=1}$不存在.$\quad(\mathrm{C})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}=0.\quad(\mathrm{D})\dfrac{\mathrm{d}y}{\mathrm{d}x}\bigg|_{x=0}$不存在
     \end{problem}
     \begin{solution}
         函数$y$为$f(x)$和$g(x)$复合函数,若求复合函数在$x=1$和$x=0$时的导数,那么可以将复合函数写为$f(x)=\begin{cases}g(x)^2,&x \geqslant 0\\g(x)^4,&x<0\end{cases}$,由此,作出$g(x)$函数图像,结合图像,可以将上述图像函数表达式更改为$f(g(x))=\begin{cases}x^2,&x\geqslant0\\x^4,&x<0\end{cases}$.则函数$f(g(x))$在$x=1$处的导数为0.
@@ -200,35 +200,35 @@
         \item 从几何上看,如果在给定的区间,函数 $y=f(x)$的图形能够被直线 $y=-M$和 $y=M$"完全包起来",则为有界;从定义上说,找到某个正数 $M$,使得$|f(z)| \leqslant M$,则为有界.
         \item \textbf{在讨论有界还是无界的时候首先要指明区间},如果没指名区间,则无法讨论有界性.如函数$y=\dfrac{1}{x}$则$(2,+\infty)$上有界,但是在$(0,2)$上无界.
     \end{itemize}
-   \subsubsection{\textcolor{red}{有界性的判断}}
-        \begin{itemize}
-            \item 利用定义
-            \item $f(x)$在$[a,b]$上连续$\Rightarrow f(x)$在$[a,b]$上有界
-            \item $f(x)$在$(a,b)$上连续,且$f(a^+)$和$f(b^-)$存在$\Leftrightarrow f(x)$在$(a,b)$上有界.
-            \item \textbf{$f'(x)$在区间$I(\text{有限})$\footnote{长度有限}上有界$\Rightarrow f(x)$在$I$上有界}
-                  \begin{proof}
-                      \begin{itemize}
-                          \item 使用拉格朗日中值定理进行证明:设区间$I(a,b)$由拉格朗日中值定理可得$f(b)-f(a)=f'(\xi)(b-a)$，固定点$a$，那么对区间$I(a,b)$上每一个点求拉格朗日中值定理，那么$f(x)=f(a)+f'(\xi)(x-a)$,其中$f(a)$为固定值,$(x-a)$为有界值，$f'(\xi)$在$I(a,b)$上有界，综上$f(x)$在区间上必有界。
-                          \item 使用斜率进行证明:由几何意义可知,$f'(x)$为$f(x)$的斜率,那么如果$f'(x)$有界,那么斜率有界,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
-                          \item 使用面积进行证明:$f'(x)$在有限区间上有界,则该区间上$f'(x)$与$x$轴所围成的面积是有界的,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
-                      \end{itemize}
-                  \end{proof}
-        \end{itemize}
+    \subsubsection{\textcolor{red}{有界性的判断}}
+    \begin{itemize}
+        \item 利用定义
+        \item $f(x)$在$[a,b]$上连续$\Rightarrow f(x)$在$[a,b]$上有界
+        \item $f(x)$在$(a,b)$上连续,且$f(a^+)$和$f(b^-)$存在$\Leftrightarrow f(x)$在$(a,b)$上有界.
+        \item \textbf{$f'(x)$在区间$I(\text{有限})$\footnote{长度有限}上有界$\Rightarrow f(x)$在$I$上有界}
+              \begin{proof}
+                  \begin{itemize}
+                      \item 使用拉格朗日中值定理进行证明:设区间$I(a,b)$由拉格朗日中值定理可得$f(b)-f(a)=f'(\xi)(b-a)$，固定点$a$，那么对区间$I(a,b)$上每一个点求拉格朗日中值定理，那么$f(x)=f(a)+f'(\xi)(x-a)$,其中$f(a)$为固定值,$(x-a)$为有界值，$f'(\xi)$在$I(a,b)$上有界，综上$f(x)$在区间上必有界。
+                      \item 使用斜率进行证明:由几何意义可知,$f'(x)$为$f(x)$的斜率,那么如果$f'(x)$有界,那么斜率有界,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
+                      \item 使用面积进行证明:$f'(x)$在有限区间上有界,则该区间上$f'(x)$与$x$轴所围成的面积是有界的,那么说明$f(x)$的变化是有界的,那么更说明$f(x)$不可能无界。
+                  \end{itemize}
+              \end{proof}
+    \end{itemize}
     \begin{problem}
     已知函数$f(x)=\dfrac{\int_0^x\ln(1+t^2)\operatorname{d}t}{x^a}\text{在}(0,+\infty)$上有界,则$a$的取值范围为
     \end{problem}
     \begin{solution}
         如果说$f(x)$在$(0,+\infty)$上有界,那么$f(x)$应该在区间两端点连续单侧极限存在.即$\lim_{x \to +\infty}f(x)$与$\lim_{x \to 0+}f(x)$极限存在。下面进行分情况讨论：
         \begin{align*}
-            \lim_{x \to +\infty}f(x) & =\lim_{x \to +\infty}\dfrac{\int_0^x \ln(1+t^2)dt}{x^\alpha} \\
-            & \xlongequal{\text{洛必达法则}}\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}\\
-            & =\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}
+            \lim_{x \to +\infty}f(x) & =\lim_{x \to +\infty}\dfrac{\int_0^x \ln(1+t^2)dt}{x^\alpha}                       \\
+                                     & \xlongequal{\text{洛必达法则}}\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}} \\
+                                     & =\lim_{x\to +\infty}\frac{\ln(1+x^2)}{\alpha x^{\alpha-1}}
         \end{align*}
         若要$x \to \infty$时函数有界,那么分母应趋近于无穷。则$\alpha -1>0$.
         \begin{align*}
-            \lim_{x \to 0^+}f(x) & =\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}   \\
-            & \xlongequal{\text{洛必达法则}}\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1}\\
-            & \xlongequal{\text{等价无穷小}}\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}
+            \lim_{x \to 0^+}f(x) & =\lim_{x \to 0^+}\frac{\int_0^x \ln(1+t^2)dt}{x^\alpha}                        \\
+                                 & \xlongequal{\text{洛必达法则}}\lim_{x \to 0^+}\frac{\ln(1+x^2)}{\alpha x ^\alpha-1} \\
+                                 & \xlongequal{\text{等价无穷小}}\lim_{x\to 0^+}\frac{x^2}{\alpha x^{\alpha-1}}
         \end{align*}
         若要该极限成立。$\alpha -1\leqslant2$使得极限整体趋于0.综上所述,$\alpha$的取值范围应为$(1,3]$.
     \end{solution}
@@ -243,24 +243,26 @@
         A,B选项.无论是导数还是原函数在区间上连续,都不可以推出原函数在区间上有界,比如函数$\frac{1}{x}$其在$(0,1)$区间上连续,但是其原函数$\ln x$在区间上无界.\\
         \textbf{一元函数中,优先看导数,由导数推函数\footnote{导数可以决定函数的变化,因此出现该类型的题目时,优先看有导数的选项}}。同时此处可以使用有界性判断\ref{yjxpd1}的定理三,可以得出导函数如果在有限区间$I$上有界,那么函数在区间$I$上有界。本题选C。
     \end{solution}
-    \subsubsection{单调性}
+    \subsubsection{单调性}\label{ddx}
     \begin{defn}{单调性的定义}{}
         设$f(x)$的定义域为$D$,区间$I \subset D$.如果对于区间上任意两点$x_1,x_2$当$x_1 < x_2$时,恒有$f(x_1) < f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调增加}.如果对于区间$I$上任意两点$x_1,x_2$当$x_1<x_2$,时,恒有$f(x_1)>f(x_2)$,则称$f(x)$在区间$I$上\textbf{单调减少}.
+        \tcblower
+        单调递增分广义的单调递增(即单调不减)和严格的单调递增.
     \end{defn}
     判断单调性的方法
     \begin{enumerate}
         \item 利用导数进行判断,若$f(x)$在区间$I$上可导,则
-        \begin{itemize}
-            \item $f^{\prime}(x)>0(<0)\Rightarrow f(x)$ 单调增(单调减)
-            \item $f^{\prime}(x)\geqslant0(\leqslant0)\Leftrightarrow f(x)$ 单调不减(单调不增)
-        \end{itemize}
+              \begin{itemize}
+                  \item $f^{\prime}(x)>0(<0)\Rightarrow f(x)$ 单调增(单调减)
+                  \item $f^{\prime}(x)\geqslant0(\leqslant0)\Leftrightarrow f(x)$ 单调不减(单调不增)
+              \end{itemize}
         \item 利用导数的定义,对任意$x_1,x_2\in D,x_1\neq x_2$,有
-        \begin{itemize}
-            \item $f\left(x\right)$是单调增函数(严格单调)$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]>0$
-            \item $f(x)$是单调减函数(严格单调)$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]<0$
-            \item $f(x)$是单调不减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]\geqslant0$
-            \item $f\left(x\right)$是单调不增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]\leqslant0$
-        \end{itemize}
+              \begin{itemize}
+                  \item $f\left(x\right)$是单调增函数(严格单调)$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]>0$
+                  \item $f(x)$是单调减函数(严格单调)$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]<0$
+                  \item $f(x)$是单调不减函数$\Leftrightarrow(x_{1}-x_{2})[f(x_{1})-f(x_{2})]\geqslant0$
+                  \item $f\left(x\right)$是单调不增函数$\Leftrightarrow\left(x_{1}-x_{2}\right)\left[f\left(x_{1}\right)-f\left(x_{2}\right)\right]\leqslant0$
+              \end{itemize}
     \end{enumerate}
     \subsubsection{奇偶性}
     \begin{defn}{奇偶性的定义}{}
@@ -269,15 +271,15 @@
     \begin{criterion}{奇偶性的性质}{}\label{jox2}
         \begin{enumerate}
             \item 奇偶函数运算后的奇偶性:
-            \begin{itemize}
-                \item 奇函数乘(除)偶函数=奇函数；
-                \item 奇函数乘(除)奇函数=偶函数；
-                \item 偶函数乘(除)偶函数=偶函数；
-                \item 奇函数加(减)奇函数=奇函数；
-                \item 偶函数加(减)偶函数=偶函数；
-                \item 不恒为零的偶(奇)函数加减不恒为零的奇(偶)函数为非奇非偶函数；
-                \item 偶(奇)函数乘以非奇非偶函数，一般不再是偶(奇)函数，为非奇非偶函数。
-            \end{itemize}
+                  \begin{itemize}
+                      \item 奇函数乘(除)偶函数=奇函数；
+                      \item 奇函数乘(除)奇函数=偶函数；
+                      \item 偶函数乘(除)偶函数=偶函数；
+                      \item 奇函数加(减)奇函数=奇函数；
+                      \item 偶函数加(减)偶函数=偶函数；
+                      \item 不恒为零的偶(奇)函数加减不恒为零的奇(偶)函数为非奇非偶函数；
+                      \item 偶(奇)函数乘以非奇非偶函数，一般不再是偶(奇)函数，为非奇非偶函数。
+                  \end{itemize}
             \item $f(\varphi(x))$(内偶则偶,内奇看外)\footnote{
                   奇[偶]$\Rightarrow$ 偶;偶[奇]$\Rightarrow$ 偶;奇[奇]$\Rightarrow$ 奇;偶[偶]$\Rightarrow$ 偶;非奇非偶[偶]$\Rightarrow$ 偶}
             \item 对任意的$x,y$都有$f(x+y)=f(x)+f(y)$,则$f(x)$是奇函数\footnote{证明如下:令$x=y=0$,则$f(0)=2*f(0)$,则$f(0)=0$,令$y=-x$,则$f(0)=f(x)+f(-x).$}.
@@ -299,9 +301,9 @@
     (C) $\int _a ^x du \int _0 ^u tf(t)dt$  \qquad \qquad (D) $\int_0 ^x du \int _a ^u f(t) dt$
     \end{problem}
     \begin{solution}
-       $A$选项 已知函数$f(x)$连续为奇函数,那么$tf(t)$为偶函数,若其想为奇函数,其积分形式应为$\int _0 ^u tf(t) dt$.\\ $B$选项为奇函数,$\int _0 ^x f(t) dt$为偶函数,再次积分,无法满足过原点,因此无奇偶性.
-       \\$C$选项,同理,$tf(t)$为偶函数,积分后为奇函数,再次积分后为偶函数,正确
-       \\$D$选项,第一次积分后为非奇非偶函数
+        $A$选项 已知函数$f(x)$连续为奇函数,那么$tf(t)$为偶函数,若其想为奇函数,其积分形式应为$\int _0 ^u tf(t) dt$.\\ $B$选项为奇函数,$\int _0 ^x f(t) dt$为偶函数,再次积分,无法满足过原点,因此无奇偶性.
+        \\$C$选项,同理,$tf(t)$为偶函数,积分后为奇函数,再次积分后为偶函数,正确
+            \\$D$选项,第一次积分后为非奇非偶函数
     \end{solution}
     \subsubsection{周期性}
     \begin{defn}{周期函数的定义}{}
@@ -443,7 +445,7 @@
             \item  \getRating{2} 对数运算法则\label{dshs}
                   \begin{itemize}
                       \item $\log_{a}\left(MN\right)=\log_{a}M+\log_{a}N\left(\text{ 积的对数}=\text{对数的和 }\right).$
-                      \item $\log_{a}\dfrac{M}{N}=\log_{a}M-\log_{a}N\left(\text{商的对数}=\text{对数的差 }\right).$ 
+                      \item $\log_{a}\dfrac{M}{N}=\log_{a}M-\log_{a}N\left(\text{商的对数}=\text{对数的差 }\right).$
                       \item $\log_aM^n=n\log_aM,\quad\log_a\sqrt[n]{M}=\dfrac1n\log_aM\text{(幂的对数}=\text{对数的倍数 }).$
                   \end{itemize}
             \item \textcolor{red}{常用公式:$x=\mathrm{e}^{\ln x}\left(x>0\right),u^{\upsilon}=\mathrm{e}^{\ln u^v}=\mathrm{e}^{\upsilon\ln u}\left(u>0\right)$}
@@ -544,15 +546,15 @@
     \begin{criterion}{反正余弦函数相关性质}{}
         \begin{itemize}
             \item 定义域$[-1,1]$,$y=\arcsin x$值域(主值区间)\footnote{描述一个函数所有值的区间}$[-\dfrac{\pi}{2},\dfrac{\pi}{2}]$,$y=\arccos x$值域(主值区间)$[0,\pi]$需要注意的是其值需要在值域内.因为只有在这个区间上,函数才满足反函数定义\ref{xxx1}中的唯一性.那么可以推断出如下的反函数:
-            $$
-            \text{当}x \in [-\frac{\pi}{2},\frac{\pi}{2}]\text{时},x=\arcsin y
-            $$
-            $$
-            \text{当}x \in [\frac{\pi}{2},\frac{3\pi}{2}]时,x=\pi-\arcsin y
-            $$
-            $$
-            \text{当}x \in [\frac{3\pi}{2},2\pi],x=2\pi+\arcsin y            
-            $$
+                  $$
+                      \text{当}x \in [-\frac{\pi}{2},\frac{\pi}{2}]\text{时},x=\arcsin y
+                  $$
+                  $$
+                      \text{当}x \in [\frac{\pi}{2},\frac{3\pi}{2}]时,x=\pi-\arcsin y
+                  $$
+                  $$
+                      \text{当}x \in [\frac{3\pi}{2},2\pi],x=2\pi+\arcsin y
+                  $$
             \item 性质:$\arcsin x+\arccos x=\dfrac{\pi}{2}$(求导后可以发现导数为0)
         \end{itemize}
     \end{criterion}
@@ -637,10 +639,10 @@
     \subsubsection{参数方程与极坐标方程转化}
     主要使用如下公式进行转换
     $$
-    \rho=\sqrt{x^2+y^2}
+        \rho=\sqrt{x^2+y^2}
     $$
     $$
-    \tan\theta=\dfrac yx
+        \tan\theta=\dfrac yx
     $$
     \section{常用函数知识}
     \subsection{三角函数}
@@ -678,8 +680,8 @@
     \begin{center}
         \boxed{
             \begin{aligned}
-                 & \sin(\alpha\pm\beta)=\sin\alpha\cos\beta cos\alpha\sin\beta                  \\
-                 & \cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta               \\
+                 & \sin(\alpha\pm\beta)=\sin\alpha\cos\beta cos\alpha\sin\beta                   \\
+                 & \cos(\alpha\pm\beta)=\cos\alpha\cos\beta\mp\sin\alpha\sin\beta                \\
                  & \tan(\alpha\pm\beta)=\dfrac{\tan\alpha\pm\tan\beta}{1\mp\tan\alpha\tan\beta}  \\
                  & \cot(\alpha\pm\beta)=\dfrac{\cot\alpha\cot\beta\mp1}{\cot\beta\pm\cot\alpha}.
             \end{aligned}
