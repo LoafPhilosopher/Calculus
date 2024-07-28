@@ -19,7 +19,7 @@
     \end{defn}
     \begin{criterion}{导数定义的注意事项}{}
         \begin{enumerate}
-            \item 在考题中,增量$\Delta x$一般会被命题人广义化为"$\square$",即
+            \item 在考题中,增量$\Delta x$一般会被命题人广义化为“$\square$”,即
                   $$
                       f'(x_0)=\lim_{\Delta x \to 0}\frac{f(x_0+\Delta x)-f(x_0)}{\Delta x}\xlongequal{\text{广义化}} \lim_{ \square \to 0}\frac{f(x_0 + \square)-f(x_0)}{\square}
                   $$
@@ -70,6 +70,22 @@
     \begin{note}
         本题可能会错误的认为$|f(x)|\leqslant 1-\cos x \to |x|\leqslant 1-\cos x$,然后绘制出一个函数图像,然后就认为B选项是正确的,没有根据题意和导数的定义进行求解.
     \end{note}
+    \begin{problem}
+    设函数$f(x)$在$x=0$处连续，下列命题错误的是\\
+    (A)若$\lim_{x\to0}\dfrac{f(x)}x$存在，则 $f(0)=0.$\quad
+    (B)若$\lim_{x\to0}\dfrac{f(x)+f(-x)}x$存在，则 $f(0)=0.$\\
+    (C)若$\lim_{x\to0}\dfrac{f(x)}x$存在，则 $f^\prime(0)$ 存在.\quad
+    (D)若$\lim_{x\to0}\dfrac{f(x)-f(-x)}x$存在，则 $f^\prime$(0)存在.
+    \end{problem}
+    \begin{solution}
+        以函数$|x|$为例,$f^{\prime}(0)$ 不存在，但$\lim_{x\to0}\dfrac{f(x)-f(-x)}x=\lim_{x\to0}\dfrac{\mid x\mid-\mid-x\mid}x=0$ 存在
+    \end{solution}
+    \begin{problem}
+    设函数 $f(x)=\operatorname*{lim}_{n\to\infty}\sqrt[n]{1+\mid x\mid^{3n}},$则$f(x)$在$\left(-\infty,+\infty\right)$内
+    \end{problem}
+    \begin{solution}
+        易知$f(x)=\lim_{n\to\infty}\sqrt[n]{1+\mid x\mid^{3n}}=\begin{cases}\quad1,&\mid x\mid\leqslant1,\\\mid x^3\mid,&\mid x\mid>1.\end{cases}$,显然该函数在$\pm 1$,这两点不可导.
+    \end{solution}
     \begin{problem}
     若$f(x)$在点$x_{0}$处的左,右导数都存在,则 $f(x)$在点$x_{0}$处\\
     (A) 可导 \quad (B)连续 \quad  (C)不可导 \quad (D)不一定连续
@@ -160,7 +176,8 @@
                   \end{figure}
                   同时,导数振荡的话,则导数极限不存在,由此可以推出衍生推论:导数极限定理\ref{dsjxdl}
             \item 导数极限如果存在,则导数一定连续(排除了振荡间断点的情况).
-            \item \textcolor{red}{函数在一点可导的必要条件:若$f(x)$在一点可导,则$f(x)$在该点连续}\footnote{上面两个结论非常重要,经常和高阶导数一起考察}
+            \item \textcolor{red}{函数在一点可导的必要条件:若$f(x)$在一点可导,则$f(x)$在该点连续(即函数连续不一定可导,但是可导一定连续)}.\footnote{上面两个结论非常重要,经常和高阶导数一起考察}
+            \item 此外,还应该注意的是:在很多教辅上讲,即(函数)连续不一定可导,但是可导一定连续.必须要注意该命题的\textbf{主语是函数}.而第一条的“导数若存在,则导数要么连续,要么只可能有振荡间断点”.这个命题的\textbf{主语是导数}.
         \end{enumerate}
     \end{criterion}
     \begin{problem}
@@ -238,7 +255,7 @@
         \item 不可导+不可导=无法确定
     \end{itemize}
     \begin{conclusion}{带绝对值函数可导的充要条件}{}
-        设 $f(x)=\varphi(x)\left|x-a\right|$,其 $\varphi(x)$ 在$x=a$处连续,则$f\left(x\right)$在$x=a$处可导的充要条件是$\varphi\left(a\right)=0$\footnote{如果该点不可导的话,在$a$点应该函数图像应该由于绝对值的存在,导致存在一个"尖"(绝对值的分段点),最终导致不可导,如果想导,则要在此点可导,整体函数必须为0}
+        设 $f(x)=\varphi(x)\left|x-a\right|$,其 $\varphi(x)$ 在$x=a$处连续,则$f\left(x\right)$在$x=a$处可导的充要条件是$\varphi\left(a\right)=0$\footnote{如果该点不可导的话,在$a$点应该函数图像应该由于绝对值的存在,导致存在一个“尖”(绝对值的分段点),最终导致不可导,如果想导,则要在此点可导,整体函数必须为0}
     \end{conclusion}
     \begin{problem}
     设 $f(x)$ 可导$,F(x)=f(x)(1+|\sin x|)$,则 $f(0)=0$ 是$F(x)$ 在$x=0$ 可导的\\
@@ -1263,7 +1280,7 @@
                           \nRightarrow \text{邻域内}f(x)\text{为凹函数}
                       \end{cases}$
             \item 函数为凹函数,推不出二阶导大于0,如$f(x)=|x|$(因为凹凸性不是用二阶导去定义的.而且一点处的二阶导推不出凹凸性)
-            \item 在第二个注意事项的基础上,即使增加条件:"$f(x)$二阶连续可导,且函数为凹函数",也推不出二阶导大于0\footnote{二阶导大于0,可推出是凹函数},如$f(x)=x^4$,显然为凹函数,但0点处二阶导等于0.(可能二阶导等于0的点)
+            \item 在第二个注意事项的基础上,即使增加条件:“$f(x)$二阶连续可导,且函数为凹函数”,也推不出二阶导大于0\footnote{二阶导大于0,可推出是凹函数},如$f(x)=x^4$,显然为凹函数,但0点处二阶导等于0.(可能二阶导等于0的点)
         \end{enumerate}
     \end{criterion}
     \subsection{拐点}
