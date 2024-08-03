@@ -9,7 +9,85 @@
     %  ############################ 正文部分
     \chapter{反常积分}
     \section{反常积分的概念}
+    \begin{defn}{反常积分的定义}{}
+        \begin{itemize}
+            \item \textbf{无穷区间}上反常积分的概念与敛散性
+                  \newline
+                  设$F(x)$是$f(x)$在相应区间上的一个原函数:
+                  \begin{enumerate}
+                      \item $$
+                                \int_{a}^{+\infty}f(x)\mathrm{d}x=\lim_{x\to+\infty}F(x)-F(a)
+                            $$若上述极限存在,则称反常积分收敛,否则称发散
+                      \item $$\int_{-\infty}^{b}f(x)\mathrm{d}x=F(b)-\lim_{x\to-\infty}F(x)$$若上述极限存在,则称反常积分收敛,否则称发散
+                      \item $$\int_{-\infty}^{+\infty}f(x)\mathrm{d}x=\int_{-\infty}^{x_{0}}f(x)\mathrm{d}x+\int_{x_{0}}^{+\infty}f(x)\mathrm{d}x$$若右端\textbf{两个积分都收敛}\footnote{两个积分必须都收敛,不能使用不存在+不存在=存在},则称反常积分收敛,否则称发散
+                  \end{enumerate}
+            \item \textbf{无界函数}的反常积分的概念与敛散性
+                  \begin{defn}{瑕点的定义}{}
+                      使$f(x)$在 $x_0$的邻域内无界的点即为瑕点,例如:$\lim_{x\to 0}\dfrac{1}{x}=\infty ,x=0$为函数的瑕点.
+                  \end{defn}
+                  设$F(x)$是$f(x)$在相应区间上的一个原函数,$x_0$为$f(x)$的瑕点.
+                  \begin{enumerate}
+                      \item 若 $x=a$ 是唯一瑕点,则
+                            $$\int_a^bf(x)\mathrm{d}x=F(b)-\lim_{x\to a^+}F(x)$$
+                            若上述极限存在,则称反常积分收敛,否则称发散. \footnote{前面定积分章节,要求$\int_a ^b f(x) dx$存在的必要条件是$f(x)$有界,但是此处似乎无界,也可使积分存在,似乎矛盾,需要注意的是,两者的积分不一样,前面要求有界的是黎曼积分,而此次可以无界的是反常积分,二者不同.}
+                      \item 若 $x=b$ 是唯一瑕点,则
+                            $$\int_a^bf(x)\mathrm{d}x=\lim_{x\to b^-}F(x)-F(a)$$
+                            若上述极限存在,则称反常积分收敛,否则称发散.
+                      \item 若 $x=c\in(a,b)$是唯一瑕点,则
+                            $$\int_a^bf(x)\mathrm{d}x=\int_a^cf(x)\mathrm{d}x+\int_c^bf(x)\mathrm{d}x\:,$$
+                            若右端两个积分都收敛,则称反常积分收敛,否则称发散.
+                  \end{enumerate}
+        \end{itemize}
+    \end{defn}
+    \begin{criterion}{敛散性的判定}{}
+        \begin{itemize}
+            \item 无穷区间
+                  \begin{enumerate}
+                      \item 比较判别法\footnote{可通过不等式放缩来证明}:设函数$f(x),g(x)$在区间$[a, +\infty )$上连续,并且$0\leqslant f(x)\leqslant g(x)(a\leqslant x<+\infty)$,则
+                            \begin{itemize}
+                                \item 当$\int_a^{+\infty}g(x) dx$收敛时,$\int_a^{+\infty} f(x) dx$收敛
+                                \item 当$\int_a^{+\infty}f(x) dx$发散时,$\int_a^{+\infty} g(x) dx$发散
+                            \end{itemize}
+                      \item 比较判别法的极限形式\footnote{通过等价无穷小求极限来判断}:设函数$f(x),g(x)$在区间$[a,+\infty)$上连续,且$f(x)\geqslant0,g(x)>0,\lim_{x\to+\infty}\dfrac{f(x)}{g(x)}=\lambda$(有限或 $\infty)$,则
+                            \begin{itemize}
+                                \item 当$\lambda\neq0$且$\lambda\neq\infty$时$,\int_a^{+\infty} f(x)$d$x$与$\int_a^{+\infty} g(x)$d$x$有相同的敛散性
+                                \item 当$\lambda=0$时,若$\int_{a}^{+\infty}g(x) dx$收敛,则$\int_a^{+\infty}f(x) dx$也收敛
+                                \item 当$\lambda=\infty$时,若$\int_a^{+\infty} g(x)$d$x$发散,则$\int_a^{+\infty}f(x)$d$x$也发散
+                            \end{itemize}
+                  \end{enumerate}
+            \item 无界函数
+                  \begin{enumerate}
+                      \item 比较判别法:设$f(x),g(x)$在$(a,b]$上连续,瑕点同为$x=a$,并且$0\leqslant f(x)\leqslant g(x)(a<x\leqslant b)$,则
+                            \begin{itemize}
+                                \item 当$\int_{a}^{b}g(x) dx$收敛时,$\int_a^{b}f(x) dx$收敛
+                                \item 当$\int_{a}^{b}f(x) dx$ 发散时,$\int_a^{b}g(x) dx$发散
+                            \end{itemize}
+                      \item 比较判别法的极限形式:设$f(x),g(x)$在$(a,b]$上连续,瑕点同为$x=a$,并且$f(x)\geqslant0,g(x)>0(a<x\leqslant b),\lim_{x\to a^{+}}\dfrac{f(x)}{g(x)}=\lambda$(有限或 $\infty)$,则
+                            \begin{itemize}
+                                \item 当$\lambda\neq0$且$\lambda\neq\infty$时,$\int_{a}^{b}f(x)\mathrm{d}x$和$\int_{a}^{b}g(x)\mathrm{d}x$有相同的敛散性
+                                \item 当$\lambda=0$时,若$\int_{a}^{b}g(x)\mathrm{d}x$收敛,则$\int_{a}^{b}f(x)\mathrm{d}x$也收敛
+                                \item 当$\lambda=\infty$时,若$\int_{a}^{b}g(x)\mathrm{d}x$发散，则$\int_{a}^{b}f(x)\mathrm{d}x$也发散
+                            \end{itemize}
+                  \end{enumerate}
+        \end{itemize}
+    \end{criterion}
+    \begin{conclusion}{两个重要结论}{}
+        \begin{enumerate}
+            \item $\int _0 ^1 \dfrac{1}{x^p} dx \begin{cases}
+                          \text{收敛},0<p<1 \\
+                          \text{发散},p \geq 1
+                      \end{cases}$
+                  \newline 由于$x\to 0$时,存在$\sin x \sim \cdots \sim x $,因此有$\int _0 ^1 \dfrac{1}{\sin x ^p} dx \begin{cases}
+                          \text{收敛},0<p<1 \\
+                          \text{发散},p \geq 1
+                      \end{cases}$,凡是与$x$趋于0的“速度”一样的函数$f(x)$均可如上讨论
+            \item $\int_{1}^{+\infty}\dfrac{1}{x^{p}}\mathrm{d}x\begin{cases}{\text{收敛,}p>1}\\{\text{发散,}p\leq1} \end{cases}$.如当$x\to+\infty$且$a>0$时，$ax+b$亦趋于$+\infty$,与$x$趋于$+\infty$的“速度”一样,当$ax+b\geq k>0$时，$\int_1^{+\infty}\dfrac1{(ax+b)^p} dx$依然满足$\begin{cases}\text{收敛，}p>1,\\\text{发散，}p\leq1.\end{cases}$
+        \end{enumerate}
+    \end{conclusion}
     \section{反常积分的计算}
+    \begin{conclusion}{}{}
+        //  TODO
+    \end{conclusion}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}

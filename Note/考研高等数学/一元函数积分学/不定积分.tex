@@ -11,17 +11,154 @@
 
     \section{不定积分的概念}
     \begin{defn}{原函数与不定积分的定义}{}
-        设函数$f(x)$定义在某区间$I$上，若存在可导函数$F(x)$,对于该区间上任意一点都有$F^\prime(x)=f(x)$成立，则称 $F(x)$是$f(x)$在区间 $I$ 上的一个原函数.称$\int f(x)dx=F(x)+C$ 为$f(x)$在区间$I$上的不定积分.
+        设函数$f(x)$定义在某区间$I$上,若存在可导函数$F(x)$,对于该区间上任意一点都有$F^\prime(x)=f(x)$成立,则称 $F(x)$是$f(x)$在区间 $I$ 上的一个原函数.称$\int f(x)dx=F(x)+C$ 为$f(x)$在区间$I$上的不定积分.
     \end{defn}
+    在几何层面,$f(x)$在区间$I$上的面积是不定积分,也就是$F(x)$.因此二者的关系与区间$I$上的面积息息相关\footnote{其实严格来说不能这样讲,但是可以这样理解}.此外,还可以把$f(x)$理解为“导数”,$F(x)$理解为原函数.
     \begin{them}{原函数(不定积分)存在定理}{}
         \begin{enumerate}
-            \item 连续函数$f(x)$必有原函数$F(x)$.\\
-                  已知$f(x)=F'(x)$,那么如果导数连续,原函数一定存在.
+            \item 连续函数$f(x)$必有原函数$F(x)$\footnote{可理解为:已知$f(x)=F'(x)$,那么如果导数连续,原函数一定存在.}.
+            \item 含有第一类间断点和无穷间断点的函数$f(x)$在包含该间断点的区间内必没有原函数$F(x)$\footnote{可以理解为如果包含第一类间断点(可去间断点+跳跃间断点+无穷间断点)的函数图像无法计算面积}.
+            \item 含有振荡间断点的函数不一定有原函数.\footnote{从前面的章节可以知道,导数存在要么连续,要么有振荡间断点.那么也就是说,含有振荡间断点的导数不一定有原函数.}
+            \item 综上,在不定积分中,也存在一个类似于导数中连续与振荡的关系\ref{dslx02}.\\若$F(x)$处处可导$\Rightarrow F^{\prime}(x)
+                      \begin{cases}
+                          \text{连续函数} \\
+                          \text{含振荡间断点的函数}
+                      \end{cases}$
         \end{enumerate}
     \end{them}
-
     \section{不定积分的计算}
-
+    \subsection{基本积分公式}
+    \begin{itemize}
+        \item \boxed{
+              \int x^{k}\mathrm{d}x=\dfrac{1}{k+1}x^{k+1}+C , k\neq-1 ;\quad\begin{cases}\int\dfrac{1}{x^{2}}\mathrm{d}x=-\dfrac{1}{x}+C ,\\\int\dfrac{1}{\sqrt{x}}\mathrm{d}x=2\sqrt{x}+C.\end{cases}
+              }
+        \item         \boxed{
+                  \int\dfrac{1}{x}\mathrm{d}x=\ln\left|x\right|+C
+              }
+        \item     \boxed{
+                  \int\mathrm{e}^{x}\mathrm{d}x=\mathrm{e}^{x}+C ; \int a^{x}\mathrm{d}x=\frac{a^{x}}{\ln a}+C , a>0 \text{且}a\neq1
+              }
+        \item \boxed{
+                  $$\begin{aligned}
+                           & \int\sin x\mathrm{d}x=-\cos x+C ; \int\cos x\mathrm{d}x=\sin x+C;                                  \\
+                           & \int\tan x\mathrm{d}x=-\ln\left|\cos x\right|+C ; \int\cot x\mathrm{d}x=\ln\left|\sin x\right|+C ; \\
+                           & \int\frac{\mathrm{d}x}{\cos x}=\int\sec x\mathrm{d}x=\ln\left|\sec x+\tan x\right|+C ;             \\
+                           & \int{\frac{\mathrm{d}x}{\sin x}}=\int\csc x\mathrm{d}x=\ln\left|\csc x-\cot x\right|+C ;           \\
+                           & \int\sec^{2}x\mathrm{d}x=\tan x+C ; \int\csc^{2}x\mathrm{d}x=-\cot x+C ;                           \\
+                           & \int\sec x\tan x\mathrm{d}x=\sec x+C ; \int\csc x\cot x\mathrm{d}x=-\csc x+C .
+                      \end{aligned}
+                  $$
+              }
+        \item \boxed{
+              \int{\dfrac{1}{1+x^{2}}}\mathrm{d}x=\arctan x+C,
+              \int{\dfrac{1}{a^{2}+x^{2}}}\mathrm{d}x={\dfrac{1}{a}}\arctan{\dfrac{x}{a}}+C(a>0).
+              }
+        \item \boxed{
+              \int\frac{1}{\sqrt{1-x^{2}}}\mathrm{d}x=\arcsin x+C ,\int\frac{1}{\sqrt{a^{2}-x^{2}}}\mathrm{d}x=\arcsin\frac{x}{a}+C(a>0).
+              }
+        \item \boxed{
+                  $$
+                      \begin{aligned}
+                           & \int\frac{1}{\sqrt{x^{2}+a^{2}}}\mathrm{d}x=\ln(x+\sqrt{x^{2}+a^{2}})+C(\text{常见 }a=1),                            \\
+                           & \int\frac{1}{\sqrt{x^{2}-a^{2}}}\mathrm{d}x=\ln\left|x+\sqrt{x^{2}-a^{2}}\right|+C(\left|x\right|>\left|a\right|).
+                      \end{aligned}
+                  $$
+              }
+        \item \boxed{
+              \int\frac{1}{x^{2}-a^{2}}\mathrm{d}x=\frac{1}{2a}\ln\left|\frac{x-a}{x+a}\right|+C\left(\int\frac{1}{a^{2}-x^{2}}\mathrm{d}x=\frac{1}{2a}\ln\left|\frac{x+a}{x-a}\right|+C\right)
+              }
+        \item \boxed{
+              \int\sqrt{a^{2}-x^{2}}\mathrm{d}x=\frac{a^{2}}{2}\arcsin\frac{x}{a}+\frac{x}{2}\sqrt{a^{2}-x^{2}}+C(a>\left|x\right|\geqslant0)
+              }
+        \item \boxed{
+                  \begin{aligned}
+                       & \int\sin^2x\mathrm{d}x= \frac{x}{2}-\frac{\sin2x}{4}+C\Bigg(\sin^{2}x=\frac{1-\cos2x}{2}\Bigg);    \\
+                       & \int\cos^{2}x\mathrm{d}x= \frac{x}{2}+\frac{\sin2x}{4}+C\Bigg(\cos^{2}x=\frac{1+\cos2x}{2}\Bigg) ; \\
+                       & \int\tan^2x\mathrm{d}x= \tan x-x+C(\tan^{2}x=\sec^{2}x-1) ;                                        \\
+                       & \int\cot^{2}x\mathrm{d}x=-\cot x-x+C(\cot^{2}x=\csc^{2}x-1) .
+                  \end{aligned}
+              }
+    \end{itemize}
+    \subsection{不定积分积分法}
+    \subsubsection{凑微分法}
+    主要使用如下公式进行求解
+    $$
+        \int f[g(x)]g'(x)\mathrm{d}x=\int f[g(x)]\mathrm{d}[g(x)]=\int f(u)\mathrm{d}u.
+    $$
+    常用凑微分公式:
+    \begin{itemize}
+        \item 由于$x \mathrm{d}x={\dfrac{1}{2}} \mathrm{d}(x^{2})$, 故$\int xf(x^{2})\mathrm{d}x={\dfrac{1}{2}}\int f(x^{2})\mathrm{d}(x^{2})={\dfrac{1}{2}}\int f(u)\mathrm{d}u$
+        \item 由于$\sqrt{x} \mathrm{d}x=\dfrac{2}{3}\mathrm{d}(x^{\dfrac{3}{2}})$ ,故$\int\sqrt{x}f(x^{\frac{3}{2}})\mathrm{d}x=\dfrac{2}{3}\int f(x^{\frac{3}{2}})\mathrm{d}(x^{\frac{3}{2}})=\dfrac{2}{3}\int f(u)\mathrm{d}u$
+        \item 由于$\dfrac{\mathrm{d}x}{\sqrt{x}}=2 \mathrm{d}(\sqrt{x})$ , 故$\int\dfrac{f(\sqrt{x})}{\sqrt{x}}\mathrm{d}x=2\int f(\sqrt{x})\mathrm{d}(\sqrt{x})=2\int f(u)\mathrm{d}u$
+        \item 由于$\dfrac{\mathrm{d}x}{x^{2}}=\mathrm{d}\left(-\dfrac{1}{x}\right)$, 故$\int\dfrac{f\left(-\dfrac{1}{x}\right)}{x^{2}}\mathrm{d}x=\int f\left(-\dfrac{1}{x}\right)\mathrm{d}\left(-\dfrac{1}{x}\right)=\int f(u)\mathrm{d}u$
+        \item 由于当 $x>0$ 时,$\dfrac{1}{x}\mathrm{d}x=\mathrm{d}(\ln x)$, 故$\int\dfrac{f(\ln x)}{x}\mathrm{d}x=\int f(\ln x)\mathrm{d}(\ln x)=\int f(u)\mathrm{d}u $
+        \item 由于$e^{x} \mathrm{d}x=\mathrm{d}(\mathrm{e}^{x})$,故$\int\mathrm{e}^{x}f(\mathrm{e}^{x})\mathrm{d}x=\int f(\mathrm{e}^{x})\mathrm{d}(\mathrm{e}^{x})=\int f(u)\mathrm{d}u$.
+        \item 由于$a^{x} \mathrm{d}x=\dfrac{1}{\ln a}\mathrm{d}(a^{x}),a>0,a\neq1$,故$\int a^{x}f(a^{x})\mathrm{d}x=\dfrac{1}{\ln a}\int f(a^{x})\mathrm{d}(a^{x})=\dfrac{1}{\ln a}\int f(u)\mathrm{d}u$
+        \item 由于$\sin x \mathrm{dx}=\mathrm{d}(-\cos x)$,故$\int\sin x \cdot f(-\cos x)\mathrm{dx}=\int f(-\cos x)\mathrm{d}(-\cos x)=\int f(u)\mathrm{d}u$
+        \item 由于$\cos x \mathrm{d}x=\mathrm{d}(\sin x)$,故$\int\cos x \cdot f(\sin x)\mathrm{d}x=\int f(\sin x)\mathrm{d}(\sin x)=\int f(u)\mathrm{d}u$
+        \item 由于$\dfrac{\mathrm{d}x}{\cos^{2}x}=\sec^{2}x \mathrm{d}x=\mathrm{d}(\tan x)$ , 故$\int\dfrac{f(\tan x)}{\cos^{2}x}\mathrm{d}x=\int f(\tan x)\mathrm{d}(\tan x)=\int f(u)\mathrm{d}u$
+        \item 由于$\dfrac{\mathrm{d}x}{\sin^{2}x}=\csc^{2}x \mathrm{d}x=\mathrm{d}(-\cot x)$, 故$\int\dfrac{f(-\cot x)}{\sin^{2}x}\mathrm{d}x=\int f(-\cot x)\mathrm{d}(-\cot x)=\int f(u)\mathrm{d}u$
+        \item 由于$\dfrac{1}{1+x^{2}}\mathrm{d}x=\mathrm{d}(\arctan x)$ , 故$\int\dfrac{f(\arctan x)}{1+x^{2}}\mathrm{d}x=\int f(\arctan x)\mathrm{d}(\arctan x)=\int f(u)\mathrm{d}u$.
+        \item 由于$\dfrac{1}{\sqrt{1-x^{2}}} \mathrm{d}x=\mathrm{d}(\arcsin x)$,故$\int\dfrac{f(\arcsin x)}{\sqrt{1-x^{2}}}\mathrm{d}x=\int f(\arcsin x)\mathrm{d}(\arcsin x)=\int f(u)\mathrm{d}u$ .
+    \end{itemize}
+    \subsubsection{换元法}
+    $$
+        \int f(x)\mathrm{d}x\xrightarrow{x=g(u)}\int f[g(u)]\mathrm{d}[g(u)]=\int f[g(u)]g^{\prime}(u)\mathrm{d}u
+    $$
+    \begin{itemize}
+        \item 三角函数代换,当被积函数含有如下根式时,可作三角函数代换,这里$a > 0$
+              \begin{center}
+                  $\begin{cases} \sqrt{a^{2}-x^{2}}\to\text{令}x=a\sin t , |t|<\dfrac{\pi}{2} ,\\\sqrt{a^{2}+x^{2}}\to\text{令}x=a\tan t , |t|<\dfrac{\pi}{2} ,\\\sqrt{x^{2}-a^{2}}\to\text{令}x=a\sec t , \begin{cases}\text{若}x>0 ,\text{则}0<t<\dfrac{\pi}{2} ,\\ \text{若}x<0 ,\text{则}\dfrac{\pi}{2}<t<\pi.\end{cases} \end{cases}$
+              \end{center}
+        \item 恒等变形后三角函数代换:当被积函数含有根式$\sqrt{ax^2+bx+c}$时,可先化为以下三种形式:\newline$\sqrt{\varphi^2(x)+k^2},\sqrt{\varphi^2(x)-k^2},\sqrt{k^2-\varphi^2(x)}$,再作三角函数代换。
+        \item 根式代换:当被积函数含有根式$\sqrt[n]{ax+b},\sqrt{\dfrac{ax+b}{cx+d}},\sqrt{a\mathrm{e}^{bx}+c}$等时,一般令根式$\sqrt*=t$(因为事实上,很难通过根号内换元的办法凑成平方,所以根号无法去掉).对既含有$\sqrt[n]{ax+b}$,也含有$\sqrt[m]{ax+b}$的函数,一般取$m$,$n$的最小公倍数$l$,令$\sqrt[t]{ax+b}=t$。
+        \item 倒代换:当被积函数分母的幂次比分子高两次及两次以上时,作倒代换,令$x=\dfrac{1}{t}$
+        \item 复杂函数的直接代换:当被积函数中含有$a^x,\mathrm{e}^x,\ln x,\arcsin x,\arctan x$等时,可考虑直接令复杂函数等于$t$,值得指出的是,当$\ln x,\arcsin x,\arctan x$与$P_n(x)$或$\mathrm{e}^{ax}$作乘法时(其中$P_n(x)$为$x$的$n$次多项式),优先考虑分部积分法.
+    \end{itemize}
+    \subsubsection{分部积分法}
+    由$$
+        (uv)'=u'v+uv'
+    $$
+    可得:
+    $$
+        \int u dv =uv -\int v du
+    $$
+    \begin{criterion}{分部积分法的使用事项}{}
+        \begin{itemize}
+            \item 该方法主要适用于求$\int u dv $比较困难,而$\int v du $比较容易的情形。
+            \item 积分后会“简单”些的函数宜取作$\nu$;微分后会“简单”些的函数宜取作$u$.故$u,\nu$的选取原则为$\text{反} \quad \text{对} \quad \text{幂} \quad \text{指(三)} \quad \text{三(指)}$。相对位置在左边的宜选作$u$,用来求导；相对位置在右边的宜选作$\nu$,用来积分,即
+                  \begin{itemize}
+                      \item 被积函数为$P_n(x)\mathrm{e}^{kx},P_n(x) \sin ax,P_n(x)\cos ax$等形式时,一般来说选取$u=P_n(x);$
+                      \item 被积函数为$e^{ax}\sin bx,e^{ax}\cos bx$等形式时,$u$可以取两因子中的任意一个
+                      \item 被积函数为$P_n(x)\ln x,P_n(x)\arcsin x,P_n(x)\arctan x$等形式时,一般分别选取$u=\ln x\:,\:u=\arcsin x\:,\:u=\arctan x$
+                  \end{itemize}
+        \end{itemize}
+    \end{criterion}
+    分部积分法的推广公式与$\int P_n(x) \mathrm{e} ^{kx}dx,\int P_n(x) \sin ax dx,\int P_n(x) \cos bx dx.$
+    设函数$u=u(x)$与$\nu=\nu(x)$具有直到第$(n+1)$阶的连续导数,并根据分部积分公式
+    $$\int u\mathrm{d}\nu=u\nu-\int\nu\mathrm{d}u\:,$$
+    则有
+    $$\int u\nu^{(n+1)}\mathrm{d}x=u\nu^{(n)}-u^{\prime}\nu^{(n-1)}+u^{\prime\prime}\nu^{(n-2)}-\cdots+(-1)^{n}u^{(n)}\nu+(-1)^{n+1}\int u^{(n+1)}\nu\mathrm{d}x\:.$$
+    以$n=3$为例,有如下公式：
+    $$
+        \int u\nu^{(4)}\mathrm{d}x=u\nu^{(3)}-u^{\prime}\nu^{\prime\prime}+u^{\prime\prime}\nu^{\prime}-u^{(3)}\nu+\int u^{(4)}\nu\mathrm{d}x
+    $$
+    \subsubsection{有理函数的积分}
+    \begin{defn}{有理函数积分的定义}{}
+        形如$\int\dfrac{P_n(x)}{Q_m(x)}\mathrm{d}x(n<m)$的积分称为有理函数的积分,其中$P_n(x),Q_m(x)$分别是$x$的$n$次多项式和$m$次多项式。
+    \end{defn}
+    \begin{defn}{有理函数积分的思想}{}
+        若$Q_m(x)$在实数域内可因式分解,则因式分解后再把$\dfrac{P_n(x)}{Q_m(x)}$拆成若干项最简有理分式之和
+    \end{defn}
+    \begin{defn}{有理函数积分的方法}{}
+        \begin{itemize}
+            \item ${\mathcal Q}_{m}(x)$的一次单因式$ax+b$产生一项$\dfrac A{ax+b}$
+            \item $Q_{m}(x)$的$k$重一次因式$(ax+b)^k$产生$k$项，分别为$\dfrac {A_1}{ax+b},\dfrac{A_{2}}{(ax+b)^{2}},\cdots,\dfrac{A_{k}}{(ax+b)^{k}}$
+            \item $Q_{m}(x)$的二次单因式$px^2+qx+r$产生一项$\dfrac{Ax+B}{px^2+qx+r}$
+            \item $Q_{m}(x)$的$k$重二次因式$(px^2+qx+r)^k$产生$k$项，分别为
+                  $$\dfrac{A_1x+B_1}{px^2+qx+r}\:,\:\dfrac{A_2x+B_2}{(px^2+qx+r)^2}\:,\:\cdots\:,\:\dfrac{A_kx+B_k}{(px^2+qx+r)^k}\:.$$
+        \end{itemize}
+    \end{defn}
     %  ############################ 正文部分
     \ifx\allfiles\undefined
 \end{sloppypar}
